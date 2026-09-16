@@ -1,5 +1,6 @@
 import {isSupabaseConfigured, supabase} from './supabase';
 import {readJSON, writeJSON, clearAll} from './storage';
+import {toError} from './errors';
 import type {
   AiSession,
   EarnedAchievement,
@@ -212,7 +213,7 @@ export async function loadProfile(userId: string): Promise<Profile | null> {
       .select('*')
       .eq('id', userId)
       .maybeSingle();
-    if (error) throw error;
+    if (error) throw toError(error);
     return data ? toProfile(data as ProfileRow) : null;
   }
   return readJSON<Profile | null>(K.profile, null);
@@ -226,7 +227,7 @@ export async function saveProfile(profile: Profile): Promise<Profile> {
       .upsert(fromProfile(next))
       .select()
       .single();
-    if (error) throw error;
+    if (error) throw toError(error);
     return toProfile(data as ProfileRow);
   }
   writeJSON(K.profile, next);
@@ -241,7 +242,7 @@ export async function loadLessonProgress(userId: string): Promise<LessonProgress
       .from('lesson_progress')
       .select('*')
       .eq('user_id', userId);
-    if (error) throw error;
+    if (error) throw toError(error);
     return ((data ?? []) as LessonRow[]).map(toLesson);
   }
   return readJSON<LessonProgress[]>(K.lessons, []);
@@ -257,7 +258,7 @@ export async function upsertLessonProgress(
     const {error} = await supabase
       .from('lesson_progress')
       .upsert(fromLesson(userId, entry), {onConflict: 'user_id,lesson_id'});
-    if (error) throw error;
+    if (error) throw toError(error);
     return next;
   }
   writeJSON(K.lessons, next);
@@ -273,7 +274,7 @@ export async function loadQuizAttempts(userId: string): Promise<QuizAttempt[]> {
       .select('*')
       .eq('user_id', userId)
       .order('submitted_at', {ascending: true});
-    if (error) throw error;
+    if (error) throw toError(error);
     return ((data ?? []) as QuizRow[]).map(toQuiz);
   }
   return readJSON<QuizAttempt[]>(K.quizzes, []);
@@ -287,7 +288,7 @@ export async function addQuizAttempt(
   const next = [...all, attempt];
   if (supabase) {
     const {error} = await supabase.from('quiz_attempts').insert(fromQuiz(userId, attempt));
-    if (error) throw error;
+    if (error) throw toError(error);
     return next;
   }
   writeJSON(K.quizzes, next);
@@ -303,7 +304,7 @@ export async function loadExamAttempts(userId: string): Promise<ExamAttempt[]> {
       .select('*')
       .eq('user_id', userId)
       .order('started_at', {ascending: true});
-    if (error) throw error;
+    if (error) throw toError(error);
     return ((data ?? []) as ExamRow[]).map(toExam);
   }
   return readJSON<ExamAttempt[]>(K.exams, []);
@@ -321,7 +322,7 @@ export async function saveExamAttempt(
     const {error} = await supabase
       .from('exam_attempts')
       .upsert(fromExam(userId, attempt), {onConflict: 'id'});
-    if (error) throw error;
+    if (error) throw toError(error);
     return next;
   }
   writeJSON(K.exams, next);
@@ -336,7 +337,7 @@ export async function loadAchievements(userId: string): Promise<EarnedAchievemen
       .from('student_achievements')
       .select('achievement_id, earned_at')
       .eq('user_id', userId);
-    if (error) throw error;
+    if (error) throw toError(error);
     return ((data ?? []) as AchievementRow[]).map((r) => ({
       achievementId: r.achievement_id,
       earnedAt: r.earned_at,
@@ -359,7 +360,7 @@ export async function saveAchievements(
       })),
       {onConflict: 'user_id,achievement_id'},
     );
-    if (error) throw error;
+    if (error) throw toError(error);
     return;
   }
   writeJSON(K.achievements, earned);

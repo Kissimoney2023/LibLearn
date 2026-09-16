@@ -1,4 +1,5 @@
 import {useState, type FormEvent} from 'react';
+import {toMessage} from '../lib/errors';
 import {Link} from 'react-router-dom';
 import {useAuth} from '../context/AuthContext';
 import {Button, Field} from '../components/ui';
@@ -22,7 +23,7 @@ export default function SignUp() {
     try {
       await signUp(name.trim(), email.trim(), password);
     } catch (err) {
-      setError(err instanceof Error ? err.message : 'Could not create your account.');
+      setError(toMessage(err, 'Could not create your account.'));
     } finally {
       setBusy(false);
     }

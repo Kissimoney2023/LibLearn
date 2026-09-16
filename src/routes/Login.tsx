@@ -1,4 +1,5 @@
 import {useState, type FormEvent} from 'react';
+import {toMessage} from '../lib/errors';
 import {Link} from 'react-router-dom';
 import {useAuth} from '../context/AuthContext';
 import {Button, Field} from '../components/ui';
@@ -19,7 +20,7 @@ export default function Login() {
     try {
       await signIn(email, password);
     } catch (err) {
-      setError(err instanceof Error ? err.message : 'Could not sign in.');
+      setError(toMessage(err, 'Could not sign in.'));
     } finally {
       setBusy(false);
     }
@@ -36,7 +37,7 @@ export default function Login() {
       await resetPassword(email);
       setNotice('Check your email for a link to set a new password.');
     } catch (err) {
-      setError(err instanceof Error ? err.message : 'Could not send the reset email.');
+      setError(toMessage(err, 'Could not send the reset email.'));
     }
   }
 
