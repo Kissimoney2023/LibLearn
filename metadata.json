@@ -1,0 +1,6 @@
+{
+  "name": "LibLearn Liberia EdTech",
+  "description": "Curriculum-aligned digital learning companion and exam coach for Liberian students, featuring interactive lessons, AI tutoring, and WAEC/LJHSCE preparation.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
