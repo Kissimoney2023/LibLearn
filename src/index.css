@@ -1,1 +1,158 @@
 @import "tailwindcss";
+
+/**
+ * LibLearn design tokens.
+ *
+ * Source of truth: DESIGN.md. Every colour pair here has been measured with the
+ * WCAG 2.1 relative-luminance formula - all text pairs meet AA (4.5:1).
+ *
+ * Each brand hue is a TWO-TIER PAIR:
+ *   - an *action* tone dark enough to carry white text (primary, tertiary)
+ *   - a *container* tone holding the saturated brand colour as a fill behind
+ *     dark text (primary-container, tertiary-container)
+ *
+ * This is why #00B140 (LibLearn Green) is `primary-container` and not `primary`:
+ * white text on #00B140 measures 2.85:1 and fails AA. As a fill behind #00300C
+ * it measures 5.16:1 and the brand colour is preserved exactly.
+ */
+@theme {
+  /* ---- Neutral surfaces (slate ramp) ---- */
+  --color-surface: #f8fafc;
+  --color-surface-dim: #dbe2ea;
+  --color-surface-bright: #ffffff;
+  --color-surface-lowest: #ffffff;
+  --color-surface-low: #f1f5f9;
+  --color-surface-container: #e2e8f0;
+  --color-surface-high: #cbd5e1;
+  --color-surface-highest: #b8c4d4;
+  --color-on-surface: #17202a;
+  --color-on-surface-variant: #475569;
+  --color-inverse-surface: #1e293b;
+  --color-inverse-on-surface: #f1f5f9;
+
+  /* outline = functional control boundaries (4.76:1 on white, clears WCAG 1.4.11)
+     outline-variant = decorative hairlines only, never identifies a control */
+  --color-outline: #64748b;
+  --color-outline-variant: #e2e8f0;
+
+  /* ---- Primary - LibLearn Green ---- */
+  --color-primary: #006e24;
+  --color-on-primary: #ffffff;
+  --color-primary-hover: #00581c;
+  --color-primary-container: #00b140;
+  --color-on-primary-container: #00300c;
+  --color-primary-surface: #e6f7ec;
+  --color-on-primary-surface: #007a2c;
+
+  /* ---- Secondary - Deep Navy ---- */
+  --color-secondary: #0a2540;
+  --color-on-secondary: #ffffff;
+  --color-secondary-hover: #061a2e;
+  --color-secondary-container: #c4dcff;
+  --color-on-secondary-container: #0a2540;
+
+  /* ---- Tertiary - Liberian Gold ---- */
+  --color-tertiary: #7c5800;
+  --color-on-tertiary: #ffffff;
+  --color-tertiary-container: #f4b942;
+  --color-on-tertiary-container: #3d2b00;
+  --color-tertiary-surface: #fef6e6;
+  --color-on-tertiary-surface: #946300;
+
+  /* ---- Error - Liberian Red ---- */
+  --color-error: #bf0a30;
+  --color-on-error: #ffffff;
+  --color-error-container: #ffdad6;
+  --color-on-error-container: #8c0723;
+
+  /* ---- Type ---- */
+  --font-display: "Montserrat", ui-sans-serif, system-ui, sans-serif;
+  --font-body: "Inter", ui-sans-serif, system-ui, sans-serif;
+
+  /* ---- Radius ---- */
+  --radius-sm: 0.25rem;
+  --radius-md: 0.75rem;
+  --radius-lg: 1rem;
+  --radius-xl: 1.5rem;
+
+  /* ---- Elevation ----
+     Tinted from `secondary` (Deep Navy) rather than black, so depth reads as
+     part of the palette. Kept as literal values: Stitch's schema discards an
+     `elevation` token block entirely, so this file is their only home. */
+  --shadow-level-1: 0 1px 3px 0 rgb(10 37 64 / 0.05), 0 1px 2px -1px rgb(10 37 64 / 0.05);
+  --shadow-level-2: 0 4px 6px -1px rgb(10 37 64 / 0.07), 0 2px 4px -2px rgb(10 37 64 / 0.05);
+  --shadow-level-3: 0 12px 24px -4px rgb(10 37 64 / 0.12), 0 6px 12px -4px rgb(10 37 64 / 0.08);
+
+  /* ---- Breakpoints - mobile 4col / tablet 8col / desktop 12col ---- */
+  --breakpoint-tablet: 768px;
+  --breakpoint-desktop: 1024px;
+}
+
+@layer base {
+  html {
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    background-color: var(--color-surface);
+    color: var(--color-on-surface);
+    font-family: var(--font-body);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: var(--font-display);
+    text-wrap: balance;
+  }
+
+  /* Input zoom guard: iOS Safari auto-zooms the viewport on focus for any
+     control under 16px. Applies to form controls specifically - 14px body-sm
+     and 12px label-sm remain available for metadata and captions. */
+  input, textarea, select {
+    font-size: 16px;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-secondary);
+    outline-offset: 2px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
+
+@layer utilities {
+  /* Desktop content is constrained to 1280px with a 32px canvas margin;
+     tablet 24px; mobile 16px. */
+  .shell {
+    margin-inline: auto;
+    width: 100%;
+    max-width: 1280px;
+    padding-inline: 1rem;
+  }
+  @media (min-width: 768px) {
+    .shell { padding-inline: 1.5rem; }
+  }
+  @media (min-width: 1024px) {
+    .shell { padding-inline: 2rem; }
+  }
+
+  .material-symbols-outlined {
+    font-family: "Material Symbols Outlined";
+    font-weight: normal;
+    font-style: normal;
+    line-height: 1;
+    letter-spacing: normal;
+    text-transform: none;
+    display: inline-block;
+    white-space: nowrap;
+    word-wrap: normal;
+    direction: ltr;
+    -webkit-font-feature-settings: "liga";
+    -webkit-font-smoothing: antialiased;
+  }
+}
