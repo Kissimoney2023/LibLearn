@@ -46,6 +46,7 @@ read by browser code.**
 | Variable | Required | Used by | Purpose |
 | --- | --- | --- | --- |
 | `GEMINI_API_KEY` | For the AI tutor | `server.ts` | Server-side only. The browser calls `/api/ai/tutor`; the key never leaves the server. |
+| `GEMINI_MODEL` | No | `server/tutor.ts` | Overrides the pinned Gemini model. Set it when Google retires the default; the tutor returns an explicit 502 naming the model if it is unavailable. |
 | `APP_URL` | No | `server.ts` | Self-referential links and OAuth callbacks. |
 | `VITE_SUPABASE_URL` | For real accounts | browser | Supabase project URL. |
 | `VITE_SUPABASE_ANON_KEY` | For real accounts | browser | Publishable anon key. Safe in the browser **under row-level security**. The service-role key must never appear in client code. |
@@ -221,6 +222,7 @@ variables**; Vercel: **Settings → Environment Variables**).
 | `VITE_SUPABASE_URL` | Build (public) | `https://<ref>.supabase.co` |
 | `VITE_SUPABASE_ANON_KEY` | Build (public) | The anon / publishable key |
 | `GEMINI_API_KEY` | Runtime (secret) | Gemini API key — **no VITE\_ prefix** |
+| `GEMINI_MODEL` | Runtime (optional) | Overrides the pinned Gemini model when Google retires it |
 
 > **The `VITE_` prefix is the security boundary.** Vite inlines every `VITE_*`
 > value into the JavaScript bundle at build time, where any visitor can read

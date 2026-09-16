@@ -140,6 +140,20 @@ export function rateLimited(ip: string): boolean {
   return entry.count > MAX_PER_WINDOW;
 }
 
+/**
+ * The Gemini model to call.
+ *
+ * Pinned rather than tracking `gemini-flash-latest`, because the homework
+ * guard and the curriculum disclaimer are load-bearing safety behaviour and a
+ * model that shifts underneath us could change how they are followed without
+ * any deploy.
+ *
+ * Overridable by env var so the next deprecation is a dashboard change, not a
+ * code change: `gemini-2.5-flash` was hardcoded here and stopped accepting new
+ * API keys, which surfaced as a generic "could not reach the tutor".
+ */
+const MODEL = process.env.GEMINI_MODEL ?? 'gemini-3.6-flash';
+
 export async function handleTutorRequest(
   rawBody: unknown,
   ip: string,
@@ -170,7 +184,7 @@ export async function handleTutorRequest(
     ];
 
     const result = await ai.models.generateContent({
-      model: 'gemini-2.5-flash',
+      model: MODEL,
       contents,
       config: {
         systemInstruction: buildSystemPrompt(body),
@@ -189,6 +203,22 @@ export async function handleTutorRequest(
   } catch (err) {
     // Logged server-side; the student sees a plain message, never a stack trace.
     console.error('[ai/tutor]', err);
+
+    // A retired or misspelled model returns 404. Reporting that as "could not
+    // reach the tutor" sends whoever debugs it hunting a network fault that
+    // does not exist, so name it.
+    const text = err instanceof Error ? err.message : String(err);
+    if (/NOT_FOUND|no longer available|is not found/i.test(text)) {
+      return {
+        status: 502,
+        body: {
+          error:
+            `The AI model "${MODEL}" is not available for this API key. ` +
+            'Set GEMINI_MODEL to a current model and redeploy.',
+        },
+      };
+    }
+
     return {status: 502, body: {error: 'Could not reach the tutor right now.'}};
   }
 }
