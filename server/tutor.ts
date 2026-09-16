@@ -42,8 +42,11 @@ const MODE_GUIDANCE: Record<string, string> = {
   example: 'Give one clear worked example, then a second for the student to try.',
   quiz_me: 'Ask three questions one at a time. Wait for an answer before the next.',
   homework:
-    'The student is asking about homework. Do NOT give the final answer. Give a hint, ' +
-    'name the method, or work a similar problem with different numbers, then ask them to try.',
+    'The student is asking about homework. Do NOT give the final answer, and do not state ' +
+    'it anywhere in your reply - not as a check, not as a verification step, not in a ' +
+    '"the answer is" line at the end. Give a hint, name the method, or work a similar ' +
+    'problem with DIFFERENT numbers that does not come out to the same result. Stop before ' +
+    'the last step of their problem and ask them to take it.',
   simplify: 'Re-explain what came before more simply, using a concrete everyday comparison.',
   practice: 'Offer practice questions on this topic, from easier to harder.',
 };
@@ -189,7 +192,12 @@ export async function handleTutorRequest(
       config: {
         systemInstruction: buildSystemPrompt(body),
         temperature: 0.7,
-        maxOutputTokens: 800,
+        // Budgets thinking AND the reply. Current Gemini models reason before
+        // answering and those thought tokens are drawn from this same cap, so
+        // 800 left roughly 30 tokens of visible answer and every reply stopped
+        // mid-sentence (finishReason MAX_TOKENS) while looking like a normal
+        // one. Measured worst case here is ~800 thinking + ~400 reply.
+        maxOutputTokens: 2400,
       },
     });
 
