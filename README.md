@@ -194,28 +194,27 @@ from a failure.
 > connected, quiz and exam grading should move behind an RPC so a student cannot
 > post an arbitrary score. The `store.ts` seam is where that swap happens.
 
-## Deployment (Vercel)
+## Deployment
 
-The deployed app is **static output on the CDN plus one serverless function**.
-`server.ts` is local-development only; Vercel never runs it. Both call the same
-`handleTutorRequest` in `server/tutor.ts`, so the prompt rules and safety guards
-cannot drift between environments.
+Static output on the CDN plus two serverless functions. `server.ts` is
+local-development only and is never deployed. Every runtime calls the same
+`handleTutorRequest` in `server/tutor.ts`, so the prompt rules and safety
+guards cannot drift between environments.
 
-```
-dist/            → CDN
-api/ai/tutor.ts  → serverless function, holds GEMINI_API_KEY
-api/health.ts    → deployment check
-```
+Both Netlify and Vercel are configured; the repository deploys to either.
 
-`vercel.json` supplies the SPA rewrite — without it a refresh on
-`/learn/8/mathematics` returns 404 — immutable caching for content-hashed
-assets, `must-revalidate` on the service worker so an update is never pinned,
-and baseline security headers.
+| | Netlify | Vercel |
+| --- | --- | --- |
+| Config | `netlify.toml` | `vercel.json` |
+| Functions | `netlify/functions/*.mts` | `api/**/*.ts` |
+| Tutor endpoint | `/api/ai/tutor` (redirect) | `/api/ai/tutor` (file route) |
+
+The browser calls `/api/ai/tutor` on both, so no client code is platform-aware.
 
 ### Environment variables
 
-Set these in **Project → Settings → Environment Variables**, for Production,
-Preview and Development.
+Set these for every deploy context (Netlify: **Site configuration → Environment
+variables**; Vercel: **Settings → Environment Variables**).
 
 | Variable | Scope | Value |
 | --- | --- | --- |
@@ -223,39 +222,51 @@ Preview and Development.
 | `VITE_SUPABASE_ANON_KEY` | Build (public) | The anon / publishable key |
 | `GEMINI_API_KEY` | Runtime (secret) | Gemini API key — **no VITE\_ prefix** |
 
-> **The `VITE_` prefix is the security boundary.** Vite inlines every
-> `VITE_*` value into the JavaScript bundle at build time, where any visitor
-> can read it. `GEMINI_API_KEY` must never carry that prefix.
+> **The `VITE_` prefix is the security boundary.** Vite inlines every `VITE_*`
+> value into the JavaScript bundle at build time, where any visitor can read
+> it. That is fine for the Supabase anon key, which row-level security governs.
+> It is not fine for a Gemini key, so `GEMINI_API_KEY` must never carry it.
 >
-> **Never add the Supabase `service_role` key to Vercel.** It bypasses row-level
-> security completely, and nothing in this app needs it.
+> **Never add the Supabase `service_role` key to a host.** It bypasses
+> row-level security completely and nothing in this app needs it.
 
-`VITE_API_BASE_URL` stays unset — the function is same-origin.
-`VITE_HASH_ROUTER` stays unset — `vercel.json` provides the rewrite.
+Changing a `VITE_*` value requires a **redeploy** — those are baked in at build
+time, not read at runtime.
 
-### Deploying
+### Deploying to Netlify
 
 ```bash
-npx vercel link       # once
-npx vercel            # preview deployment
-npx vercel --prod     # production
+npx netlify login
+npx netlify init      # link or create the site
+npx netlify deploy --prod
 ```
 
-Or import the GitHub repo in the Vercel dashboard; the settings in
-`vercel.json` are picked up automatically.
+Or connect the GitHub repo in the Netlify dashboard; `netlify.toml` supplies
+the build command, publish directory, functions directory, redirects and
+headers automatically.
+
+**Redirect order matters.** Netlify evaluates redirects top to bottom and the
+first match wins, so the two `/api/*` rules must stay above the `/*` SPA
+fallback. Reversed, every API call is rewritten to `index.html` and returns
+HTML where the client expects JSON.
+
+### Deploying to Vercel
+
+```bash
+npx vercel link
+npx vercel --prod
+```
 
 ### After the first deploy
 
-1. `GET /api/health` → `{ok:true,aiConfigured:true,supabaseConfigured:true}`.
-   Any `false` means that variable is missing or not applied to this
-   environment.
+1. `GET /api/health` → `{"ok":true,"aiConfigured":true,"supabaseConfigured":true}`.
+   Any `false` names a variable that did not apply to that context.
 2. In Supabase → **Authentication → URL Configuration**, add the deployment
    origin to **Site URL** and **Redirect URLs**. Password reset links back to
-   `${origin}/login` and will fail without it.
-3. Sign up once and confirm a row appears in `profiles`.
-
-Changing a `VITE_*` variable requires a **redeploy** — those values are baked
-in at build time, not read at runtime.
+   `${origin}/login` and fails silently without it.
+3. Apply `supabase/migrations/0001_init.sql` if you have not already; sign-up
+   against a database with no `profiles` table fails in a way that looks like a
+   deployment bug.
 
 ## Architecture
 

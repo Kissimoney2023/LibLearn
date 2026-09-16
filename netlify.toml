@@ -1,0 +1,61 @@
+# Netlify deployment for LibLearn.
+#
+# Static output on the CDN plus two functions. server.ts is local development
+# only - it and the functions both call handleTutorRequest in server/tutor.ts,
+# so the prompt rules and safety guards cannot drift between environments.
+
+[build]
+  command = "npm run build"
+  publish = "dist"
+  functions = "netlify/functions"
+
+[build.environment]
+  NODE_VERSION = "22"
+
+# ---------------------------------------------------------------- routing
+#
+# ORDER MATTERS. Netlify evaluates redirects top to bottom and the first match
+# wins, so the API rules must precede the SPA catch-all. Reversed, every API
+# call would be rewritten to index.html and return HTML where the client
+# expects JSON.
+
+[[redirects]]
+  from = "/api/ai/tutor"
+  to = "/.netlify/functions/tutor"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/api/health"
+  to = "/.netlify/functions/health"
+  status = 200
+  force = true
+
+# SPA history fallback. Without it a refresh on /learn/8/mathematics is a 404,
+# because no such file exists on disk. Netlify checks the filesystem first, so
+# real assets still win over this rule.
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+# ---------------------------------------------------------------- headers
+
+# Vite content-hashes these, so each URL is immutable and can be cached hard.
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+# The service worker must never be pinned, or an update can never roll out.
+[[headers]]
+  for = "/sw.js"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    X-Frame-Options = "SAMEORIGIN"
