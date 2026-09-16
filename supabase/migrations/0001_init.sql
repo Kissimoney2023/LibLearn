@@ -41,13 +41,13 @@ drop policy if exists "profiles: update own" on public.profiles;
 create policy "profiles: update own" on public.profiles
   for update using (auth.uid() = id) with check (auth.uid() = id);
 
--- A student must never be able to promote themselves. `role` is writable only
--- by the service role, which never touches client code.
-drop policy if exists "profiles: no self role change" on public.profiles;
+-- A student must never be able to promote themselves. The guard fires only when
+-- the account holder is the one updating, so an administrator acting through
+-- the service role can still change a role - which is what Phase 2 needs.
 create or replace function public.guard_profile_role()
 returns trigger language plpgsql security definer set search_path = '' as $$
 begin
-  if new.role is distinct from old.role then
+  if new.role is distinct from old.role and auth.uid() = old.id then
     raise exception 'role cannot be changed by the account holder';
   end if;
   new.updated_at := now();
@@ -185,3 +185,22 @@ create policy "achievements: read own" on public.student_achievements
 drop policy if exists "achievements: insert own" on public.student_achievements;
 create policy "achievements: insert own" on public.student_achievements
   for insert with check (auth.uid() = user_id);
+
+-- ------------------------------------------------------------- backfill
+
+-- The trigger above only fires on INSERT. Anyone who signed up before this
+-- migration ran has an auth.users row but no profile, which leaves them stuck
+-- at onboarding. This repairs them, and is safe to re-run.
+insert into public.profiles (id, name, email)
+select
+  u.id,
+  coalesce(nullif(u.raw_user_meta_data ->> 'name', ''), split_part(u.email, '@', 1)),
+  coalesce(u.email, '')
+from auth.users u
+where not exists (select 1 from public.profiles p where p.id = u.id)
+on conflict (id) do nothing;
+
+-- Tell PostgREST to reload its schema cache, so the new tables are visible
+-- immediately rather than after the next automatic refresh. Without this the
+-- app can keep reporting PGRST205 for a minute or so after the tables exist.
+notify pgrst, 'reload schema';
