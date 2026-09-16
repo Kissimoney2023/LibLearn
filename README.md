@@ -194,15 +194,68 @@ from a failure.
 > connected, quiz and exam grading should move behind an RPC so a student cannot
 > post an arbitrary score. The `store.ts` seam is where that swap happens.
 
-## Deployment
+## Deployment (Vercel)
 
-```bash
-npm run build     # → dist/
-npm run server    # Express serves dist/ and /api
+The deployed app is **static output on the CDN plus one serverless function**.
+`server.ts` is local-development only; Vercel never runs it. Both call the same
+`handleTutorRequest` in `server/tutor.ts`, so the prompt rules and safety guards
+cannot drift between environments.
+
+```
+dist/            → CDN
+api/ai/tutor.ts  → serverless function, holds GEMINI_API_KEY
+api/health.ts    → deployment check
 ```
 
-Set `GEMINI_API_KEY` in the host environment. If deploying to Google AI Studio,
-the key is injected at runtime from user secrets.
+`vercel.json` supplies the SPA rewrite — without it a refresh on
+`/learn/8/mathematics` returns 404 — immutable caching for content-hashed
+assets, `must-revalidate` on the service worker so an update is never pinned,
+and baseline security headers.
+
+### Environment variables
+
+Set these in **Project → Settings → Environment Variables**, for Production,
+Preview and Development.
+
+| Variable | Scope | Value |
+| --- | --- | --- |
+| `VITE_SUPABASE_URL` | Build (public) | `https://<ref>.supabase.co` |
+| `VITE_SUPABASE_ANON_KEY` | Build (public) | The anon / publishable key |
+| `GEMINI_API_KEY` | Runtime (secret) | Gemini API key — **no VITE\_ prefix** |
+
+> **The `VITE_` prefix is the security boundary.** Vite inlines every
+> `VITE_*` value into the JavaScript bundle at build time, where any visitor
+> can read it. `GEMINI_API_KEY` must never carry that prefix.
+>
+> **Never add the Supabase `service_role` key to Vercel.** It bypasses row-level
+> security completely, and nothing in this app needs it.
+
+`VITE_API_BASE_URL` stays unset — the function is same-origin.
+`VITE_HASH_ROUTER` stays unset — `vercel.json` provides the rewrite.
+
+### Deploying
+
+```bash
+npx vercel link       # once
+npx vercel            # preview deployment
+npx vercel --prod     # production
+```
+
+Or import the GitHub repo in the Vercel dashboard; the settings in
+`vercel.json` are picked up automatically.
+
+### After the first deploy
+
+1. `GET /api/health` → `{ok:true,aiConfigured:true,supabaseConfigured:true}`.
+   Any `false` means that variable is missing or not applied to this
+   environment.
+2. In Supabase → **Authentication → URL Configuration**, add the deployment
+   origin to **Site URL** and **Redirect URLs**. Password reset links back to
+   `${origin}/login` and will fail without it.
+3. Sign up once and confirm a row appears in `profiles`.
+
+Changing a `VITE_*` variable requires a **redeploy** — those values are baked
+in at build time, not read at runtime.
 
 ## Architecture
 

@@ -1,0 +1,10 @@
+# Build outputs Vercel regenerates itself
+dist
+dist-preview
+node_modules
+
+# Local-only tooling and docs
+scripts
+supabase
+*.md
+!README.md
