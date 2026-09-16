@@ -101,8 +101,26 @@ Every table must have row-level security enabled with policies scoped to
 `auth.uid() = user_id` (and `auth.uid() = id` on `profiles`). Without RLS the
 anon key would expose every student's records.
 
-> SQL migrations are **not yet written** — the schema above is the contract the
-> repository layer already expects.
+### Applying the schema
+
+```bash
+# Supabase CLI
+supabase db push
+# or paste supabase/migrations/0001_init.sql into the SQL Editor and run it
+```
+
+The migration creates the tables above, enables RLS on every one of them, and
+installs two triggers:
+
+- `on_auth_user_created` writes the profile row during sign-up, so the client
+  never races the session to insert it. The student's name travels in
+  `signUp options.data`.
+- `profiles_guard_role` rejects any update that changes `role`, so a student
+  cannot promote themselves to teacher or admin.
+
+Quiz and exam attempts are **insert-and-read only** from the client — there is
+no update or delete policy — so a recorded score cannot be edited afterwards.
+An exam row may be finalised only while `submitted_at` is null.
 
 ## Authentication
 

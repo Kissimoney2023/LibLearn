@@ -175,8 +175,10 @@ straight into recommended practice.
 - **Client-side scoring.** Quiz and exam grading happens in the browser. Once
   Supabase is connected this belongs behind an RPC, so a student cannot post an
   arbitrary score. `store.ts` is the seam.
-- **No SQL migrations yet.** The schema is documented in the README; the
-  repository layer already expects it.
+- **Scoring is still client-side even with Supabase connected.** RLS makes an
+  attempt row immutable once written, but the score inside it is computed in
+  the browser, so a determined student could post an arbitrary one. Moving
+  grading behind an RPC closes this; `store.ts` is the seam.
 - **No automated test suite.** Verification has been a Playwright smoke run over
   the student journey. Unit tests for `progress.ts`, `recommendations.ts` and
   `search.ts` would be the highest-value first tests — all three are pure

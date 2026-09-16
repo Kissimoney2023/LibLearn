@@ -94,14 +94,41 @@ export function AuthProvider({children}: {children: ReactNode}) {
     };
   }, []);
 
+  // Supabase refreshes tokens and can sign out from another tab. Without this
+  // the UI would keep rendering a session that no longer exists.
+  useEffect(() => {
+    if (!supabase) return;
+    const {data} = supabase.auth.onAuthStateChange((event, session) => {
+      if (event === 'SIGNED_OUT' || !session) {
+        setProfile(null);
+        setStatus('signed_out');
+      }
+    });
+    return () => data.subscription.unsubscribe();
+  }, []);
+
   const signUp = useCallback(async (name: string, email: string, password: string) => {
     if (supabase) {
-      const {data, error} = await supabase.auth.signUp({email, password});
+      // `name` rides along in user metadata so the on_auth_user_created
+      // trigger can write the profile row server-side. The client never races
+      // the session to insert it.
+      const {data, error} = await supabase.auth.signUp({
+        email,
+        password,
+        options: {data: {name}},
+      });
       if (error) throw new Error(error.message);
-      const user = data.user;
-      if (!user) throw new Error('Check your email to confirm your account, then sign in.');
-      const p = await saveProfile(newProfile(user.id, name, email));
-      setProfile(p);
+
+      // With email confirmation enabled there is a user but no session yet, so
+      // nothing can be written under RLS until they confirm.
+      if (!data.session || !data.user) {
+        throw new Error(
+          'Account created. Check your email to confirm it, then sign in.',
+        );
+      }
+
+      const existing = await loadProfile(data.user.id);
+      setProfile(existing ?? (await saveProfile(newProfile(data.user.id, name, email))));
       setStatus('signed_in');
       return;
     }
