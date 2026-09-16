@@ -8,7 +8,8 @@
 export function registerServiceWorker(): void {
   if (!('serviceWorker' in navigator)) return;
 
-  if (import.meta.env.DEV) {
+  // Preview builds are served from a sub-path where /sw.js does not exist.
+  if (import.meta.env.DEV || import.meta.env.VITE_HASH_ROUTER === 'true') {
     void navigator.serviceWorker
       .getRegistrations()
       .then((regs) => regs.forEach((r) => void r.unregister()))

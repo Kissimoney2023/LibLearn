@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 import {lazy, Suspense} from 'react';
-import {BrowserRouter, Navigate, Route, Routes} from 'react-router-dom';
+import {BrowserRouter, HashRouter, Navigate, Route, Routes} from 'react-router-dom';
 import {AuthProvider, useAuth} from './context/AuthContext';
 import {StudentDataProvider} from './context/StudentDataContext';
 import {AppShell} from './components/layout/AppShell';
@@ -66,9 +66,17 @@ function PublicOnly({children}: {children: React.ReactNode}) {
   return <>{children}</>;
 }
 
+/**
+ * Static-host preview builds set VITE_HASH_ROUTER. Hosts that serve the bundle
+ * from a sub-path with no SPA rewrite rule cannot resolve deep links like
+ * /learn/8/mathematics, so those builds route through the hash instead.
+ * Production uses clean paths via BrowserRouter.
+ */
+const Router = import.meta.env.VITE_HASH_ROUTER === 'true' ? HashRouter : BrowserRouter;
+
 export default function App() {
   return (
-    <BrowserRouter>
+    <Router>
       <AuthProvider>
         <Suspense fallback={<RouteFallback />}>
           <Routes>
@@ -100,6 +108,6 @@ export default function App() {
           </Routes>
         </Suspense>
       </AuthProvider>
-    </BrowserRouter>
+    </Router>
   );
 }

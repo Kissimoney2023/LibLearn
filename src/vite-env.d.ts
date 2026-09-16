@@ -7,6 +7,8 @@ interface ImportMetaEnv {
   readonly VITE_SUPABASE_ANON_KEY?: string;
   /** Base URL of the AI endpoint. Defaults to same-origin /api. */
   readonly VITE_API_BASE_URL?: string;
+  /** 'true' in static-host preview builds; routes through the hash. */
+  readonly VITE_HASH_ROUTER?: string;
 }
 
 interface ImportMeta {
