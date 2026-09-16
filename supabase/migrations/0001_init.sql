@@ -10,11 +10,18 @@
 --    teacher/parent/school_admin without an ALTER TYPE migration.
 --  * Columns are snake_case; the client maps to/from camelCase in
 --    src/lib/store.ts. Do not add quoted camelCase identifiers here.
+--  * Foreign keys to auth.users are added at the END, inside a guarded block.
+--    Declaring them inline requires REFERENCES privilege on auth.users, which
+--    the migrating role does not always hold. The SQL Editor runs this whole
+--    file in ONE transaction, so an inline FK that is refused aborts every
+--    table above it and leaves the database empty - indistinguishable from
+--    never having run the migration at all. RLS, not the FK, is what enforces
+--    ownership; the FK only adds cascade-on-delete.
 
 -- ---------------------------------------------------------------- profiles
 
 create table if not exists public.profiles (
-  id                uuid primary key references auth.users(id) on delete cascade,
+  id                uuid primary key,
   name              text not null default '',
   email             text not null default '',
   role              text not null default 'student'
@@ -74,15 +81,36 @@ begin
   return new;
 end; $$;
 
-drop trigger if exists on_auth_user_created on auth.users;
-create trigger on_auth_user_created
-  after insert on auth.users
-  for each row execute function public.handle_new_user();
+-- The trigger on auth.users is an OPTIMISATION, not a requirement.
+--
+-- auth.users is owned by supabase_auth_admin, and on many projects the role
+-- running this migration cannot create a trigger on it ("must be owner of
+-- relation users"). The SQL Editor runs the whole script in ONE transaction,
+-- so an unguarded failure here would roll back every table above and leave the
+-- database empty - which looks exactly like the migration never being run.
+--
+-- Guarded, so a permission error degrades instead of destroying the migration.
+-- When the trigger cannot be installed the client creates the profile itself
+-- immediately after sign-up, which is why AuthContext falls back to saveProfile
+-- when loadProfile returns null.
+do $$
+begin
+  execute 'drop trigger if exists on_auth_user_created on auth.users';
+  execute 'create trigger on_auth_user_created
+             after insert on auth.users
+             for each row execute function public.handle_new_user()';
+  raise notice 'on_auth_user_created installed.';
+exception
+  when insufficient_privilege or undefined_table then
+    raise notice 'Skipped the auth.users trigger (no permission). This is fine - the app creates the profile client-side after sign-up.';
+  when others then
+    raise notice 'Skipped the auth.users trigger: %', sqlerrm;
+end $$;
 
 -- --------------------------------------------------------- lesson_progress
 
 create table if not exists public.lesson_progress (
-  user_id      uuid not null references auth.users(id) on delete cascade,
+  user_id      uuid not null,
   lesson_id    text not null,
   subject_id   text not null,
   topic_id     text not null,
@@ -104,7 +132,7 @@ create policy "lesson_progress: own rows" on public.lesson_progress
 
 create table if not exists public.quiz_attempts (
   id           text primary key,
-  user_id      uuid not null references auth.users(id) on delete cascade,
+  user_id      uuid not null,
   quiz_id      text not null,
   subject_id   text not null,
   topic_id     text not null,
@@ -134,7 +162,7 @@ create policy "quiz_attempts: insert own" on public.quiz_attempts
 
 create table if not exists public.exam_attempts (
   id               text primary key,
-  user_id          uuid not null references auth.users(id) on delete cascade,
+  user_id          uuid not null,
   exam             text not null check (exam in ('general','lpsce','ljhsce','wassce')),
   subject_id       text not null,
   difficulty       text not null check (difficulty in ('foundation','core','challenge')),
@@ -170,7 +198,7 @@ create policy "exam_attempts: update unsubmitted" on public.exam_attempts
 -- ----------------------------------------------------- student_achievements
 
 create table if not exists public.student_achievements (
-  user_id        uuid not null references auth.users(id) on delete cascade,
+  user_id        uuid not null,
   achievement_id text not null,
   earned_at      timestamptz not null default now(),
   primary key (user_id, achievement_id)
@@ -191,16 +219,72 @@ create policy "achievements: insert own" on public.student_achievements
 -- The trigger above only fires on INSERT. Anyone who signed up before this
 -- migration ran has an auth.users row but no profile, which leaves them stuck
 -- at onboarding. This repairs them, and is safe to re-run.
-insert into public.profiles (id, name, email)
-select
-  u.id,
-  coalesce(nullif(u.raw_user_meta_data ->> 'name', ''), split_part(u.email, '@', 1)),
-  coalesce(u.email, '')
-from auth.users u
-where not exists (select 1 from public.profiles p where p.id = u.id)
-on conflict (id) do nothing;
+do $$
+begin
+  insert into public.profiles (id, name, email)
+  select
+    u.id,
+    coalesce(nullif(u.raw_user_meta_data ->> 'name', ''), split_part(u.email, '@', 1)),
+    coalesce(u.email, '')
+  from auth.users u
+  where not exists (select 1 from public.profiles p where p.id = u.id)
+  on conflict (id) do nothing;
+exception
+  when insufficient_privilege or undefined_table then
+    raise notice 'Skipped the profile backfill (no read access to auth.users).';
+end $$;
 
 -- Tell PostgREST to reload its schema cache, so the new tables are visible
 -- immediately rather than after the next automatic refresh. Without this the
 -- app can keep reporting PGRST205 for a minute or so after the tables exist.
 notify pgrst, 'reload schema';
+
+-- --------------------------------------------------------- foreign keys
+
+-- Best-effort cascade-delete wiring. If the role cannot reference auth.users
+-- the tables above still work correctly - deleting an account simply leaves
+-- orphaned rows, which RLS keeps unreachable.
+do $$
+declare
+  spec text;
+begin
+  foreach spec in array array[
+    'alter table public.profiles add constraint profiles_id_fkey
+       foreign key (id) references auth.users(id) on delete cascade',
+    'alter table public.lesson_progress add constraint lesson_progress_user_fkey
+       foreign key (user_id) references auth.users(id) on delete cascade',
+    'alter table public.quiz_attempts add constraint quiz_attempts_user_fkey
+       foreign key (user_id) references auth.users(id) on delete cascade',
+    'alter table public.exam_attempts add constraint exam_attempts_user_fkey
+       foreign key (user_id) references auth.users(id) on delete cascade',
+    'alter table public.student_achievements add constraint student_achievements_user_fkey
+       foreign key (user_id) references auth.users(id) on delete cascade'
+  ]
+  loop
+    begin
+      execute spec;
+    exception
+      when duplicate_object then null;               -- already applied
+      when insufficient_privilege or undefined_table then
+        raise notice 'Skipped a foreign key to auth.users (no permission). Tables still work.';
+    end;
+  end loop;
+end $$;
+
+-- ---------------------------------------------------------- verification
+-- The SQL Editor shows the last result set. Five rows here, each with
+-- rls_enabled = true, means the migration succeeded.
+select
+  c.relname            as table_name,
+  c.relrowsecurity     as rls_enabled,
+  count(p.polname)     as policy_count
+from pg_class c
+join pg_namespace n on n.oid = c.relnamespace
+left join pg_policy p on p.polrelid = c.oid
+where n.nspname = 'public'
+  and c.relname in (
+    'profiles', 'lesson_progress', 'quiz_attempts',
+    'exam_attempts', 'student_achievements'
+  )
+group by c.relname, c.relrowsecurity
+order by c.relname;
