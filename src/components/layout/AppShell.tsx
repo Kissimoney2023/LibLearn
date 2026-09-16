@@ -6,6 +6,7 @@ import {
   Home,
   type LucideIcon,
   MessageCircleQuestion,
+  Search,
   Settings,
   TrendingUp,
   User,
@@ -77,6 +78,18 @@ export function AppShell() {
             <GraduationCap className="text-primary" aria-hidden="true" />
             <span className="font-display text-lg font-bold text-secondary">LibLearn</span>
           </div>
+          <div className="px-3 pb-2">
+            <NavLink
+              to="/search"
+              className={({isActive}) =>
+                `flex min-h-12 items-center gap-3 rounded-lg border border-outline px-3 text-sm font-medium transition-colors ${
+                  isActive ? 'bg-primary-surface text-on-primary-surface' : 'text-on-surface-variant hover:bg-surface-low'
+                }`
+              }>
+              <Search size={18} aria-hidden="true" />
+              Search
+            </NavLink>
+          </div>
           <nav className="flex flex-1 flex-col gap-1 px-3" aria-label="Main">
             {NAV.map(({to, label, icon: Icon}) => (
               <NavLink
@@ -126,11 +139,19 @@ export function AppShell() {
               <GraduationCap size={22} aria-hidden="true" />
               <span className="font-display text-lg font-bold">LibLearn</span>
             </div>
-            {profile?.grade && (
-              <span className="inline-flex h-7 items-center rounded-full bg-tertiary-surface px-3 text-xs font-medium text-on-tertiary-surface">
-                Grade {profile.grade}
-              </span>
-            )}
+            <div className="flex items-center gap-2">
+              {profile?.grade && (
+                <span className="inline-flex h-7 items-center rounded-full bg-tertiary-surface px-3 text-xs font-medium text-on-tertiary-surface">
+                  Grade {profile.grade}
+                </span>
+              )}
+              <NavLink
+                to="/search"
+                aria-label="Search"
+                className="flex size-12 items-center justify-center rounded-lg">
+                <Search size={22} aria-hidden="true" />
+              </NavLink>
+            </div>
           </header>
 
           <main className="shell flex-1 py-6 pb-24 desktop:pb-10">

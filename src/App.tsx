@@ -28,6 +28,7 @@ const ExamResults = lazy(() => import('./routes/ExamResults'));
 const Progress = lazy(() => import('./routes/Progress'));
 const ProfilePage = lazy(() => import('./routes/Profile'));
 const SettingsPage = lazy(() => import('./routes/Settings'));
+const SearchPage = lazy(() => import('./routes/Search'));
 const NotFound = lazy(() => import('./routes/NotFound'));
 
 function RouteFallback() {
@@ -89,6 +90,7 @@ export default function App() {
               <Route path="/exam/:exam/:subject" element={<ExamSession />} />
               <Route path="/exam/:exam/:subject/:attemptId" element={<ExamSession />} />
               <Route path="/exam-results/:attemptId" element={<ExamResults />} />
+              <Route path="/search" element={<SearchPage />} />
               <Route path="/progress" element={<Progress />} />
               <Route path="/profile" element={<ProfilePage />} />
               <Route path="/settings" element={<SettingsPage />} />
