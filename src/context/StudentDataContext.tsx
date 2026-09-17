@@ -5,11 +5,13 @@ import {
   useEffect,
   useMemo,
   useState,
+  useSyncExternalStore,
   type ReactNode,
 } from 'react';
 import {useAuth} from './AuthContext';
 import * as store from '../lib/store';
 import {summarise, examReadiness} from '../lib/progress';
+import {getCorpusVersion, loadedLessons, subscribeCorpus} from '../lib/curriculum';
 import {recommend} from '../lib/recommendations';
 import {evaluate} from '../lib/achievements';
 import {track} from '../lib/analytics';
@@ -123,12 +125,25 @@ export function StudentDataProvider({children}: {children: ReactNode}) {
     };
   }, [userId]);
 
+  // Re-derives when a grade's curriculum lands, so progress denominators track
+  // the corpus the student is actually reading rather than the bundled one.
+  const corpusVersion = useSyncExternalStore(subscribeCorpus, getCorpusVersion, getCorpusVersion);
+
   const summary = useMemo(
     () =>
       profile
-        ? summarise(lessons, quizzes, exams, profile.selectedSubjects, profile.grade)
+        ? summarise(
+            lessons,
+            quizzes,
+            exams,
+            profile.selectedSubjects,
+            profile.grade,
+            loadedLessons(),
+          )
         : EMPTY_SUMMARY,
-    [lessons, quizzes, exams, profile],
+    // corpusVersion is the dependency that matters here: loadedLessons() is a
+    // snapshot, so without it the summary would keep the first corpus forever.
+    [lessons, quizzes, exams, profile, corpusVersion],
   );
 
   const recommendations = useMemo(

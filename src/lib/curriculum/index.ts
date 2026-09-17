@@ -10,6 +10,7 @@ import type {
 import {isSupabaseConfigured} from '../supabase';
 import {bundledRepository} from './bundled';
 import {supabaseRepository} from './supabaseRepo';
+import {createBreaker, DATABASE_COOLDOWN_MS} from './breaker';
 import {emptyCurriculum, type GradeCurriculum} from './types';
 
 export type {GradeCurriculum} from './types';
@@ -39,6 +40,54 @@ export interface LoadResult {
 const cache = new Map<GradeLevel, LoadResult>();
 
 /**
+ * Failures open a breaker so repeated navigation during an outage makes no
+ * doomed requests. Logic and its boundary behaviour are tested in
+ * breaker.test.ts.
+ */
+const databaseBreaker = createBreaker(DATABASE_COOLDOWN_MS);
+
+/** Lets the UI say the database is unreachable rather than merely slow. */
+export const databaseUnreachable = (): boolean => databaseBreaker.isOpen();
+
+/* -------------------------------------------------- loaded corpus ------- */
+
+/**
+ * Everything the app has actually loaded, across grades.
+ *
+ * Progress is a fraction, and its DENOMINATOR has to come from the same corpus
+ * the student is reading. Computing "3 of 11 lessons" from bundled content
+ * while the screen shows lessons from the database is how a progress bar ends
+ * up quietly wrong - the same class of bug that made "Mark complete" a no-op
+ * for database lessons.
+ *
+ * Subscribers are notified when a grade lands so derived figures recompute.
+ */
+let corpusVersion = 0;
+const corpusListeners = new Set<() => void>();
+
+const notifyCorpus = () => {
+  corpusVersion += 1;
+  for (const l of corpusListeners) l();
+};
+
+export function subscribeCorpus(cb: () => void): () => void {
+  corpusListeners.add(cb);
+  return () => corpusListeners.delete(cb);
+}
+
+export const getCorpusVersion = (): number => corpusVersion;
+
+/**
+ * Lessons from every loaded grade, or the bundled corpus before anything has
+ * loaded. Never empty, so callers never divide by zero on first paint.
+ */
+export function loadedLessons(): Lesson[] {
+  const out: Lesson[] = [];
+  for (const {curriculum} of cache.values()) out.push(...curriculum.lessons);
+  return out;
+}
+
+/**
  * Load one grade's curriculum.
  *
  * On a database failure this falls back to bundled content rather than showing
@@ -59,6 +108,19 @@ export async function loadGrade(
 
   let result: LoadResult;
 
+  if (isSupabaseConfigured && databaseBreaker.isOpen()) {
+    // Breaker open: do not spend the student's bandwidth on a call we expect
+    // to fail. Say so plainly rather than presenting stale content as current.
+    const fallback = await bundledRepository.load(grade);
+    return {
+      curriculum: fallback,
+      source: 'bundled-fallback',
+      warning:
+        'Could not reach the learning database, so LibLearn is showing the ' +
+        'lessons included with the app. Your progress is still being saved.',
+    };
+  }
+
   if (isSupabaseConfigured) {
     try {
       const curriculum = await supabaseRepository.load(grade);
@@ -77,12 +139,15 @@ export async function loadGrade(
               'Showing the lessons included with the app.',
           };
           cache.set(grade, result);
+          notifyCorpus();
           return result;
         }
       }
 
+      databaseBreaker.reset();
       result = {curriculum, source: 'supabase'};
     } catch (err) {
+      databaseBreaker.trip();
       const fallback = await bundledRepository.load(grade);
       result = {
         curriculum: fallback,
@@ -101,6 +166,7 @@ export async function loadGrade(
   }
 
   cache.set(grade, result);
+  notifyCorpus();
   return result;
 }
 
@@ -108,6 +174,8 @@ export async function loadGrade(
 export function invalidate(grade?: GradeLevel): void {
   if (grade === undefined) cache.clear();
   else cache.delete(grade);
+  databaseBreaker.reset(); // an explicit refresh should retry immediately
+  notifyCorpus();
 }
 
 /* ------------------------------------------------------------- selectors */
