@@ -136,6 +136,29 @@ export interface Subject {
   grades: GradeLevel[];
 }
 
+/**
+ * A unit groups related topics inside one subject at one grade.
+ *
+ *   Grade 11 -> Mathematics -> Algebra -> Quadratic Equations -> Lesson -> Quiz
+ *                              ^^^^^^^ this
+ *
+ * Curriculum documents are organised this way, so carrying the level makes
+ * importing one a mapping exercise rather than a reshaping exercise. `unitId`
+ * on Topic stays optional: a topic that has not been filed under a unit still
+ * renders, which matters while curriculum is being loaded piecemeal.
+ */
+export interface Unit {
+  id: string;
+  subjectId: string;
+  grade: GradeLevel;
+  name: string;
+  summary: string;
+  order: number;
+  curriculumVersionId?: string;
+  provenance?: ContentProvenance;
+  sourceId?: string;
+}
+
 export interface Topic {
   id: string;
   subjectId: string;
@@ -143,9 +166,12 @@ export interface Topic {
   name: string;
   summary: string;
   order: number;
+  /** The unit this topic belongs to. Optional: see Unit. */
+  unitId?: string;
   /** Which curriculum version places this topic at this grade. */
   curriculumVersionId?: string;
   provenance?: ContentProvenance;
+  sourceId?: string;
 }
 
 export interface LearningObjective {

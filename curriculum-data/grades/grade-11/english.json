@@ -1,0 +1,156 @@
+{
+  "grade": 11,
+  "subjectId": "english",
+  "curriculumVersionId": "liblearn-v1",
+  "provenance": "liblearn",
+  "sourceId": null,
+  "units": [
+    {
+      "id": "g11-eng-u-writing",
+      "name": "Written Composition",
+      "summary": "Constructing clear, well-argued written work.",
+      "order": 1
+    }
+  ],
+  "topics": [
+    {
+      "id": "g11-eng-essay",
+      "unitId": "g11-eng-u-writing",
+      "name": "Essay Writing",
+      "summary": "Building an argument that holds together: thesis, paragraph structure, evidence and conclusion.",
+      "order": 1
+    }
+  ],
+  "lessons": [
+    {
+      "id": "g11-eng-essay-l1",
+      "topicId": "g11-eng-essay",
+      "title": "Structuring an Argumentative Essay",
+      "estimatedMinutes": 14,
+      "order": 1,
+      "objectives": [
+        {
+          "id": "o1",
+          "text": "Write a thesis statement that takes a clear position."
+        },
+        {
+          "id": "o2",
+          "text": "Build body paragraphs using point, evidence and explanation."
+        },
+        {
+          "id": "o3",
+          "text": "Address a counter-argument without weakening your case."
+        }
+      ],
+      "keyTerms": [
+        {
+          "term": "Thesis statement",
+          "definition": "One sentence stating the position the essay will argue."
+        },
+        {
+          "term": "Topic sentence",
+          "definition": "The opening sentence of a paragraph, naming its single main point."
+        },
+        {
+          "term": "Counter-argument",
+          "definition": "An opposing view, acknowledged and then answered."
+        },
+        {
+          "term": "Cohesion",
+          "definition": "The linking of ideas so writing flows logically."
+        }
+      ],
+      "sections": [
+        {
+          "heading": "What you will learn",
+          "body": "How to turn an opinion into a structured argument a reader can follow — and how markers actually award credit for it."
+        },
+        {
+          "heading": "Start with a position",
+          "body": "An argumentative essay must ARGUE something. The most common weakness is an essay that describes a topic without ever committing to a view.\n\nYour THESIS STATEMENT, usually the final sentence of the introduction, states your position in one sentence.\n\nWeak:  \"This essay will discuss school uniforms.\"\n       — announces a subject, takes no position.\n\nStrong: \"School uniforms should be required because they reduce visible inequality between students, lower costs for families, and cut daily distraction.\"\n       — states a position AND previews three reasons.\n\nThe strong version also does structural work: those three reasons become your three body paragraphs, in that order."
+        },
+        {
+          "heading": "Body paragraphs: P–E–E",
+          "body": "Each body paragraph makes ONE point, in three moves:\n\nPOINT — a topic sentence naming the paragraph’s argument.\nEVIDENCE — an example, fact, statistic or quotation supporting it.\nEXPLANATION — how that evidence proves your point and supports the thesis.\n\nThe explanation is where most marks are won and lost. Students frequently state a point, give an example, and stop — leaving the reader to infer the connection. Never make the reader do that work. Spell it out.\n\nOne point per paragraph. If a paragraph needs \"also\" or \"another thing\", it is two paragraphs.",
+          "example": "A complete P–E–E paragraph:\n\n[POINT] Uniforms reduce the visible gap between students from different economic backgrounds.\n\n[EVIDENCE] Where ordinary clothes are worn, brand and condition of clothing are immediately visible, and students from poorer households are readily identified by what they can afford.\n\n[EXPLANATION] By removing that signal, a uniform takes one obvious marker of family income out of daily school life. Students are less easily sorted by wealth before they have spoken a word, which supports the argument that uniforms create fairer conditions for learning.\n\nNotice the explanation is the longest part, and that it returns to the thesis."
+        },
+        {
+          "heading": "Handling the other side",
+          "body": "A strong essay acknowledges the opposing view. This feels risky but strengthens your case: it shows you have considered the question rather than only one half of it.\n\nThe pattern is concede, then answer:\n\n\"Critics argue that uniforms suppress individual expression. This concern is understandable, but students express identity through many channels beyond clothing, and the fairness gained outweighs a restriction that applies only during school hours.\"\n\nConcede genuinely — do not set up a weak version of the opposing argument to knock over. Then answer it. Never concede without answering, or you have argued against yourself."
+        },
+        {
+          "heading": "The conclusion",
+          "body": "A conclusion restates your position in fresh words and draws the argument together. It must not introduce new evidence.\n\nAvoid \"In conclusion, I have discussed…\" — summarising your own structure wastes the most memorable position in the essay. Instead, state what the argument has established and why it matters."
+        },
+        {
+          "heading": "Try it yourself",
+          "body": "Write a thesis statement and ONE full P–E–E paragraph for:\n\n\"Should secondary students be required to study a second language?\"\n\nCheck your paragraph: does the explanation connect the evidence back to the thesis explicitly, or does it stop at the example?"
+        },
+        {
+          "heading": "Summary",
+          "body": "• Take a clear position in a one-sentence thesis, and preview your reasons.\n• One point per paragraph: Point, Evidence, Explanation.\n• The explanation earns the marks — never leave the link implicit.\n• Concede a counter-argument honestly, then answer it.\n• Conclude by restating the position freshly; add no new evidence."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "id": "q11-essay-1",
+      "topicId": "g11-eng-essay",
+      "question": "Which is the strongest thesis statement?",
+      "options": [
+        "This essay will discuss school uniforms.",
+        "School uniforms are an interesting topic with many opinions.",
+        "School uniforms should be required because they reduce visible inequality, lower family costs and cut distraction.",
+        "There are advantages and disadvantages to school uniforms."
+      ],
+      "correctAnswer": 2,
+      "explanation": "A thesis must take a POSITION, not announce a subject. Only the third option states what the writer will argue and previews the three supporting reasons, which then become the three body paragraphs. The others describe the topic without committing to a view.",
+      "difficulty": "foundation",
+      "examGoal": "wassce"
+    },
+    {
+      "id": "q11-essay-2",
+      "topicId": "g11-eng-essay",
+      "question": "In the P–E–E structure, which part do students most often leave out, losing marks?",
+      "options": [
+        "Point",
+        "Evidence",
+        "Explanation",
+        "The topic sentence"
+      ],
+      "correctAnswer": 2,
+      "explanation": "Students commonly state a point and give an example, then move on — leaving the reader to work out how the evidence proves the argument. The explanation is where the reasoning is actually demonstrated, so it is where most marks are awarded. Make the link explicit and connect it back to the thesis.",
+      "difficulty": "core",
+      "examGoal": "wassce"
+    },
+    {
+      "id": "q11-essay-3",
+      "topicId": "g11-eng-essay",
+      "question": "What is the correct way to handle a counter-argument?",
+      "options": [
+        "Ignore it so your argument looks stronger",
+        "State it and leave it, to appear balanced",
+        "Acknowledge it genuinely, then answer it",
+        "Put it in the conclusion"
+      ],
+      "correctAnswer": 2,
+      "explanation": "Acknowledging an opposing view shows you have considered the whole question, which strengthens your case — but only if you then ANSWER it. Conceding without answering argues against yourself, and ignoring it leaves an obvious gap. Present the opposing view fairly rather than as a weak version.",
+      "difficulty": "core",
+      "examGoal": "wassce"
+    }
+  ],
+  "quizzes": [
+    {
+      "id": "quiz-g11-essay",
+      "lessonId": "g11-eng-essay-l1",
+      "topicId": "g11-eng-essay",
+      "title": "Essay Structure Check",
+      "questionIds": [
+        "q11-essay-1",
+        "q11-essay-2",
+        "q11-essay-3"
+      ]
+    }
+  ]
+}

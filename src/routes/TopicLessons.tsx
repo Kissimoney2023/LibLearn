@@ -1,10 +1,9 @@
 import {useEffect, useState} from 'react';
 import {Link, useParams, useSearchParams} from 'react-router-dom';
 import {CheckCircle2} from 'lucide-react';
-import {Button, ButtonLink, Card, DemoBadge, EmptyState, GradeBadge, SubjectChip} from '../components/ui';
-import {lessonsForTopic, topicById} from '../data/seed/curriculum';
-import {quizForLesson} from '../data/seed/questions';
-import {subjectById} from '../data/catalog';
+import {Button, ButtonLink, Card, EmptyState, GradeBadge, ProvenanceBadge, SubjectChip} from '../components/ui';
+import {useCurriculum} from '../context/CurriculumContext';
+import {lessonsForTopic, quizForLesson, topicById, unitById} from '../lib/curriculum';
 import {useStudentData} from '../context/StudentDataContext';
 
 export default function TopicLessons() {
@@ -12,8 +11,9 @@ export default function TopicLessons() {
   const [params, setParams] = useSearchParams();
   const {startLesson, completeLesson, isLessonComplete} = useStudentData();
 
-  const topicMeta = topic ? topicById(topic) : undefined;
-  const lessons = topic ? lessonsForTopic(topic) : [];
+  const {curriculum} = useCurriculum();
+  const topicMeta = topic ? topicById(curriculum, topic) : undefined;
+  const lessons = topic ? lessonsForTopic(curriculum, topic) : [];
   const selectedId = params.get('lesson') ?? lessons[0]?.id;
   const lesson = lessons.find((l) => l.id === selectedId);
   const [saving, setSaving] = useState(false);
@@ -26,11 +26,12 @@ export default function TopicLessons() {
     return <EmptyState title="Lesson not found" body="This topic has no lessons yet." />;
   }
 
+  const unit = topicMeta.unitId ? unitById(curriculum, topicMeta.unitId) : undefined;
   const done = isLessonComplete(lesson.id);
   const index = lessons.findIndex((l) => l.id === lesson.id);
   const prev = lessons[index - 1];
   const next = lessons[index + 1];
-  const quiz = quizForLesson(lesson.id);
+  const quiz = quizForLesson(curriculum, lesson.id);
 
   async function markComplete() {
     setSaving(true);
@@ -47,12 +48,13 @@ export default function TopicLessons() {
         <Link
           to={`/learn/${grade}/${subject}`}
           className="text-sm text-secondary underline underline-offset-4">
-          ← {subjectById(subject ?? '')?.name ?? 'Back'}
+          ← {curriculum.subjects.find((x) => x.id === subject)?.name ?? 'Back'}
         </Link>
         <div className="mt-3 flex flex-wrap items-center gap-2">
           <GradeBadge>Grade {lesson.grade}</GradeBadge>
+          {unit && <SubjectChip>{unit.name}</SubjectChip>}
           <SubjectChip>{topicMeta.name}</SubjectChip>
-          {lesson.provenance === 'liblearn' && <DemoBadge />}
+          <ProvenanceBadge provenance={lesson.provenance} />
         </div>
         <h1 className="mt-3 font-display text-2xl font-bold">{lesson.title}</h1>
         <p className="mt-1 text-sm text-on-surface-variant">

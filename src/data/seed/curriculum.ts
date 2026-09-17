@@ -1,5 +1,5 @@
-import type {Lesson, Topic} from '../../types/domain';
-import {GRADE11_LESSONS, GRADE11_TOPICS} from './grade11';
+import type {Lesson, Topic, Unit} from '../../types/domain';
+import {GRADE11_LESSONS, GRADE11_TOPICS, GRADE11_UNITS} from './grade11';
 
 /**
  * LIBLEARN CURRICULUM SEED.
@@ -290,6 +290,13 @@ const BASE_LESSONS: Lesson[] = [
  * Grade 11 lives in its own module purely for file size; it is part of the same
  * LibLearn Teaching Sequence v1 and carries the same provenance.
  */
+/**
+ * Units exist only for Grade 11 so far. Grades 6, 8 and 10 have topics filed
+ * under no unit, which the UI handles explicitly (see `unfiledTopics`) rather
+ * than hiding them. Content mid-import must stay reachable.
+ */
+export const UNITS: Unit[] = [...GRADE11_UNITS];
+
 export const TOPICS: Topic[] = [...BASE_TOPICS, ...GRADE11_TOPICS];
 export const LESSONS: Lesson[] = [...BASE_LESSONS, ...GRADE11_LESSONS];
 

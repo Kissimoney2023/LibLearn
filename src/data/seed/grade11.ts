@@ -1,4 +1,4 @@
-import type {Lesson, Topic} from '../../types/domain';
+import type {Lesson, Topic, Unit} from '../../types/domain';
 
 /**
  * GRADE 11 TEACHING CONTENT — LibLearn Teaching Sequence v1
@@ -26,10 +26,68 @@ import type {Lesson, Topic} from '../../types/domain';
 
 const V = 'liblearn-v1';
 
+/**
+ * Units group topics the way curriculum documents do:
+ *
+ *   Grade 11 -> Mathematics -> Algebra -> Quadratic Equations -> Lesson -> Quiz
+ *
+ * Carrying this level now means importing a Ministry syllabus later is a
+ * mapping exercise, not a restructuring one. The unit names below are ordinary
+ * subject divisions, not a claim about how the Liberian curriculum is organised.
+ */
+export const GRADE11_UNITS: Unit[] = [
+  {id: 'g11-math-u-algebra', subjectId: 'mathematics', grade: 11, order: 1,
+   name: 'Algebra',
+   summary: 'Working with unknowns, equations and the relationships between them.',
+   curriculumVersionId: V, provenance: 'liblearn'},
+  {id: 'g11-math-u-trig', subjectId: 'mathematics', grade: 11, order: 2,
+   name: 'Trigonometry',
+   summary: 'Relationships between angles and lengths in triangles.',
+   curriculumVersionId: V, provenance: 'liblearn'},
+
+  {id: 'g11-bio-u-plants', subjectId: 'biology', grade: 11, order: 1,
+   name: 'Plant Biology',
+   summary: 'How plants obtain energy and sustain themselves.',
+   curriculumVersionId: V, provenance: 'liblearn'},
+  {id: 'g11-bio-u-genetics', subjectId: 'biology', grade: 11, order: 2,
+   name: 'Heredity',
+   summary: 'How characteristics pass from one generation to the next.',
+   curriculumVersionId: V, provenance: 'liblearn'},
+
+  {id: 'g11-chem-u-quant', subjectId: 'chemistry', grade: 11, order: 1,
+   name: 'Quantitative Chemistry',
+   summary: 'Measuring and calculating the amounts involved in reactions.',
+   curriculumVersionId: V, provenance: 'liblearn'},
+  {id: 'g11-chem-u-structure', subjectId: 'chemistry', grade: 11, order: 2,
+   name: 'Structure and Bonding',
+   summary: 'How atoms join, and how that explains the properties of matter.',
+   curriculumVersionId: V, provenance: 'liblearn'},
+
+  {id: 'g11-phys-u-mechanics', subjectId: 'physics', grade: 11, order: 1,
+   name: 'Mechanics',
+   summary: 'Forces, motion, and the laws connecting them.',
+   curriculumVersionId: V, provenance: 'liblearn'},
+  {id: 'g11-phys-u-electricity', subjectId: 'physics', grade: 11, order: 2,
+   name: 'Electricity',
+   summary: 'Charge in motion, and the behaviour of circuits.',
+   curriculumVersionId: V, provenance: 'liblearn'},
+
+  {id: 'g11-eng-u-writing', subjectId: 'english', grade: 11, order: 1,
+   name: 'Written Composition',
+   summary: 'Constructing clear, well-argued written work.',
+   curriculumVersionId: V, provenance: 'liblearn'},
+
+  {id: 'g11-civics-u-government', subjectId: 'civics', grade: 11, order: 1,
+   name: 'Government and the Constitution',
+   summary: 'How states are constituted and how power is limited.',
+   curriculumVersionId: V, provenance: 'liblearn'},
+];
+
 export const GRADE11_TOPICS: Topic[] = [
   // ---------------------------------------------------------- Mathematics
   {
     id: 'g11-math-quadratics',
+    unitId: 'g11-math-u-algebra',
     subjectId: 'mathematics',
     grade: 11,
     name: 'Quadratic Equations',
@@ -42,6 +100,7 @@ export const GRADE11_TOPICS: Topic[] = [
   },
   {
     id: 'g11-math-trigonometry',
+    unitId: 'g11-math-u-trig',
     subjectId: 'mathematics',
     grade: 11,
     name: 'Trigonometry',
@@ -56,6 +115,7 @@ export const GRADE11_TOPICS: Topic[] = [
   // ------------------------------------------------------------- Biology
   {
     id: 'g11-bio-photosynthesis',
+    unitId: 'g11-bio-u-plants',
     subjectId: 'biology',
     grade: 11,
     name: 'Photosynthesis',
@@ -68,6 +128,7 @@ export const GRADE11_TOPICS: Topic[] = [
   },
   {
     id: 'g11-bio-genetics',
+    unitId: 'g11-bio-u-genetics',
     subjectId: 'biology',
     grade: 11,
     name: 'Genetics and Inheritance',
@@ -82,6 +143,7 @@ export const GRADE11_TOPICS: Topic[] = [
   // ----------------------------------------------------------- Chemistry
   {
     id: 'g11-chem-mole',
+    unitId: 'g11-chem-u-quant',
     subjectId: 'chemistry',
     grade: 11,
     name: 'The Mole and Stoichiometry',
@@ -94,6 +156,7 @@ export const GRADE11_TOPICS: Topic[] = [
   },
   {
     id: 'g11-chem-bonding',
+    unitId: 'g11-chem-u-structure',
     subjectId: 'chemistry',
     grade: 11,
     name: 'Chemical Bonding',
@@ -108,6 +171,7 @@ export const GRADE11_TOPICS: Topic[] = [
   // ------------------------------------------------------------- Physics
   {
     id: 'g11-phys-motion',
+    unitId: 'g11-phys-u-mechanics',
     subjectId: 'physics',
     grade: 11,
     name: 'Forces and Motion',
@@ -119,6 +183,7 @@ export const GRADE11_TOPICS: Topic[] = [
   },
   {
     id: 'g11-phys-electricity',
+    unitId: 'g11-phys-u-electricity',
     subjectId: 'physics',
     grade: 11,
     name: 'Current Electricity',
@@ -133,6 +198,7 @@ export const GRADE11_TOPICS: Topic[] = [
   // ------------------------------------------------------ English Language
   {
     id: 'g11-eng-essay',
+    unitId: 'g11-eng-u-writing',
     subjectId: 'english',
     grade: 11,
     name: 'Essay Writing',
@@ -147,6 +213,7 @@ export const GRADE11_TOPICS: Topic[] = [
   // -------------------------------------------------------------- Civics
   {
     id: 'g11-civics-government',
+    unitId: 'g11-civics-u-government',
     subjectId: 'civics',
     grade: 11,
     name: 'How Government Is Structured',

@@ -1,0 +1,283 @@
+{
+  "grade": 11,
+  "subjectId": "physics",
+  "curriculumVersionId": "liblearn-v1",
+  "provenance": "liblearn",
+  "sourceId": null,
+  "units": [
+    {
+      "id": "g11-phys-u-mechanics",
+      "name": "Mechanics",
+      "summary": "Forces, motion, and the laws connecting them.",
+      "order": 1
+    },
+    {
+      "id": "g11-phys-u-electricity",
+      "name": "Electricity",
+      "summary": "Charge in motion, and the behaviour of circuits.",
+      "order": 2
+    }
+  ],
+  "topics": [
+    {
+      "id": "g11-phys-motion",
+      "unitId": "g11-phys-u-mechanics",
+      "name": "Forces and Motion",
+      "summary": "Newton's three laws, and using them to explain and calculate how objects move.",
+      "order": 1
+    },
+    {
+      "id": "g11-phys-electricity",
+      "unitId": "g11-phys-u-electricity",
+      "name": "Current Electricity",
+      "summary": "Current, voltage and resistance, how they relate, and how to work with series and parallel circuits.",
+      "order": 2
+    }
+  ],
+  "lessons": [
+    {
+      "id": "g11-phys-motion-l1",
+      "topicId": "g11-phys-motion",
+      "title": "Newton's Three Laws of Motion",
+      "estimatedMinutes": 15,
+      "order": 1,
+      "objectives": [
+        {
+          "id": "o1",
+          "text": "State all three of Newton's laws correctly."
+        },
+        {
+          "id": "o2",
+          "text": "Apply F = ma to calculate force, mass or acceleration."
+        },
+        {
+          "id": "o3",
+          "text": "Identify action–reaction pairs correctly."
+        }
+      ],
+      "keyTerms": [
+        {
+          "term": "Force",
+          "definition": "A push or pull, measured in newtons (N)."
+        },
+        {
+          "term": "Inertia",
+          "definition": "The tendency of an object to resist a change in its motion."
+        },
+        {
+          "term": "Resultant force",
+          "definition": "The single force equivalent to all forces acting combined."
+        },
+        {
+          "term": "Acceleration",
+          "definition": "Rate of change of velocity, in m/s²."
+        }
+      ],
+      "sections": [
+        {
+          "heading": "What you will learn",
+          "body": "Three laws that between them describe the motion of essentially everything you will meet at this level — from a dropped stone to a moving vehicle."
+        },
+        {
+          "heading": "First law — inertia",
+          "body": "An object stays at rest, or continues moving at constant velocity in a straight line, UNLESS a resultant force acts on it.\n\nThis contradicts everyday intuition, which says moving things naturally slow down. They do — but only because friction and air resistance are acting. Remove those and motion simply continues.\n\nNote \"resultant\". Forces can act and still cancel. A book on a table has gravity pulling down and the table pushing up equally, so the resultant is zero and the book stays put.\n\nThis is why passengers lurch forward when a vehicle brakes sharply: the vehicle decelerates, but nothing has yet acted on the passenger, who continues at the original speed. That is inertia, and it is the argument for seat belts."
+        },
+        {
+          "heading": "Second law — F = ma",
+          "body": "A resultant force produces acceleration in the direction of that force:\n\n    F = m × a\n\n    F in newtons (N), m in kilograms (kg), a in m/s²\n\nOne newton is the force that accelerates 1 kg at 1 m/s².\n\nTwo consequences worth holding onto:\n• The same force on a heavier object gives less acceleration.\n• Acceleration means any change in velocity — speeding up, slowing down, or changing direction.\n\nAlways use the RESULTANT force. If a 1000 N driving force meets 200 N of friction, the resultant is 800 N, and that is what goes into the equation.",
+          "example": "A 1200 kg car experiences a 3600 N driving force and 600 N of resistance. Find its acceleration.\n\nResultant force:\n    F = 3600 − 600 = 3000 N\n\nApply F = ma:\n    3000 = 1200 × a\n    a = 3000 / 1200\n    a = 2.5 m/s²\n\nUsing 3600 N instead of the resultant would have given 3 m/s² — a wrong answer that looks perfectly reasonable, which is why the resultant step must be explicit."
+        },
+        {
+          "heading": "Third law — action and reaction",
+          "body": "For every action there is an equal and opposite reaction.\n\nStated carefully: if object A exerts a force on object B, then B exerts an equal force on A in the opposite direction.\n\nThe condition students most often miss is that the two forces act on DIFFERENT OBJECTS. That is why they never cancel out — cancelling requires both forces on the same object.\n\nWalking: your foot pushes backward on the ground; the ground pushes forward on you. The forward push on you is what moves you.\n\nA common trap: \"A book rests on a table. Gravity pulls it down, the table pushes it up — are these an action–reaction pair?\" No. Both act on the BOOK. They are balanced forces under the first law. The true partner to the table pushing up on the book is the book pushing down on the table."
+        },
+        {
+          "heading": "Try it yourself",
+          "body": "1. A 5 kg object accelerates at 4 m/s². What resultant force acts on it?\n2. A 70 kg person in a lift accelerating upward at 2 m/s² — is the floor’s push greater or less than their weight? Explain.\n3. A rocket works in the vacuum of space with nothing to push against. Use the third law to explain how."
+        },
+        {
+          "heading": "Summary",
+          "body": "• First law: no resultant force → velocity unchanged. Inertia.\n• Second law: F = ma, always using the RESULTANT force.\n• Third law: forces come in equal, opposite pairs acting on DIFFERENT objects.\n• Balanced forces on one object ≠ an action–reaction pair."
+        }
+      ]
+    },
+    {
+      "id": "g11-phys-electricity-l1",
+      "topicId": "g11-phys-electricity",
+      "title": "Current, Voltage, Resistance and Ohm's Law",
+      "estimatedMinutes": 15,
+      "order": 1,
+      "objectives": [
+        {
+          "id": "o1",
+          "text": "Define current, potential difference and resistance with units."
+        },
+        {
+          "id": "o2",
+          "text": "Apply Ohm's law V = IR."
+        },
+        {
+          "id": "o3",
+          "text": "Compare current and voltage in series and parallel circuits."
+        }
+      ],
+      "keyTerms": [
+        {
+          "term": "Current",
+          "definition": "Rate of flow of charge, measured in amperes (A)."
+        },
+        {
+          "term": "Potential difference",
+          "definition": "Energy transferred per unit charge, measured in volts (V)."
+        },
+        {
+          "term": "Resistance",
+          "definition": "Opposition to current flow, measured in ohms (Ω)."
+        }
+      ],
+      "sections": [
+        {
+          "heading": "What you will learn",
+          "body": "The three quantities that describe every circuit, the equation linking them, and how they behave differently in series and parallel arrangements."
+        },
+        {
+          "heading": "The three quantities",
+          "body": "CURRENT (I) is the rate at which charge flows, in amperes. Measured with an ammeter connected IN SERIES, so the current passes through it.\n\nPOTENTIAL DIFFERENCE (V), or voltage, is the energy given to each unit of charge, in volts. Measured with a voltmeter connected IN PARALLEL, across the component.\n\nRESISTANCE (R) opposes the flow of current, in ohms. A thin wire has more resistance than a thick one; a long wire more than a short one.\n\nIf an analogy helps: voltage is the pressure pushing water along a pipe, current is how much water flows per second, resistance is how narrow the pipe is. Like all analogies it has limits, but it gets the relationships right."
+        },
+        {
+          "heading": "Ohm's law",
+          "body": "For a component at constant temperature:\n\n    V = I × R\n\nRearranged:\n\n    I = V / R        R = V / I\n\nRead what it says: for a fixed resistance, doubling the voltage doubles the current. For a fixed voltage, doubling the resistance halves it.\n\nThe temperature condition is real. A filament lamp heats up as current flows, its resistance rises, and a V–I graph for it curves instead of staying straight. A component that does keep a straight-line graph is called ohmic — a fixed resistor at steady temperature is the standard example.",
+          "example": "A 12 V supply drives current through a 4 Ω resistor. Find the current.\n\n    I = V / R\n    I = 12 / 4\n    I = 3 A\n\nNow add a second 4 Ω resistor in series.\n\n    Total resistance = 4 + 4 = 8 Ω\n    I = 12 / 8 = 1.5 A\n\nThe current halves, because the same voltage now pushes against twice the resistance."
+        },
+        {
+          "heading": "Series and parallel",
+          "body": "SERIES — one single path.\n• Current is the SAME everywhere. Charge has nowhere else to go.\n• Voltage DIVIDES between components, adding up to the supply voltage.\n• Resistances add: R = R₁ + R₂\n\nPARALLEL — multiple branches.\n• Voltage is the SAME across each branch, equal to the supply.\n• Current DIVIDES between branches, adding up to the total.\n• Total resistance is LESS than the smallest single resistance.\n\nThat last point surprises people. Adding another parallel branch gives current an additional route, so more current flows in total — which means less overall resistance.\n\nIt is also why house wiring is parallel: every appliance gets the full supply voltage, and switching one off leaves the rest unaffected. In series, one failed bulb would break the only path and everything would go out."
+        },
+        {
+          "heading": "Try it yourself",
+          "body": "1. A 9 V battery drives 0.3 A through a lamp. What is its resistance?\n2. Two 6 Ω resistors in series across 12 V — find total resistance and current.\n3. Explain why the V–I graph of a filament lamp curves while that of a fixed resistor is straight."
+        },
+        {
+          "heading": "Summary",
+          "body": "• Current (A) = rate of charge flow; ammeter in series.\n• Potential difference (V) = energy per unit charge; voltmeter in parallel.\n• Resistance (Ω) opposes current.\n• V = IR, for constant temperature.\n• Series: current constant, voltage divides, resistances add.\n• Parallel: voltage constant, current divides, total resistance falls."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "id": "q11-motion-1",
+      "topicId": "g11-phys-motion",
+      "question": "A book rests on a table without moving. What is the resultant force on it?",
+      "options": [
+        "Equal to its weight",
+        "Zero",
+        "Upward",
+        "Downward"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Gravity pulls the book down and the table pushes up with an equal force, so the two cancel and the resultant is zero. By Newton’s first law, zero resultant force means no change in motion — the book stays at rest. Forces acting does not mean a resultant force.",
+      "difficulty": "foundation",
+      "examGoal": "wassce"
+    },
+    {
+      "id": "q11-motion-2",
+      "topicId": "g11-phys-motion",
+      "question": "A 1200 kg car has a 3600 N driving force and 600 N of resistance. What is its acceleration?",
+      "options": [
+        "3.0 m/s²",
+        "2.5 m/s²",
+        "0.5 m/s²",
+        "3.5 m/s²"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Find the RESULTANT force first: 3600 − 600 = 3000 N. Then a = F/m = 3000/1200 = 2.5 m/s². Using the 3600 N driving force alone gives 3.0 m/s² — a wrong answer that looks plausible, which is why the resultant step must be written down explicitly.",
+      "difficulty": "core",
+      "examGoal": "wassce"
+    },
+    {
+      "id": "q11-motion-3",
+      "topicId": "g11-phys-motion",
+      "question": "A book rests on a table. Are \"gravity pulling the book down\" and \"the table pushing the book up\" an action–reaction pair?",
+      "options": [
+        "Yes, they are equal and opposite",
+        "No, because they both act on the same object",
+        "Yes, because the book is not moving",
+        "No, because gravity is not a real force"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Action–reaction pairs act on DIFFERENT objects. Both of these forces act on the book, so they are balanced forces under the first law, not a third-law pair. The genuine partner to \"the table pushes up on the book\" is \"the book pushes down on the table\". Being equal and opposite is not sufficient.",
+      "difficulty": "challenge",
+      "examGoal": "wassce"
+    },
+    {
+      "id": "q11-elec-1",
+      "topicId": "g11-phys-electricity",
+      "question": "A 12 V supply drives current through a 4 Ω resistor. What is the current?",
+      "options": [
+        "48 A",
+        "3 A",
+        "0.33 A",
+        "16 A"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Rearrange V = IR to I = V/R = 12/4 = 3 A. Multiplying instead of dividing gives 48 A, which should look obviously too large for a 12 V supply — checking whether an answer is physically sensible catches this immediately.",
+      "difficulty": "foundation",
+      "examGoal": "wassce"
+    },
+    {
+      "id": "q11-elec-2",
+      "topicId": "g11-phys-electricity",
+      "question": "In a series circuit, which quantity is the same at every point?",
+      "options": [
+        "Voltage",
+        "Current",
+        "Resistance",
+        "Power"
+      ],
+      "correctAnswer": 1,
+      "explanation": "A series circuit has one single path, so charge has nowhere else to go and the current is identical everywhere. Voltage is what divides between the components, adding up to the supply voltage. In a PARALLEL circuit the opposite holds: voltage is shared, current divides.",
+      "difficulty": "core",
+      "examGoal": "wassce"
+    },
+    {
+      "id": "q11-elec-3",
+      "topicId": "g11-phys-electricity",
+      "question": "Adding a second resistor in PARALLEL to a circuit has what effect on total resistance?",
+      "options": [
+        "It increases, because there is more resistance in total",
+        "It decreases, because current has an additional path",
+        "It stays the same",
+        "It doubles"
+      ],
+      "correctAnswer": 1,
+      "explanation": "This is counter-intuitive but important: an extra parallel branch gives current another route, so more total current flows for the same voltage, which means total resistance has fallen. The total is always LESS than the smallest individual resistance. Resistances only add in series.",
+      "difficulty": "challenge",
+      "examGoal": "wassce"
+    }
+  ],
+  "quizzes": [
+    {
+      "id": "quiz-g11-motion",
+      "lessonId": "g11-phys-motion-l1",
+      "topicId": "g11-phys-motion",
+      "title": "Newton's Laws Check",
+      "questionIds": [
+        "q11-motion-1",
+        "q11-motion-2",
+        "q11-motion-3"
+      ]
+    },
+    {
+      "id": "quiz-g11-electricity",
+      "lessonId": "g11-phys-electricity-l1",
+      "topicId": "g11-phys-electricity",
+      "title": "Current Electricity Check",
+      "questionIds": [
+        "q11-elec-1",
+        "q11-elec-2",
+        "q11-elec-3"
+      ]
+    }
+  ]
+}

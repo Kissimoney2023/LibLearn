@@ -1,53 +1,41 @@
 import {Link, useParams} from 'react-router-dom';
 import {Card, EmptyState} from '../components/ui';
-import {subjectsForGrade} from '../data/catalog';
-import {topicsForSubjectGrade} from '../data/seed/curriculum';
+import {useCurriculum} from '../context/CurriculumContext';
+import {subjectsForGrade, topicCounts, unitsForSubject} from '../lib/curriculum';
 
 /**
- * Subject list for one grade.
+ * Subject list for one grade, driven entirely by loaded curriculum.
  *
- * The per-subject caption below is deliberately specific. An earlier version
- * said "No topics added yet" for every subject with zero topics, which conflated
- * three situations a student cannot tell apart: content that has not been
- * written, content that failed to load, and content still loading. The first is
- * a fact about LibLearn; the second is a fault worth retrying. Showing the wrong
- * one teaches students to distrust the app, or to give up on a subject that is
- * actually there.
+ * Nothing here is hardcoded: the subjects shown are those the repository
+ * returned for this grade. Loading a new grade into the database makes its
+ * subjects appear with no code change, which is the property that lets this one
+ * screen serve Grades 1-12.
  *
- * Curriculum currently ships bundled with the app rather than being fetched, so
- * a read cannot fail or be pending here and only the "not written yet" case is
- * reachable. When this route moves to a network read, the loading and error
- * branches belong here — not a rewording of the empty one.
+ * Loading and error are handled by <GradeScope>, so by the time this renders
+ * the only remaining case is "this subject has no content yet" - and that is
+ * stated as a fact about LibLearn, not dressed up as an error.
  */
 export default function GradeSubjects() {
   const {grade} = useParams();
+  const {curriculum} = useCurriculum();
   const g = Number(grade);
-  const subjects = subjectsForGrade(g);
 
-  if (!Number.isFinite(g)) {
-    return (
-      <EmptyState
-        title="That grade does not exist"
-        body="Choose a grade between 4 and 12 from the Learn page."
-      />
-    );
-  }
+  const subjects = subjectsForGrade(curriculum);
+  const counts = topicCounts(curriculum);
 
   if (subjects.length === 0) {
     return (
       <EmptyState
-        title={`No subjects listed for Grade ${g}`}
-        body="No subjects are offered at this grade yet. Try another grade."
+        title={`No lessons for Grade ${g} yet`}
+        body="No curriculum has been loaded for this grade. Try another grade — Grade 11 is the most complete."
       />
     );
   }
 
-  // Subjects with lessons first, so a student lands on something they can use.
-  const withTopics = subjects
-    .map((s) => ({subject: s, topics: topicsForSubjectGrade(s.id, g)}))
-    .sort((a, b) => b.topics.length - a.topics.length);
-
-  const ready = withTopics.filter((s) => s.topics.length > 0).length;
+  const ordered = [...subjects].sort(
+    (a, b) => (counts.get(b.id) ?? 0) - (counts.get(a.id) ?? 0),
+  );
+  const ready = ordered.filter((s) => (counts.get(s.id) ?? 0) > 0).length;
 
   return (
     <div className="flex flex-col gap-6">
@@ -59,13 +47,16 @@ export default function GradeSubjects() {
         <p className="mt-1 text-sm text-on-surface-variant">
           {ready === 0
             ? 'Lessons for this grade are still being written.'
-            : `${ready} of ${subjects.length} subjects have lessons ready.`}
+            : `${ready} of ${ordered.length} subjects have lessons ready.`}
         </p>
       </header>
 
       <div className="grid gap-3 tablet:grid-cols-2 desktop:grid-cols-3">
-        {withTopics.map(({subject, topics}) => {
-          const empty = topics.length === 0;
+        {ordered.map((subject) => {
+          const topics = counts.get(subject.id) ?? 0;
+          const units = unitsForSubject(curriculum, subject.id).length;
+          const empty = topics === 0;
+
           const card = (
             <Card>
               <div className="flex items-start justify-between gap-2">
@@ -79,14 +70,14 @@ export default function GradeSubjects() {
               <p className="mt-1 text-sm text-on-surface-variant">
                 {empty
                   ? 'Lessons for this subject have not been written yet.'
-                  : `${topics.length} topic${topics.length === 1 ? '' : 's'} ready to study`}
+                  : units > 0
+                    ? `${units} unit${units === 1 ? '' : 's'} · ${topics} topic${topics === 1 ? '' : 's'}`
+                    : `${topics} topic${topics === 1 ? '' : 's'} ready to study`}
               </p>
             </Card>
           );
 
-          // Linking into a subject with nothing in it is a dead end. Render such
-          // a card as plain content rather than a link that looks tappable and
-          // then disappoints.
+          // A card leading nowhere is a dead end, so empty subjects are not links.
           return empty ? (
             <div key={subject.id} className="cursor-default opacity-60">
               {card}

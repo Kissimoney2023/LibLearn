@@ -81,6 +81,73 @@ export const CONTENT_SOURCES: ContentSource[] = [
       'LibLearn states no WASSCE subject requirement, grading scale or entry rule.',
   },
   {
+    id: 'moe-curriculum-download',
+    title: 'Liberia Ministry of Education — Curriculum Download',
+    organization: 'Ministry of Education, Republic of Liberia',
+    sourceType: 'MOE',
+    url: 'https://moe.gov.lr/curriculum-download/',
+    curriculumVersionId: 'lr-national-2011',
+    description:
+      'The Ministry\u2019s own curriculum download page: the primary distribution point ' +
+      'for current curriculum documents, and the most authoritative starting point ' +
+      'for establishing which curriculum is actually in force.',
+    verificationStatus: 'located',
+    lastVerifiedAt: null,
+    notes:
+      'START HERE. Supplied as a priority source. Not reachable from the build ' +
+      'environment (egress-blocked), so its contents have not been read. Reading ' +
+      'this page is what would let LibLearn state which curriculum version is current.',
+  },
+  {
+    id: 'mcss',
+    title: 'Monrovia Consolidated School System',
+    organization: 'MCSS',
+    sourceType: 'MCSS',
+    url: 'https://mcssschools.com/',
+    description:
+      'The Monrovia public school system. Useful for how the national curriculum is ' +
+      'implemented in practice, and for school-specific subject offerings that may ' +
+      'differ from the national list.',
+    verificationStatus: 'located',
+    lastVerifiedAt: null,
+    notes:
+      'Distinguish school-specific offerings from national curriculum requirements; ' +
+      'they are not the same claim. Contents not read.',
+  },
+  {
+    id: 'waec-official',
+    title: 'West African Examinations Council',
+    organization: 'WAEC',
+    sourceType: 'WAEC',
+    url: 'https://www.waec.org/',
+    description:
+      'WAEC\u2019s own site. The authoritative source for WASSCE subjects and rules, ' +
+      'as against the many third-party syllabus sites describing other countries.',
+    verificationStatus: 'located',
+    lastVerifiedAt: null,
+    notes:
+      'Must be read for LIBERIA specifically. WAEC serves five countries and their ' +
+      'subject combinations differ.',
+  },
+  {
+    id: 'wassce-2026-expansion',
+    title: 'Reported expansion of WASSCE subjects for 2026 (Liberia)',
+    organization: 'Ministry of Education, Republic of Liberia',
+    sourceType: 'MOE',
+    description:
+      'A reported significant expansion of the WASSCE subject list for 2026, and ' +
+      'confirmation that Liberia uses LPSCE, LJHSCE, WASSCE and LNAT.',
+    verificationStatus: 'verification-required',
+    lastVerifiedAt: null,
+    notes:
+      'REPORTED TO LIBLEARN BY THE PROJECT OWNER, not read from a primary document ' +
+      'here. Recorded so it is not lost, and held at verification-required so it ' +
+      'cannot drive content until confirmed against a Ministry or WAEC publication. ' +
+      'If accurate it is significant: an expanded subject list would change which ' +
+      'subjects LibLearn should offer at Grades 10-12, and a stale list would send ' +
+      'students to revise the wrong subjects.',
+  },
+  {
     id: 'liberia-esp-2022',
     title: 'Republic of Liberia Education Sector Plan',
     organization: 'Ministry of Education, Republic of Liberia',

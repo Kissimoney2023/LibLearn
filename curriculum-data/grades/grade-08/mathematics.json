@@ -1,0 +1,334 @@
+{
+  "grade": 8,
+  "subjectId": "mathematics",
+  "curriculumVersionId": "liblearn-v1",
+  "provenance": "liblearn",
+  "sourceId": null,
+  "units": [],
+  "topics": [
+    {
+      "id": "g8-math-algebra",
+      "name": "Algebra",
+      "summary": "Working with unknowns: expressions, equations and how to solve them.",
+      "order": 1
+    },
+    {
+      "id": "g8-math-fractions",
+      "name": "Fractions & Decimals",
+      "summary": "Converting between forms and calculating confidently with both.",
+      "order": 2
+    }
+  ],
+  "lessons": [
+    {
+      "id": "g8-math-algebra-l1",
+      "topicId": "g8-math-algebra",
+      "title": "Understanding Variables and Expressions",
+      "estimatedMinutes": 12,
+      "order": 1,
+      "objectives": [
+        {
+          "id": "o1",
+          "text": "Explain what a variable stands for in an expression."
+        },
+        {
+          "id": "o2",
+          "text": "Write a word problem as an algebraic expression."
+        },
+        {
+          "id": "o3",
+          "text": "Identify the terms and coefficients in an expression."
+        }
+      ],
+      "keyTerms": [],
+      "sections": [
+        {
+          "heading": "What a variable is",
+          "body": "A variable is a letter that stands in for a number you do not know yet. In the expression 3x + 5, the letter x is the variable. It has no fixed value - it waits for you to find out what it is. The number 3 in front of it is called the coefficient, and it means \"three lots of x\".",
+          "example": "If a bundle of cassava costs x dollars, then 3 bundles cost 3x dollars. When x turns out to be 25, the three bundles cost 3 x 25 = 75 dollars."
+        },
+        {
+          "heading": "Terms and coefficients",
+          "body": "An expression is built from terms separated by plus or minus signs. In 4a + 7b - 2, there are three terms: 4a, 7b and -2. The coefficient of a is 4 and the coefficient of b is 7. The term -2 has no variable at all, so it is called a constant - its value never changes."
+        },
+        {
+          "heading": "Turning words into algebra",
+          "body": "Most of algebra is translation. \"Five more than a number\" becomes n + 5. \"Twice a number, less three\" becomes 2n - 3. Read the sentence slowly and write down each piece in the order it appears, then check that your expression says the same thing as the words.",
+          "example": "A taxi charges 40 dollars to start plus 15 dollars for each kilometre. The cost of a journey of k kilometres is 40 + 15k."
+        }
+      ]
+    },
+    {
+      "id": "g8-math-algebra-l2",
+      "topicId": "g8-math-algebra",
+      "title": "Solving Linear Equations",
+      "estimatedMinutes": 15,
+      "order": 2,
+      "objectives": [
+        {
+          "id": "o1",
+          "text": "Solve a one-step linear equation."
+        },
+        {
+          "id": "o2",
+          "text": "Solve a two-step linear equation."
+        },
+        {
+          "id": "o3",
+          "text": "Check a solution by substituting it back."
+        }
+      ],
+      "keyTerms": [],
+      "sections": [
+        {
+          "heading": "The balance rule",
+          "body": "An equation says two things are equal. Picture a balance scale: whatever you do to one side, you must do to the other, or the scale tips. That single rule is the whole of equation solving. To get x by itself, undo whatever has been done to it - and do the same undoing on both sides.",
+          "example": "x + 7 = 12. Seven has been added to x, so subtract 7 from both sides: x + 7 - 7 = 12 - 7, giving x = 5."
+        },
+        {
+          "heading": "Two-step equations",
+          "body": "When x has been multiplied and then added to, undo in reverse order: deal with the addition or subtraction first, then the multiplication. This is the opposite of the order you would use to build the expression up.",
+          "example": "3x + 4 = 19. First subtract 4 from both sides: 3x = 15. Then divide both sides by 3: x = 5."
+        },
+        {
+          "heading": "Always check your answer",
+          "body": "Substituting your answer back into the original equation costs ten seconds and catches almost every mistake. Put the number in place of the letter and work out both sides separately. If they match, you are right.",
+          "example": "Check x = 5 in 3x + 4 = 19. Left side: 3 x 5 + 4 = 15 + 4 = 19. Right side: 19. They match, so x = 5 is correct."
+        }
+      ]
+    },
+    {
+      "id": "g8-math-algebra-l3",
+      "topicId": "g8-math-algebra",
+      "title": "Equations with Brackets",
+      "estimatedMinutes": 14,
+      "order": 3,
+      "objectives": [
+        {
+          "id": "o1",
+          "text": "Expand a bracket using the distributive law."
+        },
+        {
+          "id": "o2",
+          "text": "Solve an equation that contains brackets."
+        }
+      ],
+      "keyTerms": [],
+      "sections": [
+        {
+          "heading": "Expanding brackets",
+          "body": "The number outside a bracket multiplies everything inside it - every term, not just the first. This is the distributive law. Missing the second term is the single most common slip in this topic, so write the multiplication out in full until it becomes automatic.",
+          "example": "4(x + 3) means 4 times x plus 4 times 3, which is 4x + 12. It does not mean 4x + 3."
+        },
+        {
+          "heading": "Solving with brackets",
+          "body": "Expand the bracket first, then solve the equation the ordinary way with the balance rule. Take care with a minus sign outside a bracket: it changes the sign of every term inside.",
+          "example": "2(x - 5) = 14. Expand: 2x - 10 = 14. Add 10 to both sides: 2x = 24. Divide by 2: x = 12."
+        }
+      ]
+    },
+    {
+      "id": "g8-math-fractions-l1",
+      "topicId": "g8-math-fractions",
+      "title": "Converting Fractions and Decimals",
+      "estimatedMinutes": 11,
+      "order": 1,
+      "objectives": [
+        {
+          "id": "o1",
+          "text": "Convert a fraction to a decimal by division."
+        },
+        {
+          "id": "o2",
+          "text": "Convert a terminating decimal to a fraction in lowest terms."
+        }
+      ],
+      "keyTerms": [],
+      "sections": [
+        {
+          "heading": "Fraction to decimal",
+          "body": "A fraction is a division waiting to happen. The line between the numbers means \"divide\". So to turn a fraction into a decimal, divide the top number by the bottom number.",
+          "example": "3/4 means 3 divided by 4, which is 0.75. And 1/8 means 1 divided by 8, which is 0.125."
+        },
+        {
+          "heading": "Decimal to fraction",
+          "body": "Read the decimal aloud and the fraction is usually in the words. 0.7 is \"seven tenths\", so it is 7/10. 0.35 is \"thirty-five hundredths\", so it is 35/100 - then cancel down to 7/20 by dividing top and bottom by 5."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "id": "q-alg-1",
+      "topicId": "g8-math-algebra",
+      "question": "What is the coefficient of x in the expression 7x + 4?",
+      "options": [
+        "7",
+        "4",
+        "x",
+        "11"
+      ],
+      "correctAnswer": 0,
+      "explanation": "The coefficient is the number multiplying the variable. In 7x, the 7 multiplies x, so the coefficient is 7. The 4 is a constant.",
+      "difficulty": "foundation",
+      "examGoal": "ljhsce"
+    },
+    {
+      "id": "q-alg-2",
+      "topicId": "g8-math-algebra",
+      "question": "Solve for x:  x + 9 = 16",
+      "options": [
+        "x = 25",
+        "x = 7",
+        "x = 9",
+        "x = 16"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Nine has been added to x, so subtract 9 from both sides: x + 9 - 9 = 16 - 9, giving x = 7. Check: 7 + 9 = 16.",
+      "difficulty": "foundation",
+      "examGoal": "ljhsce"
+    },
+    {
+      "id": "q-alg-3",
+      "topicId": "g8-math-algebra",
+      "question": "Solve for x:  3x + 4 = 19",
+      "options": [
+        "x = 5",
+        "x = 7",
+        "x = 15",
+        "x = 23"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Undo in reverse order. Subtract 4 from both sides: 3x = 15. Then divide both sides by 3: x = 5. Check: 3 x 5 + 4 = 19.",
+      "difficulty": "core",
+      "examGoal": "ljhsce"
+    },
+    {
+      "id": "q-alg-4",
+      "topicId": "g8-math-algebra",
+      "question": "Expand:  4(x + 3)",
+      "options": [
+        "4x + 3",
+        "4x + 12",
+        "x + 12",
+        "7x"
+      ],
+      "correctAnswer": 1,
+      "explanation": "The 4 multiplies every term inside the bracket, not just the first: 4 times x is 4x, and 4 times 3 is 12. So the answer is 4x + 12.",
+      "difficulty": "core",
+      "examGoal": "ljhsce"
+    },
+    {
+      "id": "q-alg-5",
+      "topicId": "g8-math-algebra",
+      "question": "Solve for x:  2(x - 5) = 14",
+      "options": [
+        "x = 2",
+        "x = 9",
+        "x = 12",
+        "x = 24"
+      ],
+      "correctAnswer": 2,
+      "explanation": "Expand first: 2x - 10 = 14. Add 10 to both sides: 2x = 24. Divide by 2: x = 12. Check: 2(12 - 5) = 2 x 7 = 14.",
+      "difficulty": "challenge",
+      "examGoal": "ljhsce"
+    },
+    {
+      "id": "q-alg-6",
+      "topicId": "g8-math-algebra",
+      "question": "A taxi charges 40 dollars to start plus 15 dollars per kilometre. Which expression gives the cost of a journey of k kilometres?",
+      "options": [
+        "40k + 15",
+        "55k",
+        "40 + 15k",
+        "15 + 40k"
+      ],
+      "correctAnswer": 2,
+      "explanation": "The 40 is paid once, so it stands alone. The 15 is paid for each kilometre, so it multiplies k. That gives 40 + 15k.",
+      "difficulty": "core"
+    },
+    {
+      "id": "q-alg-7",
+      "topicId": "g8-math-algebra",
+      "question": "Solve for x:  5x - 3 = 2x + 12",
+      "options": [
+        "x = 3",
+        "x = 5",
+        "x = 9",
+        "x = 15"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Collect the x terms on one side: subtract 2x from both sides to get 3x - 3 = 12. Add 3: 3x = 15. Divide by 3: x = 5.",
+      "difficulty": "challenge",
+      "examGoal": "ljhsce"
+    },
+    {
+      "id": "q-fr8-1",
+      "topicId": "g8-math-fractions",
+      "question": "Write 3/4 as a decimal.",
+      "options": [
+        "0.34",
+        "0.75",
+        "0.43",
+        "1.33"
+      ],
+      "correctAnswer": 1,
+      "explanation": "A fraction means divide. 3 divided by 4 is 0.75.",
+      "difficulty": "foundation"
+    },
+    {
+      "id": "q-fr8-2",
+      "topicId": "g8-math-fractions",
+      "question": "Write 0.35 as a fraction in its lowest terms.",
+      "options": [
+        "35/10",
+        "7/20",
+        "3/5",
+        "35/1000"
+      ],
+      "correctAnswer": 1,
+      "explanation": "0.35 is thirty-five hundredths, so 35/100. Divide top and bottom by 5 to get 7/20.",
+      "difficulty": "core"
+    },
+    {
+      "id": "q-fr8-3",
+      "topicId": "g8-math-fractions",
+      "question": "Which is larger: 0.6 or 5/8?",
+      "options": [
+        "0.6",
+        "5/8",
+        "They are equal",
+        "Cannot be compared"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Convert 5/8 to a decimal: 5 divided by 8 is 0.625. Since 0.625 is greater than 0.6, the fraction 5/8 is larger.",
+      "difficulty": "core"
+    }
+  ],
+  "quizzes": [
+    {
+      "id": "quiz-g8-algebra",
+      "lessonId": "g8-math-algebra-l2",
+      "topicId": "g8-math-algebra",
+      "title": "Algebra Check",
+      "questionIds": [
+        "q-alg-1",
+        "q-alg-2",
+        "q-alg-3",
+        "q-alg-4",
+        "q-alg-5"
+      ]
+    },
+    {
+      "id": "quiz-g8-fractions",
+      "lessonId": "g8-math-fractions-l1",
+      "topicId": "g8-math-fractions",
+      "title": "Fractions & Decimals Check",
+      "questionIds": [
+        "q-fr8-1",
+        "q-fr8-2",
+        "q-fr8-3"
+      ]
+    }
+  ]
+}

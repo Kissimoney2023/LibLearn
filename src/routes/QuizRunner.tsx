@@ -1,8 +1,8 @@
 import {useMemo, useState} from 'react';
 import {Link, useNavigate, useParams} from 'react-router-dom';
 import {Button, ButtonLink, Card, EmptyState, ProgressBar} from '../components/ui';
-import {questionById, quizById} from '../data/seed/questions';
-import {topicById} from '../data/seed/curriculum';
+import {useCurriculum} from '../context/CurriculumContext';
+import {questionById, quizById, topicById} from '../lib/curriculum';
 import {useStudentData} from '../context/StudentDataContext';
 import {track} from '../lib/analytics';
 import type {QuizAnswer, QuizAttempt} from '../types/domain';
@@ -12,9 +12,10 @@ export default function QuizRunner() {
   const navigate = useNavigate();
   const {recordQuiz} = useStudentData();
 
-  const quiz = quizId ? quizById(quizId) : undefined;
+  const {curriculum} = useCurriculum();
+  const quiz = quizId ? quizById(curriculum, quizId) : undefined;
   const questions = useMemo(
-    () => (quiz ? quiz.questionIds.map(questionById).filter((q) => q !== undefined) : []),
+    () => (quiz ? quiz.questionIds.map((id) => questionById(curriculum, id)).filter((q) => q !== undefined) : []),
     [quiz],
   );
 
@@ -88,7 +89,7 @@ export default function QuizRunner() {
           <Card rail="progress">
             <p className="font-semibold">Recommended next</p>
             <p className="mt-1 text-sm text-on-surface-variant">
-              Review {topicById(quiz.topicId)?.name ?? 'this topic'} before moving on — your
+              Review {topicById(curriculum, quiz.topicId)?.name ?? 'this topic'} before moving on — your
               score here was below 60%.
             </p>
           </Card>

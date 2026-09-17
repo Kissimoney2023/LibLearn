@@ -1,0 +1,307 @@
+{
+  "grade": 11,
+  "subjectId": "chemistry",
+  "curriculumVersionId": "liblearn-v1",
+  "provenance": "liblearn",
+  "sourceId": null,
+  "units": [
+    {
+      "id": "g11-chem-u-quant",
+      "name": "Quantitative Chemistry",
+      "summary": "Measuring and calculating the amounts involved in reactions.",
+      "order": 1
+    },
+    {
+      "id": "g11-chem-u-structure",
+      "name": "Structure and Bonding",
+      "summary": "How atoms join, and how that explains the properties of matter.",
+      "order": 2
+    }
+  ],
+  "topics": [
+    {
+      "id": "g11-chem-mole",
+      "unitId": "g11-chem-u-quant",
+      "name": "The Mole and Stoichiometry",
+      "summary": "Counting particles by weighing: the mole, molar mass, and calculating how much product a reaction gives.",
+      "order": 1
+    },
+    {
+      "id": "g11-chem-bonding",
+      "unitId": "g11-chem-u-structure",
+      "name": "Chemical Bonding",
+      "summary": "Why atoms join together, and how ionic and covalent bonding explain the properties of the substances they form.",
+      "order": 2
+    }
+  ],
+  "lessons": [
+    {
+      "id": "g11-chem-mole-l1",
+      "topicId": "g11-chem-mole",
+      "title": "The Mole: Counting Atoms by Weighing",
+      "estimatedMinutes": 16,
+      "order": 1,
+      "objectives": [
+        {
+          "id": "o1",
+          "text": "Define the mole and state Avogadro’s constant."
+        },
+        {
+          "id": "o2",
+          "text": "Convert between mass, moles and number of particles."
+        },
+        {
+          "id": "o3",
+          "text": "Calculate molar mass from a chemical formula."
+        }
+      ],
+      "keyTerms": [
+        {
+          "term": "Mole",
+          "definition": "The amount of substance containing 6.02 × 10²³ particles."
+        },
+        {
+          "term": "Avogadro’s constant",
+          "definition": "6.02 × 10²³ — the number of particles in one mole."
+        },
+        {
+          "term": "Molar mass",
+          "definition": "The mass of one mole of a substance, in g/mol."
+        },
+        {
+          "term": "Relative atomic mass",
+          "definition": "The mass of an atom relative to 1/12 of a carbon-12 atom."
+        }
+      ],
+      "sections": [
+        {
+          "heading": "What you will learn",
+          "body": "Chemical reactions happen between individual particles, but no one can count particles. The mole is the bridge: it converts a mass you can weigh into a number of particles you can reason about."
+        },
+        {
+          "heading": "Why chemists need the mole",
+          "body": "An equation like 2H₂ + O₂ → 2H₂O is a statement about COUNTS: two hydrogen molecules for every one oxygen molecule.\n\nBut you cannot count molecules in a laboratory. You can only weigh things. And weighing equal masses does not give equal counts, because atoms have different masses — 1 g of hydrogen contains far more atoms than 1 g of lead.\n\nThe mole solves this. It is simply a counting unit for very large numbers, the way \"a dozen\" is a counting unit for twelve.\n\n    1 mole = 6.02 × 10²³ particles\n\nThat number, Avogadro’s constant, is enormous because atoms are tiny. One mole of water is about a mouthful."
+        },
+        {
+          "heading": "Molar mass",
+          "body": "Here is the elegant part. The mass of one mole of a substance, in grams, equals its relative atomic or formula mass.\n\n    Carbon:  relative atomic mass 12  →  1 mol weighs 12 g\n    Water:   relative formula mass 18  →  1 mol weighs 18 g\n\nTo find the relative formula mass, add up the atomic masses in the formula:\n\n    H₂O = (2 × 1) + 16 = 18\n    CO₂ = 12 + (2 × 16) = 44\n    CaCO₃ = 40 + 12 + (3 × 16) = 100\n\nSo weighing out 100 g of calcium carbonate gives you exactly one mole of it — 6.02 × 10²³ formula units — without counting anything."
+        },
+        {
+          "heading": "The key equation",
+          "body": "Everything in this topic rests on one relationship:\n\n    moles = mass (g) / molar mass (g/mol)\n\nRearranged as needed:\n\n    mass = moles × molar mass\n    molar mass = mass / moles\n\nAnd to reach particles:\n\n    number of particles = moles × 6.02 × 10²³\n\nA reliable habit: write down what you are given, what you want, and which equation connects them, BEFORE substituting numbers."
+        },
+        {
+          "heading": "Worked example",
+          "body": "Calculate the number of moles in 25 g of calcium carbonate, CaCO₃, and how many formula units that is.",
+          "example": "Step 1 — Molar mass of CaCO₃:\n    Ca = 40\n    C  = 12\n    O₃ = 3 × 16 = 48\n    Total = 100 g/mol\n\nStep 2 — Moles:\n    moles = mass / molar mass\n          = 25 / 100\n          = 0.25 mol\n\nStep 3 — Particles:\n    = 0.25 × 6.02 × 10²³\n    = 1.505 × 10²³ formula units\n\nSanity check: 25 g is a quarter of 100 g, so 0.25 mol. If your answer had come out greater than 1 mol, something went wrong."
+        },
+        {
+          "heading": "Try it yourself",
+          "body": "1. How many moles are in 36 g of water (H₂O)?\n2. What is the mass of 2 moles of CO₂?\n3. How many atoms are in 0.5 mol of sodium?\n4. 4.4 g of a gas turns out to be 0.1 mol. What is its molar mass — and can you name the gas?"
+        },
+        {
+          "heading": "Summary",
+          "body": "• 1 mole = 6.02 × 10²³ particles.\n• Molar mass in g/mol equals relative formula mass — add the atomic masses.\n• moles = mass / molar mass, rearranged as required.\n• particles = moles × 6.02 × 10²³.\n• Always sanity-check the size of your answer against the molar mass."
+        }
+      ]
+    },
+    {
+      "id": "g11-chem-bonding-l1",
+      "topicId": "g11-chem-bonding",
+      "title": "Ionic and Covalent Bonding",
+      "estimatedMinutes": 15,
+      "order": 1,
+      "objectives": [
+        {
+          "id": "o1",
+          "text": "Explain why atoms form bonds at all."
+        },
+        {
+          "id": "o2",
+          "text": "Describe ionic bonding as transfer and covalent as sharing."
+        },
+        {
+          "id": "o3",
+          "text": "Link bonding type to melting point, conductivity and solubility."
+        }
+      ],
+      "keyTerms": [
+        {
+          "term": "Ion",
+          "definition": "An atom that has gained or lost electrons and so carries a charge."
+        },
+        {
+          "term": "Ionic bond",
+          "definition": "Electrostatic attraction between oppositely charged ions."
+        },
+        {
+          "term": "Covalent bond",
+          "definition": "A shared pair of electrons between two atoms."
+        },
+        {
+          "term": "Lattice",
+          "definition": "A regular repeating 3-D arrangement of ions."
+        }
+      ],
+      "sections": [
+        {
+          "heading": "What you will learn",
+          "body": "Why atoms bond, the two main ways they do it, and how the bonding explains properties you can observe — why salt melts at 801°C but candle wax melts in your hand."
+        },
+        {
+          "heading": "Why atoms bond",
+          "body": "Atoms bond to reach a full outer shell of electrons, which is a more stable, lower-energy arrangement.\n\nThe noble gases already have full outer shells, which is precisely why they are famously unreactive. Every other element achieves the same thing by losing, gaining or sharing electrons.\n\nThat gives two routes:\n• Metal + non-metal → electrons are TRANSFERRED → ionic bonding\n• Non-metal + non-metal → electrons are SHARED → covalent bonding"
+        },
+        {
+          "heading": "Ionic bonding",
+          "body": "A metal atom loses its outer electrons; a non-metal gains them. Both end up with full shells, and both are now charged.\n\nSodium chloride:\n    Na has 1 outer electron → loses it → Na⁺\n    Cl has 7 outer electrons → gains 1 → Cl⁻\n\nThe opposite charges attract strongly. Crucially, this is not a bond between one Na⁺ and one particular Cl⁻ — each ion attracts every oppositely charged neighbour, building a giant LATTICE extending in all directions.\n\nThat structure explains the properties:\n• HIGH MELTING POINT — melting means overcoming attractions throughout the whole lattice.\n• CONDUCTS ONLY WHEN MOLTEN OR DISSOLVED — charged ions must be free to move. In a solid they are locked in place, so solid salt does not conduct.\n• BRITTLE — knock the lattice out of alignment and like charges meet, forcing it apart."
+        },
+        {
+          "heading": "Covalent bonding",
+          "body": "Two non-metals cannot both gain electrons, so they share instead. A shared PAIR of electrons counts towards the full shell of both atoms.\n\n    H₂  — one shared pair (single bond)\n    O₂  — two shared pairs (double bond)\n    H₂O — oxygen shares with two hydrogens\n\nThe shared pair itself is a strong bond. But most covalent substances exist as small separate MOLECULES, and the forces BETWEEN those molecules are weak.\n\nThis distinction is the most misunderstood point in the topic. When water boils, you are not breaking O–H bonds — you are separating whole water molecules from one another. The bonds inside survive, which is why steam is still H₂O.\n\nHence: low melting and boiling points, and no conductivity, because there are no free charged particles.",
+          "example": "Why does sodium chloride melt at 801°C while chlorine gas boils at −34°C, when both involve chlorine?\n\nNaCl — a giant ionic lattice. Melting requires breaking strong attractions between millions of ions. Enormous energy.\n\nCl₂ — small molecules. The Cl–Cl covalent bond is strong, but boiling only has to separate molecules from each other, and the forces between them are weak. Very little energy.\n\nThe lesson: melting and boiling points tell you about the forces BETWEEN particles, not the bonds within them."
+        },
+        {
+          "heading": "Try it yourself",
+          "body": "1. Magnesium oxide (MgO) melts at 2852°C. What bonding does it have, and why is its melting point even higher than NaCl’s?\n2. Explain why solid NaCl does not conduct electricity but molten NaCl does.\n3. Predict the bonding in CH₄ and give two expected properties."
+        },
+        {
+          "heading": "Summary",
+          "body": "• Atoms bond to achieve full outer shells.\n• Metal + non-metal → transfer → ions → giant lattice.\n• Non-metal + non-metal → sharing → covalent bonds → usually small molecules.\n• Ionic: high melting point, conducts when molten or dissolved, brittle.\n• Covalent molecular: low melting point, does not conduct.\n• Melting point reflects forces BETWEEN particles, not bond strength within them."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "id": "q11-mole-1",
+      "topicId": "g11-chem-mole",
+      "question": "How many particles are in one mole of a substance?",
+      "options": [
+        "6.02 × 10²³",
+        "6.02 × 10²²",
+        "1 × 10²³",
+        "3.01 × 10²³"
+      ],
+      "correctAnswer": 0,
+      "explanation": "One mole contains 6.02 × 10²³ particles — Avogadro’s constant. It is a counting unit for very large numbers, in the same way a dozen is a counting unit for twelve.",
+      "difficulty": "foundation",
+      "examGoal": "wassce"
+    },
+    {
+      "id": "q11-mole-2",
+      "topicId": "g11-chem-mole",
+      "question": "What is the molar mass of CO₂?  (C = 12, O = 16)",
+      "options": [
+        "28 g/mol",
+        "44 g/mol",
+        "32 g/mol",
+        "56 g/mol"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Add the atomic masses in the formula: carbon contributes 12, and there are two oxygens contributing 2 × 16 = 32. So 12 + 32 = 44 g/mol. Choosing 28 means only one oxygen was counted.",
+      "difficulty": "core",
+      "examGoal": "wassce"
+    },
+    {
+      "id": "q11-mole-3",
+      "topicId": "g11-chem-mole",
+      "question": "How many moles are in 36 g of water, H₂O?  (H = 1, O = 16)",
+      "options": [
+        "1 mol",
+        "2 mol",
+        "0.5 mol",
+        "18 mol"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Molar mass of H₂O = (2 × 1) + 16 = 18 g/mol. Then moles = mass / molar mass = 36 / 18 = 2 mol. A quick sanity check: 36 g is twice 18 g, so 2 moles.",
+      "difficulty": "core",
+      "examGoal": "wassce"
+    },
+    {
+      "id": "q11-mole-4",
+      "topicId": "g11-chem-mole",
+      "question": "A sample of 0.1 mol of a gas has a mass of 4.4 g. What is its molar mass?",
+      "options": [
+        "4.4 g/mol",
+        "44 g/mol",
+        "0.44 g/mol",
+        "440 g/mol"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Rearrange the key equation: molar mass = mass / moles = 4.4 / 0.1 = 44 g/mol. Dividing by 0.1 multiplies by 10, which trips people up. A molar mass of 44 g/mol suggests the gas is carbon dioxide.",
+      "difficulty": "challenge",
+      "examGoal": "wassce"
+    },
+    {
+      "id": "q11-bond-1",
+      "topicId": "g11-chem-bonding",
+      "question": "What type of bonding forms between a metal and a non-metal?",
+      "options": [
+        "Covalent",
+        "Ionic",
+        "Metallic",
+        "No bond forms"
+      ],
+      "correctAnswer": 1,
+      "explanation": "A metal loses electrons to form a positive ion and a non-metal gains them to form a negative ion. The opposite charges attract, which is ionic bonding. Covalent bonding is sharing, and happens between two non-metals.",
+      "difficulty": "foundation",
+      "examGoal": "wassce"
+    },
+    {
+      "id": "q11-bond-2",
+      "topicId": "g11-chem-bonding",
+      "question": "Why does solid sodium chloride not conduct electricity, while molten sodium chloride does?",
+      "options": [
+        "The ions are destroyed when solid",
+        "The ions are fixed in the lattice when solid and free to move when molten",
+        "Solid NaCl contains no ions",
+        "Melting converts the bonding to covalent"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Conduction needs charged particles that are free to move. The ions exist in both states, but in the solid lattice they are locked in position. Melting frees them, so the liquid conducts. The ions are neither destroyed nor changed — only their mobility changes.",
+      "difficulty": "core",
+      "examGoal": "wassce"
+    },
+    {
+      "id": "q11-bond-3",
+      "topicId": "g11-chem-bonding",
+      "question": "When water boils, what is actually broken?",
+      "options": [
+        "The O–H covalent bonds inside each molecule",
+        "The forces of attraction between separate water molecules",
+        "Both equally",
+        "The oxygen atoms split apart"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Boiling separates whole molecules from one another by overcoming the weak forces between them. The strong covalent O–H bonds inside each molecule survive, which is why steam is still H₂O rather than hydrogen and oxygen gas. Melting and boiling points tell you about forces BETWEEN particles, not bonds within them.",
+      "difficulty": "challenge",
+      "examGoal": "wassce"
+    }
+  ],
+  "quizzes": [
+    {
+      "id": "quiz-g11-mole",
+      "lessonId": "g11-chem-mole-l1",
+      "topicId": "g11-chem-mole",
+      "title": "The Mole Check",
+      "questionIds": [
+        "q11-mole-1",
+        "q11-mole-2",
+        "q11-mole-3",
+        "q11-mole-4"
+      ]
+    },
+    {
+      "id": "quiz-g11-bonding",
+      "lessonId": "g11-chem-bonding-l1",
+      "topicId": "g11-chem-bonding",
+      "title": "Chemical Bonding Check",
+      "questionIds": [
+        "q11-bond-1",
+        "q11-bond-2",
+        "q11-bond-3"
+      ]
+    }
+  ]
+}
