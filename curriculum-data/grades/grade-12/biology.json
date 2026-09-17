@@ -1,0 +1,153 @@
+{
+  "grade": 12,
+  "subjectId": "biology",
+  "curriculumVersionId": "liblearn-v1",
+  "provenance": "liblearn",
+  "sourceId": null,
+  "units": [
+    {
+      "id": "g12-bio-u-transport",
+      "name": "Transport in Humans",
+      "summary": "How blood moves and what it carries.",
+      "order": 1
+    }
+  ],
+  "topics": [
+    {
+      "id": "g12-bio-circulation",
+      "unitId": "g12-bio-u-transport",
+      "name": "The Circulatory System",
+      "summary": "The heart, the vessels, and the double circuit.",
+      "order": 1
+    }
+  ],
+  "lessons": [
+    {
+      "id": "g12-bio-circulation-l1",
+      "topicId": "g12-bio-circulation",
+      "title": "The Heart and Blood Circulation",
+      "estimatedMinutes": 15,
+      "order": 1,
+      "objectives": [
+        {
+          "id": "o1",
+          "text": "Describe the structure of the heart."
+        },
+        {
+          "id": "o2",
+          "text": "Trace the path of blood through the double circulation."
+        },
+        {
+          "id": "o3",
+          "text": "Explain how arteries, veins and capillaries differ."
+        }
+      ],
+      "keyTerms": [
+        {
+          "term": "Atrium",
+          "definition": "An upper chamber of the heart; receives blood."
+        },
+        {
+          "term": "Ventricle",
+          "definition": "A lower chamber; pumps blood out."
+        },
+        {
+          "term": "Artery",
+          "definition": "A vessel carrying blood AWAY from the heart."
+        },
+        {
+          "term": "Vein",
+          "definition": "A vessel carrying blood TO the heart."
+        },
+        {
+          "term": "Capillary",
+          "definition": "A microscopic vessel where exchange with cells happens."
+        }
+      ],
+      "sections": [
+        {
+          "heading": "What you will learn",
+          "body": "Blood must reach every cell, deliver oxygen, collect waste, and return. This lesson covers the pump, the pipes, and the route."
+        },
+        {
+          "heading": "Four chambers",
+          "body": "The heart has four chambers:\n\n    RIGHT ATRIUM   | LEFT ATRIUM     ← upper, receive blood\n    RIGHT VENTRICLE| LEFT VENTRICLE  ← lower, pump blood out\n\nAtria receive; ventricles pump. Valves between them stop blood flowing backwards.\n\nThe LEFT VENTRICLE has a much thicker muscular wall than the right. The reason is the distance each must cover: the right ventricle pumps only to the lungs, next door. The left pumps to the entire rest of the body, so it must generate far more pressure.\n\nThat asymmetry is not a flaw. It is the structure matching the job — and it is a favourite examination question."
+        },
+        {
+          "heading": "Arteries, veins, capillaries",
+          "body": "ARTERIES carry blood AWAY from the heart. Thick muscular walls, narrow lumen, because they take blood at high pressure.\n\nVEINS carry blood TO the heart. Thinner walls, wider lumen, and VALVES — pressure is low by then, so valves stop backflow.\n\nCAPILLARIES are one cell thick. This is where the actual exchange happens: oxygen and nutrients out to cells, carbon dioxide and waste in.\n\nThe memory aid: **A**rteries **A**way. Everything else follows.\n\nBut notice what the definition does NOT mention: oxygen. Arteries are defined by DIRECTION, not by what they carry — which matters in the next section."
+        },
+        {
+          "heading": "Double circulation",
+          "body": "Human blood passes through the heart TWICE per complete circuit. Two loops:\n\n**PULMONARY (heart → lungs → heart)**\n\n    Right atrium → right ventricle → pulmonary artery → lungs\n    (picks up oxygen, drops carbon dioxide)\n    → pulmonary vein → left atrium\n\n**SYSTEMIC (heart → body → heart)**\n\n    Left atrium → left ventricle → aorta → body\n    (delivers oxygen, collects carbon dioxide)\n    → vena cava → right atrium\n\nWhy two loops? Blood loses pressure passing through the lungs. Returning it to the heart lets it be re-pressurised before the long journey round the body. A single circuit would deliver blood to your feet far too slowly.",
+          "example": "The exception that catches everyone.\n\n\"Arteries carry oxygenated blood.\" This is usually true and is NOT the definition — and there are two exceptions.\n\nThe PULMONARY ARTERY carries DEOXYGENATED blood, from the heart to the lungs. It is an artery because it leads away from the heart.\n\nThe PULMONARY VEIN carries OXYGENATED blood, from the lungs back to the heart. It is a vein because it leads toward the heart.\n\nSo the rule is direction, never oxygen:\n\n    Artery = away from the heart\n    Vein   = toward the heart\n\nIf you memorise \"arteries carry oxygen\", you will get the pulmonary vessels wrong every time — and they are exactly what gets asked."
+        },
+        {
+          "heading": "Try it yourself",
+          "body": "1. Name the four chambers and say which two pump.\n2. Why is the left ventricle wall thicker than the right?\n3. Trace a drop of blood from the right atrium back to the right atrium, naming every vessel and chamber.\n4. Why does the pulmonary artery carry deoxygenated blood though arteries \"usually\" carry oxygenated blood?\n5. Why must capillaries be one cell thick?"
+        },
+        {
+          "heading": "Summary",
+          "body": "• Four chambers: atria receive, ventricles pump.\n• The left ventricle is thicker because it supplies the whole body.\n• Arteries away, veins toward — defined by DIRECTION, not oxygen.\n• Capillaries are one cell thick, for exchange.\n• Double circulation: pulmonary and systemic, re-pressurised between.\n• The pulmonary artery and vein are the exceptions to remember."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "id": "q12-cir-1",
+      "topicId": "g12-bio-circulation",
+      "question": "Why is the wall of the left ventricle thicker than the right?",
+      "options": [
+        "It holds more blood",
+        "It must pump blood to the whole body, not just to the lungs",
+        "It beats more often",
+        "It contains more valves"
+      ],
+      "correctAnswer": 1,
+      "explanation": "The right ventricle pumps only to the lungs, which are close by. The left pumps to the entire body, so it must generate far greater pressure and needs more muscle. Both hold a similar volume and beat together — the difference is distance, not capacity.",
+      "difficulty": "core"
+    },
+    {
+      "id": "q12-cir-2",
+      "topicId": "g12-bio-circulation",
+      "question": "The pulmonary artery carries DEOXYGENATED blood. Why is it still called an artery?",
+      "options": [
+        "It is a mistake in naming",
+        "Because arteries are defined by carrying blood away from the heart, not by oxygen",
+        "Because it becomes oxygenated later",
+        "Because it has thin walls"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Artery means AWAY from the heart; vein means TOWARD it. Oxygen is not part of the definition. The pulmonary artery carries deoxygenated blood to the lungs, and the pulmonary vein carries oxygenated blood back — the two standard exceptions, and the ones most often asked.",
+      "difficulty": "challenge"
+    },
+    {
+      "id": "q12-cir-3",
+      "topicId": "g12-bio-circulation",
+      "question": "Why must capillary walls be only one cell thick?",
+      "options": [
+        "To let blood travel faster",
+        "So substances can be exchanged easily between blood and cells",
+        "To save space in the body",
+        "So they can carry more blood"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Capillaries are where exchange happens — oxygen and nutrients out to cells, carbon dioxide and waste in. A thin wall means a short diffusion distance. Thin walls actually slow blood down, which gives more time for that exchange.",
+      "difficulty": "core"
+    }
+  ],
+  "quizzes": [
+    {
+      "id": "quiz-g12-circulation",
+      "lessonId": "g12-bio-circulation-l1",
+      "topicId": "g12-bio-circulation",
+      "title": "Circulatory System Check",
+      "questionIds": [
+        "q12-cir-1",
+        "q12-cir-2",
+        "q12-cir-3"
+      ]
+    }
+  ]
+}

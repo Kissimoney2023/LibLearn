@@ -1,0 +1,145 @@
+{
+  "grade": 9,
+  "subjectId": "general-science",
+  "curriculumVersionId": "liblearn-v1",
+  "provenance": "liblearn",
+  "sourceId": null,
+  "units": [
+    {
+      "id": "g9-sci-u-matter",
+      "name": "Classifying Matter",
+      "summary": "Elements, compounds and mixtures, and how they differ.",
+      "order": 1
+    }
+  ],
+  "topics": [
+    {
+      "id": "g9-sci-matter",
+      "unitId": "g9-sci-u-matter",
+      "name": "Elements, Compounds and Mixtures",
+      "summary": "Three kinds of substance, and how to tell them apart.",
+      "order": 1
+    }
+  ],
+  "lessons": [
+    {
+      "id": "g9-sci-matter-l1",
+      "topicId": "g9-sci-matter",
+      "title": "Elements, Compounds and Mixtures",
+      "estimatedMinutes": 14,
+      "order": 1,
+      "objectives": [
+        {
+          "id": "o1",
+          "text": "Define element, compound and mixture."
+        },
+        {
+          "id": "o2",
+          "text": "Classify a substance into one of the three."
+        },
+        {
+          "id": "o3",
+          "text": "Explain why a compound differs from a mixture of the same elements."
+        }
+      ],
+      "keyTerms": [
+        {
+          "term": "Element",
+          "definition": "A substance made of only one kind of atom."
+        },
+        {
+          "term": "Compound",
+          "definition": "Two or more elements chemically joined in fixed proportions."
+        },
+        {
+          "term": "Mixture",
+          "definition": "Substances together but not chemically joined."
+        }
+      ],
+      "sections": [
+        {
+          "heading": "What you will learn",
+          "body": "Everything around you is one of three kinds of substance. Telling them apart is the foundation of chemistry, and the compound-versus-mixture distinction is the one that does the most work later."
+        },
+        {
+          "heading": "The three kinds",
+          "body": "ELEMENT — made of only ONE kind of atom. It cannot be broken into anything simpler by chemical means.\n\n    oxygen, iron, carbon, gold\n\nCOMPOUND — two or more elements CHEMICALLY JOINED, always in the same proportions.\n\n    water (H₂O) — hydrogen and oxygen, always 2 to 1\n    salt (NaCl) — sodium and chlorine, always 1 to 1\n\nMIXTURE — substances together but NOT chemically joined. The proportions can be anything.\n\n    air, sea water, soil, rice mixed with beans"
+        },
+        {
+          "heading": "Compound versus mixture",
+          "body": "This is the distinction that matters, so take it slowly. There are three differences.\n\n**1. Are they joined?**\nIn a compound the atoms are chemically bonded. In a mixture they are only sitting together.\n\n**2. Fixed proportions?**\nWater is ALWAYS 2 hydrogen to 1 oxygen. Never 3 to 1. A mixture has no fixed recipe — tea can be weak or strong and is still tea.\n\n**3. Can you separate it easily?**\nA mixture can be separated physically — filtering, evaporating, picking out by hand. A compound needs a chemical reaction.\n\nAnd the consequence that surprises people: **a compound has completely different properties from the elements in it.**",
+          "example": "Sodium, chlorine, and salt.\n\nSODIUM on its own is a soft metal that reacts violently with water.\nCHLORINE on its own is a poisonous green gas.\n\nJoin them chemically and you get SODIUM CHLORIDE — ordinary table salt, which you eat every day.\n\nA dangerous metal plus a poisonous gas makes something safe and necessary. That is not a mixture behaving like its parts; it is a new substance.\n\nNow compare with a MIXTURE. Mix iron filings with sulfur powder. It still looks like iron filings and sulfur, and a magnet pulls the iron straight back out — because nothing joined.\n\nHeat that same mixture, and the elements react to form iron sulfide. Now the magnet does nothing. A compound has formed, and the properties changed."
+        },
+        {
+          "heading": "Classifying quickly",
+          "body": "Ask in this order:\n\n1. Is it one kind of atom only? → ELEMENT\n2. Are different elements chemically joined in fixed proportions? → COMPOUND\n3. Are different substances just together, separable physically? → MIXTURE\n\nA warning: a chemical FORMULA tells you it is a compound, not a mixture. H₂O is a compound. \"Salt water\" has no single formula — it is salt (a compound) mixed with water (a compound), so the whole thing is a mixture."
+        },
+        {
+          "heading": "Try it yourself",
+          "body": "Element, compound or mixture?\n1. Copper\n2. Carbon dioxide (CO₂)\n3. Sea water\n4. Air\n5. Sugar (C₁₂H₂₂O₁₁)\n\nThen: explain why salt is safe to eat although sodium and chlorine are both dangerous.\nAnd: how could you separate salt from sea water? Does that tell you it is a mixture?"
+        },
+        {
+          "heading": "Summary",
+          "body": "• Element: one kind of atom.\n• Compound: elements chemically joined, fixed proportions, new properties.\n• Mixture: substances together, any proportions, physically separable.\n• A compound behaves nothing like the elements it contains.\n• A formula means compound; no single formula usually means mixture."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "id": "q9-mat-1",
+      "topicId": "g9-sci-matter",
+      "question": "Which of these is a compound?",
+      "options": [
+        "Oxygen",
+        "Air",
+        "Water",
+        "Iron"
+      ],
+      "correctAnswer": 2,
+      "explanation": "Water (H₂O) is hydrogen and oxygen chemically joined in fixed proportions — always 2 to 1. Oxygen and iron are elements, one kind of atom each. Air is a mixture of gases that are not chemically joined.",
+      "difficulty": "foundation"
+    },
+    {
+      "id": "q9-mat-2",
+      "topicId": "g9-sci-matter",
+      "question": "Sodium reacts violently with water and chlorine is a poisonous gas, yet sodium chloride is safe to eat. Why?",
+      "options": [
+        "The dangerous parts are removed during the reaction",
+        "A compound is a new substance with its own properties, not a mixture of its elements",
+        "Salt contains only a tiny amount of each",
+        "Sodium and chlorine are not really dangerous"
+      ],
+      "correctAnswer": 1,
+      "explanation": "When elements bond chemically they form a NEW substance whose properties need not resemble theirs at all. Nothing is removed and no element is present in its free form. This is the clearest difference from a mixture, where each part keeps its own behaviour.",
+      "difficulty": "challenge"
+    },
+    {
+      "id": "q9-mat-3",
+      "topicId": "g9-sci-matter",
+      "question": "Which is the best evidence that sea water is a MIXTURE rather than a compound?",
+      "options": [
+        "It tastes salty",
+        "The salt can be separated out by evaporating the water",
+        "It is a liquid",
+        "It contains more than one element"
+      ],
+      "correctAnswer": 1,
+      "explanation": "A mixture can be separated by physical means such as evaporation; a compound needs a chemical reaction. Containing several elements is not enough on its own — water itself contains two and is a compound.",
+      "difficulty": "core"
+    }
+  ],
+  "quizzes": [
+    {
+      "id": "quiz-g9-matter",
+      "lessonId": "g9-sci-matter-l1",
+      "topicId": "g9-sci-matter",
+      "title": "Elements and Compounds Check",
+      "questionIds": [
+        "q9-mat-1",
+        "q9-mat-2",
+        "q9-mat-3"
+      ]
+    }
+  ]
+}

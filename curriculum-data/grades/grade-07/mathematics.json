@@ -1,0 +1,145 @@
+{
+  "grade": 7,
+  "subjectId": "mathematics",
+  "curriculumVersionId": "liblearn-v1",
+  "provenance": "liblearn",
+  "sourceId": null,
+  "units": [
+    {
+      "id": "g7-math-u-integers",
+      "name": "Integers",
+      "summary": "Positive and negative whole numbers, and how to calculate with them.",
+      "order": 1
+    }
+  ],
+  "topics": [
+    {
+      "id": "g7-math-negatives",
+      "unitId": "g7-math-u-integers",
+      "name": "Negative Numbers",
+      "summary": "Numbers below zero, and how adding and subtracting works with them.",
+      "order": 1
+    }
+  ],
+  "lessons": [
+    {
+      "id": "g7-math-negatives-l1",
+      "topicId": "g7-math-negatives",
+      "title": "Adding and Subtracting Negative Numbers",
+      "estimatedMinutes": 15,
+      "order": 1,
+      "objectives": [
+        {
+          "id": "o1",
+          "text": "Place positive and negative numbers on a number line."
+        },
+        {
+          "id": "o2",
+          "text": "Add and subtract with negative numbers."
+        },
+        {
+          "id": "o3",
+          "text": "Explain why subtracting a negative gives a bigger answer."
+        }
+      ],
+      "keyTerms": [
+        {
+          "term": "Integer",
+          "definition": "Any whole number, positive, negative or zero."
+        },
+        {
+          "term": "Negative number",
+          "definition": "A number less than zero, written with a minus sign."
+        },
+        {
+          "term": "Number line",
+          "definition": "A line with numbers in order, negatives to the left of zero."
+        }
+      ],
+      "sections": [
+        {
+          "heading": "What you will learn",
+          "body": "Until now every number counted something you could hold. Negative numbers do not, so counting objects will not help you check your answer. Instead you will use a number line — a picture that keeps working when the objects run out."
+        },
+        {
+          "heading": "The number line",
+          "body": "Draw a line with zero in the middle. Positives go right, negatives go left:\n\n    −5  −4  −3  −2  −1   0   1   2   3   4   5\n     ←──────────────────  │  ──────────────────→\n\nTwo rules that come straight from the picture:\n\n    ADDING moves you RIGHT.\n    SUBTRACTING moves you LEFT.\n\nThat is all. Every question below is just deciding where to start and which way to walk."
+        },
+        {
+          "heading": "Adding and subtracting",
+          "body": "Work out −3 + 5.\n\n    Start at −3. Add 5, so move 5 steps RIGHT:\n    −3 → −2 → −1 → 0 → 1 → 2\n\n    So −3 + 5 = 2\n\nNow 2 − 6.\n\n    Start at 2. Subtract 6, so move 6 steps LEFT:\n    2 → 1 → 0 → −1 → −2 → −3 → −4\n\n    So 2 − 6 = −4\n\nNotice you can subtract a bigger number from a smaller one now. Before Grade 7 that question had no answer. It has one — it is just below zero."
+        },
+        {
+          "heading": "Subtracting a negative",
+          "body": "This is the part that confuses people, so here it is slowly.\n\n    5 − (−3) = ?\n\nSubtracting means \"move left\". But the thing you are moving is itself negative, which reverses the direction. Two reversals cancel, so you move RIGHT.\n\n    5 − (−3) = 5 + 3 = 8\n\nThe rule: **subtracting a negative is the same as adding a positive.**\n\nIf that feels like a trick, try it in words. \"Take away a debt of 3\" leaves you better off by 3. Removing something bad is the same as gaining something good.\n\nTwo minus signs next to each other become a plus:\n\n    7 − (−2) = 7 + 2 = 9\n    −4 − (−6) = −4 + 6 = 2",
+          "example": "Temperature, worked through.\n\nAt night the temperature is −2°C. By midday it has risen 9 degrees. What is it at midday?\n\n    Start at −2, rise means add:\n    −2 + 9 = 7\n\n    Midday is 7°C.\n\nNow the harder version. The temperature is 3°C. It falls to −4°C. By how many degrees did it fall?\n\nThe fall is the DIFFERENCE between the two:\n\n    3 − (−4) = 3 + 4 = 7\n\n    It fell by 7 degrees.\n\nCheck it on the line: from 3 down to 0 is 3 steps, then 0 down to −4 is 4 more. 3 + 4 = 7 ✓\n\nThis is a good habit — when the rule feels strange, count the steps on the line and confirm the rule gave the same answer."
+        },
+        {
+          "heading": "Try it yourself",
+          "body": "1. −7 + 4\n2. 3 − 9\n3. 6 − (−5)\n4. −2 − (−8)\n5. A well’s water level is 2 m below ground, written −2. It drops another 3 m. What is the new level?\n6. The temperature rises from −5°C to 4°C. By how much did it rise? (Careful — it is not 1.)"
+        },
+        {
+          "heading": "Summary",
+          "body": "• Negatives sit left of zero on the number line.\n• Adding moves right; subtracting moves left.\n• You can subtract a bigger number from a smaller one; the answer is negative.\n• Subtracting a negative is adding a positive: 5 − (−3) = 8.\n• When unsure, count steps on the line and check the rule agrees."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "id": "q7-neg-1",
+      "topicId": "g7-math-negatives",
+      "question": "What is −3 + 5?",
+      "options": [
+        "−8",
+        "2",
+        "−2",
+        "8"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Start at −3 on the number line and move 5 steps right, because adding moves right: −3 → −2 → −1 → 0 → 1 → 2. The answer is 2. Choosing −2 means you moved the right distance but kept the wrong sign.",
+      "difficulty": "foundation"
+    },
+    {
+      "id": "q7-neg-2",
+      "topicId": "g7-math-negatives",
+      "question": "What is 6 − (−5)?",
+      "options": [
+        "1",
+        "11",
+        "−11",
+        "−1"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Subtracting a negative is the same as adding a positive, so 6 − (−5) = 6 + 5 = 11. If you answered 1 you treated it as 6 − 5, ignoring one of the minus signs. Two minus signs next to each other become a plus.",
+      "difficulty": "core"
+    },
+    {
+      "id": "q7-neg-3",
+      "topicId": "g7-math-negatives",
+      "question": "The temperature rises from −5°C to 4°C. By how many degrees did it rise?",
+      "options": [
+        "1",
+        "9",
+        "−1",
+        "20"
+      ],
+      "correctAnswer": 1,
+      "explanation": "The rise is the difference: 4 − (−5) = 4 + 5 = 9 degrees. Count it on the line to check — from −5 up to 0 is 5 steps, then 0 up to 4 is 4 more, so 9 in total. Answering 1 comes from doing 4 − 5 and losing a sign.",
+      "difficulty": "challenge"
+    }
+  ],
+  "quizzes": [
+    {
+      "id": "quiz-g7-negatives",
+      "lessonId": "g7-math-negatives-l1",
+      "topicId": "g7-math-negatives",
+      "title": "Negative Numbers Check",
+      "questionIds": [
+        "q7-neg-1",
+        "q7-neg-2",
+        "q7-neg-3"
+      ]
+    }
+  ]
+}

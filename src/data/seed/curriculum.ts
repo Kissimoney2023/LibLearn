@@ -1,6 +1,10 @@
 import type {Lesson, Topic, Unit} from '../../types/domain';
 import {GRADE4_LESSONS, GRADE4_TOPICS, GRADE4_UNITS} from './grade4';
+import {GRADE5_LESSONS, GRADE5_TOPICS, GRADE5_UNITS} from './grade5';
+import {GRADE7_LESSONS, GRADE7_TOPICS, GRADE7_UNITS} from './grade7';
+import {GRADE9_LESSONS, GRADE9_TOPICS, GRADE9_UNITS} from './grade9';
 import {GRADE11_LESSONS, GRADE11_TOPICS, GRADE11_UNITS} from './grade11';
+import {GRADE12_LESSONS, GRADE12_TOPICS, GRADE12_UNITS} from './grade12';
 
 /**
  * LIBLEARN CURRICULUM SEED.
@@ -296,10 +300,33 @@ const BASE_LESSONS: Lesson[] = [
  * under no unit, which the UI handles explicitly (see `unfiledTopics`) rather
  * than hiding them. Content mid-import must stay reachable.
  */
-export const UNITS: Unit[] = [...GRADE4_UNITS, ...GRADE11_UNITS];
+export const UNITS: Unit[] = [
+  ...GRADE4_UNITS,
+  ...GRADE5_UNITS,
+  ...GRADE7_UNITS,
+  ...GRADE9_UNITS,
+  ...GRADE11_UNITS,
+  ...GRADE12_UNITS,
+];
 
-export const TOPICS: Topic[] = [...BASE_TOPICS, ...GRADE4_TOPICS, ...GRADE11_TOPICS];
-export const LESSONS: Lesson[] = [...BASE_LESSONS, ...GRADE4_LESSONS, ...GRADE11_LESSONS];
+export const TOPICS: Topic[] = [
+  ...BASE_TOPICS,
+  ...GRADE4_TOPICS,
+  ...GRADE5_TOPICS,
+  ...GRADE7_TOPICS,
+  ...GRADE9_TOPICS,
+  ...GRADE11_TOPICS,
+  ...GRADE12_TOPICS,
+];
+export const LESSONS: Lesson[] = [
+  ...BASE_LESSONS,
+  ...GRADE4_LESSONS,
+  ...GRADE5_LESSONS,
+  ...GRADE7_LESSONS,
+  ...GRADE9_LESSONS,
+  ...GRADE11_LESSONS,
+  ...GRADE12_LESSONS,
+];
 
 export const topicsForSubjectGrade = (subjectId: string, grade: number): Topic[] =>
   TOPICS.filter((t) => t.subjectId === subjectId && t.grade === grade).sort(
