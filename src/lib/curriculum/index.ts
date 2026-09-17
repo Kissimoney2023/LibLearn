@@ -10,6 +10,7 @@ import type {
 import {isSupabaseConfigured} from '../supabase';
 import {bundledRepository} from './bundled';
 import {supabaseRepository} from './supabaseRepo';
+import {resolveAvailableGrades} from './availability';
 import {createBreaker, DATABASE_COOLDOWN_MS} from './breaker';
 import {emptyCurriculum, type GradeCurriculum} from './types';
 
@@ -48,6 +49,9 @@ const databaseBreaker = createBreaker(DATABASE_COOLDOWN_MS);
 
 /** Lets the UI say the database is unreachable rather than merely slow. */
 export const databaseUnreachable = (): boolean => databaseBreaker.isOpen();
+
+/** Cached grade availability; cleared by invalidate() alongside the corpus. */
+let availableGradesCache: GradeLevel[] | null = null;
 
 /* -------------------------------------------------- loaded corpus ------- */
 
@@ -170,10 +174,44 @@ export async function loadGrade(
   return result;
 }
 
+/**
+ * Which grades have lessons to study.
+ *
+ * The UNION of the database and the bundle, deliberately. `loadGrade` falls
+ * back to bundled content when the database has nothing for a grade, so a
+ * grade in the bundle but not the database still opens and still teaches -
+ * marking it "Coming soon" would be a lie the student can disprove in one tap.
+ * Taking the union also means this can only ever offer more grades than the
+ * old bundled-only check, never fewer.
+ *
+ * Never throws. A grade picker that fails closed would tell a student their
+ * grade does not exist because of a dropped connection.
+ */
+export async function loadAvailableGrades(
+  opts: {force?: boolean} = {},
+): Promise<GradeLevel[]> {
+  const bundled = await bundledRepository.availableGrades();
+
+  if (!opts.force && availableGradesCache) return availableGradesCache;
+
+  // Breaker open: skip the call we expect to fail and show what we can.
+  if (!isSupabaseConfigured || databaseBreaker.isOpen()) return bundled;
+
+  const merged = await resolveAvailableGrades(
+    bundled,
+    () => supabaseRepository.availableGrades(),
+    databaseBreaker,
+  );
+  if (merged !== bundled) availableGradesCache = merged;
+  return merged;
+}
+
+
 /** Drop cached curriculum, e.g. after content is edited. */
 export function invalidate(grade?: GradeLevel): void {
   if (grade === undefined) cache.clear();
   else cache.delete(grade);
+  availableGradesCache = null;
   databaseBreaker.reset(); // an explicit refresh should retry immediately
   notifyCorpus();
 }

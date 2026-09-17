@@ -45,6 +45,19 @@ export interface CurriculumRepository {
   /** Name shown in diagnostics so it is obvious which backend answered. */
   readonly name: string;
   load(grade: GradeLevel): Promise<GradeCurriculum>;
+
+  /**
+   * Which grades have something to study, in one request.
+   *
+   * The grade picker sits above the per-grade loader and needs to know which
+   * of the nine cards are worth opening. It used to answer that from the
+   * bundled corpus, which quietly broke the promise the Supabase backend is
+   * built on: curriculum loaded into the database did not appear until
+   * somebody rebuilt and redeployed the app. Loading all nine grades to find
+   * out would cost nine requests to render one list, so backends answer this
+   * cheaply instead.
+   */
+  availableGrades(): Promise<GradeLevel[]>;
 }
 
 /** Empty curriculum for a grade, so callers never handle undefined. */

@@ -18,6 +18,17 @@ import type {CurriculumRepository, GradeCurriculum} from './types';
 export const bundledRepository: CurriculumRepository = {
   name: 'bundled',
 
+  async availableGrades(): Promise<GradeLevel[]> {
+    // A grade with topics but no lessons is still a dead end, so lessons are
+    // what count as "ready", matching what the picker tells the student.
+    const withLessons = new Set(LESSONS.map((l) => l.topicId));
+    return [
+      ...new Set(
+        TOPICS.filter((t) => withLessons.has(t.id)).map((t) => t.grade),
+      ),
+    ].sort((a, b) => a - b);
+  },
+
   async load(grade: GradeLevel): Promise<GradeCurriculum> {
     const topics = TOPICS.filter((t) => t.grade === grade);
     const topicIds = new Set(topics.map((t) => t.id));

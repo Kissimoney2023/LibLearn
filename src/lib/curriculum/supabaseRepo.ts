@@ -10,6 +10,7 @@ import type {
   Topic,
   Unit,
 } from '../../types/domain';
+import {GRADE_LEVELS} from '../../types/domain';
 import {supabase} from '../supabase';
 import {toError} from '../errors';
 import type {CurriculumRepository, GradeCurriculum} from './types';
@@ -180,6 +181,26 @@ const toSubject = (r: SubjectRow, grades: GradeLevel[]): Subject => ({
 
 export const supabaseRepository: CurriculumRepository = {
   name: 'supabase',
+
+  async availableGrades(): Promise<GradeLevel[]> {
+    if (!supabase) throw new Error('Supabase is not configured.');
+
+    // One column of one table, published rows only. PostgREST has no DISTINCT,
+    // so the duplicates are removed here - a few dozen integers is far cheaper
+    // than the nine full grade loads this replaces.
+    const res = await supabase
+      .from('lessons')
+      .select('grade')
+      .eq('review_status', 'published');
+
+    if (res.error) throw toError(res.error);
+
+    const grades = (res.data as {grade: number}[] | null ?? [])
+      .map((r) => r.grade)
+      .filter((g): g is GradeLevel => GRADE_LEVELS.includes(g as GradeLevel));
+
+    return [...new Set(grades)].sort((a, b) => a - b);
+  },
 
   async load(grade: GradeLevel): Promise<GradeCurriculum> {
     if (!supabase) throw new Error('Supabase is not configured.');
