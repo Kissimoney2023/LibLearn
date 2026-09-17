@@ -1,0 +1,273 @@
+{
+  "grade": 3,
+  "subjectId": "mathematics",
+  "curriculumVersionId": "liblearn-v1",
+  "provenance": "liblearn",
+  "sourceId": null,
+  "units": [
+    {
+      "id": "g3-math-u-multiply",
+      "name": "Multiplication",
+      "summary": "Counting equal groups quickly instead of adding again and again.",
+      "order": 1
+    },
+    {
+      "id": "g3-math-u-fractions",
+      "name": "Halves, Thirds and Quarters",
+      "summary": "Splitting one whole thing into equal parts.",
+      "order": 2
+    }
+  ],
+  "topics": [
+    {
+      "id": "g3-math-multiplication",
+      "unitId": "g3-math-u-multiply",
+      "name": "Equal Groups",
+      "summary": "What 3 x 4 really means, and why it is not 3 + 4.",
+      "order": 1
+    },
+    {
+      "id": "g3-math-fractions",
+      "unitId": "g3-math-u-fractions",
+      "name": "Equal Parts",
+      "summary": "Why a half is only a half when both pieces are the same size.",
+      "order": 1
+    }
+  ],
+  "lessons": [
+    {
+      "id": "g3-math-multiplication-l1",
+      "topicId": "g3-math-multiplication",
+      "title": "Equal Groups",
+      "estimatedMinutes": 12,
+      "order": 1,
+      "objectives": [
+        {
+          "id": "o1",
+          "text": "Say what a multiplication like 4 x 5 means."
+        },
+        {
+          "id": "o2",
+          "text": "Write a multiplication for a picture of equal groups."
+        },
+        {
+          "id": "o3",
+          "text": "Tell a multiplication problem from an addition problem."
+        }
+      ],
+      "keyTerms": [
+        {
+          "term": "Equal groups",
+          "definition": "Groups that all have the same number of things in them."
+        },
+        {
+          "term": "Multiply",
+          "definition": "To find how many altogether when you have equal groups."
+        },
+        {
+          "term": "Times",
+          "definition": "The word we say for the x sign. 4 x 5 is read \"four times five\"."
+        }
+      ],
+      "sections": [
+        {
+          "heading": "What you will learn",
+          "body": "Multiplication is about EQUAL GROUPS.\n\nYou will learn what 4 x 5 really means.\n\nYou will learn how to tell when a problem needs multiplying."
+        },
+        {
+          "heading": "Equal groups",
+          "body": "Look at these four baskets. Each basket has 5 mangoes.\n\n    [5]  [5]  [5]  [5]\n\nHow many mangoes altogether?\n\nYou could add:  5 + 5 + 5 + 5 = 20\n\nThat works. But writing 5 four times is slow. And with twenty baskets it would be very slow.\n\nSo we write it a shorter way:\n\n    4 x 5 = 20\n\nRead it as \"four groups of five\".\n\nThe 4 is how many groups. The 5 is how many in each group."
+        },
+        {
+          "heading": "The groups must be EQUAL",
+          "body": "This only works if every group is the same size.\n\nLook at these baskets:\n\n    [5]  [3]  [5]  [6]\n\nYou cannot write a multiplication for this. The groups are not equal.\n\nHere you have to add: 5 + 3 + 5 + 6 = 19.\n\nMultiplication is a shortcut, but it is only a shortcut for EQUAL groups. If the groups are different sizes, the shortcut does not work.",
+          "example": "A word problem.\n\n\"A farmer plants 6 rows of maize. Each row has 8 plants. How many plants altogether?\"\n\nAsk yourself: are there equal groups?\n\nYes. There are 6 rows, and every row has the same number: 8.\n\nSo it is multiplication:\n\n    6 x 8 = 48\n\nThere are 48 plants.\n\nNow a different problem.\n\n\"A farmer plants 6 plants on Monday and 8 plants on Tuesday. How many altogether?\"\n\nAre these equal groups? No. One day is 6, the other is 8. They are just two amounts.\n\nSo this is addition:\n\n    6 + 8 = 14\n\nSame two numbers. Completely different answer. The words tell you which one to use."
+        },
+        {
+          "heading": "Turning it around",
+          "body": "Here is something useful.\n\n    3 x 4 = 12\n    4 x 3 = 12\n\nThe answer is the same both ways.\n\nWhy? Picture it.\n\n    3 rows of 4:        4 rows of 3:\n      * * * *              * * *\n      * * * *              * * *\n      * * * *              * * *\n                           * * *\n\nBoth have 12 stars. It is the same stars, just turned.\n\nThis helps you. If you know 2 x 9, then you also know 9 x 2 — and 2 x 9 is much easier to work out."
+        },
+        {
+          "heading": "Try it yourself",
+          "body": "1. There are 5 bags. Each bag has 3 oranges. Write the multiplication and the answer.\n\n2. What does 7 x 2 mean? Say it in words.\n\n3. A shop has 4 shelves. Each shelf has 6 tins. How many tins?\n\n4. Musu has 4 sweets. Her brother has 7 sweets. Is this multiplication or addition? Why?\n\n5. If 8 x 3 = 24, what is 3 x 8? How do you know without working it out?"
+        },
+        {
+          "heading": "Summary",
+          "body": "• Multiplication means equal groups.\n• 4 x 5 means four groups of five.\n• The groups must all be the same size, or you must add instead.\n• Read the words carefully: equal groups means multiply, two different amounts means add.\n• You can turn a multiplication around and the answer stays the same."
+        }
+      ]
+    },
+    {
+      "id": "g3-math-fractions-l1",
+      "topicId": "g3-math-fractions",
+      "title": "Equal Parts",
+      "estimatedMinutes": 12,
+      "order": 1,
+      "objectives": [
+        {
+          "id": "o1",
+          "text": "Say why parts must be equal to be halves, thirds or quarters."
+        },
+        {
+          "id": "o2",
+          "text": "Name the fraction when a whole is split into equal parts."
+        },
+        {
+          "id": "o3",
+          "text": "Say which is bigger, a half or a quarter, and why."
+        }
+      ],
+      "keyTerms": [
+        {
+          "term": "Whole",
+          "definition": "One complete thing before you cut it up."
+        },
+        {
+          "term": "Equal parts",
+          "definition": "Pieces that are exactly the same size as each other."
+        },
+        {
+          "term": "Half",
+          "definition": "One of two equal parts of a whole."
+        }
+      ],
+      "sections": [
+        {
+          "heading": "What you will learn",
+          "body": "A fraction is a part of one whole thing.\n\nYou will learn what halves, thirds and quarters are.\n\nMost of all you will learn one word: EQUAL."
+        },
+        {
+          "heading": "Equal is the whole idea",
+          "body": "Two children share one loaf of bread.\n\nOne child cuts it like this:\n\n    |=======|==|\n      big     small\n\nIs that fair? No.\n\nAre those two pieces halves? NO.\n\nCutting something into two pieces does not make halves. The two pieces must be the SAME SIZE.\n\n    |=====|=====|\n      same   same\n\nNow they are halves.\n\nThis is the mistake almost everyone makes at first. Remember it: two pieces is not enough. Two EQUAL pieces."
+        },
+        {
+          "heading": "Naming the parts",
+          "body": "The name depends on how many equal parts you make.\n\n    Cut a whole into 2 equal parts → each part is a HALF\n    Cut a whole into 3 equal parts → each part is a THIRD\n    Cut a whole into 4 equal parts → each part is a QUARTER\n\nWe write them like this:\n\n    one half     = 1/2\n    one third    = 1/3\n    one quarter  = 1/4\n\nThe bottom number tells you how many equal parts the whole was cut into.\n\nThe top number tells you how many of those parts you have.\n\nSo 3/4 means: the whole was cut into 4 equal parts, and you have 3 of them.",
+          "example": "Sharing a cassava.\n\nThree children share one cassava equally.\n\nHow many equal parts? Three.\n\nSo each child gets one third. We write it 1/3.\n\nNow four children share one cassava equally.\n\nHow many equal parts? Four.\n\nEach child gets one quarter, 1/4.\n\nHere is the important question. Which child gets more — one of the three, or one of the four?\n\nThe same cassava was shared among MORE children the second time. So each piece must be smaller.\n\n1/3 is bigger than 1/4.\n\nMore people sharing, smaller pieces. That is true every time."
+        },
+        {
+          "heading": "More parts means smaller parts",
+          "body": "This surprises people, so look at it carefully.\n\n4 is a bigger number than 2.\n\nBut 1/4 is SMALLER than 1/2.\n\nWhy? Because the bottom number is not counting how much you have. It is counting how many ways the whole was split.\n\nSplit a mango between 2 people — big pieces.\n\nSplit the same mango between 4 people — small pieces.\n\nSplit it between 8 people — very small pieces.\n\nThe bigger the bottom number, the more people are sharing, and the smaller each share becomes."
+        },
+        {
+          "heading": "Try it yourself",
+          "body": "1. A cake is cut into 2 pieces, but one piece is much bigger. Are these halves? Why not?\n\n2. A bread is cut into 4 equal parts. What is each part called?\n\n3. Write \"one third\" using numbers.\n\n4. What does 3/4 mean? Say it in words.\n\n5. Which is bigger, 1/2 or 1/4? Explain why, using sharing."
+        },
+        {
+          "heading": "Summary",
+          "body": "• A fraction is a part of one whole.\n• The parts must be EQUAL, or they have no fraction name.\n• 2 equal parts are halves, 3 are thirds, 4 are quarters.\n• The bottom number says how many equal parts the whole was cut into.\n• The more parts, the smaller each part is."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "id": "q3-mul-1",
+      "topicId": "g3-math-multiplication",
+      "question": "There are 5 bags. Each bag has 3 oranges. How many oranges altogether?",
+      "options": [
+        "8",
+        "15",
+        "53",
+        "2"
+      ],
+      "correctAnswer": 1,
+      "explanation": "These are equal groups — every bag has the same number. So multiply: 5 groups of 3 is 5 x 3 = 15. If you chose 8, you added 5 + 3 instead. Adding would only be right if the bags held different amounts.",
+      "difficulty": "foundation"
+    },
+    {
+      "id": "q3-mul-2",
+      "topicId": "g3-math-multiplication",
+      "question": "A farmer plants 6 rows of maize with 8 plants in each row. How many plants?",
+      "options": [
+        "14",
+        "48",
+        "68",
+        "2"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Every row has the same number, so these are equal groups: 6 x 8 = 48. If you chose 14, you added 6 + 8. Look for the words \"each row\" — they tell you the groups are equal, so you multiply.",
+      "difficulty": "core"
+    },
+    {
+      "id": "q3-mul-3",
+      "topicId": "g3-math-multiplication",
+      "question": "If 8 x 3 = 24, what is 3 x 8?",
+      "options": [
+        "11",
+        "24",
+        "38",
+        "You must work it out again"
+      ],
+      "correctAnswer": 1,
+      "explanation": "It is 24 as well. Turning a multiplication around does not change the answer — 3 rows of 8 has exactly the same number of things as 8 rows of 3, just turned. This is worth remembering, because one way round is often easier to work out.",
+      "difficulty": "core"
+    },
+    {
+      "id": "q3-fr-1",
+      "topicId": "g3-math-fractions",
+      "question": "A bread is cut into 2 pieces, but one piece is much bigger. Are these halves?",
+      "options": [
+        "Yes, because there are 2 pieces",
+        "No, because halves must be equal in size",
+        "Yes, because all cuts make halves",
+        "Only the big piece is a half"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Cutting into two pieces is not enough. For them to be halves, the two pieces must be exactly the SAME SIZE. This is the mistake nearly everyone makes at first, so it is worth saying to yourself every time: two EQUAL pieces.",
+      "difficulty": "foundation"
+    },
+    {
+      "id": "q3-fr-2",
+      "topicId": "g3-math-fractions",
+      "question": "A cassava is cut into 4 equal parts. What is each part called?",
+      "options": [
+        "A half",
+        "A third",
+        "A quarter",
+        "A whole"
+      ],
+      "correctAnswer": 2,
+      "explanation": "Four equal parts means each one is a quarter, written 1/4. Two equal parts would be halves and three would be thirds. The number of equal parts gives the name.",
+      "difficulty": "foundation"
+    },
+    {
+      "id": "q3-fr-3",
+      "topicId": "g3-math-fractions",
+      "question": "Which is bigger, 1/2 or 1/4?",
+      "options": [
+        "1/4, because 4 is bigger than 2",
+        "1/2",
+        "They are the same",
+        "You cannot compare them"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Think about sharing one mango. Between 2 people, the pieces are big. Between 4 people, the same mango gives smaller pieces. So 1/2 is bigger. The bottom number counts how many ways the whole was split, not how much you get — more parts means smaller parts.",
+      "difficulty": "core"
+    }
+  ],
+  "quizzes": [
+    {
+      "id": "quiz-g3-multiplication",
+      "lessonId": "g3-math-multiplication-l1",
+      "topicId": "g3-math-multiplication",
+      "title": "Equal Groups Check",
+      "questionIds": [
+        "q3-mul-1",
+        "q3-mul-2",
+        "q3-mul-3"
+      ]
+    },
+    {
+      "id": "quiz-g3-fractions",
+      "lessonId": "g3-math-fractions-l1",
+      "topicId": "g3-math-fractions",
+      "title": "Equal Parts Check",
+      "questionIds": [
+        "q3-fr-1",
+        "q3-fr-2",
+        "q3-fr-3"
+      ]
+    }
+  ]
+}

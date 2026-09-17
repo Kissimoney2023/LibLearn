@@ -1,0 +1,130 @@
+{
+  "grade": 2,
+  "subjectId": "social-studies",
+  "curriculumVersionId": "liblearn-v1",
+  "provenance": "liblearn",
+  "sourceId": null,
+  "units": [
+    {
+      "id": "g2-soc-u-community",
+      "name": "My School and My Community",
+      "summary": "The people who help in a community, and the work they do.",
+      "order": 1
+    }
+  ],
+  "topics": [
+    {
+      "id": "g2-soc-helpers",
+      "unitId": "g2-soc-u-community",
+      "name": "People Who Help Us",
+      "summary": "The jobs people do that keep a community working.",
+      "order": 1
+    }
+  ],
+  "lessons": [
+    {
+      "id": "g2-soc-helpers-l1",
+      "topicId": "g2-soc-helpers",
+      "title": "People Who Help Us",
+      "estimatedMinutes": 10,
+      "order": 1,
+      "objectives": [
+        {
+          "id": "o1",
+          "text": "Name some jobs people do that help a community."
+        },
+        {
+          "id": "o2",
+          "text": "Say what would happen if one of those jobs was not done."
+        },
+        {
+          "id": "o3",
+          "text": "Say how people in a community depend on each other."
+        }
+      ],
+      "keyTerms": [
+        {
+          "term": "Community",
+          "definition": "All the people who live near each other in one place."
+        },
+        {
+          "term": "Job",
+          "definition": "The work a person does, often to earn money or to help others."
+        },
+        {
+          "term": "Depend on",
+          "definition": "To need someone else for something you cannot do yourself."
+        }
+      ],
+      "sections": [
+        {
+          "heading": "What you will learn",
+          "body": "Many people do work that helps everyone.\n\nYou will learn about some of those jobs.\n\nYou will learn why they matter."
+        },
+        {
+          "heading": "Jobs that help everyone",
+          "body": "Think about the people around where you live.\n\n    A TEACHER helps children learn to read and count.\n\n    A NURSE helps people who are sick or hurt.\n\n    A FARMER grows the food that people eat.\n\n    A SHOPKEEPER sells things people need.\n\n    A DRIVER takes people and goods from place to place.\n\n    A BUILDER makes the houses people live in.\n\nNone of these people works only for themselves. Their work reaches other people too."
+        },
+        {
+          "heading": "What if the job was not done?",
+          "body": "This is the best way to see why a job matters. Take it away and look.\n\nIf no farmer grew food, the shopkeeper would have nothing to sell, and nobody would eat.\n\nIf no driver carried goods, the food would stay on the farm and rot.\n\nIf no teacher taught, children would not learn to read.\n\nIf no nurse worked, a sick person would have nowhere to go.\n\nEvery job is holding something up. You notice it most when it stops.",
+          "example": "One loaf of bread.\n\nThink about bread on a table.\n\nA farmer grew the grain.\n\nA driver carried it to town.\n\nA baker turned it into bread.\n\nA shopkeeper sold it.\n\nSomeone in the family carried it home.\n\nFive people. One loaf of bread.\n\nNot one of them could have done it alone. The farmer cannot bake. The baker cannot grow grain. They each did one part, and together the bread reached the table."
+        },
+        {
+          "heading": "Depending on each other",
+          "body": "Nobody can do everything.\n\nThe nurse cannot also grow all her own food.\n\nThe farmer cannot also treat his own illness.\n\nSo the nurse depends on the farmer for food. The farmer depends on the nurse when he is sick.\n\nThat is what a community is: people who each do one thing well, and depend on each other for the rest."
+        },
+        {
+          "heading": "Try it yourself",
+          "body": "Think about where you live. Answer out loud.\n\n1. Name three people who do work that helps others.\n\n2. What does a nurse do?\n\n3. What would happen if nobody grew food?\n\n4. Who helps you learn?\n\n5. Name one job you would like to do when you are older. Who would it help?"
+        },
+        {
+          "heading": "Summary",
+          "body": "• Many people do work that helps the whole community.\n• Take a job away and you see what it was holding up.\n• Nobody can do everything alone.\n• People in a community depend on each other."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "id": "q2-hlp-1",
+      "topicId": "g2-soc-helpers",
+      "question": "Whose work grows the food that people eat?",
+      "options": [
+        "A driver",
+        "A farmer",
+        "A builder",
+        "A teacher"
+      ],
+      "correctAnswer": 1,
+      "explanation": "A farmer grows the food. The driver may carry it and the shopkeeper may sell it, but it starts with the farmer growing it.",
+      "difficulty": "foundation"
+    },
+    {
+      "id": "q2-hlp-2",
+      "topicId": "g2-soc-helpers",
+      "question": "What does it mean to say people in a community depend on each other?",
+      "options": [
+        "Everyone does exactly the same job",
+        "Nobody needs help from anyone",
+        "Each person does one thing well and needs others for the rest",
+        "Only some people are allowed to work"
+      ],
+      "correctAnswer": 2,
+      "explanation": "Nobody can do everything. A nurse cannot also grow all her own food, and a farmer cannot treat his own illness. Each does one thing well and relies on others for the rest. That is what a community is.",
+      "difficulty": "core"
+    }
+  ],
+  "quizzes": [
+    {
+      "id": "quiz-g2-helpers",
+      "lessonId": "g2-soc-helpers-l1",
+      "topicId": "g2-soc-helpers",
+      "title": "People Who Help Us Check",
+      "questionIds": [
+        "q2-hlp-1",
+        "q2-hlp-2"
+      ]
+    }
+  ]
+}

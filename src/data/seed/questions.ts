@@ -1,5 +1,6 @@
 import type {Question, Quiz} from '../../types/domain';
 import {GRADE4_QUESTIONS, GRADE4_QUIZZES} from './grade4Questions';
+import {LOWER_PRIMARY_QUESTIONS, LOWER_PRIMARY_QUIZZES} from './lowerPrimaryQuestions';
 import {GRADE11_QUESTIONS, GRADE11_QUIZZES} from './grade11Questions';
 import {OTHER_GRADE_QUESTIONS, OTHER_GRADE_QUIZZES} from './gradesQuestions';
 
@@ -242,12 +243,14 @@ const BASE_QUIZZES: Quiz[] = [
 
 export const QUESTIONS: Question[] = [
   ...BASE_QUESTIONS,
+  ...LOWER_PRIMARY_QUESTIONS,
   ...GRADE4_QUESTIONS,
   ...OTHER_GRADE_QUESTIONS,
   ...GRADE11_QUESTIONS,
 ];
 export const QUIZZES: Quiz[] = [
   ...BASE_QUIZZES,
+  ...LOWER_PRIMARY_QUIZZES,
   ...GRADE4_QUIZZES,
   ...OTHER_GRADE_QUIZZES,
   ...GRADE11_QUIZZES,

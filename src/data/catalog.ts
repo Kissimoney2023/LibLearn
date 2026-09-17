@@ -1,13 +1,13 @@
 import type {Achievement, ExamDefinition, Subject} from '../types/domain';
 
 export const SUBJECTS: Subject[] = [
-  {id: 'mathematics', name: 'Mathematics', icon: 'calculate', grades: [4, 5, 6, 7, 8, 9, 10, 11, 12]},
-  {id: 'english', name: 'English Language', icon: 'menu_book', grades: [4, 5, 6, 7, 8, 9, 10, 11, 12]},
-  {id: 'general-science', name: 'General Science', icon: 'science', grades: [4, 5, 6, 7, 8, 9]},
+  {id: 'mathematics', name: 'Mathematics', icon: 'calculate', grades: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]},
+  {id: 'english', name: 'English Language', icon: 'menu_book', grades: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]},
+  {id: 'general-science', name: 'General Science', icon: 'science', grades: [1, 2, 3, 4, 5, 6, 7, 8, 9]},
   {id: 'biology', name: 'Biology', icon: 'biotech', grades: [10, 11, 12]},
   {id: 'chemistry', name: 'Chemistry', icon: 'experiment', grades: [10, 11, 12]},
   {id: 'physics', name: 'Physics', icon: 'bolt', grades: [10, 11, 12]},
-  {id: 'social-studies', name: 'Social Studies', icon: 'public', grades: [4, 5, 6, 7, 8, 9]},
+  {id: 'social-studies', name: 'Social Studies', icon: 'public', grades: [1, 2, 3, 4, 5, 6, 7, 8, 9]},
   {id: 'civics', name: 'Civics', icon: 'gavel', grades: [7, 8, 9, 10, 11, 12]},
 ];
 

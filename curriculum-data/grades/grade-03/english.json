@@ -1,0 +1,145 @@
+{
+  "grade": 3,
+  "subjectId": "english",
+  "curriculumVersionId": "liblearn-v1",
+  "provenance": "liblearn",
+  "sourceId": null,
+  "units": [
+    {
+      "id": "g3-eng-u-wordjobs",
+      "name": "Naming Words and Doing Words",
+      "summary": "Nouns and verbs, and how to find them in a sentence.",
+      "order": 1
+    }
+  ],
+  "topics": [
+    {
+      "id": "g3-eng-nouns-verbs",
+      "unitId": "g3-eng-u-wordjobs",
+      "name": "Nouns and Verbs",
+      "summary": "Finding the naming word and the doing word in a sentence.",
+      "order": 1
+    }
+  ],
+  "lessons": [
+    {
+      "id": "g3-eng-nouns-verbs-l1",
+      "topicId": "g3-eng-nouns-verbs",
+      "title": "Nouns and Verbs",
+      "estimatedMinutes": 10,
+      "order": 1,
+      "objectives": [
+        {
+          "id": "o1",
+          "text": "Find the naming words in a sentence."
+        },
+        {
+          "id": "o2",
+          "text": "Find the doing word in a sentence."
+        },
+        {
+          "id": "o3",
+          "text": "Use a test to check whether a word is a noun or a verb."
+        }
+      ],
+      "keyTerms": [
+        {
+          "term": "Noun",
+          "definition": "A naming word. A person, a place, an animal or a thing."
+        },
+        {
+          "term": "Verb",
+          "definition": "A doing word. It tells what someone or something does."
+        },
+        {
+          "term": "Sentence",
+          "definition": "A group of words that tells a whole idea."
+        }
+      ],
+      "sections": [
+        {
+          "heading": "What you will learn",
+          "body": "Words do different jobs in a sentence.\n\nYou will learn about naming words and doing words.\n\nYou will learn a test for telling them apart."
+        },
+        {
+          "heading": "Naming words",
+          "body": "A NOUN is a naming word.\n\nIt names a person, a place, an animal or a thing.\n\n    person:  boy, teacher, mother, nurse\n    place:   school, market, river, village\n    animal:  goat, bird, fish, dog\n    thing:   cup, book, chair, mango\n\nHere is a test. Can you put \"a\" or \"the\" in front of it and does it still sound right?\n\n    the goat    ✓ works → goat is a noun\n    the run     ✗ does not work → run is not a noun\n\nThat test is not perfect, but for words like these it works well."
+        },
+        {
+          "heading": "Doing words",
+          "body": "A VERB is a doing word. It tells what someone or something DOES.\n\n    run, eat, sing, write, sleep, carry, laugh\n\nHere is a test. Can you put \"I\" in front of it?\n\n    I run     ✓ works → run is a verb\n    I sing    ✓ works → sing is a verb\n    I goat    ✗ does not work → goat is not a verb\n\nEvery sentence needs a verb. Without one, nothing is happening and the sentence is not finished.",
+          "example": "Finding both in a sentence.\n\n    The farmer carries a heavy basket.\n\nFirst find the naming words. Who or what is this about?\n\n    farmer  — a person → noun\n    basket  — a thing → noun\n\nNow find the doing word. What is happening?\n\n    carries — that is what the farmer does → verb\n\nSo: farmer and basket are nouns. Carries is the verb.\n\nTry another:\n\n    My sister sings in the market.\n\n    Nouns: sister, market\n    Verb: sings\n\nNotice \"heavy\" and \"my\" are neither. Not every word is a noun or a verb — those two do other jobs."
+        },
+        {
+          "heading": "Why this helps you",
+          "body": "This is not just naming things for the sake of it.\n\nWhen you write a sentence and it feels wrong, it is very often because the verb is missing.\n\n    The boy under the tree.        ← no verb. Not finished.\n    The boy sat under the tree.    ← verb added. Now it is a sentence.\n\nIf you can find the verb, you can check your own writing."
+        },
+        {
+          "heading": "Try it yourself",
+          "body": "For each sentence, name the nouns and the verb.\n\n1. The dog barked loudly.\n\n2. My mother cooks rice.\n\n3. The children walked to school.\n\n4. Is \"market\" a noun or a verb? Use the test.\n\n5. This is not a sentence: \"The big goat near the river.\" What is missing?"
+        },
+        {
+          "heading": "Summary",
+          "body": "• A noun is a naming word: person, place, animal or thing.\n• A verb is a doing word.\n• Test a noun by putting \"a\" or \"the\" in front.\n• Test a verb by putting \"I\" in front.\n• Every sentence needs a verb."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "id": "q3-nv-1",
+      "topicId": "g3-eng-nouns-verbs",
+      "question": "In \"The dog barked loudly\", which word is the verb?",
+      "options": [
+        "dog",
+        "barked",
+        "loudly",
+        "The"
+      ],
+      "correctAnswer": 1,
+      "explanation": "The verb is the doing word — what is happening. The dog barked, so \"barked\" is the verb. \"Dog\" is a noun, a naming word. \"Loudly\" tells you HOW it barked, which is a different job again.",
+      "difficulty": "foundation"
+    },
+    {
+      "id": "q3-nv-2",
+      "topicId": "g3-eng-nouns-verbs",
+      "question": "Is \"market\" a noun or a verb?",
+      "options": [
+        "A verb",
+        "A noun",
+        "Both",
+        "Neither"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Use the test. Can you say \"the market\"? Yes, that sounds right, so it is a noun — it names a place. Now try the verb test: \"I market\" does not sound right, so it is not a doing word.",
+      "difficulty": "foundation"
+    },
+    {
+      "id": "q3-nv-3",
+      "topicId": "g3-eng-nouns-verbs",
+      "question": "What is missing from this: \"The big goat near the river.\"?",
+      "options": [
+        "A noun",
+        "A verb",
+        "A capital letter",
+        "Nothing is missing"
+      ],
+      "correctAnswer": 1,
+      "explanation": "There are plenty of naming words — goat, river — but nothing is HAPPENING. The verb is missing, so the idea is not finished. Add one and it becomes a sentence: \"The big goat drank near the river.\"",
+      "difficulty": "core"
+    }
+  ],
+  "quizzes": [
+    {
+      "id": "quiz-g3-nouns-verbs",
+      "lessonId": "g3-eng-nouns-verbs-l1",
+      "topicId": "g3-eng-nouns-verbs",
+      "title": "Nouns and Verbs Check",
+      "questionIds": [
+        "q3-nv-1",
+        "q3-nv-2",
+        "q3-nv-3"
+      ]
+    }
+  ]
+}

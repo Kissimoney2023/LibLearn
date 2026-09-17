@@ -1,0 +1,145 @@
+{
+  "grade": 2,
+  "subjectId": "general-science",
+  "curriculumVersionId": "liblearn-v1",
+  "provenance": "liblearn",
+  "sourceId": null,
+  "units": [
+    {
+      "id": "g2-sci-u-livingthings",
+      "name": "What Living Things Need",
+      "summary": "What plants and animals must have to stay alive.",
+      "order": 1
+    }
+  ],
+  "topics": [
+    {
+      "id": "g2-sci-living-needs",
+      "unitId": "g2-sci-u-livingthings",
+      "name": "What Living Things Need",
+      "summary": "Food, water, air — and what happens without them.",
+      "order": 1
+    }
+  ],
+  "lessons": [
+    {
+      "id": "g2-sci-living-needs-l1",
+      "topicId": "g2-sci-living-needs",
+      "title": "What Living Things Need",
+      "estimatedMinutes": 10,
+      "order": 1,
+      "objectives": [
+        {
+          "id": "o1",
+          "text": "Name the things every living thing needs."
+        },
+        {
+          "id": "o2",
+          "text": "Say what a plant needs that an animal does not get the same way."
+        },
+        {
+          "id": "o3",
+          "text": "Explain why a living thing dies without these needs."
+        }
+      ],
+      "keyTerms": [
+        {
+          "term": "Living thing",
+          "definition": "Something that is alive. It grows, and it needs food, water and air."
+        },
+        {
+          "term": "Need",
+          "definition": "Something you must have to stay alive. Not something you just want."
+        },
+        {
+          "term": "Sunlight",
+          "definition": "Light from the sun. Plants use it to make their own food."
+        }
+      ],
+      "sections": [
+        {
+          "heading": "What you will learn",
+          "body": "Living things need certain things to stay alive.\n\nYou will learn what those are.\n\nYou will learn what happens without them."
+        },
+        {
+          "heading": "Three things everything alive needs",
+          "body": "Every living thing needs three things:\n\n    FOOD    — to grow and have strength\n    WATER   — every living body needs it\n    AIR     — to breathe\n\nA goat needs all three.\n\nA mango tree needs all three.\n\nYou need all three.\n\nA stone needs none of them. A stone is not alive."
+        },
+        {
+          "heading": "Plants make their own food",
+          "body": "Here is the difference between a plant and an animal.\n\nAn animal has to FIND its food. A goat eats grass. A child eats rice.\n\nA plant does not go anywhere. It MAKES its own food.\n\nTo do that, a plant needs one extra thing:\n\n    SUNLIGHT\n\nA plant uses sunlight, water and air to make its own food, right there in its leaves.\n\nThat is why a plant in a dark room turns pale and dies, even if you water it. It has water. It has air. But with no sunlight it cannot make food.",
+          "example": "Two bean plants.\n\nA girl grows two bean plants in two cups.\n\nShe puts the first cup on the windowsill. Sun, water, air. It grows tall and green.\n\nShe puts the second cup inside a dark cupboard. She still gives it water. It still has air.\n\nAfter two weeks she opens the cupboard.\n\nThe second plant is thin, pale and bent. It is dying.\n\nWhat was missing? Only the sunlight. Without sunlight it could not make food, and without food it could not live."
+        },
+        {
+          "heading": "What happens without them",
+          "body": "Take away any one of the needs, and a living thing will die.\n\nNo water — a plant dries up. An animal gets weak.\n\nNo food — a body has no strength to grow or move.\n\nNo air — nothing alive lasts long at all.\n\nThis is why we water crops in dry weather, and why we feed animals we keep. We are giving them what they cannot live without."
+        },
+        {
+          "heading": "Try it yourself",
+          "body": "1. Name the three things every living thing needs.\n\n2. What extra thing does a plant need, that lets it make its own food?\n\n3. A goat and a mango tree. Which one has to find its food?\n\n4. A plant is watered every day but kept in a dark room. Will it live? Why?\n\n5. Is a stone a living thing? How do you know?"
+        },
+        {
+          "heading": "Summary",
+          "body": "• Every living thing needs food, water and air.\n• Animals find their food.\n• Plants make their own food, and need sunlight to do it.\n• Take away a need and the living thing dies."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "id": "q2-liv-1",
+      "topicId": "g2-sci-living-needs",
+      "question": "Which three things does every living thing need?",
+      "options": [
+        "Food, water and air",
+        "Food, money and shoes",
+        "Water, sand and stones",
+        "Air, sunlight and salt"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Every living thing — a goat, a mango tree, you — needs food, water and air. A stone needs none of these, because a stone is not alive.",
+      "difficulty": "foundation"
+    },
+    {
+      "id": "q2-liv-2",
+      "topicId": "g2-sci-living-needs",
+      "question": "A plant is watered every day but kept in a dark cupboard. What will happen?",
+      "options": [
+        "It will grow well, because it has water",
+        "It will turn pale and die, because it cannot make food",
+        "Nothing will change at all",
+        "It will grow faster than in the sun"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Water is not the only need. A plant makes its own food using SUNLIGHT. In the dark it cannot make food, so it grows pale and weak and dies — even though it has water and air.",
+      "difficulty": "core"
+    },
+    {
+      "id": "q2-liv-3",
+      "topicId": "g2-sci-living-needs",
+      "question": "What is the main difference between how a goat and a mango tree get food?",
+      "options": [
+        "The goat makes its own food; the tree finds it",
+        "The goat finds its food; the tree makes its own",
+        "Neither of them needs food",
+        "They both make their own food"
+      ],
+      "correctAnswer": 1,
+      "explanation": "An animal has to go and find food — a goat eats grass. A plant cannot go anywhere, so it makes its own food in its leaves, using sunlight, water and air.",
+      "difficulty": "core"
+    }
+  ],
+  "quizzes": [
+    {
+      "id": "quiz-g2-living",
+      "lessonId": "g2-sci-living-needs-l1",
+      "topicId": "g2-sci-living-needs",
+      "title": "Living Things Check",
+      "questionIds": [
+        "q2-liv-1",
+        "q2-liv-2",
+        "q2-liv-3"
+      ]
+    }
+  ]
+}

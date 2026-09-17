@@ -1,4 +1,7 @@
 import type {Lesson, Topic, Unit} from '../../types/domain';
+import {GRADE1_LESSONS, GRADE1_TOPICS, GRADE1_UNITS} from './grade1';
+import {GRADE2_LESSONS, GRADE2_TOPICS, GRADE2_UNITS} from './grade2';
+import {GRADE3_LESSONS, GRADE3_TOPICS, GRADE3_UNITS} from './grade3';
 import {GRADE4_LESSONS, GRADE4_TOPICS, GRADE4_UNITS} from './grade4';
 import {GRADE5_LESSONS, GRADE5_TOPICS, GRADE5_UNITS} from './grade5';
 import {GRADE7_LESSONS, GRADE7_TOPICS, GRADE7_UNITS} from './grade7';
@@ -301,6 +304,9 @@ const BASE_LESSONS: Lesson[] = [
  * than hiding them. Content mid-import must stay reachable.
  */
 export const UNITS: Unit[] = [
+  ...GRADE1_UNITS,
+  ...GRADE2_UNITS,
+  ...GRADE3_UNITS,
   ...GRADE4_UNITS,
   ...GRADE5_UNITS,
   ...GRADE7_UNITS,
@@ -311,6 +317,9 @@ export const UNITS: Unit[] = [
 
 export const TOPICS: Topic[] = [
   ...BASE_TOPICS,
+  ...GRADE1_TOPICS,
+  ...GRADE2_TOPICS,
+  ...GRADE3_TOPICS,
   ...GRADE4_TOPICS,
   ...GRADE5_TOPICS,
   ...GRADE7_TOPICS,
@@ -320,6 +329,9 @@ export const TOPICS: Topic[] = [
 ];
 export const LESSONS: Lesson[] = [
   ...BASE_LESSONS,
+  ...GRADE1_LESSONS,
+  ...GRADE2_LESSONS,
+  ...GRADE3_LESSONS,
   ...GRADE4_LESSONS,
   ...GRADE5_LESSONS,
   ...GRADE7_LESSONS,
