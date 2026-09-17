@@ -2,7 +2,13 @@ import {useState} from 'react';
 import {useAuth} from '../context/AuthContext';
 import {Button, Card, SectionHeading} from '../components/ui';
 import {EXAMS, subjectsForGrade} from '../data/catalog';
-import {GRADE_LEVELS, type ExamGoal, type GradeLevel} from '../types/domain';
+import {
+  GRADE_LEVELS,
+  TEACHING_STYLE_LABEL,
+  type ExamGoal,
+  type GradeLevel,
+  type TeachingStyle,
+} from '../types/domain';
 
 export default function SettingsPage() {
   const {profile, updateProfile} = useAuth();
@@ -12,6 +18,9 @@ export default function SettingsPage() {
   const [grade, setGrade] = useState<GradeLevel | null>(profile?.grade ?? null);
   const [subjects, setSubjects] = useState<string[]>(profile?.selectedSubjects ?? []);
   const [goal, setGoal] = useState<ExamGoal | null>(profile?.examGoal ?? null);
+  const [language, setLanguage] = useState<TeachingStyle>(
+    profile?.preferredLanguage ?? 'standard',
+  );
 
   if (!profile) return null;
   const available = grade ? subjectsForGrade(grade) : [];
@@ -20,7 +29,12 @@ export default function SettingsPage() {
     setSaving(true);
     setSaved(false);
     try {
-      await updateProfile({grade, selectedSubjects: subjects, examGoal: goal});
+      await updateProfile({
+        grade,
+        selectedSubjects: subjects,
+        examGoal: goal,
+        preferredLanguage: language,
+      });
       setSaved(true);
     } finally {
       setSaving(false);
@@ -74,6 +88,34 @@ export default function SettingsPage() {
                 }
               />
               {s.name}
+            </label>
+          ))}
+        </div>
+      </Card>
+
+      <Card>
+        <SectionHeading>How the AI Tutor speaks to you</SectionHeading>
+        <p className="mb-3 text-sm text-on-surface-variant">
+          This changes the wording only. Definitions, formulas and worked steps stay
+          exactly the same in every option.
+        </p>
+        <div className="flex flex-col gap-2">
+          {(['standard', 'simple', 'liberian'] as TeachingStyle[]).map((v) => (
+            <label
+              key={v}
+              className={`flex min-h-12 cursor-pointer items-center gap-3 rounded-lg border p-3.5 transition-colors ${
+                language === v
+                  ? 'border-primary bg-primary-surface'
+                  : 'border-outline-variant bg-surface-lowest'
+              }`}>
+              <input
+                type="radio"
+                name="preferred-language"
+                className="size-[22px] accent-primary"
+                checked={language === v}
+                onChange={() => setLanguage(v)}
+              />
+              <span className="font-medium">{TEACHING_STYLE_LABEL[v]}</span>
             </label>
           ))}
         </div>

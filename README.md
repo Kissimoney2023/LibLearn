@@ -45,6 +45,7 @@ a data-layer change — see [Content architecture](#content-architecture).
 | [docs/AUDIT.md](docs/AUDIT.md) | Repository audit, blockers, recommended order |
 | [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) | Layers, the curriculum seam, design decisions |
 | [docs/DATABASE.md](docs/DATABASE.md) | Schema, RLS, provenance enforcement, migration conventions |
+| [docs/CONTENT_SOURCES.md](docs/CONTENT_SOURCES.md) | The source register, verification ladder, and what unlocks `official` |
 | [docs/CURRICULUM.md](docs/CURRICULUM.md) | Hierarchy, provenance tiers, coverage, sources |
 | [docs/CONTENT_PIPELINE.md](docs/CONTENT_PIPELINE.md) | Adding curriculum without code changes |
 | [docs/SUPABASE_SETUP.md](docs/SUPABASE_SETUP.md) | Migrations, auth, env vars, troubleshooting |

@@ -58,8 +58,14 @@ export default function SubjectTopics() {
   const renderTopic = (t: Topic) => {
     const lessons = lessonsForTopic(curriculum, t.id);
     const done = lessons.filter((l) => isLessonComplete(l.id)).length;
-    const pct = lessons.length === 0 ? 0 : (done / lessons.length) * 100;
-    const complete = lessons.length > 0 && done === lessons.length;
+
+    // A topic with no lessons has no denominator, so it has no percentage.
+    // Showing "0%" against it reads as "you have done none of this", when the
+    // truth is "there is nothing here yet" - it blames the student for a gap
+    // in the content.
+    const hasLessons = lessons.length > 0;
+    const pct = hasLessons ? (done / lessons.length) * 100 : 0;
+    const complete = hasLessons && done === lessons.length;
     const rail = complete ? 'complete' : done > 0 ? 'progress' : undefined;
 
     return (
@@ -68,14 +74,28 @@ export default function SubjectTopics() {
           <div className="mb-1.5 flex items-center justify-between gap-3">
             <h3 className="font-semibold">{t.name}</h3>
             <span className="shrink-0 text-xs font-medium text-on-surface-variant">
-              {complete ? 'Complete' : done > 0 ? 'In progress' : 'Not started'}
+              {!hasLessons
+                ? 'Content not available yet'
+                : complete
+                  ? 'Complete'
+                  : done > 0
+                    ? 'In progress'
+                    : 'Not started'}
             </span>
           </div>
           <p className="mb-3 text-sm text-on-surface-variant">{t.summary}</p>
-          <ProgressBar value={pct} label={`${t.name} progress`} />
-          <p className="mt-2 text-xs text-on-surface-variant">
-            {done} of {lessons.length} lesson{lessons.length === 1 ? '' : 's'}
-          </p>
+          {hasLessons ? (
+            <>
+              <ProgressBar value={pct} label={`${t.name} progress`} />
+              <p className="mt-2 text-xs text-on-surface-variant">
+                {done} of {lessons.length} lesson{lessons.length === 1 ? '' : 's'}
+              </p>
+            </>
+          ) : (
+            <p className="text-xs text-on-surface-variant">
+              Lessons for this topic are being prepared.
+            </p>
+          )}
         </Card>
       </Link>
     );

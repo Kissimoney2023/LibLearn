@@ -56,6 +56,7 @@ interface ProfileRow {
   grade: number | null;
   selected_subjects: string[];
   exam_goal: ExamGoal | null;
+  preferred_language: string | null;
   onboarded_at: string | null;
   created_at: string;
   updated_at: string;
@@ -69,6 +70,12 @@ const toProfile = (r: ProfileRow): Profile => ({
   grade: (r.grade as GradeLevel | null) ?? null,
   selectedSubjects: r.selected_subjects ?? [],
   examGoal: r.exam_goal,
+  // Default rather than trust the column: an unrecognised value (an older row,
+  // a hand edit) must not hand the tutor a style it cannot interpret.
+  preferredLanguage:
+    r.preferred_language === 'simple' || r.preferred_language === 'liberian'
+      ? r.preferred_language
+      : 'standard',
   onboardedAt: r.onboarded_at,
   createdAt: r.created_at,
   updatedAt: r.updated_at,
@@ -82,6 +89,7 @@ const fromProfile = (p: Profile) => ({
   grade: p.grade,
   selected_subjects: p.selectedSubjects,
   exam_goal: p.examGoal,
+  preferred_language: p.preferredLanguage,
   onboarded_at: p.onboardedAt,
 });
 

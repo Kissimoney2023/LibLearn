@@ -20,6 +20,10 @@ const GradeSubjects = lazy(() => import('./routes/GradeSubjects'));
 const GradeScope = lazy(() => import('./routes/GradeScope'));
 const StudentGradeScope = lazy(() => import('./routes/StudentGradeScope'));
 const Bookmarks = lazy(() => import('./routes/Bookmarks'));
+const Help = lazy(() => import('./routes/Help'));
+const About = lazy(() => import('./routes/About'));
+const Privacy = lazy(() => import('./routes/Privacy'));
+const Terms = lazy(() => import('./routes/Terms'));
 const SubjectTopics = lazy(() => import('./routes/SubjectTopics'));
 const TopicLessons = lazy(() => import('./routes/TopicLessons'));
 const QuizRunner = lazy(() => import('./routes/QuizRunner'));
@@ -87,6 +91,14 @@ export default function App() {
             <Route path="/login" element={<PublicOnly><Login /></PublicOnly>} />
             <Route path="/signup" element={<PublicOnly><SignUp /></PublicOnly>} />
             <Route path="/onboarding" element={<Onboarding />} />
+
+            {/* Public: readable without an account, because someone deciding
+                whether to sign up should be able to read what the app does
+                with their data first. */}
+            <Route path="/help" element={<Help />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/privacy" element={<Privacy />} />
+            <Route path="/terms" element={<Terms />} />
 
             <Route element={<Protected />}>
               {/* Dashboard needs curriculum to derive Continue Learning, and

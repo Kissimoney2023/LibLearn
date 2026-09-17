@@ -2,6 +2,7 @@ import {NavLink, Outlet} from 'react-router-dom';
 import {
   BookOpen,
   GraduationCap,
+  Bookmark,
   HelpCircle,
   Home,
   type LucideIcon,
@@ -32,6 +33,7 @@ const NAV: NavItem[] = [
 ];
 
 const SECONDARY: NavItem[] = [
+  {to: '/bookmarks', label: 'My Bookmarks', short: 'Saved', icon: Bookmark},
   {to: '/settings', label: 'Settings', short: 'Settings', icon: Settings},
   {to: '/profile', label: 'Profile', short: 'Profile', icon: User},
 ];
@@ -108,12 +110,18 @@ export function AppShell() {
             ))}
           </nav>
           <nav className="flex flex-col gap-1 border-t border-outline-variant px-3 py-3" aria-label="Account">
-            <a
-              href="mailto:help@liblearn.example"
-              className="flex min-h-12 items-center gap-3 rounded-lg px-3 text-sm font-medium text-on-surface-variant hover:bg-surface-low">
+            <NavLink
+              to="/help"
+              className={({isActive}) =>
+                `flex min-h-12 items-center gap-3 rounded-lg px-3 text-sm font-medium transition-colors ${
+                  isActive
+                    ? 'bg-primary-surface text-on-primary-surface'
+                    : 'text-on-surface-variant hover:bg-surface-low'
+                }`
+              }>
               <HelpCircle size={20} aria-hidden="true" />
               Help
-            </a>
+            </NavLink>
             {SECONDARY.map(({to, label, icon: Icon}) => (
               <NavLink
                 key={to}

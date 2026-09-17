@@ -234,6 +234,15 @@ export interface Quiz {
 
 /* ---------- Student state ---------- */
 
+/** How the tutor speaks. Liberian English stays academically precise. */
+export type TeachingStyle = 'standard' | 'simple' | 'liberian';
+
+export const TEACHING_STYLE_LABEL: Record<TeachingStyle, string> = {
+  standard: 'Standard English',
+  simple: 'Simple English',
+  liberian: 'Liberian English',
+};
+
 export interface Profile {
   id: string;
   name: string;
@@ -242,6 +251,12 @@ export interface Profile {
   grade: GradeLevel | null;
   selectedSubjects: string[];
   examGoal: ExamGoal | null;
+  /**
+   * How the AI Tutor should address this student. Persisted on the profile so
+   * the choice survives a new device and a new session - a preference that
+   * resets every time is a preference the student stops setting.
+   */
+  preferredLanguage: TeachingStyle;
   onboardedAt: string | null;
   createdAt: string;
   updatedAt: string;
@@ -401,7 +416,6 @@ export interface ContinueLearning {
 
 /* ---------- AI tutor ---------- */
 
-export type TeachingStyle = 'standard' | 'simple' | 'liberian';
 
 export type TutorMode =
   | 'chat'
