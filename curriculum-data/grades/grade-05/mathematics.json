@@ -1,0 +1,149 @@
+{
+  "grade": 5,
+  "subjectId": "mathematics",
+  "curriculumVersionId": "liblearn-v1",
+  "provenance": "liblearn",
+  "sourceId": null,
+  "units": [
+    {
+      "id": "g5-math-u-fractions",
+      "name": "Fractions",
+      "summary": "Parts of a whole, and when two different fractions are the same size.",
+      "order": 1
+    }
+  ],
+  "topics": [
+    {
+      "id": "g5-math-equivalent",
+      "unitId": "g5-math-u-fractions",
+      "name": "Equivalent Fractions",
+      "summary": "Why 1/2 and 2/4 are the same amount written two ways.",
+      "order": 1
+    }
+  ],
+  "lessons": [
+    {
+      "id": "g5-math-equivalent-l1",
+      "topicId": "g5-math-equivalent",
+      "title": "Equivalent Fractions",
+      "estimatedMinutes": 13,
+      "order": 1,
+      "objectives": [
+        {
+          "id": "o1",
+          "text": "Explain what makes two fractions equivalent."
+        },
+        {
+          "id": "o2",
+          "text": "Make equivalent fractions by multiplying or dividing."
+        },
+        {
+          "id": "o3",
+          "text": "Simplify a fraction to its lowest terms."
+        }
+      ],
+      "keyTerms": [
+        {
+          "term": "Numerator",
+          "definition": "The top number — how many parts you have."
+        },
+        {
+          "term": "Denominator",
+          "definition": "The bottom number — how many equal parts the whole was cut into."
+        },
+        {
+          "term": "Equivalent fractions",
+          "definition": "Different fractions that are the same amount."
+        },
+        {
+          "term": "Simplify",
+          "definition": "To write a fraction with the smallest numbers possible."
+        }
+      ],
+      "sections": [
+        {
+          "heading": "What you will learn",
+          "body": "Two fractions can look completely different and still be exactly the same amount. By the end of this lesson you will be able to make equivalent fractions and simplify them."
+        },
+        {
+          "heading": "Start with something you can see",
+          "body": "Take an orange and cut it into 2 equal pieces. Eat 1 piece. You ate 1/2.\n\nTake the same size orange and cut it into 4 equal pieces. Eat 2 pieces. You ate 2/4.\n\nDid you eat more the second time?\n\nNo. You ate exactly the same amount. The orange was just cut differently.\n\n    1/2 = 2/4\n\nThat is what EQUIVALENT means: different numbers, same amount."
+        },
+        {
+          "heading": "Making equivalent fractions",
+          "body": "To make an equivalent fraction, multiply the top AND the bottom by the same number.\n\n    1/2 → multiply both by 2 → 2/4\n    1/2 → multiply both by 3 → 3/6\n    1/2 → multiply both by 5 → 5/10\n\nAll of these are one half.\n\nWhy does this work? Multiplying top and bottom by the same number is the same as cutting every piece into smaller pieces. You have more pieces, but each piece is smaller, so the total is unchanged.\n\nThe rule that matters: whatever you do to the top, you must do to the bottom. Change only one and you change the amount.",
+          "example": "Is 3/4 the same as 6/8?\n\nLook at the bottoms: 4 and 8. To get from 4 to 8, multiply by 2.\n\nNow do the same to the top:\n    3 × 2 = 6\n\nSo 3/4 = 6/8 ✓ They are equivalent.\n\nNow check a different pair: is 3/4 the same as 6/9?\n\nBottom: 4 → 9. That is not multiplying by a whole number.\nAnd 3 × 2 = 6 but 4 × 2 = 8, not 9.\n\nSo 3/4 and 6/9 are NOT equivalent."
+        },
+        {
+          "heading": "Simplifying",
+          "body": "Simplifying goes the other way: you DIVIDE top and bottom by the same number.\n\n    6/8 → divide both by 2 → 3/4\n\n3/4 is simpler. You cannot divide 3 and 4 by any whole number except 1, so 3/4 is in its LOWEST TERMS.\n\nTo simplify, find a number that divides into both:\n\n    8/12 → both divide by 4 → 2/3\n    10/15 → both divide by 5 → 2/3\n\nNotice 8/12 and 10/15 both simplify to 2/3, so they are equivalent to each other too."
+        },
+        {
+          "heading": "Try it yourself",
+          "body": "1. Write two fractions equivalent to 1/3.\n2. Is 2/5 equivalent to 6/15? Show how you checked.\n3. Simplify 9/12 to its lowest terms.\n4. Musu ate 4/8 of a cake. Her brother ate 1/2. Who ate more?"
+        },
+        {
+          "heading": "Summary",
+          "body": "• Equivalent fractions are different numbers for the same amount.\n• Multiply top AND bottom by the same number to make an equivalent fraction.\n• Divide top AND bottom by the same number to simplify.\n• Whatever you do to the top, do to the bottom.\n• Lowest terms means no number except 1 divides both."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "id": "q5-eq-1",
+      "topicId": "g5-math-equivalent",
+      "question": "Which fraction is equivalent to 1/2?",
+      "options": [
+        "2/3",
+        "3/6",
+        "1/4",
+        "2/5"
+      ],
+      "correctAnswer": 1,
+      "explanation": "3/6 is equivalent to 1/2: multiply both the top and the bottom of 1/2 by 3. Check the others by asking whether the same number takes the top to the top and the bottom to the bottom — for 2/3 it does not.",
+      "difficulty": "foundation"
+    },
+    {
+      "id": "q5-eq-2",
+      "topicId": "g5-math-equivalent",
+      "question": "Simplify 9/12 to its lowest terms.",
+      "options": [
+        "3/4",
+        "4/3",
+        "9/12",
+        "1/3"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Both 9 and 12 divide by 3: 9÷3 = 3 and 12÷3 = 4, giving 3/4. Nothing except 1 divides both 3 and 4, so it is now in lowest terms. If you got 1/3 you probably divided 9 by 3 but not 12.",
+      "difficulty": "core"
+    },
+    {
+      "id": "q5-eq-3",
+      "topicId": "g5-math-equivalent",
+      "question": "Musu ate 4/8 of a cake. Her brother ate 1/2. Who ate more?",
+      "options": [
+        "Musu",
+        "Her brother",
+        "They ate the same",
+        "You cannot tell"
+      ],
+      "correctAnswer": 2,
+      "explanation": "The same. 4/8 simplifies to 1/2 — divide top and bottom by 4. The numbers look bigger, but a bigger numerator does not mean a bigger fraction when the denominator grew too.",
+      "difficulty": "core"
+    }
+  ],
+  "quizzes": [
+    {
+      "id": "quiz-g5-equivalent",
+      "lessonId": "g5-math-equivalent-l1",
+      "topicId": "g5-math-equivalent",
+      "title": "Equivalent Fractions Check",
+      "questionIds": [
+        "q5-eq-1",
+        "q5-eq-2",
+        "q5-eq-3"
+      ]
+    }
+  ]
+}

@@ -1,4 +1,5 @@
 import {LESSONS} from '../data/seed/curriculum';
+import type {Lesson} from '../types/domain';
 import type {
   ExamAttempt,
   LessonProgress,
@@ -42,12 +43,23 @@ export function summarise(
   exams: ExamAttempt[],
   selectedSubjects: string[],
   grade: number | null,
+  /**
+   * The curriculum actually loaded. Omit and the bundled corpus is used, which
+   * is correct only while the app is serving bundled content.
+   */
+  allLessons?: Lesson[],
 ): ProgressSummary {
   const completed = lessons.filter((l) => l.status === 'completed');
 
   // Denominator is the lessons actually available to this student, not the
   // whole seed - otherwise a Grade 8 student's bar is diluted by Grade 12 work.
-  const available = LESSONS.filter(
+  // The denominator must come from the SAME corpus the student is reading.
+  // Counting "3 of 11" from bundled content while the screen shows database
+  // lessons is a progress bar that is quietly wrong, and nothing on screen
+  // would reveal it.
+  const corpus = allLessons && allLessons.length > 0 ? allLessons : LESSONS;
+
+  const available = corpus.filter(
     (l) =>
       (grade === null || l.grade === grade) &&
       (selectedSubjects.length === 0 || selectedSubjects.includes(l.subjectId)),

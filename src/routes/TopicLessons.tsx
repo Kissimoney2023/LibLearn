@@ -1,41 +1,44 @@
 import {useEffect, useState} from 'react';
 import {Link, useParams, useSearchParams} from 'react-router-dom';
-import {CheckCircle2} from 'lucide-react';
-import {Button, ButtonLink, Card, DemoBadge, EmptyState, GradeBadge, SubjectChip} from '../components/ui';
-import {lessonsForTopic, topicById} from '../data/seed/curriculum';
-import {quizForLesson} from '../data/seed/questions';
-import {subjectById} from '../data/catalog';
+import {Bookmark as BookmarkIcon, CheckCircle2} from 'lucide-react';
+import {Button, ButtonLink, Card, EmptyState, GradeBadge, ProvenanceBadge, SubjectChip} from '../components/ui';
+import {useCurriculum} from '../context/CurriculumContext';
+import {lessonsForTopic, quizForLesson, topicById, unitById} from '../lib/curriculum';
 import {useStudentData} from '../context/StudentDataContext';
 
 export default function TopicLessons() {
   const {grade, subject, topic} = useParams();
   const [params, setParams] = useSearchParams();
-  const {startLesson, completeLesson, isLessonComplete} = useStudentData();
+  const {startLesson, completeLesson, isLessonComplete, toggleBookmark, isBookmarked} =
+    useStudentData();
 
-  const topicMeta = topic ? topicById(topic) : undefined;
-  const lessons = topic ? lessonsForTopic(topic) : [];
+  const {curriculum} = useCurriculum();
+  const topicMeta = topic ? topicById(curriculum, topic) : undefined;
+  const lessons = topic ? lessonsForTopic(curriculum, topic) : [];
   const selectedId = params.get('lesson') ?? lessons[0]?.id;
   const lesson = lessons.find((l) => l.id === selectedId);
   const [saving, setSaving] = useState(false);
 
   useEffect(() => {
-    if (lesson) void startLesson(lesson.id);
+    if (lesson) void startLesson(lesson);
   }, [lesson, startLesson]);
 
   if (!topicMeta || !lesson) {
     return <EmptyState title="Lesson not found" body="This topic has no lessons yet." />;
   }
 
+  const unit = topicMeta.unitId ? unitById(curriculum, topicMeta.unitId) : undefined;
   const done = isLessonComplete(lesson.id);
+  const bookmarked = isBookmarked('lesson', lesson.id);
   const index = lessons.findIndex((l) => l.id === lesson.id);
   const prev = lessons[index - 1];
   const next = lessons[index + 1];
-  const quiz = quizForLesson(lesson.id);
+  const quiz = quizForLesson(curriculum, lesson.id);
 
   async function markComplete() {
     setSaving(true);
     try {
-      await completeLesson(lesson!.id);
+      await completeLesson(lesson!, lesson!.title);
     } finally {
       setSaving(false);
     }
@@ -46,13 +49,14 @@ export default function TopicLessons() {
       <header>
         <Link
           to={`/learn/${grade}/${subject}`}
-          className="text-sm text-secondary underline underline-offset-4">
-          ← {subjectById(subject ?? '')?.name ?? 'Back'}
+          className="inline-flex min-h-12 items-center text-sm text-secondary underline underline-offset-4">
+          ← {curriculum.subjects.find((x) => x.id === subject)?.name ?? 'Back'}
         </Link>
         <div className="mt-3 flex flex-wrap items-center gap-2">
           <GradeBadge>Grade {lesson.grade}</GradeBadge>
+          {unit && <SubjectChip>{unit.name}</SubjectChip>}
           <SubjectChip>{topicMeta.name}</SubjectChip>
-          {lesson.provenance === 'demo' && <DemoBadge />}
+          <ProvenanceBadge provenance={lesson.provenance} />
         </div>
         <h1 className="mt-3 font-display text-2xl font-bold">{lesson.title}</h1>
         <p className="mt-1 text-sm text-on-surface-variant">
@@ -99,15 +103,37 @@ export default function TopicLessons() {
                 : 'Mark it complete to update your progress and recommendations.'}
             </p>
           </div>
-          {done ? (
-            <span className="flex items-center gap-2 font-medium text-on-primary-surface">
-              <CheckCircle2 size={20} aria-hidden="true" /> Done
-            </span>
-          ) : (
-            <Button onClick={markComplete} disabled={saving}>
-              {saving ? 'Saving…' : 'Mark complete'}
-            </Button>
-          )}
+          <div className="flex items-center gap-2">
+            <button
+              type="button"
+              onClick={() =>
+                void toggleBookmark({
+                  contentType: 'lesson',
+                  contentId: lesson.id,
+                  title: lesson.title,
+                  subjectId: lesson.subjectId,
+                  grade: lesson.grade,
+                })
+              }
+              aria-pressed={bookmarked}
+              aria-label={bookmarked ? 'Remove bookmark' : 'Bookmark this lesson'}
+              className="flex min-h-12 min-w-12 items-center justify-center rounded-lg border border-outline px-3 text-on-surface-variant">
+              <BookmarkIcon
+                size={20}
+                aria-hidden="true"
+                fill={bookmarked ? 'currentColor' : 'none'}
+              />
+            </button>
+            {done ? (
+              <span className="flex items-center gap-2 font-medium text-on-primary-surface">
+                <CheckCircle2 size={20} aria-hidden="true" /> Done
+              </span>
+            ) : (
+              <Button onClick={markComplete} disabled={saving}>
+                {saving ? 'Saving…' : 'Mark complete'}
+              </Button>
+            )}
+          </div>
         </div>
       </Card>
 

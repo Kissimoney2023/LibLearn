@@ -1,0 +1,115 @@
+{
+  "grade": 10,
+  "subjectId": "biology",
+  "curriculumVersionId": "liblearn-v1",
+  "provenance": "liblearn",
+  "sourceId": null,
+  "units": [],
+  "topics": [
+    {
+      "id": "g10-bio-cells",
+      "name": "Cell Biology",
+      "summary": "The structures inside plant and animal cells, and what each one does.",
+      "order": 1
+    }
+  ],
+  "lessons": [
+    {
+      "id": "g10-bio-cells-l1",
+      "topicId": "g10-bio-cells",
+      "title": "Cell Structure and Organelles",
+      "estimatedMinutes": 16,
+      "order": 1,
+      "objectives": [
+        {
+          "id": "o1",
+          "text": "Name the main organelles of a plant and an animal cell."
+        },
+        {
+          "id": "o2",
+          "text": "State the function of the nucleus, mitochondria and chloroplast."
+        },
+        {
+          "id": "o3",
+          "text": "Describe two differences between plant and animal cells."
+        }
+      ],
+      "keyTerms": [],
+      "sections": [
+        {
+          "heading": "The cell as a working unit",
+          "body": "Every living thing is built from cells, and each cell is a small working unit with parts called organelles. Each organelle has a job, and the cell stays alive because they work together."
+        },
+        {
+          "heading": "The main organelles",
+          "body": "The nucleus holds the cell’s genetic information and controls its activities. The mitochondria release energy from food through respiration. The cell membrane controls what enters and leaves. The cytoplasm is the jelly where most reactions happen.",
+          "example": "Muscle cells contain very many mitochondria, because contracting a muscle demands a great deal of energy."
+        },
+        {
+          "heading": "Plant cells are different",
+          "body": "Plant cells have three parts animal cells do not: a rigid cell wall made of cellulose that gives the cell its shape, chloroplasts containing chlorophyll where photosynthesis takes place, and a large permanent vacuole filled with cell sap that helps keep the cell firm."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "id": "q-cell-1",
+      "topicId": "g10-bio-cells",
+      "question": "Which organelle controls the activities of the cell?",
+      "options": [
+        "Mitochondrion",
+        "Nucleus",
+        "Cell membrane",
+        "Vacuole"
+      ],
+      "correctAnswer": 1,
+      "explanation": "The nucleus holds the genetic information and directs the cell’s activities.",
+      "difficulty": "foundation",
+      "examGoal": "wassce"
+    },
+    {
+      "id": "q-cell-2",
+      "topicId": "g10-bio-cells",
+      "question": "Which THREE structures are found in plant cells but not animal cells?",
+      "options": [
+        "Nucleus, cytoplasm, membrane",
+        "Cell wall, chloroplast, permanent vacuole",
+        "Mitochondria, ribosomes, nucleus",
+        "Chloroplast, nucleus, mitochondria"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Plant cells have a cellulose cell wall, chloroplasts for photosynthesis, and a large permanent vacuole. Animal cells have none of these three.",
+      "difficulty": "core",
+      "examGoal": "wassce"
+    },
+    {
+      "id": "q-cell-3",
+      "topicId": "g10-bio-cells",
+      "question": "Muscle cells contain unusually large numbers of mitochondria. Why?",
+      "options": [
+        "They need to store more genetic material",
+        "They require a great deal of energy to contract",
+        "They carry out photosynthesis",
+        "They must keep their shape rigid"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Mitochondria release energy through respiration. Contracting a muscle demands much energy, so muscle cells carry many of them.",
+      "difficulty": "challenge",
+      "examGoal": "wassce"
+    }
+  ],
+  "quizzes": [
+    {
+      "id": "quiz-g10-cells",
+      "lessonId": "g10-bio-cells-l1",
+      "topicId": "g10-bio-cells",
+      "title": "Cell Biology Check",
+      "questionIds": [
+        "q-cell-1",
+        "q-cell-2",
+        "q-cell-3"
+      ]
+    }
+  ]
+}

@@ -19,8 +19,10 @@ export default function AiTutor() {
   const [messages, setMessages] = useState<AiMessage[]>(
     () => loadSessions().at(-1)?.messages ?? [],
   );
+  // The profile is the source of truth; local storage is only a fallback for
+  // a session whose profile has not loaded yet.
   const [style, setStyle] = useState<TeachingStyle>(
-    () => readJSON<TeachingStyle>('teaching-style', 'standard'),
+    () => profile?.preferredLanguage ?? readJSON<TeachingStyle>('teaching-style', 'standard'),
   );
   const [input, setInput] = useState('');
   const [busy, setBusy] = useState(false);

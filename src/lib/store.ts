@@ -10,7 +10,9 @@ import type {
   LessonProgress,
   Profile,
   QuizAttempt,
-} from '../types/domain';
+  ActivityEvent,
+  ActivityType,
+  Bookmark} from '../types/domain';
 
 /**
  * One repository for every piece of student state.
@@ -35,6 +37,8 @@ export const backend: Backend = isSupabaseConfigured ? 'supabase' : 'local';
 
 const K = {
   profile: 'profile',
+  bookmarks: 'bookmarks',
+  activity: 'activity',
   lessons: 'lesson-progress',
   quizzes: 'quiz-attempts',
   exams: 'exam-attempts',
@@ -52,6 +56,7 @@ interface ProfileRow {
   grade: number | null;
   selected_subjects: string[];
   exam_goal: ExamGoal | null;
+  preferred_language: string | null;
   onboarded_at: string | null;
   created_at: string;
   updated_at: string;
@@ -65,6 +70,12 @@ const toProfile = (r: ProfileRow): Profile => ({
   grade: (r.grade as GradeLevel | null) ?? null,
   selectedSubjects: r.selected_subjects ?? [],
   examGoal: r.exam_goal,
+  // Default rather than trust the column: an unrecognised value (an older row,
+  // a hand edit) must not hand the tutor a style it cannot interpret.
+  preferredLanguage:
+    r.preferred_language === 'simple' || r.preferred_language === 'liberian'
+      ? r.preferred_language
+      : 'standard',
   onboardedAt: r.onboarded_at,
   createdAt: r.created_at,
   updatedAt: r.updated_at,
@@ -78,6 +89,7 @@ const fromProfile = (p: Profile) => ({
   grade: p.grade,
   selected_subjects: p.selectedSubjects,
   exam_goal: p.examGoal,
+  preferred_language: p.preferredLanguage,
   onboarded_at: p.onboardedAt,
 });
 
@@ -375,6 +387,177 @@ export function loadSessions(): AiSession[] {
 export function saveSessions(sessions: AiSession[]): void {
   // Capped so a long-running conversation cannot fill the storage quota.
   writeJSON(K.sessions, sessions.slice(-20));
+}
+
+
+/* ----------------------------------------------------------- bookmarks */
+
+interface BookmarkRow {
+  id: string | number;
+  content_type: string;
+  content_id: string;
+  title: string | null;
+  subject_id: string | null;
+  grade: number | null;
+  created_at: string;
+}
+
+const toBookmark = (r: BookmarkRow): Bookmark => ({
+  id: String(r.id),
+  contentType: r.content_type as Bookmark['contentType'],
+  contentId: r.content_id,
+  title: r.title ?? '',
+  subjectId: r.subject_id ?? undefined,
+  grade: (r.grade as Bookmark['grade']) ?? undefined,
+  createdAt: r.created_at,
+});
+
+export async function loadBookmarks(userId: string): Promise<Bookmark[]> {
+  if (supabase) {
+    const {data, error} = await supabase
+      .from('bookmarks')
+      .select('*')
+      .eq('user_id', userId)
+      .order('created_at', {ascending: false});
+    if (error) throw toError(error);
+    return ((data ?? []) as BookmarkRow[]).map(toBookmark);
+  }
+  return readJSON<Bookmark[]>(K.bookmarks, []);
+}
+
+/**
+ * Toggle a bookmark, returning the full list.
+ *
+ * Returns the list rather than a boolean so the caller can set state from one
+ * value: deriving "is this bookmarked?" separately is how the star ends up
+ * disagreeing with the bookmarks page.
+ */
+export async function toggleBookmark(
+  userId: string,
+  bookmark: Omit<Bookmark, 'id' | 'createdAt'>,
+): Promise<{bookmarks: Bookmark[]; added: boolean}> {
+  const all = await loadBookmarks(userId);
+  const existing = all.find(
+    (b) => b.contentType === bookmark.contentType && b.contentId === bookmark.contentId,
+  );
+
+  if (existing) {
+    if (supabase) {
+      const {error} = await supabase
+        .from('bookmarks')
+        .delete()
+        .eq('user_id', userId)
+        .eq('content_type', bookmark.contentType)
+        .eq('content_id', bookmark.contentId);
+      if (error) throw toError(error);
+    }
+    const next = all.filter((b) => b.id !== existing.id);
+    if (!supabase) writeJSON(K.bookmarks, next);
+    return {bookmarks: next, added: false};
+  }
+
+  const created: Bookmark = {
+    ...bookmark,
+    id: `bm-${Date.now().toString(36)}`,
+    createdAt: new Date().toISOString(),
+  };
+
+  if (supabase) {
+    const {data, error} = await supabase
+      .from('bookmarks')
+      .insert({
+        user_id: userId,
+        content_type: created.contentType,
+        content_id: created.contentId,
+        title: created.title,
+        subject_id: created.subjectId ?? null,
+        grade: created.grade ?? null,
+      })
+      .select()
+      .single();
+    if (error) throw toError(error);
+    return {bookmarks: [toBookmark(data as BookmarkRow), ...all], added: true};
+  }
+
+  const next = [created, ...all];
+  writeJSON(K.bookmarks, next);
+  return {bookmarks: next, added: true};
+}
+
+/* ------------------------------------------------------ recent activity */
+
+interface ActivityRow {
+  id: string | number;
+  activity_type: string;
+  content_type: string | null;
+  content_id: string | null;
+  metadata: unknown;
+  created_at: string;
+}
+
+const toActivity = (r: ActivityRow): ActivityEvent => ({
+  id: String(r.id),
+  activityType: r.activity_type as ActivityType,
+  contentType: (r.content_type as ActivityEvent['contentType']) ?? undefined,
+  contentId: r.content_id ?? undefined,
+  metadata:
+    r.metadata && typeof r.metadata === 'object'
+      ? (r.metadata as Record<string, string | number>)
+      : {},
+  createdAt: r.created_at,
+});
+
+/** Newest first. `limit` keeps the dashboard read small. */
+export async function loadActivity(userId: string, limit = 25): Promise<ActivityEvent[]> {
+  if (supabase) {
+    const {data, error} = await supabase
+      .from('recent_activity')
+      .select('*')
+      .eq('user_id', userId)
+      .order('created_at', {ascending: false})
+      .limit(limit);
+    if (error) throw toError(error);
+    return ((data ?? []) as ActivityRow[]).map(toActivity);
+  }
+  return readJSON<ActivityEvent[]>(K.activity, []).slice(0, limit);
+}
+
+/**
+ * Record an activity event.
+ *
+ * Deliberately never throws. Logging is a side effect of studying, and a failed
+ * write to the activity feed must not surface as an error on top of a lesson a
+ * student just completed successfully. A missing feed row is a cosmetic loss;
+ * an error dialog over a completed lesson is not.
+ */
+export async function recordActivity(
+  userId: string,
+  event: Omit<ActivityEvent, 'id' | 'createdAt'>,
+): Promise<void> {
+  try {
+    if (supabase) {
+      await supabase.from('recent_activity').insert({
+        user_id: userId,
+        activity_type: event.activityType,
+        content_type: event.contentType ?? null,
+        content_id: event.contentId ?? null,
+        metadata: event.metadata ?? {},
+      });
+      return;
+    }
+    const all = readJSON<ActivityEvent[]>(K.activity, []);
+    const next = [
+      {
+        ...event,
+        id: `ev-${Date.now().toString(36)}-${Math.random().toString(36).slice(2, 6)}`,
+        createdAt: new Date().toISOString(),
+      },
+      ...all,
+    ].slice(0, 100); // capped so local storage cannot grow without bound
+    writeJSON(K.activity, next);
+  } catch (err) {
+    console.warn('[activity] not recorded:', err);
+  }
 }
 
 export function clearLocalState(): void {

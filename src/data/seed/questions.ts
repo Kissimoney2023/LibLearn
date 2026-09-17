@@ -1,17 +1,20 @@
 import type {Question, Quiz} from '../../types/domain';
+import {GRADE4_QUESTIONS, GRADE4_QUIZZES} from './grade4Questions';
+import {GRADE11_QUESTIONS, GRADE11_QUIZZES} from './grade11Questions';
+import {OTHER_GRADE_QUESTIONS, OTHER_GRADE_QUIZZES} from './gradesQuestions';
 
 /**
- * DEMO QUESTION BANK. provenance: 'demo' throughout.
+ * LIBLEARN QUESTION BANK. provenance: 'liblearn' throughout.
  *
  * Questions tagged with an `examGoal` are written in the general style of that
  * examination. They are NOT past papers and carry no official standing.
  */
 
-export const QUESTIONS: Question[] = [
+const BASE_QUESTIONS: Question[] = [
   // ---- Grade 8 Mathematics / Algebra ----
   {
     id: 'q-alg-1', subjectId: 'mathematics', grade: 8, topicId: 'g8-math-algebra',
-    difficulty: 'foundation', provenance: 'demo', examGoal: 'ljhsce',
+    difficulty: 'foundation', provenance: 'liblearn', examGoal: 'ljhsce',
     question: 'What is the coefficient of x in the expression 7x + 4?',
     options: ['7', '4', 'x', '11'],
     correctAnswer: 0,
@@ -19,7 +22,7 @@ export const QUESTIONS: Question[] = [
   },
   {
     id: 'q-alg-2', subjectId: 'mathematics', grade: 8, topicId: 'g8-math-algebra',
-    difficulty: 'foundation', provenance: 'demo', examGoal: 'ljhsce',
+    difficulty: 'foundation', provenance: 'liblearn', examGoal: 'ljhsce',
     question: 'Solve for x:  x + 9 = 16',
     options: ['x = 25', 'x = 7', 'x = 9', 'x = 16'],
     correctAnswer: 1,
@@ -27,7 +30,7 @@ export const QUESTIONS: Question[] = [
   },
   {
     id: 'q-alg-3', subjectId: 'mathematics', grade: 8, topicId: 'g8-math-algebra',
-    difficulty: 'core', provenance: 'demo', examGoal: 'ljhsce',
+    difficulty: 'core', provenance: 'liblearn', examGoal: 'ljhsce',
     question: 'Solve for x:  3x + 4 = 19',
     options: ['x = 5', 'x = 7', 'x = 15', 'x = 23'],
     correctAnswer: 0,
@@ -35,7 +38,7 @@ export const QUESTIONS: Question[] = [
   },
   {
     id: 'q-alg-4', subjectId: 'mathematics', grade: 8, topicId: 'g8-math-algebra',
-    difficulty: 'core', provenance: 'demo', examGoal: 'ljhsce',
+    difficulty: 'core', provenance: 'liblearn', examGoal: 'ljhsce',
     question: 'Expand:  4(x + 3)',
     options: ['4x + 3', '4x + 12', 'x + 12', '7x'],
     correctAnswer: 1,
@@ -43,7 +46,7 @@ export const QUESTIONS: Question[] = [
   },
   {
     id: 'q-alg-5', subjectId: 'mathematics', grade: 8, topicId: 'g8-math-algebra',
-    difficulty: 'challenge', provenance: 'demo', examGoal: 'ljhsce',
+    difficulty: 'challenge', provenance: 'liblearn', examGoal: 'ljhsce',
     question: 'Solve for x:  2(x - 5) = 14',
     options: ['x = 2', 'x = 9', 'x = 12', 'x = 24'],
     correctAnswer: 2,
@@ -51,7 +54,7 @@ export const QUESTIONS: Question[] = [
   },
   {
     id: 'q-alg-6', subjectId: 'mathematics', grade: 8, topicId: 'g8-math-algebra',
-    difficulty: 'core', provenance: 'demo',
+    difficulty: 'core', provenance: 'liblearn',
     question: 'A taxi charges 40 dollars to start plus 15 dollars per kilometre. Which expression gives the cost of a journey of k kilometres?',
     options: ['40k + 15', '55k', '40 + 15k', '15 + 40k'],
     correctAnswer: 2,
@@ -59,7 +62,7 @@ export const QUESTIONS: Question[] = [
   },
   {
     id: 'q-alg-7', subjectId: 'mathematics', grade: 8, topicId: 'g8-math-algebra',
-    difficulty: 'challenge', provenance: 'demo', examGoal: 'ljhsce',
+    difficulty: 'challenge', provenance: 'liblearn', examGoal: 'ljhsce',
     question: 'Solve for x:  5x - 3 = 2x + 12',
     options: ['x = 3', 'x = 5', 'x = 9', 'x = 15'],
     correctAnswer: 1,
@@ -69,7 +72,7 @@ export const QUESTIONS: Question[] = [
   // ---- Grade 8 Mathematics / Fractions ----
   {
     id: 'q-fr8-1', subjectId: 'mathematics', grade: 8, topicId: 'g8-math-fractions',
-    difficulty: 'foundation', provenance: 'demo',
+    difficulty: 'foundation', provenance: 'liblearn',
     question: 'Write 3/4 as a decimal.',
     options: ['0.34', '0.75', '0.43', '1.33'],
     correctAnswer: 1,
@@ -77,7 +80,7 @@ export const QUESTIONS: Question[] = [
   },
   {
     id: 'q-fr8-2', subjectId: 'mathematics', grade: 8, topicId: 'g8-math-fractions',
-    difficulty: 'core', provenance: 'demo',
+    difficulty: 'core', provenance: 'liblearn',
     question: 'Write 0.35 as a fraction in its lowest terms.',
     options: ['35/10', '7/20', '3/5', '35/1000'],
     correctAnswer: 1,
@@ -85,7 +88,7 @@ export const QUESTIONS: Question[] = [
   },
   {
     id: 'q-fr8-3', subjectId: 'mathematics', grade: 8, topicId: 'g8-math-fractions',
-    difficulty: 'core', provenance: 'demo',
+    difficulty: 'core', provenance: 'liblearn',
     question: 'Which is larger: 0.6 or 5/8?',
     options: ['0.6', '5/8', 'They are equal', 'Cannot be compared'],
     correctAnswer: 1,
@@ -95,7 +98,7 @@ export const QUESTIONS: Question[] = [
   // ---- Grade 6 Mathematics / Fractions ----
   {
     id: 'q-fr6-1', subjectId: 'mathematics', grade: 6, topicId: 'g6-math-fractions',
-    difficulty: 'foundation', provenance: 'demo', examGoal: 'lpsce',
+    difficulty: 'foundation', provenance: 'liblearn', examGoal: 'lpsce',
     question: 'In the fraction 3/8, which number is the denominator?',
     options: ['3', '8', 'Both', 'Neither'],
     correctAnswer: 1,
@@ -103,7 +106,7 @@ export const QUESTIONS: Question[] = [
   },
   {
     id: 'q-fr6-2', subjectId: 'mathematics', grade: 6, topicId: 'g6-math-fractions',
-    difficulty: 'foundation', provenance: 'demo', examGoal: 'lpsce',
+    difficulty: 'foundation', provenance: 'liblearn', examGoal: 'lpsce',
     question: 'Which fraction is larger: 5/8 or 3/8?',
     options: ['5/8', '3/8', 'They are equal', 'It depends'],
     correctAnswer: 0,
@@ -111,7 +114,7 @@ export const QUESTIONS: Question[] = [
   },
   {
     id: 'q-fr6-3', subjectId: 'mathematics', grade: 6, topicId: 'g6-math-fractions',
-    difficulty: 'core', provenance: 'demo', examGoal: 'lpsce',
+    difficulty: 'core', provenance: 'liblearn', examGoal: 'lpsce',
     question: 'A loaf is cut into 8 equal slices. You take 3. What fraction of the loaf is left?',
     options: ['3/8', '5/8', '8/3', '1/8'],
     correctAnswer: 1,
@@ -121,7 +124,7 @@ export const QUESTIONS: Question[] = [
   // ---- Grade 8 General Science / Matter ----
   {
     id: 'q-mat-1', subjectId: 'general-science', grade: 8, topicId: 'g8-science-matter',
-    difficulty: 'foundation', provenance: 'demo', examGoal: 'ljhsce',
+    difficulty: 'foundation', provenance: 'liblearn', examGoal: 'ljhsce',
     question: 'In which state of matter are the particles packed closely in a fixed pattern?',
     options: ['Solid', 'Liquid', 'Gas', 'All three'],
     correctAnswer: 0,
@@ -129,7 +132,7 @@ export const QUESTIONS: Question[] = [
   },
   {
     id: 'q-mat-2', subjectId: 'general-science', grade: 8, topicId: 'g8-science-matter',
-    difficulty: 'core', provenance: 'demo', examGoal: 'ljhsce',
+    difficulty: 'core', provenance: 'liblearn', examGoal: 'ljhsce',
     question: 'Why does a gas fill its whole container?',
     options: [
       'Its particles are heavier than liquid particles',
@@ -142,7 +145,7 @@ export const QUESTIONS: Question[] = [
   },
   {
     id: 'q-mat-3', subjectId: 'general-science', grade: 8, topicId: 'g8-science-matter',
-    difficulty: 'core', provenance: 'demo',
+    difficulty: 'core', provenance: 'liblearn',
     question: 'Which state keeps its volume but takes the shape of its container?',
     options: ['Solid', 'Liquid', 'Gas', 'None of them'],
     correctAnswer: 1,
@@ -152,7 +155,7 @@ export const QUESTIONS: Question[] = [
   // ---- Grade 8 English ----
   {
     id: 'q-eng-1', subjectId: 'english', grade: 8, topicId: 'g8-english-speech',
-    difficulty: 'foundation', provenance: 'demo', examGoal: 'ljhsce',
+    difficulty: 'foundation', provenance: 'liblearn', examGoal: 'ljhsce',
     question: 'In "The clever student answered quickly", which word is the adjective?',
     options: ['student', 'answered', 'clever', 'quickly'],
     correctAnswer: 2,
@@ -160,7 +163,7 @@ export const QUESTIONS: Question[] = [
   },
   {
     id: 'q-eng-2', subjectId: 'english', grade: 8, topicId: 'g8-english-speech',
-    difficulty: 'core', provenance: 'demo', examGoal: 'ljhsce',
+    difficulty: 'core', provenance: 'liblearn', examGoal: 'ljhsce',
     question: 'Identify the verb in "The farmer harvested the rice before the rain."',
     options: ['farmer', 'harvested', 'rice', 'rain'],
     correctAnswer: 1,
@@ -170,7 +173,7 @@ export const QUESTIONS: Question[] = [
   // ---- Grade 10 Biology / Cells ----
   {
     id: 'q-cell-1', subjectId: 'biology', grade: 10, topicId: 'g10-bio-cells',
-    difficulty: 'foundation', provenance: 'demo', examGoal: 'wassce',
+    difficulty: 'foundation', provenance: 'liblearn', examGoal: 'wassce',
     question: 'Which organelle controls the activities of the cell?',
     options: ['Mitochondrion', 'Nucleus', 'Cell membrane', 'Vacuole'],
     correctAnswer: 1,
@@ -178,7 +181,7 @@ export const QUESTIONS: Question[] = [
   },
   {
     id: 'q-cell-2', subjectId: 'biology', grade: 10, topicId: 'g10-bio-cells',
-    difficulty: 'core', provenance: 'demo', examGoal: 'wassce',
+    difficulty: 'core', provenance: 'liblearn', examGoal: 'wassce',
     question: 'Which THREE structures are found in plant cells but not animal cells?',
     options: [
       'Nucleus, cytoplasm, membrane',
@@ -191,7 +194,7 @@ export const QUESTIONS: Question[] = [
   },
   {
     id: 'q-cell-3', subjectId: 'biology', grade: 10, topicId: 'g10-bio-cells',
-    difficulty: 'challenge', provenance: 'demo', examGoal: 'wassce',
+    difficulty: 'challenge', provenance: 'liblearn', examGoal: 'wassce',
     question: 'Muscle cells contain unusually large numbers of mitochondria. Why?',
     options: [
       'They need to store more genetic material',
@@ -204,7 +207,7 @@ export const QUESTIONS: Question[] = [
   },
 ];
 
-export const QUIZZES: Quiz[] = [
+const BASE_QUIZZES: Quiz[] = [
   {
     id: 'quiz-g8-algebra', topicId: 'g8-math-algebra', subjectId: 'mathematics', grade: 8,
     title: 'Algebra Check', lessonId: 'g8-math-algebra-l2',
@@ -235,6 +238,19 @@ export const QUIZZES: Quiz[] = [
     title: 'Cell Biology Check', lessonId: 'g10-bio-cells-l1',
     questionIds: ['q-cell-1', 'q-cell-2', 'q-cell-3'],
   },
+];
+
+export const QUESTIONS: Question[] = [
+  ...BASE_QUESTIONS,
+  ...GRADE4_QUESTIONS,
+  ...OTHER_GRADE_QUESTIONS,
+  ...GRADE11_QUESTIONS,
+];
+export const QUIZZES: Quiz[] = [
+  ...BASE_QUIZZES,
+  ...GRADE4_QUIZZES,
+  ...OTHER_GRADE_QUIZZES,
+  ...GRADE11_QUIZZES,
 ];
 
 export const questionById = (id: string): Question | undefined =>

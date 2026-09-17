@@ -1,0 +1,149 @@
+{
+  "grade": 12,
+  "subjectId": "mathematics",
+  "curriculumVersionId": "liblearn-v1",
+  "provenance": "liblearn",
+  "sourceId": null,
+  "units": [
+    {
+      "id": "g12-math-u-stats",
+      "name": "Statistics",
+      "summary": "Summarising a set of data, and choosing the right average.",
+      "order": 1
+    }
+  ],
+  "topics": [
+    {
+      "id": "g12-math-averages",
+      "unitId": "g12-math-u-stats",
+      "name": "Mean, Median and Mode",
+      "summary": "Three averages, and when each one misleads.",
+      "order": 1
+    }
+  ],
+  "lessons": [
+    {
+      "id": "g12-math-averages-l1",
+      "topicId": "g12-math-averages",
+      "title": "Mean, Median and Mode",
+      "estimatedMinutes": 15,
+      "order": 1,
+      "objectives": [
+        {
+          "id": "o1",
+          "text": "Calculate the mean, median and mode of a data set."
+        },
+        {
+          "id": "o2",
+          "text": "Choose the most appropriate average for a given set."
+        },
+        {
+          "id": "o3",
+          "text": "Explain how an outlier affects each one."
+        }
+      ],
+      "keyTerms": [
+        {
+          "term": "Mean",
+          "definition": "Add all values and divide by how many there are."
+        },
+        {
+          "term": "Median",
+          "definition": "The middle value when the data is put in order."
+        },
+        {
+          "term": "Mode",
+          "definition": "The value that appears most often."
+        },
+        {
+          "term": "Outlier",
+          "definition": "A value far away from the rest of the data."
+        }
+      ],
+      "sections": [
+        {
+          "heading": "What you will learn",
+          "body": "\"The average\" is not one thing. There are three, they can give very different answers for the same data, and choosing the wrong one is how statistics mislead."
+        },
+        {
+          "heading": "The three averages",
+          "body": "Data: 3, 7, 7, 8, 10\n\nMEAN — add and divide:\n    (3 + 7 + 7 + 8 + 10) ÷ 5 = 35 ÷ 5 = 7\n\nMEDIAN — order the data, take the middle:\n    3, 7, 7, 8, 10 → the middle value is 7\n\n    (With an EVEN count, take the mean of the middle two.)\n\nMODE — the most frequent value:\n    7 appears twice, everything else once → mode = 7\n\nHere all three are 7, because the data is evenly spread. That is exactly why this example teaches nothing about choosing between them — for that you need data with an outlier."
+        },
+        {
+          "heading": "When one value distorts everything",
+          "body": "Seven workers earn, per week:\n\n    50, 55, 60, 60, 65, 70, 700\n\nThe last one is the owner. It is an OUTLIER — far from the rest.\n\nMEAN:\n    (50+55+60+60+65+70+700) ÷ 7 = 1060 ÷ 7 ≈ 151\n\nMEDIAN:\n    ordered already; the 4th of 7 values = 60\n\nMODE:\n    60 appears twice = 60\n\nThe mean says 151. But SIX of the seven workers earn less than that, and nobody earns anything near it. As a description of what a typical worker earns, 151 is simply wrong.\n\nThe median, 60, describes the group far better.\n\nThe mean is pulled towards outliers because every value enters the sum. The median only cares about position, so one extreme value moves it barely at all.",
+          "example": "Where this matters outside the classroom.\n\nA company advertises \"average wage 151 per week\". True — that is the mean. Also deeply misleading, because one owner's pay lifts a figure that six of seven employees never see.\n\nIf the company reported the MEDIAN, 60, you would know what a typical worker actually earns.\n\nNeither number is a lie. They answer different questions:\n\n    MEAN   — what would everyone get if the total were shared equally?\n    MEDIAN — what does the person in the middle get?\n\nWhen you meet \"the average\" in a news report, ask which one it is. If it is not stated and the data could have outliers, be suspicious — including of a number that supports something you already believe."
+        },
+        {
+          "heading": "Choosing",
+          "body": "MEAN — use when data is fairly even and you want every value to count.\nMEDIAN — use when there are outliers, or with data like income or house prices.\nMODE — use for categories, where mean and median make no sense.\n\nThat last one matters. If you record the most common shoe size sold, the mean shoe size is a number nobody wears. Only the mode answers \"which should I stock most of?\""
+        },
+        {
+          "heading": "Try it yourself",
+          "body": "Data: 12, 15, 15, 18, 20, 100\n\n1. Find the mean, median and mode.\n2. Which best describes a typical value here? Say why.\n3. Remove the 100 and recalculate all three. Which changed most, and why?\n4. A shop records colours of shirts sold. Which average can be used at all?"
+        },
+        {
+          "heading": "Summary",
+          "body": "• Mean = total ÷ count. Median = middle when ordered. Mode = most frequent.\n• Outliers pull the mean strongly and the median hardly at all.\n• Use the median for skewed data such as incomes.\n• Use the mode for categories, where the others are meaningless.\n• When you see \"average\", ask which one — and why that one was chosen."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "id": "q12-av-1",
+      "topicId": "g12-math-averages",
+      "question": "Find the median of: 12, 15, 15, 18, 20, 100",
+      "options": [
+        "15",
+        "16.5",
+        "30",
+        "18"
+      ],
+      "correctAnswer": 1,
+      "explanation": "With six values there is no single middle, so take the mean of the middle two: (15 + 18) ÷ 2 = 16.5. Answering 15 takes only the third value; with an even count you must average the pair.",
+      "difficulty": "core"
+    },
+    {
+      "id": "q12-av-2",
+      "topicId": "g12-math-averages",
+      "question": "Seven workers earn 50, 55, 60, 60, 65, 70 and 700. Which average best describes a typical wage?",
+      "options": [
+        "The mean, because it uses every value",
+        "The median, because the 700 distorts the mean",
+        "The mode, because it is easiest",
+        "They all describe it equally well"
+      ],
+      "correctAnswer": 1,
+      "explanation": "The mean is about 151, yet six of the seven earn less than that and nobody earns near it — the outlier of 700 drags it up. The median of 60 describes a typical worker properly. Using every value is a weakness, not a strength, when one value is extreme.",
+      "difficulty": "challenge"
+    },
+    {
+      "id": "q12-av-3",
+      "topicId": "g12-math-averages",
+      "question": "A shop records the colours of shirts sold. Which average can be used?",
+      "options": [
+        "Mean",
+        "Median",
+        "Mode",
+        "All three"
+      ],
+      "correctAnswer": 2,
+      "explanation": "Only the mode. Colours are categories, not numbers — you cannot add them or put them in a meaningful order, so mean and median have no meaning. The mode gives the most frequent colour, which is exactly what a shop needs to know.",
+      "difficulty": "core"
+    }
+  ],
+  "quizzes": [
+    {
+      "id": "quiz-g12-averages",
+      "lessonId": "g12-math-averages-l1",
+      "topicId": "g12-math-averages",
+      "title": "Mean, Median and Mode Check",
+      "questionIds": [
+        "q12-av-1",
+        "q12-av-2",
+        "q12-av-3"
+      ]
+    }
+  ]
+}

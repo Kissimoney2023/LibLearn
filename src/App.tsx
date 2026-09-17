@@ -17,6 +17,13 @@ const Onboarding = lazy(() => import('./routes/Onboarding'));
 const Dashboard = lazy(() => import('./routes/Dashboard'));
 const Learn = lazy(() => import('./routes/Learn'));
 const GradeSubjects = lazy(() => import('./routes/GradeSubjects'));
+const GradeScope = lazy(() => import('./routes/GradeScope'));
+const StudentGradeScope = lazy(() => import('./routes/StudentGradeScope'));
+const Bookmarks = lazy(() => import('./routes/Bookmarks'));
+const Help = lazy(() => import('./routes/Help'));
+const About = lazy(() => import('./routes/About'));
+const Privacy = lazy(() => import('./routes/Privacy'));
+const Terms = lazy(() => import('./routes/Terms'));
 const SubjectTopics = lazy(() => import('./routes/SubjectTopics'));
 const TopicLessons = lazy(() => import('./routes/TopicLessons'));
 const QuizRunner = lazy(() => import('./routes/QuizRunner'));
@@ -85,13 +92,35 @@ export default function App() {
             <Route path="/signup" element={<PublicOnly><SignUp /></PublicOnly>} />
             <Route path="/onboarding" element={<Onboarding />} />
 
+            {/* Public: readable without an account, because someone deciding
+                whether to sign up should be able to read what the app does
+                with their data first. */}
+            <Route path="/help" element={<Help />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/privacy" element={<Privacy />} />
+            <Route path="/terms" element={<Terms />} />
+
             <Route element={<Protected />}>
-              <Route path="/dashboard" element={<Dashboard />} />
+              {/* Dashboard needs curriculum to derive Continue Learning, and
+                  bookmarks link into it, so both sit in the student's grade scope. */}
+              <Route element={<StudentGradeScope />}>
+                <Route path="/dashboard" element={<Dashboard />} />
+                <Route path="/bookmarks" element={<Bookmarks />} />
+              </Route>
               <Route path="/learn" element={<Learn />} />
-              <Route path="/learn/:grade" element={<GradeSubjects />} />
-              <Route path="/learn/:grade/:subject" element={<SubjectTopics />} />
-              <Route path="/learn/:grade/:subject/:topic" element={<TopicLessons />} />
-              <Route path="/quiz/:quizId" element={<QuizRunner />} />
+              {/* Every screen below shares one grade load, so navigating
+                  subject -> unit -> topic -> lesson touches no network, and
+                  loading/error/offline states live in GradeScope alone. */}
+              <Route path="/learn/:grade" element={<GradeScope />}>
+                <Route index element={<GradeSubjects />} />
+                <Route path=":subject" element={<SubjectTopics />} />
+                <Route path=":subject/:topic" element={<TopicLessons />} />
+              </Route>
+              {/* Quizzes carry no grade in the URL, so they scope to the
+                  student's own grade. */}
+              <Route element={<StudentGradeScope />}>
+                <Route path="/quiz/:quizId" element={<QuizRunner />} />
+              </Route>
               <Route path="/ai-tutor" element={<AiTutor />} />
               <Route path="/exam-coach" element={<ExamCoach />} />
               <Route path="/exam-coach/:exam" element={<ExamPrep />} />

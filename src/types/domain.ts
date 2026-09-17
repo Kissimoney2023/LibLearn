@@ -37,11 +37,96 @@ export interface ExamDefinition {
 export type Difficulty = 'foundation' | 'core' | 'challenge';
 
 /**
- * Every content record declares where it came from. The UI must surface
- * `demo` content as sample material and must never present it as official
- * Liberian curriculum.
+ * Every content record declares where it came from, and the UI must label it.
+ *
+ *  official      Reproduced from a government / Ministry / WAEC document that
+ *                someone has actually read. Requires a `sourceId`.
+ *  verified      Supported by a credible published educational source that
+ *                someone has actually read. Requires a `sourceId`.
+ *  liblearn      Written for LibLearn. Academically standard material, NOT
+ *                claimed to match any national curriculum.
+ *  ai-generated  Produced by a model at runtime. Never persisted as curriculum
+ *                without passing through review (see ReviewStatus).
+ *
+ * The distinction that matters: `official` and `verified` are claims about
+ * Liberia. Nothing may carry them until the underlying document has been read
+ * by a person. Guessing here misinforms students about their own examinations.
  */
-export type ContentProvenance = 'demo' | 'verified' | 'ai-generated';
+export type ContentProvenance =
+  | 'official'
+  | 'verified'
+  | 'liblearn'
+  | 'ai-generated';
+
+/** Human-readable label per provenance tier, for UI badges. */
+export const PROVENANCE_LABEL: Record<ContentProvenance, string> = {
+  official: 'Official source',
+  verified: 'Verified source',
+  liblearn: 'LibLearn content',
+  'ai-generated': 'AI generated',
+};
+
+/** Where a source document came from. */
+export type SourceType =
+  | 'MOE'
+  | 'WAEC'
+  | 'MCSS'
+  | 'Government'
+  | 'UNESCO'
+  | 'WorldBank'
+  | 'Other';
+
+/**
+ * How far a source has actually been checked.
+ *
+ * `located` is deliberately distinct from `reviewed`: knowing a document
+ * exists at a URL is not the same as having read it, and only the latter can
+ * justify `official` provenance on content.
+ */
+export type VerificationStatus =
+  | 'located'
+  | 'reviewed'
+  | 'verified'
+  | 'superseded'
+  | 'verification-required';
+
+/** A document LibLearn can cite. Registry lives in src/data/sources.ts. */
+export interface ContentSource {
+  id: string;
+  title: string;
+  organization: string;
+  sourceType: SourceType;
+  url?: string;
+  documentDate?: string;
+  curriculumVersionId?: string;
+  description: string;
+  verificationStatus: VerificationStatus;
+  lastVerifiedAt: string | null;
+  /** Why this status - especially why something is not yet reviewed. */
+  notes?: string;
+}
+
+/** Status of a curriculum version. Only `official-current` may drive claims. */
+export type CurriculumStatus =
+  | 'official-current'
+  | 'official-historical'
+  | 'revised'
+  | 'draft'
+  | 'archived'
+  | 'reference';
+
+export interface CurriculumVersion {
+  id: string;
+  name: string;
+  description: string;
+  status: CurriculumStatus;
+  sourceId?: string;
+  effectiveDate?: string;
+  notes?: string;
+}
+
+/** Editorial pipeline for content, incl. anything a model drafts. */
+export type ReviewStatus = 'draft' | 'in-review' | 'verified' | 'published';
 
 export interface Subject {
   id: string;
@@ -51,6 +136,29 @@ export interface Subject {
   grades: GradeLevel[];
 }
 
+/**
+ * A unit groups related topics inside one subject at one grade.
+ *
+ *   Grade 11 -> Mathematics -> Algebra -> Quadratic Equations -> Lesson -> Quiz
+ *                              ^^^^^^^ this
+ *
+ * Curriculum documents are organised this way, so carrying the level makes
+ * importing one a mapping exercise rather than a reshaping exercise. `unitId`
+ * on Topic stays optional: a topic that has not been filed under a unit still
+ * renders, which matters while curriculum is being loaded piecemeal.
+ */
+export interface Unit {
+  id: string;
+  subjectId: string;
+  grade: GradeLevel;
+  name: string;
+  summary: string;
+  order: number;
+  curriculumVersionId?: string;
+  provenance?: ContentProvenance;
+  sourceId?: string;
+}
+
 export interface Topic {
   id: string;
   subjectId: string;
@@ -58,6 +166,12 @@ export interface Topic {
   name: string;
   summary: string;
   order: number;
+  /** The unit this topic belongs to. Optional: see Unit. */
+  unitId?: string;
+  /** Which curriculum version places this topic at this grade. */
+  curriculumVersionId?: string;
+  provenance?: ContentProvenance;
+  sourceId?: string;
 }
 
 export interface LearningObjective {
@@ -84,6 +198,12 @@ export interface Lesson {
   sections: LessonSection[];
   provenance: ContentProvenance;
   order: number;
+  /** Required when provenance is 'official' or 'verified'. */
+  sourceId?: string;
+  curriculumVersionId?: string;
+  reviewStatus?: ReviewStatus;
+  /** Terms a student can look up; feeds the glossary and search. */
+  keyTerms?: {term: string; definition: string}[];
 }
 
 export interface Question {
@@ -114,6 +234,15 @@ export interface Quiz {
 
 /* ---------- Student state ---------- */
 
+/** How the tutor speaks. Liberian English stays academically precise. */
+export type TeachingStyle = 'standard' | 'simple' | 'liberian';
+
+export const TEACHING_STYLE_LABEL: Record<TeachingStyle, string> = {
+  standard: 'Standard English',
+  simple: 'Simple English',
+  liberian: 'Liberian English',
+};
+
 export interface Profile {
   id: string;
   name: string;
@@ -122,6 +251,12 @@ export interface Profile {
   grade: GradeLevel | null;
   selectedSubjects: string[];
   examGoal: ExamGoal | null;
+  /**
+   * How the AI Tutor should address this student. Persisted on the profile so
+   * the choice survives a new device and a new session - a preference that
+   * resets every time is a preference the student stops setting.
+   */
+  preferredLanguage: TeachingStyle;
   onboardedAt: string | null;
   createdAt: string;
   updatedAt: string;
@@ -223,9 +358,64 @@ export interface ProgressSummary {
   strongTopics: string[];
 }
 
+/* ---------- Bookmarks & activity ---------- */
+
+export type BookmarkType = 'lesson' | 'topic' | 'question';
+
+export interface Bookmark {
+  id: string;
+  contentType: BookmarkType;
+  contentId: string;
+  /** Denormalised so My Bookmarks renders from one read, not N lookups. */
+  title: string;
+  subjectId?: string;
+  grade?: GradeLevel;
+  createdAt: string;
+}
+
+export type ActivityType =
+  | 'lesson_opened'
+  | 'lesson_completed'
+  | 'quiz_started'
+  | 'quiz_completed'
+  | 'bookmark_created'
+  | 'exam_started'
+  | 'exam_completed'
+  | 'search_performed';
+
+export interface ActivityEvent {
+  id: string;
+  activityType: ActivityType;
+  contentType?: 'lesson' | 'topic' | 'subject' | 'quiz' | 'question' | 'exam' | 'unit';
+  contentId?: string;
+  /** Small payload (title, subject, score) so the feed needs no extra reads. */
+  metadata: Record<string, string | number>;
+  createdAt: string;
+}
+
+/**
+ * The card that answers "where was I?".
+ *
+ * Derived from lesson progress rather than stored, so it can never disagree
+ * with the progress it is meant to summarise.
+ */
+export interface ContinueLearning {
+  lessonId: string;
+  lessonTitle: string;
+  topicId: string;
+  topicName: string;
+  subjectId: string;
+  subjectName: string;
+  grade: GradeLevel;
+  /** Lessons finished in this topic, over lessons in it. */
+  topicCompleted: number;
+  topicTotal: number;
+  percent: number;
+  href: string;
+}
+
 /* ---------- AI tutor ---------- */
 
-export type TeachingStyle = 'standard' | 'simple' | 'liberian';
 
 export type TutorMode =
   | 'chat'

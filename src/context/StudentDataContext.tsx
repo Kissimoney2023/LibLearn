@@ -5,23 +5,39 @@ import {
   useEffect,
   useMemo,
   useState,
+  useSyncExternalStore,
   type ReactNode,
 } from 'react';
 import {useAuth} from './AuthContext';
 import * as store from '../lib/store';
 import {summarise, examReadiness} from '../lib/progress';
+import {getCorpusVersion, loadedLessons, subscribeCorpus} from '../lib/curriculum';
 import {recommend} from '../lib/recommendations';
 import {evaluate} from '../lib/achievements';
 import {track} from '../lib/analytics';
-import {lessonById} from '../data/seed/curriculum';
 import type {
+  ActivityEvent,
+  Bookmark,
+  BookmarkType,
   EarnedAchievement,
   ExamAttempt,
+  Lesson,
   LessonProgress,
   ProgressSummary,
   QuizAttempt,
   Recommendation,
 } from '../types/domain';
+
+/**
+ * The minimum a caller must supply to record progress against a lesson.
+ *
+ * Progress used to be recorded from a lesson id alone, looked up in the bundled
+ * seed data. That silently did nothing for any lesson loaded from the database,
+ * because the lookup returned undefined and the function returned early - a
+ * student would mark a lesson complete and watch nothing happen. Callers hold
+ * the lesson already, so they pass what is needed.
+ */
+export type LessonRef = Pick<Lesson, 'id' | 'subjectId' | 'topicId' | 'grade'>;
 
 interface StudentData {
   loading: boolean;
@@ -32,8 +48,19 @@ interface StudentData {
   summary: ProgressSummary;
   recommendations: Recommendation[];
   readiness: number;
-  startLesson: (lessonId: string) => Promise<void>;
-  completeLesson: (lessonId: string) => Promise<void>;
+  bookmarks: Bookmark[];
+  activity: ActivityEvent[];
+  startLesson: (lesson: LessonRef) => Promise<void>;
+  completeLesson: (lesson: LessonRef, title?: string) => Promise<void>;
+  toggleBookmark: (b: {
+    contentType: BookmarkType;
+    contentId: string;
+    title: string;
+    subjectId?: string;
+    grade?: LessonRef['grade'];
+  }) => Promise<boolean>;
+  isBookmarked: (contentType: BookmarkType, contentId: string) => boolean;
+  logActivity: (e: Omit<ActivityEvent, 'id' | 'createdAt'>) => Promise<void>;
   recordQuiz: (attempt: QuizAttempt) => Promise<void>;
   recordExam: (attempt: ExamAttempt) => Promise<void>;
   isLessonComplete: (lessonId: string) => boolean;
@@ -62,6 +89,8 @@ export function StudentDataProvider({children}: {children: ReactNode}) {
   const [quizzes, setQuizzes] = useState<QuizAttempt[]>([]);
   const [exams, setExams] = useState<ExamAttempt[]>([]);
   const [achievements, setAchievements] = useState<EarnedAchievement[]>([]);
+  const [bookmarks, setBookmarks] = useState<Bookmark[]>([]);
+  const [activity, setActivity] = useState<ActivityEvent[]>([]);
 
   useEffect(() => {
     if (!userId) {
@@ -72,17 +101,21 @@ export function StudentDataProvider({children}: {children: ReactNode}) {
     setLoading(true);
     (async () => {
       try {
-        const [l, q, e, a] = await Promise.all([
+        const [l, q, e, a, b, ev] = await Promise.all([
           store.loadLessonProgress(userId),
           store.loadQuizAttempts(userId),
           store.loadExamAttempts(userId),
           store.loadAchievements(userId),
+          store.loadBookmarks(userId),
+          store.loadActivity(userId),
         ]);
         if (cancelled) return;
         setLessons(l);
         setQuizzes(q);
         setExams(e);
         setAchievements(a);
+        setBookmarks(b);
+        setActivity(ev);
       } finally {
         if (!cancelled) setLoading(false);
       }
@@ -92,12 +125,25 @@ export function StudentDataProvider({children}: {children: ReactNode}) {
     };
   }, [userId]);
 
+  // Re-derives when a grade's curriculum lands, so progress denominators track
+  // the corpus the student is actually reading rather than the bundled one.
+  const corpusVersion = useSyncExternalStore(subscribeCorpus, getCorpusVersion, getCorpusVersion);
+
   const summary = useMemo(
     () =>
       profile
-        ? summarise(lessons, quizzes, exams, profile.selectedSubjects, profile.grade)
+        ? summarise(
+            lessons,
+            quizzes,
+            exams,
+            profile.selectedSubjects,
+            profile.grade,
+            loadedLessons(),
+          )
         : EMPTY_SUMMARY,
-    [lessons, quizzes, exams, profile],
+    // corpusVersion is the dependency that matters here: loadedLessons() is a
+    // snapshot, so without it the summary would keep the first corpus forever.
+    [lessons, quizzes, exams, profile, corpusVersion],
   );
 
   const recommendations = useMemo(
@@ -122,13 +168,11 @@ export function StudentDataProvider({children}: {children: ReactNode}) {
   }, [userId, loading, lessons, quizzes, exams, summary, achievements]);
 
   const startLesson = useCallback(
-    async (lessonId: string) => {
+    async (lesson: LessonRef) => {
       if (!userId) return;
-      const lesson = lessonById(lessonId);
-      if (!lesson) return;
-      if (lessons.some((l) => l.lessonId === lessonId)) return;
+      if (lessons.some((l) => l.lessonId === lesson.id)) return;
       const entry: LessonProgress = {
-        lessonId,
+        lessonId: lesson.id,
         subjectId: lesson.subjectId,
         topicId: lesson.topicId,
         grade: lesson.grade,
@@ -137,19 +181,23 @@ export function StudentDataProvider({children}: {children: ReactNode}) {
         completedAt: null,
       };
       setLessons(await store.upsertLessonProgress(userId, entry));
-      track('lesson_started', {lessonId, subjectId: lesson.subjectId});
+      track('lesson_started', {lessonId: lesson.id, subjectId: lesson.subjectId});
+      void store.recordActivity(userId, {
+        activityType: 'lesson_opened',
+        contentType: 'lesson',
+        contentId: lesson.id,
+        metadata: {subjectId: lesson.subjectId, grade: lesson.grade},
+      });
     },
     [userId, lessons],
   );
 
   const completeLesson = useCallback(
-    async (lessonId: string) => {
+    async (lesson: LessonRef, title?: string) => {
       if (!userId) return;
-      const lesson = lessonById(lessonId);
-      if (!lesson) return;
-      const existing = lessons.find((l) => l.lessonId === lessonId);
+      const existing = lessons.find((l) => l.lessonId === lesson.id);
       const entry: LessonProgress = {
-        lessonId,
+        lessonId: lesson.id,
         subjectId: lesson.subjectId,
         topicId: lesson.topicId,
         grade: lesson.grade,
@@ -158,7 +206,14 @@ export function StudentDataProvider({children}: {children: ReactNode}) {
         completedAt: new Date().toISOString(),
       };
       setLessons(await store.upsertLessonProgress(userId, entry));
-      track('lesson_completed', {lessonId, subjectId: lesson.subjectId});
+      track('lesson_completed', {lessonId: lesson.id, subjectId: lesson.subjectId});
+      void store.recordActivity(userId, {
+        activityType: 'lesson_completed',
+        contentType: 'lesson',
+        contentId: lesson.id,
+        metadata: {subjectId: lesson.subjectId, grade: lesson.grade, title: title ?? ''},
+      });
+      setActivity(await store.loadActivity(userId));
     },
     [userId, lessons],
   );
@@ -191,6 +246,46 @@ export function StudentDataProvider({children}: {children: ReactNode}) {
     [userId],
   );
 
+  const toggleBookmark = useCallback(
+    async (b: {
+      contentType: BookmarkType;
+      contentId: string;
+      title: string;
+      subjectId?: string;
+      grade?: LessonRef['grade'];
+    }) => {
+      if (!userId) return false;
+      const {bookmarks: next, added} = await store.toggleBookmark(userId, b);
+      setBookmarks(next);
+      if (added) {
+        void store.recordActivity(userId, {
+          activityType: 'bookmark_created',
+          contentType: b.contentType,
+          contentId: b.contentId,
+          metadata: {title: b.title, subjectId: b.subjectId ?? ''},
+        });
+        setActivity(await store.loadActivity(userId));
+      }
+      return added;
+    },
+    [userId],
+  );
+
+  const isBookmarked = useCallback(
+    (contentType: BookmarkType, contentId: string) =>
+      bookmarks.some((b) => b.contentType === contentType && b.contentId === contentId),
+    [bookmarks],
+  );
+
+  const logActivity = useCallback(
+    async (e: Omit<ActivityEvent, 'id' | 'createdAt'>) => {
+      if (!userId) return;
+      await store.recordActivity(userId, e);
+      setActivity(await store.loadActivity(userId));
+    },
+    [userId],
+  );
+
   const isLessonComplete = useCallback(
     (lessonId: string) =>
       lessons.some((l) => l.lessonId === lessonId && l.status === 'completed'),
@@ -207,15 +302,21 @@ export function StudentDataProvider({children}: {children: ReactNode}) {
       summary,
       recommendations,
       readiness,
+      bookmarks,
+      activity,
       startLesson,
       completeLesson,
       recordQuiz,
       recordExam,
       isLessonComplete,
+      toggleBookmark,
+      isBookmarked,
+      logActivity,
     }),
     [
       loading, lessons, quizzes, exams, achievements, summary, recommendations,
-      readiness, startLesson, completeLesson, recordQuiz, recordExam, isLessonComplete,
+      readiness, bookmarks, activity, startLesson, completeLesson, recordQuiz,
+      recordExam, isLessonComplete, toggleBookmark, isBookmarked, logActivity,
     ],
   );
 

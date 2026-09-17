@@ -1,0 +1,403 @@
+{
+  "grade": 11,
+  "subjectId": "mathematics",
+  "curriculumVersionId": "liblearn-v1",
+  "provenance": "liblearn",
+  "sourceId": null,
+  "units": [
+    {
+      "id": "g11-math-u-algebra",
+      "name": "Algebra",
+      "summary": "Working with unknowns, equations and the relationships between them.",
+      "order": 1
+    },
+    {
+      "id": "g11-math-u-trig",
+      "name": "Trigonometry",
+      "summary": "Relationships between angles and lengths in triangles.",
+      "order": 2
+    }
+  ],
+  "topics": [
+    {
+      "id": "g11-math-quadratics",
+      "unitId": "g11-math-u-algebra",
+      "name": "Quadratic Equations",
+      "summary": "Equations where the unknown is squared: how to solve them by factorising, completing the square and formula, and what the graph tells you.",
+      "order": 1
+    },
+    {
+      "id": "g11-math-trigonometry",
+      "unitId": "g11-math-u-trig",
+      "name": "Trigonometry",
+      "summary": "Using ratios of sides in right-angled triangles to find lengths and angles you cannot measure directly.",
+      "order": 2
+    }
+  ],
+  "lessons": [
+    {
+      "id": "g11-math-quadratics-l1",
+      "topicId": "g11-math-quadratics",
+      "title": "Solving Quadratic Equations by Factorising",
+      "estimatedMinutes": 15,
+      "order": 1,
+      "objectives": [
+        {
+          "id": "o1",
+          "text": "Recognise a quadratic equation and write it in standard form."
+        },
+        {
+          "id": "o2",
+          "text": "Factorise a quadratic expression into two brackets."
+        },
+        {
+          "id": "o3",
+          "text": "Use the zero-product rule to find both solutions."
+        }
+      ],
+      "keyTerms": [
+        {
+          "term": "Quadratic equation",
+          "definition": "An equation in which the highest power of the unknown is 2."
+        },
+        {
+          "term": "Standard form",
+          "definition": "A quadratic written as ax² + bx + c = 0, with everything on one side."
+        },
+        {
+          "term": "Root",
+          "definition": "A value of x that makes the equation true. A quadratic has at most two."
+        },
+        {
+          "term": "Zero-product rule",
+          "definition": "If two things multiply to give 0, at least one of them must be 0."
+        }
+      ],
+      "sections": [
+        {
+          "heading": "What you will learn",
+          "body": "By the end of this lesson you will be able to take a quadratic equation, rearrange it into standard form, factorise it, and read off both of its roots. Factorising is the fastest method when it works, so it is worth trying first."
+        },
+        {
+          "heading": "Introduction",
+          "body": "A linear equation like 3x + 4 = 19 has exactly one solution. A quadratic is different: because the unknown is squared, there are usually two values of x that satisfy it.\n\nThink about x² = 9. It is tempting to answer 3 and stop. But (−3)² = 9 as well, so x = 3 and x = −3 both work. Losing the second solution is the single most common mistake with quadratics, and factorising is a method that hands you both."
+        },
+        {
+          "heading": "Getting to standard form",
+          "body": "Before you can factorise, every term must be on one side with zero on the other:\n\n    ax² + bx + c = 0\n\nIf you are given x² + 5x = −6, add 6 to both sides to get x² + 5x + 6 = 0. Only now is it ready.\n\nThis step is not a formality. The method that follows depends on one side being exactly zero, and it gives wrong answers if it is not."
+        },
+        {
+          "heading": "Factorising",
+          "body": "To factorise x² + bx + c, look for two numbers that MULTIPLY to give c and ADD to give b.\n\nFor x² + 5x + 6: you need two numbers multiplying to 6 and adding to 5.\n\n    1 × 6 = 6, but 1 + 6 = 7   ✗\n    2 × 3 = 6, and 2 + 3 = 5   ✓\n\nSo the numbers are 2 and 3, and the expression factorises as (x + 2)(x + 3).\n\nWatch the signs. If c is positive and b is negative, both numbers are negative: x² − 5x + 6 = (x − 2)(x − 3). If c is negative, one number is positive and the other negative.",
+          "example": "Factorise x² − x − 12.\n\nTwo numbers multiplying to −12, adding to −1.\nSince −12 is negative, one is positive and one negative.\n\n    3 and −4:  3 × (−4) = −12 ✓   3 + (−4) = −1 ✓\n\nSo x² − x − 12 = (x + 3)(x − 4)."
+        },
+        {
+          "heading": "From factors to roots",
+          "body": "Here is the step that makes the whole method work. If two quantities multiply to give zero, then at least one of them MUST be zero — there is no other way to get a product of zero.\n\nSo from (x + 2)(x + 3) = 0 we get:\n\n    x + 2 = 0   →   x = −2\n    x + 3 = 0   →   x = −3\n\nBoth are solutions. Notice the sign flip: the bracket (x + 2) gives the root −2, not +2. Students lose marks on this more often than on the factorising itself."
+        },
+        {
+          "heading": "Worked example",
+          "body": "Solve x² + 2x − 15 = 0 completely.",
+          "example": "Step 1 — Already in standard form.\n\nStep 2 — Two numbers multiplying to −15, adding to +2.\n    5 × (−3) = −15 ✓    5 + (−3) = 2 ✓\n\nStep 3 — Factorise:\n    (x + 5)(x − 3) = 0\n\nStep 4 — Set each bracket to zero:\n    x + 5 = 0  →  x = −5\n    x − 3 = 0  →  x = 3\n\nStep 5 — Check by substituting back:\n    x = −5:  25 − 10 − 15 = 0 ✓\n    x = 3:   9 + 6 − 15 = 0 ✓\n\nAnswer: x = −5 or x = 3"
+        },
+        {
+          "heading": "Try it yourself",
+          "body": "Solve these, and check each answer by substituting it back in:\n\n  1. x² + 7x + 10 = 0\n  2. x² − 9x + 20 = 0\n  3. x² − 16 = 0   (hint: what is b here?)\n\nIf you get stuck, ask the AI Tutor for a hint rather than the answer — you will remember the method far better for having worked it out."
+        },
+        {
+          "heading": "Summary",
+          "body": "• Rearrange into ax² + bx + c = 0 first — always.\n• Find two numbers multiplying to c and adding to b.\n• Write the two brackets, set each to zero, solve each.\n• The bracket (x + k) gives the root x = −k. Mind the sign.\n• Expect two solutions, and check both.\n\nNot every quadratic factorises neatly. When no whole numbers work, use the quadratic formula instead — that is the next lesson."
+        }
+      ]
+    },
+    {
+      "id": "g11-math-quadratics-l2",
+      "topicId": "g11-math-quadratics",
+      "title": "The Quadratic Formula and the Discriminant",
+      "estimatedMinutes": 15,
+      "order": 2,
+      "objectives": [
+        {
+          "id": "o1",
+          "text": "Apply the quadratic formula to any quadratic equation."
+        },
+        {
+          "id": "o2",
+          "text": "Calculate the discriminant and say how many roots exist."
+        },
+        {
+          "id": "o3",
+          "text": "Choose sensibly between factorising and the formula."
+        }
+      ],
+      "keyTerms": [
+        {
+          "term": "Quadratic formula",
+          "definition": "x = (−b ± √(b² − 4ac)) / 2a — solves any quadratic in standard form."
+        },
+        {
+          "term": "Discriminant",
+          "definition": "The quantity b² − 4ac, which reveals how many real roots an equation has."
+        },
+        {
+          "term": "Coefficient",
+          "definition": "The number multiplying a term: in 3x², the coefficient a is 3."
+        }
+      ],
+      "sections": [
+        {
+          "heading": "What you will learn",
+          "body": "Factorising is quick but only works when the numbers are friendly. The quadratic formula works every time, on every quadratic, without exception. You will also learn to tell in advance — before solving anything — how many solutions an equation has."
+        },
+        {
+          "heading": "The formula",
+          "body": "For any equation in the form ax² + bx + c = 0:\n\n    x = ( −b ± √(b² − 4ac) ) / 2a\n\nThe ± is doing important work: it is what produces the two roots. Take the + once, the − once, and you have both.\n\nTo use it, first identify a, b and c including their signs. For 2x² − 7x + 3 = 0: a = 2, b = −7, c = 3. Note that b is −7, not 7. Dropping that minus sign is the most frequent source of wrong answers here."
+        },
+        {
+          "heading": "Worked example",
+          "body": "Solve 2x² − 7x + 3 = 0 using the formula.",
+          "example": "a = 2,  b = −7,  c = 3\n\nDiscriminant first:\n    b² − 4ac = (−7)² − 4(2)(3)\n             = 49 − 24\n             = 25\n\n√25 = 5, a whole number, so this one would have factorised too.\n\nNow the formula:\n    x = ( −(−7) ± 5 ) / (2 × 2)\n    x = ( 7 ± 5 ) / 4\n\nTaking + :  x = 12/4 = 3\nTaking − :  x = 2/4 = 0.5\n\nAnswer: x = 3 or x = 0.5\n\nCheck x = 3:  2(9) − 7(3) + 3 = 18 − 21 + 3 = 0 ✓"
+        },
+        {
+          "heading": "The discriminant",
+          "body": "The part under the square root, b² − 4ac, is called the discriminant. Calculate it on its own and it tells you what to expect:\n\n    b² − 4ac > 0  →  two different real roots\n    b² − 4ac = 0  →  one repeated root\n    b² − 4ac < 0  →  no real roots\n\nThe reason is the square root. A positive number has two square roots, so ± gives two answers. Zero has one, so both branches collapse to the same value. A negative number has no real square root at all, which is why the graph never crosses the x-axis.\n\nThis is worth a moment on its own: it lets you answer \"how many solutions does this have?\" without solving anything."
+        },
+        {
+          "heading": "Which method should you use?",
+          "body": "Try factorising first. If you spot the two numbers within about fifteen seconds, factorising is faster and less error-prone.\n\nUse the formula when the numbers do not cooperate, when a ≠ 1, or when the question asks for answers to a number of decimal places — that is a strong hint the roots are not whole numbers.\n\nThe formula is never wrong, only sometimes slower. If you are unsure, use it."
+        },
+        {
+          "heading": "Try it yourself",
+          "body": "1. Solve x² + 4x + 1 = 0 to 2 decimal places.\n2. How many real roots does x² + 2x + 5 = 0 have? Find the discriminant — you should not need to solve it.\n3. Solve 3x² − 5x − 2 = 0."
+        },
+        {
+          "heading": "Summary",
+          "body": "• x = (−b ± √(b² − 4ac)) / 2a works for every quadratic.\n• Identify a, b, c carefully, keeping negative signs attached.\n• The discriminant b² − 4ac tells you the number of real roots before you solve.\n• Factorise when it is quick; use the formula whenever it is not."
+        }
+      ]
+    },
+    {
+      "id": "g11-math-trigonometry-l1",
+      "topicId": "g11-math-trigonometry",
+      "title": "Sine, Cosine and Tangent in Right-Angled Triangles",
+      "estimatedMinutes": 14,
+      "order": 1,
+      "objectives": [
+        {
+          "id": "o1",
+          "text": "Label the hypotenuse, opposite and adjacent sides correctly."
+        },
+        {
+          "id": "o2",
+          "text": "Use SOH-CAH-TOA to choose the right ratio."
+        },
+        {
+          "id": "o3",
+          "text": "Find an unknown side or angle in a right-angled triangle."
+        }
+      ],
+      "keyTerms": [
+        {
+          "term": "Hypotenuse",
+          "definition": "The longest side, always opposite the right angle."
+        },
+        {
+          "term": "Opposite",
+          "definition": "The side facing the angle you are working with."
+        },
+        {
+          "term": "Adjacent",
+          "definition": "The side next to your angle that is not the hypotenuse."
+        }
+      ],
+      "sections": [
+        {
+          "heading": "What you will learn",
+          "body": "Trigonometry lets you find a distance or an angle you cannot physically measure — the height of a tree, the width of a river, the angle of a roof — using only a triangle and a calculator."
+        },
+        {
+          "heading": "Labelling the sides",
+          "body": "Every right-angled triangle has three sides, and which name each one takes depends on the angle you are working from.\n\n• The HYPOTENUSE is the longest side, opposite the right angle. It never changes.\n• The OPPOSITE is the side directly facing your chosen angle.\n• The ADJACENT is the remaining side, touching your angle.\n\nOnly the hypotenuse is fixed. If you switch to the other non-right angle, opposite and adjacent swap places. Label the sides for the angle in the question before doing anything else."
+        },
+        {
+          "heading": "SOH-CAH-TOA",
+          "body": "Three ratios connect an angle to two sides:\n\n    sin θ = Opposite / Hypotenuse      (SOH)\n    cos θ = Adjacent / Hypotenuse      (CAH)\n    tan θ = Opposite / Adjacent        (TOA)\n\nTo choose: identify which two sides the question involves — the one you know and the one you want — and pick the ratio containing exactly those two."
+        },
+        {
+          "heading": "Worked example — finding a side",
+          "body": "A ladder leans against a wall at 65° to the ground. The ladder is 4 m long. How high up the wall does it reach?",
+          "example": "The angle is 65°. The height up the wall is OPPOSITE that angle.\nThe ladder is the HYPOTENUSE (4 m).\n\nOpposite and hypotenuse → sine.\n\n    sin 65° = opposite / 4\n    opposite = 4 × sin 65°\n    opposite = 4 × 0.9063\n    opposite = 3.63 m (2 d.p.)\n\nSanity check: 3.63 m is less than the 4 m ladder, which it must be."
+        },
+        {
+          "heading": "Worked example — finding an angle",
+          "body": "A ramp rises 1.5 m over a horizontal distance of 6 m. What angle does it make with the ground?",
+          "example": "Rise = 1.5 m is OPPOSITE the angle.\nHorizontal 6 m is ADJACENT.\n\nOpposite and adjacent → tangent.\n\n    tan θ = 1.5 / 6 = 0.25\n\nTo get θ from tan θ, use the inverse (tan⁻¹ on your calculator):\n\n    θ = tan⁻¹(0.25) = 14.0°\n\nA gentle slope, which matches a ramp."
+        },
+        {
+          "heading": "Try it yourself",
+          "body": "1. A triangle has hypotenuse 10 cm and an angle of 30°. Find the side opposite that angle.\n2. A tree casts a 12 m shadow when the sun is 40° above the horizon. How tall is the tree?\n3. A right-angled triangle has opposite 5 and adjacent 12. Find the angle."
+        },
+        {
+          "heading": "Summary",
+          "body": "• Label opposite, adjacent and hypotenuse relative to the angle in the question.\n• Pick the ratio containing the side you know and the side you want.\n• Multiply when finding a side; use sin⁻¹, cos⁻¹ or tan⁻¹ when finding an angle.\n• Check your answer is physically sensible — the hypotenuse is always longest."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "id": "q11-quad-1",
+      "topicId": "g11-math-quadratics",
+      "question": "Which of these is a quadratic equation in standard form?",
+      "options": [
+        "3x + 5 = 0",
+        "x² + 2x − 8 = 0",
+        "x³ − 1 = 0",
+        "2/x = 4"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Standard form is ax² + bx + c = 0: the highest power of x must be exactly 2, and everything must be on one side. 3x + 5 = 0 is linear (highest power 1), x³ − 1 = 0 is cubic, and 2/x = 4 has x in the denominator, so it is not a polynomial equation at all.",
+      "difficulty": "foundation",
+      "examGoal": "wassce"
+    },
+    {
+      "id": "q11-quad-2",
+      "topicId": "g11-math-quadratics",
+      "question": "Factorise:  x² + 5x + 6",
+      "options": [
+        "(x + 1)(x + 6)",
+        "(x + 2)(x + 3)",
+        "(x − 2)(x − 3)",
+        "(x + 5)(x + 6)"
+      ],
+      "correctAnswer": 1,
+      "explanation": "You need two numbers that multiply to 6 and add to 5. Check the pairs: 1 and 6 multiply to 6 but add to 7. 2 and 3 multiply to 6 and add to 5 — correct. So the factors are (x + 2)(x + 3). Expanding back gives x² + 3x + 2x + 6 = x² + 5x + 6.",
+      "difficulty": "core",
+      "examGoal": "wassce"
+    },
+    {
+      "id": "q11-quad-3",
+      "topicId": "g11-math-quadratics",
+      "question": "The equation (x + 4)(x − 2) = 0 has which solutions?",
+      "options": [
+        "x = 4 or x = −2",
+        "x = −4 or x = 2",
+        "x = 4 or x = 2",
+        "x = −4 or x = −2"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Set each bracket to zero separately. From x + 4 = 0 you get x = −4. From x − 2 = 0 you get x = 2. Note the sign flips: the bracket (x + 4) gives the root −4, not +4. Reading the numbers straight out of the brackets is the most common error here.",
+      "difficulty": "core",
+      "examGoal": "wassce"
+    },
+    {
+      "id": "q11-quad-4",
+      "topicId": "g11-math-quadratics",
+      "question": "For 2x² − 7x + 3 = 0, what is the value of the discriminant b² − 4ac?",
+      "options": [
+        "25",
+        "73",
+        "−25",
+        "49"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Here a = 2, b = −7 and c = 3. So b² − 4ac = (−7)² − 4(2)(3) = 49 − 24 = 25. Keeping the minus sign on b matters, though in this case squaring removes it. Since 25 is positive, the equation has two different real roots.",
+      "difficulty": "core",
+      "examGoal": "wassce"
+    },
+    {
+      "id": "q11-quad-5",
+      "topicId": "g11-math-quadratics",
+      "question": "How many real roots does x² + 2x + 5 = 0 have?",
+      "options": [
+        "Two",
+        "One",
+        "None",
+        "Cannot be determined"
+      ],
+      "correctAnswer": 2,
+      "explanation": "Find the discriminant: b² − 4ac = 2² − 4(1)(5) = 4 − 20 = −16. It is negative, and a negative number has no real square root, so the formula produces no real answer. The equation has no real roots — its graph never crosses the x-axis. You can answer this without solving anything.",
+      "difficulty": "challenge",
+      "examGoal": "wassce"
+    },
+    {
+      "id": "q11-trig-1",
+      "topicId": "g11-math-trigonometry",
+      "question": "In a right-angled triangle, which side is always the hypotenuse?",
+      "options": [
+        "The side opposite the right angle",
+        "The side adjacent to the chosen angle",
+        "The shortest side",
+        "The vertical side"
+      ],
+      "correctAnswer": 0,
+      "explanation": "The hypotenuse is always opposite the right angle, and it is always the longest side. Unlike \"opposite\" and \"adjacent\", which swap depending on which angle you are working from, the hypotenuse never changes.",
+      "difficulty": "foundation",
+      "examGoal": "wassce"
+    },
+    {
+      "id": "q11-trig-2",
+      "topicId": "g11-math-trigonometry",
+      "question": "You know the hypotenuse and want the side opposite a given angle. Which ratio should you use?",
+      "options": [
+        "Cosine",
+        "Sine",
+        "Tangent",
+        "Pythagoras"
+      ],
+      "correctAnswer": 1,
+      "explanation": "SOH-CAH-TOA: sine links Opposite and Hypotenuse, which are exactly the two sides involved. Cosine uses adjacent and hypotenuse; tangent uses opposite and adjacent. Pick the ratio containing the side you know and the side you want.",
+      "difficulty": "core",
+      "examGoal": "wassce"
+    },
+    {
+      "id": "q11-trig-3",
+      "topicId": "g11-math-trigonometry",
+      "question": "A ramp rises 3 m over a horizontal distance of 4 m. What is tan of the angle it makes with the ground?",
+      "options": [
+        "0.75",
+        "1.33",
+        "0.6",
+        "0.8"
+      ],
+      "correctAnswer": 0,
+      "explanation": "tan = opposite / adjacent. The rise (3 m) is opposite the angle and the horizontal distance (4 m) is adjacent, so tan θ = 3/4 = 0.75. Dividing the wrong way round gives 1.33, which is the tangent of the other angle in the triangle.",
+      "difficulty": "core",
+      "examGoal": "wassce"
+    }
+  ],
+  "quizzes": [
+    {
+      "id": "quiz-g11-quadratics",
+      "lessonId": "g11-math-quadratics-l1",
+      "topicId": "g11-math-quadratics",
+      "title": "Quadratic Equations Check",
+      "questionIds": [
+        "q11-quad-1",
+        "q11-quad-2",
+        "q11-quad-3"
+      ]
+    },
+    {
+      "id": "quiz-g11-quadratics-2",
+      "lessonId": "g11-math-quadratics-l2",
+      "topicId": "g11-math-quadratics",
+      "title": "Formula & Discriminant Check",
+      "questionIds": [
+        "q11-quad-4",
+        "q11-quad-5"
+      ]
+    },
+    {
+      "id": "quiz-g11-trigonometry",
+      "lessonId": "g11-math-trigonometry-l1",
+      "topicId": "g11-math-trigonometry",
+      "title": "Trigonometry Check",
+      "questionIds": [
+        "q11-trig-1",
+        "q11-trig-2",
+        "q11-trig-3"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,107 @@
+{
+  "grade": 6,
+  "subjectId": "mathematics",
+  "curriculumVersionId": "liblearn-v1",
+  "provenance": "liblearn",
+  "sourceId": null,
+  "units": [],
+  "topics": [
+    {
+      "id": "g6-math-fractions",
+      "name": "Fractions",
+      "summary": "Parts of a whole: naming, comparing and adding fractions.",
+      "order": 1
+    }
+  ],
+  "lessons": [
+    {
+      "id": "g6-math-fractions-l1",
+      "topicId": "g6-math-fractions",
+      "title": "Naming and Comparing Fractions",
+      "estimatedMinutes": 10,
+      "order": 1,
+      "objectives": [
+        {
+          "id": "o1",
+          "text": "Name the numerator and denominator of a fraction."
+        },
+        {
+          "id": "o2",
+          "text": "Compare two fractions with the same denominator."
+        }
+      ],
+      "keyTerms": [],
+      "sections": [
+        {
+          "heading": "The two numbers",
+          "body": "A fraction has a top number and a bottom number. The bottom number - the denominator - tells you how many equal parts the whole has been cut into. The top number - the numerator - tells you how many of those parts you have.",
+          "example": "If a loaf is cut into 8 equal slices and you take 3, you have 3/8 of the loaf. The 8 is the denominator, the 3 is the numerator."
+        },
+        {
+          "heading": "Comparing fractions",
+          "body": "When two fractions have the same denominator, the pieces are the same size, so the one with the bigger numerator is bigger. 5/8 is greater than 3/8 because five equal pieces beat three of the same size."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "id": "q-fr6-1",
+      "topicId": "g6-math-fractions",
+      "question": "In the fraction 3/8, which number is the denominator?",
+      "options": [
+        "3",
+        "8",
+        "Both",
+        "Neither"
+      ],
+      "correctAnswer": 1,
+      "explanation": "The denominator is the bottom number. It tells you how many equal parts the whole was cut into - here, 8.",
+      "difficulty": "foundation",
+      "examGoal": "lpsce"
+    },
+    {
+      "id": "q-fr6-2",
+      "topicId": "g6-math-fractions",
+      "question": "Which fraction is larger: 5/8 or 3/8?",
+      "options": [
+        "5/8",
+        "3/8",
+        "They are equal",
+        "It depends"
+      ],
+      "correctAnswer": 0,
+      "explanation": "The denominators match, so the pieces are the same size. Five pieces is more than three, so 5/8 is larger.",
+      "difficulty": "foundation",
+      "examGoal": "lpsce"
+    },
+    {
+      "id": "q-fr6-3",
+      "topicId": "g6-math-fractions",
+      "question": "A loaf is cut into 8 equal slices. You take 3. What fraction of the loaf is left?",
+      "options": [
+        "3/8",
+        "5/8",
+        "8/3",
+        "1/8"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Eight slices in total, three taken, so five remain. That is 5/8 of the loaf.",
+      "difficulty": "core",
+      "examGoal": "lpsce"
+    }
+  ],
+  "quizzes": [
+    {
+      "id": "quiz-g6-fractions",
+      "lessonId": "g6-math-fractions-l1",
+      "topicId": "g6-math-fractions",
+      "title": "Fractions Check",
+      "questionIds": [
+        "q-fr6-1",
+        "q-fr6-2",
+        "q-fr6-3"
+      ]
+    }
+  ]
+}

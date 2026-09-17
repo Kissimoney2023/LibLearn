@@ -46,6 +46,7 @@ const newProfile = (id: string, name: string, email: string): Profile => ({
   grade: null,
   selectedSubjects: [],
   examGoal: null,
+  preferredLanguage: 'standard',
   onboardedAt: null,
   createdAt: new Date().toISOString(),
   updatedAt: new Date().toISOString(),

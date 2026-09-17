@@ -1,0 +1,130 @@
+{
+  "grade": 9,
+  "subjectId": "civics",
+  "curriculumVersionId": "liblearn-v1",
+  "provenance": "liblearn",
+  "sourceId": null,
+  "units": [
+    {
+      "id": "g9-civ-u-democracy",
+      "name": "Democracy",
+      "summary": "What democracy requires beyond simply holding a vote.",
+      "order": 1
+    }
+  ],
+  "topics": [
+    {
+      "id": "g9-civ-democracy",
+      "unitId": "g9-civ-u-democracy",
+      "name": "What Democracy Requires",
+      "summary": "Voting is necessary but not sufficient.",
+      "order": 1
+    }
+  ],
+  "lessons": [
+    {
+      "id": "g9-civ-democracy-l1",
+      "topicId": "g9-civ-democracy",
+      "title": "What Democracy Requires",
+      "estimatedMinutes": 13,
+      "order": 1,
+      "objectives": [
+        {
+          "id": "o1",
+          "text": "Explain what democracy means."
+        },
+        {
+          "id": "o2",
+          "text": "Say why elections alone are not sufficient."
+        },
+        {
+          "id": "o3",
+          "text": "Describe what protects a minority from a majority."
+        }
+      ],
+      "keyTerms": [
+        {
+          "term": "Democracy",
+          "definition": "A system where political power comes from the people."
+        },
+        {
+          "term": "Franchise",
+          "definition": "The right to vote."
+        },
+        {
+          "term": "Accountability",
+          "definition": "Those in power having to answer for what they do."
+        }
+      ],
+      "sections": [
+        {
+          "heading": "What you will learn",
+          "body": "Democracy is often summarised as \"the people vote\". Voting is necessary, but a vote on its own does not make a system democratic. This lesson is about what else is required.\n\nScope note: this teaches the general principles, which are shared across democracies. It does not describe Liberia’s specific electoral arrangements — for those, use the Constitution or your teacher’s materials."
+        },
+        {
+          "heading": "The basic idea",
+          "body": "In a DEMOCRACY, political power comes from the people. Those who govern do so because the people chose them, and they can be removed the same way.\n\nThe contrast is with a system where rulers hold power by force, by inheritance, or by their own say-so, and the governed have no means of changing them."
+        },
+        {
+          "heading": "Why voting is not enough",
+          "body": "Imagine a country that holds an election, but:\n\n    newspapers may not criticise the government\n    opposition candidates are arrested\n    voters are told who to choose and watched while voting\n    the people counting the votes work for one candidate\n\nAn election happened. Was it democratic?\n\nNo. A vote only expresses the people's will if people can find out what is going on, choose freely, and have their choice counted honestly.\n\nSo democracy also requires:\n\n    FREE EXPRESSION — you can criticise those in power without punishment\n    REAL CHOICE — genuine alternatives are allowed to stand\n    A SECRET BALLOT — nobody can punish you for how you voted\n    AN HONEST COUNT — results reflect the votes cast\n    ACCOUNTABILITY — those in power must answer for what they do\n    RULE OF LAW — leaders are subject to the law like everyone else\n\nRemove any one and the election becomes a ceremony rather than a decision."
+        },
+        {
+          "heading": "The majority does not get everything",
+          "body": "Democracy means the majority decides — but not that the majority may do anything at all.\n\nIf 60% could vote to remove the rights of the other 40%, then those 40% have no rights, only permissions that can be withdrawn. And a majority is not fixed: today's majority can be tomorrow's minority.\n\nThis is why constitutions put certain things beyond an ordinary vote, and why courts can strike down a law even when it was passed by a majority. Those limits are not undemocratic. They are what stops democracy consuming itself.",
+          "example": "Two decisions, one town.\n\nA town votes on where to build a new well. The majority chooses the east side. That is democracy working — a shared decision, made by the most people, and next year they could choose differently.\n\nNow the town votes that families from one clan may not use the well at all.\n\nThe same procedure was followed. The majority still won. But this decision removes a basic entitlement from a group because they are outnumbered — and no vote count makes that legitimate.\n\nThe difference is not how the decision was made. It is what the decision does."
+        },
+        {
+          "heading": "Try it yourself",
+          "body": "1. Give two conditions besides voting that democracy requires, and explain what each protects.\n2. Why is a secret ballot important? What could happen without it?\n3. Explain why \"the majority voted for it\" does not always make something acceptable.\n4. Using your Constitution or class materials, find how elections are arranged in Liberia, and note anything that differs from the general picture here."
+        },
+        {
+          "heading": "Summary",
+          "body": "• Democracy means power comes from the people and rulers can be replaced.\n• Voting alone is not enough: free expression, real choice, a secret ballot, an honest count, accountability and rule of law are all required.\n• Majorities decide, but may not remove others’ basic rights.\n• Limits on the majority protect democracy rather than weaken it."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "id": "q9-dem-1",
+      "topicId": "g9-civ-democracy",
+      "question": "A country holds elections, but newspapers may not criticise the government and opposition candidates are arrested. Is this democratic?",
+      "options": [
+        "Yes — an election was held",
+        "No — voting alone is not enough without free expression and real choice",
+        "Yes, if many people voted",
+        "Only if the count was accurate"
+      ],
+      "correctAnswer": 1,
+      "explanation": "A vote expresses the people’s will only if they can find out what is happening, choose freely, and have the choice counted honestly. Without free expression and genuine alternatives, the election is a ceremony rather than a decision.",
+      "difficulty": "core"
+    },
+    {
+      "id": "q9-dem-2",
+      "topicId": "g9-civ-democracy",
+      "question": "Why do democracies limit what a majority may vote to do?",
+      "options": [
+        "Because majorities are usually wrong",
+        "Because a majority removing others’ basic rights would leave those people with no rights at all",
+        "Because voting is unreliable",
+        "They do not — a majority may decide anything"
+      ],
+      "correctAnswer": 1,
+      "explanation": "If 60% could vote away the rights of the other 40%, those 40% would hold only permissions that could be withdrawn. A majority is not fixed either — today’s majority may be tomorrow’s minority. Such limits protect democracy rather than weaken it.",
+      "difficulty": "challenge"
+    }
+  ],
+  "quizzes": [
+    {
+      "id": "quiz-g9-democracy",
+      "lessonId": "g9-civ-democracy-l1",
+      "topicId": "g9-civ-democracy",
+      "title": "Democracy Check",
+      "questionIds": [
+        "q9-dem-1",
+        "q9-dem-2"
+      ]
+    }
+  ]
+}

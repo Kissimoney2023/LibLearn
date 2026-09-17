@@ -1,0 +1,149 @@
+{
+  "grade": 5,
+  "subjectId": "general-science",
+  "curriculumVersionId": "liblearn-v1",
+  "provenance": "liblearn",
+  "sourceId": null,
+  "units": [
+    {
+      "id": "g5-sci-u-earth",
+      "name": "Water and Weather",
+      "summary": "How water moves around the Earth and returns as rain.",
+      "order": 1
+    }
+  ],
+  "topics": [
+    {
+      "id": "g5-sci-water-cycle",
+      "unitId": "g5-sci-u-earth",
+      "name": "The Water Cycle",
+      "summary": "Evaporation, condensation and rainfall, and why water never runs out.",
+      "order": 1
+    }
+  ],
+  "lessons": [
+    {
+      "id": "g5-sci-water-cycle-l1",
+      "topicId": "g5-sci-water-cycle",
+      "title": "The Water Cycle",
+      "estimatedMinutes": 13,
+      "order": 1,
+      "objectives": [
+        {
+          "id": "o1",
+          "text": "Name the main stages of the water cycle."
+        },
+        {
+          "id": "o2",
+          "text": "Explain what evaporation and condensation are."
+        },
+        {
+          "id": "o3",
+          "text": "Explain why the Earth never runs out of water."
+        }
+      ],
+      "keyTerms": [
+        {
+          "term": "Evaporation",
+          "definition": "When liquid water is heated and becomes water vapour, a gas."
+        },
+        {
+          "term": "Condensation",
+          "definition": "When water vapour cools and turns back into tiny drops of liquid."
+        },
+        {
+          "term": "Precipitation",
+          "definition": "Water falling from clouds as rain."
+        },
+        {
+          "term": "Water vapour",
+          "definition": "Water in gas form. You cannot see it."
+        }
+      ],
+      "sections": [
+        {
+          "heading": "What you will learn",
+          "body": "Rain falls, puddles dry up, and rain falls again. This lesson explains where the water goes and why it comes back."
+        },
+        {
+          "heading": "Start with a puddle",
+          "body": "After rain there is a puddle in the yard. By afternoon it is gone.\n\nWhere did the water go? It did not sink — the ground underneath is dry. Nobody carried it away.\n\nThe sun heated it, and the water turned into a gas called WATER VAPOUR. Vapour is invisible, so the water did not disappear — it just stopped being something you can see.\n\nThat change, liquid → gas, is EVAPORATION."
+        },
+        {
+          "heading": "Up, cool, and back down",
+          "body": "The vapour rises into the sky. High up it is much colder.\n\nWhen vapour cools, it turns back into tiny drops of liquid water. That change, gas → liquid, is CONDENSATION. Millions of those tiny drops together are what a CLOUD is.\n\nAs more vapour condenses, the drops join and grow heavier. When they are too heavy for the air to hold, they fall as rain. That is PRECIPITATION.\n\nThe rain lands, collects in rivers and the sea, and the sun heats it again. Round it goes.\n\n    Evaporation → Condensation → Precipitation → back to the start",
+          "example": "Seeing condensation at home.\n\nTake a cold bottle of water out on a warm day. In a few minutes the outside is wet.\n\nWhere did that water come from? Not from inside — the bottle is sealed.\n\nThere is always invisible water vapour in the air. When it touches the cold bottle it cools, condenses, and becomes liquid you can see and feel.\n\nThis is the same thing that makes clouds. The only difference is where the cooling happens."
+        },
+        {
+          "heading": "Why water never runs out",
+          "body": "The water in today's rain is not new. It is the same water that has been going round this cycle for a very long time.\n\nWater is not created or destroyed by the cycle — only moved and changed between liquid and gas.\n\nBut be careful with what this does NOT mean. It does not mean water is always available where people need it, or that it is always clean enough to drink. The cycle keeps the total amount steady; it does not deliver it to your village, and it does not remove what pollutes it."
+        },
+        {
+          "heading": "Try it yourself",
+          "body": "1. Name the three main stages in order.\n2. Wet clothes on a line dry faster on a sunny day than a cloudy one. Which stage does this show, and why does sun speed it up?\n3. Why does a cold bottle get wet on the outside?\n4. A friend says \"the puddle water disappeared\". Is that right? Explain what really happened."
+        },
+        {
+          "heading": "Summary",
+          "body": "• Evaporation: the sun heats liquid water into invisible vapour.\n• Condensation: vapour cools high up and becomes tiny drops — clouds.\n• Precipitation: the drops grow heavy and fall as rain.\n• The cycle repeats; water is moved and changed, never lost.\n• Steady total does not mean available or clean where people need it."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "id": "q5-wc-1",
+      "topicId": "g5-sci-water-cycle",
+      "question": "What is it called when the sun heats water and it becomes an invisible gas?",
+      "options": [
+        "Condensation",
+        "Precipitation",
+        "Evaporation",
+        "Collection"
+      ],
+      "correctAnswer": 2,
+      "explanation": "Evaporation — liquid water becoming water vapour, a gas. Condensation is the opposite change, when vapour cools back into liquid drops. Getting these two the wrong way round is the commonest mistake in this topic.",
+      "difficulty": "foundation"
+    },
+    {
+      "id": "q5-wc-2",
+      "topicId": "g5-sci-water-cycle",
+      "question": "Why does the outside of a cold bottle become wet on a warm day?",
+      "options": [
+        "Water leaks through the plastic",
+        "Water vapour in the air cools on the bottle and condenses",
+        "The bottle is melting",
+        "The water inside evaporates through the sides"
+      ],
+      "correctAnswer": 1,
+      "explanation": "There is always invisible water vapour in the air. Touching the cold bottle cools it, so it condenses into liquid you can see. Nothing came out of the bottle — the water came from the air, which is the same process that forms clouds.",
+      "difficulty": "core"
+    },
+    {
+      "id": "q5-wc-3",
+      "topicId": "g5-sci-water-cycle",
+      "question": "A puddle dries up in the sun. What happened to the water?",
+      "options": [
+        "It was destroyed",
+        "It evaporated into water vapour in the air",
+        "It sank through the dry ground",
+        "It turned into air"
+      ],
+      "correctAnswer": 1,
+      "explanation": "It evaporated — it is still water, just in gas form and invisible. Saying it \"disappeared\" or \"turned into air\" is wrong: water vapour IS water, and it is not air. It will condense and fall again as rain.",
+      "difficulty": "challenge"
+    }
+  ],
+  "quizzes": [
+    {
+      "id": "quiz-g5-water",
+      "lessonId": "g5-sci-water-cycle-l1",
+      "topicId": "g5-sci-water-cycle",
+      "title": "Water Cycle Check",
+      "questionIds": [
+        "q5-wc-1",
+        "q5-wc-2",
+        "q5-wc-3"
+      ]
+    }
+  ]
+}

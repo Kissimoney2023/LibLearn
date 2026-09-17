@@ -1,0 +1,91 @@
+{
+  "grade": 8,
+  "subjectId": "english",
+  "curriculumVersionId": "liblearn-v1",
+  "provenance": "liblearn",
+  "sourceId": null,
+  "units": [],
+  "topics": [
+    {
+      "id": "g8-english-speech",
+      "name": "Parts of Speech",
+      "summary": "The jobs words do in a sentence, and how to identify each one.",
+      "order": 1
+    }
+  ],
+  "lessons": [
+    {
+      "id": "g8-english-speech-l1",
+      "topicId": "g8-english-speech",
+      "title": "Nouns, Verbs and Adjectives",
+      "estimatedMinutes": 10,
+      "order": 1,
+      "objectives": [
+        {
+          "id": "o1",
+          "text": "Identify nouns, verbs and adjectives in a sentence."
+        },
+        {
+          "id": "o2",
+          "text": "Explain the job each does."
+        }
+      ],
+      "keyTerms": [],
+      "sections": [
+        {
+          "heading": "The three workhorses",
+          "body": "A noun names something - a person, place, thing or idea. A verb tells you what is happening or what something is. An adjective describes a noun, adding detail about which one, what kind or how many.",
+          "example": "In \"The clever student answered quickly\", student is the noun, answered is the verb, and clever is the adjective describing the student."
+        },
+        {
+          "heading": "Finding them reliably",
+          "body": "To find the verb, ask what is being done. To find the noun, ask who or what is doing it. To find adjectives, look at the words sitting just before a noun and ask whether they describe it."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "id": "q-eng-1",
+      "topicId": "g8-english-speech",
+      "question": "In \"The clever student answered quickly\", which word is the adjective?",
+      "options": [
+        "student",
+        "answered",
+        "clever",
+        "quickly"
+      ],
+      "correctAnswer": 2,
+      "explanation": "An adjective describes a noun. \"Clever\" describes the student, so it is the adjective. \"Quickly\" describes the verb, which makes it an adverb.",
+      "difficulty": "foundation",
+      "examGoal": "ljhsce"
+    },
+    {
+      "id": "q-eng-2",
+      "topicId": "g8-english-speech",
+      "question": "Identify the verb in \"The farmer harvested the rice before the rain.\"",
+      "options": [
+        "farmer",
+        "harvested",
+        "rice",
+        "rain"
+      ],
+      "correctAnswer": 1,
+      "explanation": "The verb tells you what is being done. The farmer harvested - that action is the verb.",
+      "difficulty": "core",
+      "examGoal": "ljhsce"
+    }
+  ],
+  "quizzes": [
+    {
+      "id": "quiz-g8-english",
+      "lessonId": "g8-english-speech-l1",
+      "topicId": "g8-english-speech",
+      "title": "Parts of Speech Check",
+      "questionIds": [
+        "q-eng-1",
+        "q-eng-2"
+      ]
+    }
+  ]
+}

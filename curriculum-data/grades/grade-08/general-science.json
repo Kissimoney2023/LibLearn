@@ -1,0 +1,106 @@
+{
+  "grade": 8,
+  "subjectId": "general-science",
+  "curriculumVersionId": "liblearn-v1",
+  "provenance": "liblearn",
+  "sourceId": null,
+  "units": [],
+  "topics": [
+    {
+      "id": "g8-science-matter",
+      "name": "Matter and its States",
+      "summary": "Solids, liquids and gases, and what happens at the changes between them.",
+      "order": 1
+    }
+  ],
+  "lessons": [
+    {
+      "id": "g8-science-matter-l1",
+      "topicId": "g8-science-matter",
+      "title": "The Three States of Matter",
+      "estimatedMinutes": 12,
+      "order": 1,
+      "objectives": [
+        {
+          "id": "o1",
+          "text": "Describe the arrangement of particles in solids, liquids and gases."
+        },
+        {
+          "id": "o2",
+          "text": "Explain why a gas fills its container but a solid does not."
+        }
+      ],
+      "keyTerms": [],
+      "sections": [
+        {
+          "heading": "Particles and arrangement",
+          "body": "All matter is made of tiny particles. What makes a solid different from a liquid or a gas is not the particles themselves but how they are arranged and how freely they move. In a solid they are packed closely in a fixed pattern and can only vibrate. In a liquid they are still close together but can slide past one another. In a gas they are far apart and move quickly in all directions."
+        },
+        {
+          "heading": "Shape and volume",
+          "body": "Because solid particles hold their positions, a solid keeps its own shape and volume. A liquid keeps its volume but takes the shape of its container, since its particles can flow. A gas keeps neither - its particles spread out until they fill whatever space they are given.",
+          "example": "Water shows all three. Ice holds its shape. Liquid water takes the shape of the cup. Steam spreads through the whole kitchen."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "id": "q-mat-1",
+      "topicId": "g8-science-matter",
+      "question": "In which state of matter are the particles packed closely in a fixed pattern?",
+      "options": [
+        "Solid",
+        "Liquid",
+        "Gas",
+        "All three"
+      ],
+      "correctAnswer": 0,
+      "explanation": "In a solid the particles hold fixed positions and can only vibrate. That is why a solid keeps its own shape.",
+      "difficulty": "foundation",
+      "examGoal": "ljhsce"
+    },
+    {
+      "id": "q-mat-2",
+      "topicId": "g8-science-matter",
+      "question": "Why does a gas fill its whole container?",
+      "options": [
+        "Its particles are heavier than liquid particles",
+        "Its particles are far apart and move freely in all directions",
+        "Its particles are joined in a fixed pattern",
+        "Gases have no particles"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Gas particles are widely spaced and move quickly in every direction, so they spread out until they occupy the whole space available.",
+      "difficulty": "core",
+      "examGoal": "ljhsce"
+    },
+    {
+      "id": "q-mat-3",
+      "topicId": "g8-science-matter",
+      "question": "Which state keeps its volume but takes the shape of its container?",
+      "options": [
+        "Solid",
+        "Liquid",
+        "Gas",
+        "None of them"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Liquid particles stay close together, so the volume is fixed, but they slide past one another, so the shape changes to fit the container.",
+      "difficulty": "core"
+    }
+  ],
+  "quizzes": [
+    {
+      "id": "quiz-g8-matter",
+      "lessonId": "g8-science-matter-l1",
+      "topicId": "g8-science-matter",
+      "title": "States of Matter Check",
+      "questionIds": [
+        "q-mat-1",
+        "q-mat-2",
+        "q-mat-3"
+      ]
+    }
+  ]
+}

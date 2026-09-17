@@ -1,0 +1,126 @@
+{
+  "grade": 12,
+  "subjectId": "english",
+  "curriculumVersionId": "liblearn-v1",
+  "provenance": "liblearn",
+  "sourceId": null,
+  "units": [
+    {
+      "id": "g12-eng-u-summary",
+      "name": "Summary Writing",
+      "summary": "Reducing a passage to its essentials without distorting it.",
+      "order": 1
+    }
+  ],
+  "topics": [
+    {
+      "id": "g12-eng-summary",
+      "unitId": "g12-eng-u-summary",
+      "name": "Summary Writing",
+      "summary": "Finding main ideas and rewriting them in your own words.",
+      "order": 1
+    }
+  ],
+  "lessons": [
+    {
+      "id": "g12-eng-summary-l1",
+      "topicId": "g12-eng-summary",
+      "title": "Summary Writing",
+      "estimatedMinutes": 14,
+      "order": 1,
+      "objectives": [
+        {
+          "id": "o1",
+          "text": "Identify the main ideas in a passage."
+        },
+        {
+          "id": "o2",
+          "text": "Rewrite them concisely in your own words."
+        },
+        {
+          "id": "o3",
+          "text": "Avoid the common faults that lose marks."
+        }
+      ],
+      "keyTerms": [
+        {
+          "term": "Summary",
+          "definition": "A short version keeping only the essential ideas."
+        },
+        {
+          "term": "Paraphrase",
+          "definition": "Saying the same thing in different words."
+        }
+      ],
+      "sections": [
+        {
+          "heading": "What you will learn",
+          "body": "Summary tests whether you understood a passage, not whether you can copy it. This lesson covers the method and the four faults that cost the most marks."
+        },
+        {
+          "heading": "The method",
+          "body": "STEP 1 — Read the whole passage once, without writing. You cannot judge what matters until you know where it goes.\n\nSTEP 2 — Read again, marking main points. Each paragraph usually carries one.\n\nSTEP 3 — Separate MAIN IDEAS from SUPPORTING DETAIL. Examples, statistics and repetitions are detail — they illustrate a point rather than being one.\n\nSTEP 4 — Write the main points in your own words, in your own sentences.\n\nSTEP 5 — Check the word limit and count. Then check you have not changed the author's meaning."
+        },
+        {
+          "heading": "Main idea or detail?",
+          "body": "A reliable test: if you removed this sentence, would a main point disappear, or would the passage just be less colourful?\n\n    \"Deforestation harms communities. In one district, 200 families\n     lost access to firewood within two years.\"\n\nMain idea: deforestation harms communities.\nDetail: the 200 families. It illustrates the harm; it is not a separate point.\n\nIn a summary, keep the first and drop the second. Specific numbers and named examples are almost always detail.",
+          "example": "A passage reduced.\n\nOriginal (about 60 words):\n\n    \"Many students struggle to study at home in the evening. Some\n     have no electric light, so reading becomes impossible after\n     dark. Others share a small room with several relatives and\n     cannot concentrate. A few must work in the evening to help\n     their families. These difficulties mean ability alone does not\n     decide results.\"\n\nMain points:\n    1. Students find evening study hard at home\n    2. Reasons: no light, no quiet space, evening work\n    3. Therefore results do not depend on ability alone\n\nSummary (about 25 words):\n\n    \"Evening study at home is difficult for many students, who may\n     lack lighting, quiet space or free time. Results therefore\n     reflect circumstances as well as ability.\"\n\nNotice: three reasons compressed into one list, and \"ability alone does not decide results\" reworded rather than copied."
+        },
+        {
+          "heading": "The four faults",
+          "body": "**1. Copying whole sentences.** The commonest and most costly. If a phrase is lifted unchanged, you have not shown understanding. Technical terms with no synonym are the only exception.\n\n**2. Adding your own opinion.** A summary reports what the author said. \"I think this is unfair\" does not belong, however reasonable.\n\n**3. Keeping examples.** They are the first thing to cut.\n\n**4. Exceeding the word limit.** If a limit is given, it is part of the task. Going over loses marks even when the content is right."
+        },
+        {
+          "heading": "Try it yourself",
+          "body": "Summarise in no more than 30 words:\n\n    \"Rivers provide water for drinking and farming, and fish for\n     food. When factories release waste into them, the water can\n     become unsafe. Fish die or become dangerous to eat, and\n     families who depend on the river lose both a food source and\n     an income.\"\n\nThen check: any copied phrases? Any opinion? Any examples left? Within 30 words?"
+        },
+        {
+          "heading": "Summary",
+          "body": "• Read once whole, then again marking main points.\n• Keep main ideas; cut examples, statistics and repetition.\n• Use your own words — copying shows nothing.\n• No opinions; report only what the author said.\n• Respect the word limit; it is part of the task."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "id": "q12-sum-1",
+      "topicId": "g12-eng-summary",
+      "question": "Which is the most serious fault in summary writing?",
+      "options": [
+        "Writing fewer words than the limit",
+        "Copying whole sentences from the passage",
+        "Using short sentences",
+        "Putting points in a different order"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Copying shows nothing about whether you understood — that is precisely what a summary tests. Paraphrase in your own words. Being under the limit is fine, and reordering points is acceptable if the meaning is preserved.",
+      "difficulty": "core"
+    },
+    {
+      "id": "q12-sum-2",
+      "topicId": "g12-eng-summary",
+      "question": "\"Deforestation harms communities. In one district, 200 families lost firewood access.\" In a summary, what happens to the second sentence?",
+      "options": [
+        "Keep it — statistics are important",
+        "Cut it — it is an example supporting the main point",
+        "Keep it and cut the first",
+        "Rewrite it as the topic sentence"
+      ],
+      "correctAnswer": 1,
+      "explanation": "The first sentence is the main idea; the second illustrates it. Specific numbers and named examples are almost always supporting detail, and they are the first thing to cut when reducing a passage.",
+      "difficulty": "core"
+    }
+  ],
+  "quizzes": [
+    {
+      "id": "quiz-g12-summary",
+      "lessonId": "g12-eng-summary-l1",
+      "topicId": "g12-eng-summary",
+      "title": "Summary Writing Check",
+      "questionIds": [
+        "q12-sum-1",
+        "q12-sum-2"
+      ]
+    }
+  ]
+}

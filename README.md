@@ -38,6 +38,20 @@ a data-layer change — see [Content architecture](#content-architecture).
 | Auth & data | Supabase — optional, with a local fallback |
 | AI | Gemini via a server-side Express route |
 
+## Documentation
+
+| Doc | What it covers |
+| --- | --- |
+| [docs/AUDIT.md](docs/AUDIT.md) | Repository audit, blockers, recommended order |
+| [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) | Layers, the curriculum seam, design decisions |
+| [docs/DATABASE.md](docs/DATABASE.md) | Schema, RLS, provenance enforcement, migration conventions |
+| [docs/CONTENT_SOURCES.md](docs/CONTENT_SOURCES.md) | The source register, verification ladder, and what unlocks `official` |
+| [docs/CURRICULUM.md](docs/CURRICULUM.md) | Hierarchy, provenance tiers, coverage, sources |
+| [docs/CONTENT_PIPELINE.md](docs/CONTENT_PIPELINE.md) | Adding curriculum without code changes |
+| [docs/SUPABASE_SETUP.md](docs/SUPABASE_SETUP.md) | Migrations, auth, env vars, troubleshooting |
+| [docs/DEPLOYMENT.md](docs/DEPLOYMENT.md) | Netlify build, redirects, checklist |
+| [docs/TESTING.md](docs/TESTING.md) | What is verified, how, and what is not |
+
 ## Environment variables
 
 Copy `.env.example` to `.env` and fill in what you need. **No secret is ever
@@ -46,6 +60,7 @@ read by browser code.**
 | Variable | Required | Used by | Purpose |
 | --- | --- | --- | --- |
 | `GEMINI_API_KEY` | For the AI tutor | `server.ts` | Server-side only. The browser calls `/api/ai/tutor`; the key never leaves the server. |
+| `GEMINI_MODEL` | No | `server/tutor.ts` | Overrides the pinned Gemini model. Set it when Google retires the default; the tutor returns an explicit 502 naming the model if it is unavailable. |
 | `APP_URL` | No | `server.ts` | Self-referential links and OAuth callbacks. |
 | `VITE_SUPABASE_URL` | For real accounts | browser | Supabase project URL. |
 | `VITE_SUPABASE_ANON_KEY` | For real accounts | browser | Publishable anon key. Safe in the browser **under row-level security**. The service-role key must never appear in client code. |
@@ -221,6 +236,7 @@ variables**; Vercel: **Settings → Environment Variables**).
 | `VITE_SUPABASE_URL` | Build (public) | `https://<ref>.supabase.co` |
 | `VITE_SUPABASE_ANON_KEY` | Build (public) | The anon / publishable key |
 | `GEMINI_API_KEY` | Runtime (secret) | Gemini API key — **no VITE\_ prefix** |
+| `GEMINI_MODEL` | Runtime (optional) | Overrides the pinned Gemini model when Google retires it |
 
 > **The `VITE_` prefix is the security boundary.** Vite inlines every `VITE_*`
 > value into the JavaScript bundle at build time, where any visitor can read

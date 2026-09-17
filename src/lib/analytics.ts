@@ -14,6 +14,8 @@ export type AnalyticsEvent =
   | 'exam_completed'
   | 'ai_question_asked'
   | 'recommendation_clicked'
+  | 'continue_learning_clicked'
+  | 'bookmark_created'
   | 'search_performed'
   | 'onboarding_completed';
 

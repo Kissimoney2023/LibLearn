@@ -1,0 +1,149 @@
+{
+  "grade": 11,
+  "subjectId": "civics",
+  "curriculumVersionId": "liblearn-v1",
+  "provenance": "liblearn",
+  "sourceId": null,
+  "units": [
+    {
+      "id": "g11-civics-u-government",
+      "name": "Government and the Constitution",
+      "summary": "How states are constituted and how power is limited.",
+      "order": 1
+    }
+  ],
+  "topics": [
+    {
+      "id": "g11-civics-government",
+      "unitId": "g11-civics-u-government",
+      "name": "How Government Is Structured",
+      "summary": "What a constitution does, why power is separated into branches, and how those branches check one another.",
+      "order": 1
+    }
+  ],
+  "lessons": [
+    {
+      "id": "g11-civics-government-l1",
+      "topicId": "g11-civics-government",
+      "title": "Constitutions and the Separation of Powers",
+      "estimatedMinutes": 14,
+      "order": 1,
+      "objectives": [
+        {
+          "id": "o1",
+          "text": "Explain what a constitution is and what it does."
+        },
+        {
+          "id": "o2",
+          "text": "Describe the three branches of government and their functions."
+        },
+        {
+          "id": "o3",
+          "text": "Explain how checks and balances limit the abuse of power."
+        }
+      ],
+      "keyTerms": [
+        {
+          "term": "Constitution",
+          "definition": "The fundamental law setting out how a state is governed and limiting the power of government."
+        },
+        {
+          "term": "Separation of powers",
+          "definition": "Dividing government functions among separate branches so no one body holds all power."
+        },
+        {
+          "term": "Checks and balances",
+          "definition": "Powers each branch holds to restrain the others."
+        },
+        {
+          "term": "Rule of law",
+          "definition": "The principle that everyone, including those who govern, is subject to the law."
+        }
+      ],
+      "sections": [
+        {
+          "heading": "What you will learn",
+          "body": "What a constitution is for, why governmental power is deliberately divided, and how the branches restrain one another.\n\nA note on scope: this lesson teaches these CONCEPTS, which are shared across constitutional democracies. It does not set out the specific provisions of the Liberian Constitution. For those — the exact composition of the Legislature, terms of office, or particular articles — use the Constitution itself or your teacher’s materials. LibLearn will not state them from memory, because a detail misremembered here is a detail you would carry into an examination."
+        },
+        {
+          "heading": "What a constitution does",
+          "body": "A constitution is the highest law of a state. Ordinary laws must conform to it, and where a law conflicts with the constitution, the constitution prevails.\n\nIt generally does four things:\n\n1. ESTABLISHES the institutions of government and their powers.\n2. LIMITS those powers, saying what government may NOT do.\n3. PROTECTS the rights of citizens.\n4. SETS THE PROCEDURE for its own amendment — usually a harder process than passing an ordinary law.\n\nPoint 2 deserves emphasis. A constitution is not only a description of how government works; it is a restraint upon it. The provisions protecting citizens are binding on those in office, which is the essence of the RULE OF LAW: those who govern are themselves subject to the law.\n\nPoint 4 matters too. Making amendment deliberately difficult stops a temporary majority from rewriting fundamental rules for short-term advantage."
+        },
+        {
+          "heading": "The three branches",
+          "body": "Most constitutional democracies divide government into three branches, each with a distinct function:\n\nThe LEGISLATURE makes law. It debates and passes bills, approves taxation and public spending, and scrutinises the executive.\n\nThe EXECUTIVE carries out and enforces law. It runs government departments, conducts foreign relations, and administers public services day to day.\n\nThe JUDICIARY interprets law and resolves disputes. It applies law to particular cases and determines what the law means when that is contested.\n\nThe division is the point. If one body could make a law, enforce it, and judge disputes about it, there would be no protection against it acting arbitrarily — it would be judge in its own cause."
+        },
+        {
+          "heading": "Checks and balances",
+          "body": "Separation alone is not enough; the branches also need power over one another. Typical checks include:\n\n• The legislature controls public money, so the executive cannot spend without approval.\n• The legislature can investigate and question the executive.\n• The executive may have a role in appointing judges, often requiring legislative confirmation.\n• Courts can rule that an action of government is unlawful or unconstitutional.\n• Amending the constitution requires a heightened procedure beyond one branch’s control.\n\nThe design principle: ambition is set against ambition. Rather than relying on officials to restrain themselves, the structure gives each branch both the means and the motive to resist overreach by the others.\n\nThis also explains why these arrangements can look slow. Deliberate friction is the mechanism working, not failing.",
+          "example": "Why control of money is such a powerful check:\n\nSuppose an executive wishes to create a new agency. It can propose it — but it cannot fund it without the legislature voting the money.\n\nSo the legislature can decline, or attach conditions, or demand reporting. Without ever directly commanding the executive, it constrains what the executive can actually do.\n\nThis is why the power to approve spending is among the oldest and most significant legislative powers: control of funding is control of action."
+        },
+        {
+          "heading": "Try it yourself",
+          "body": "1. Explain in your own words why a constitution is harder to amend than an ordinary law.\n2. A government department spends money the legislature never approved. Which principle is breached, and which branch would you expect to respond?\n3. Give one argument FOR and one AGAINST the slowness that checks and balances produce.\n\nThen, using your Constitution or class materials, identify how these three branches are actually constituted in Liberia — and note anything that differs from the general pattern above."
+        },
+        {
+          "heading": "Summary",
+          "body": "• A constitution is the highest law: it establishes, limits, protects and sets amendment procedure.\n• Rule of law means those who govern are also governed by law.\n• Legislature makes law, executive enforces it, judiciary interprets it.\n• Checks and balances give each branch the means to restrain the others.\n• Control of public money is among the strongest checks available.\n• Country-specific constitutional detail must come from the constitution itself, not from memory."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "id": "q11-civ-1",
+      "topicId": "g11-civics-government",
+      "question": "Which branch of government is responsible for interpreting the law?",
+      "options": [
+        "The legislature",
+        "The executive",
+        "The judiciary",
+        "The civil service"
+      ],
+      "correctAnswer": 2,
+      "explanation": "The judiciary interprets law and resolves disputes about what it means. The legislature makes law and the executive enforces it. Separating these three functions prevents any one body from making a law, enforcing it, and judging disputes about it.",
+      "difficulty": "foundation"
+    },
+    {
+      "id": "q11-civ-2",
+      "topicId": "g11-civics-government",
+      "question": "Why is a constitution usually harder to amend than an ordinary law?",
+      "options": [
+        "Because it is a longer document",
+        "To stop a temporary majority rewriting fundamental rules for short-term advantage",
+        "Because only judges may amend it",
+        "Because it never needs changing"
+      ],
+      "correctAnswer": 1,
+      "explanation": "A constitution sets the fundamental rules and limits on government power. Requiring a heightened procedure to change it means those rules cannot be swept aside by whoever happens to hold a majority at one moment. Constitutions can and do change — the process is simply made deliberately demanding.",
+      "difficulty": "core"
+    },
+    {
+      "id": "q11-civ-3",
+      "topicId": "g11-civics-government",
+      "question": "Why is legislative control over public spending considered such a powerful check on the executive?",
+      "options": [
+        "Because the legislature can arrest officials",
+        "Because the executive cannot act on plans it has no funds for",
+        "Because it allows the legislature to appoint judges",
+        "Because it transfers executive powers to the legislature"
+      ],
+      "correctAnswer": 1,
+      "explanation": "The legislature need not command the executive directly. By approving, refusing or attaching conditions to funding, it controls what the executive can actually carry out — since a plan without money cannot be implemented. This is why the power to approve spending is among the oldest and most significant legislative powers.",
+      "difficulty": "challenge"
+    }
+  ],
+  "quizzes": [
+    {
+      "id": "quiz-g11-civics",
+      "lessonId": "g11-civics-government-l1",
+      "topicId": "g11-civics-government",
+      "title": "Government Structure Check",
+      "questionIds": [
+        "q11-civ-1",
+        "q11-civ-2",
+        "q11-civ-3"
+      ]
+    }
+  ]
+}

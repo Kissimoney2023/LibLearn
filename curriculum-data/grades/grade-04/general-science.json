@@ -1,0 +1,265 @@
+{
+  "grade": 4,
+  "subjectId": "general-science",
+  "curriculumVersionId": "liblearn-v1",
+  "provenance": "liblearn",
+  "sourceId": null,
+  "units": [
+    {
+      "id": "g4-sci-u-living",
+      "name": "Living Things",
+      "summary": "What makes something alive, and how living things are grouped.",
+      "order": 1
+    },
+    {
+      "id": "g4-sci-u-plants",
+      "name": "Plants",
+      "summary": "The parts of a plant and the job each part does.",
+      "order": 2
+    }
+  ],
+  "topics": [
+    {
+      "id": "g4-sci-living",
+      "unitId": "g4-sci-u-living",
+      "name": "Living and Non-Living Things",
+      "summary": "How to tell what is alive from what has never been alive.",
+      "order": 1
+    },
+    {
+      "id": "g4-sci-plants",
+      "unitId": "g4-sci-u-plants",
+      "name": "Parts of a Plant",
+      "summary": "Roots, stem, leaves, flower — and what each one does.",
+      "order": 1
+    }
+  ],
+  "lessons": [
+    {
+      "id": "g4-sci-living-l1",
+      "topicId": "g4-sci-living",
+      "title": "Living and Non-Living Things",
+      "estimatedMinutes": 12,
+      "order": 1,
+      "objectives": [
+        {
+          "id": "o1",
+          "text": "List the things all living things do."
+        },
+        {
+          "id": "o2",
+          "text": "Sort things into living and non-living."
+        },
+        {
+          "id": "o3",
+          "text": "Explain why moving does not always mean alive."
+        }
+      ],
+      "keyTerms": [
+        {
+          "term": "Living",
+          "definition": "Something that grows, feeds, breathes, moves and produces young."
+        },
+        {
+          "term": "Non-living",
+          "definition": "Something that has never been alive."
+        }
+      ],
+      "sections": [
+        {
+          "heading": "What you will learn",
+          "body": "It seems easy to say what is alive. But a river moves and is not alive, while a seed sits still and is. This lesson gives you a proper test instead of a guess."
+        },
+        {
+          "heading": "What all living things do",
+          "body": "Living things all do these:\n\n    They GROW — they get bigger over time\n    They FEED — they take in food\n    They BREATHE — they take in air\n    They MOVE — even plants turn towards light\n    They MAKE YOUNG — they produce more of their own kind\n    They RESPOND — they react to what is around them\n\nA goat does all six. A tree does all six, just more slowly than you would notice by watching.\n\nA stone does none."
+        },
+        {
+          "heading": "Why \"it moves\" is not enough",
+          "body": "This is the part people get wrong most often.\n\nA river moves. A car moves. Smoke moves. None of them is alive.\n\nWhy not? Because moving is only ONE of the six. A river does not grow, does not feed, does not make young rivers.\n\nA car is a good test case. It moves, and it even takes in fuel. But it does not grow, it cannot heal, and no car has ever produced a baby car. It fails most of the list, so it is not alive.\n\nSo do not use one sign. Check the whole list.",
+          "example": "Sorting four things.\n\nMANGO TREE\n  Grows ✓  Feeds ✓  Breathes ✓  Makes seeds ✓\n  → LIVING\n\nRIVER\n  Moves ✓  Grows ✗  Feeds ✗  Makes young ✗\n  → NON-LIVING. Movement alone is not enough.\n\nCHICKEN\n  All six ✓\n  → LIVING\n\nWOODEN CHAIR\n  Does nothing on the list now.\n  → It is made from a tree that WAS alive, but the chair itself is not alive."
+        },
+        {
+          "heading": "A tricky group",
+          "body": "Some things were once part of a living thing but are not alive now: a wooden chair, a leather shoe, dried rice.\n\nThey came from something living. They are not living now. The test is always what the thing does TODAY — not where it came from."
+        },
+        {
+          "heading": "Try it yourself",
+          "body": "Living or non-living? Give your reason using the list:\n\n1. A cloud\n2. A seed in the ground\n3. A bicycle\n4. Grass\n5. A fire\n\nNumber 5 is worth thinking hard about. Fire moves, spreads and needs air — but does it grow the way a living thing grows? Does it make young?"
+        },
+        {
+          "heading": "Summary",
+          "body": "• Living things grow, feed, breathe, move, make young and respond.\n• Check the WHOLE list, not one sign.\n• Moving does not mean alive — rivers, cars and smoke all move.\n• Something made from a living thing is not itself alive."
+        }
+      ]
+    },
+    {
+      "id": "g4-sci-plants-l1",
+      "topicId": "g4-sci-plants",
+      "title": "Parts of a Plant and What They Do",
+      "estimatedMinutes": 12,
+      "order": 1,
+      "objectives": [
+        {
+          "id": "o1",
+          "text": "Name the main parts of a plant."
+        },
+        {
+          "id": "o2",
+          "text": "Say what job each part does."
+        },
+        {
+          "id": "o3",
+          "text": "Explain why a plant needs all its parts together."
+        }
+      ],
+      "keyTerms": [
+        {
+          "term": "Roots",
+          "definition": "The parts under the ground that hold the plant and take in water."
+        },
+        {
+          "term": "Stem",
+          "definition": "The part that holds the plant up and carries water to the leaves."
+        },
+        {
+          "term": "Leaf",
+          "definition": "The flat green part where the plant makes its food."
+        }
+      ],
+      "sections": [
+        {
+          "heading": "What you will learn",
+          "body": "A plant is not one lump. It is a set of parts, each doing a different job, and each needing the others."
+        },
+        {
+          "heading": "The four main parts",
+          "body": "ROOTS — under the ground.\n  They hold the plant firm so wind does not blow it over,\n  and they take in water from the soil.\n\nSTEM — the upright part.\n  It holds the plant up towards the light,\n  and carries water from the roots to the leaves.\n\nLEAVES — the flat green parts.\n  This is where the plant makes its own food, using sunlight.\n\nFLOWER — where seeds are made.\n  Seeds grow into new plants."
+        },
+        {
+          "heading": "The parts need each other",
+          "body": "Here is the important idea. No part can do its job alone.\n\nThe leaves make the food — but they cannot make it without water, and they cannot fetch water themselves.\nThe roots fetch the water — but they are underground in the dark and cannot make food.\nThe stem carries the water up — but it neither fetches nor makes anything.\n\nSo: roots fetch, stem carries, leaves make. Take away any one and the plant dies, even though the other two are unharmed.\n\nThis is why a cutting with no roots wilts, and why a plant kept in the dark dies even when it is watered every day.",
+          "example": "Why a plant in a dark room dies.\n\nYou water it every morning. The soil is damp. Nothing is broken.\n\nRoots — working. Taking in water ✓\nStem — working. Carrying water up ✓\nLeaves — CANNOT WORK. They need sunlight to make food ✗\n\nTwo parts out of three are fine, and the plant still dies of hunger, standing in wet soil.\n\nWater and food are not the same thing. This catches people out."
+        },
+        {
+          "heading": "Try it yourself",
+          "body": "1. Which part takes in water from the soil?\n2. Why would a plant fall over if its roots were cut?\n3. A plant is in bright sun but has not been watered for a week. Which part cannot do its job, and why does that stop the leaves working too?\n4. Name a plant part people eat. (Cassava, potato, spinach — which part is each one?)"
+        },
+        {
+          "heading": "Summary",
+          "body": "• Roots hold the plant and take in water.\n• The stem holds it up and carries water to the leaves.\n• Leaves make food using sunlight.\n• Flowers make seeds for new plants.\n• Every part depends on the others — remove one and the plant dies."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "id": "q4-liv-1",
+      "topicId": "g4-sci-living",
+      "question": "Which of these is a living thing?",
+      "options": [
+        "A stone",
+        "A mango tree",
+        "A bicycle",
+        "A cloud"
+      ],
+      "correctAnswer": 1,
+      "explanation": "A mango tree grows, takes in water, breathes and makes seeds, so it does everything on the list. The others do none of it. A cloud changes shape and moves, but changing is not the same as growing.",
+      "difficulty": "foundation"
+    },
+    {
+      "id": "q4-liv-2",
+      "topicId": "g4-sci-living",
+      "question": "A river moves and never stops. Why is it still not a living thing?",
+      "options": [
+        "Because it is made of water",
+        "Because it does not grow, feed or make young",
+        "Because it is cold",
+        "Because it is outside"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Moving is only one sign out of six. A river never grows, never feeds and never makes young rivers, so it fails almost the whole list. This is the mistake to avoid: check every sign, not just movement.",
+      "difficulty": "core"
+    },
+    {
+      "id": "q4-liv-3",
+      "topicId": "g4-sci-living",
+      "question": "Is a wooden chair a living thing?",
+      "options": [
+        "Yes, because wood comes from a tree",
+        "No, because it does not do any of the things living things do",
+        "Yes, because it can last many years",
+        "Only when it is new"
+      ],
+      "correctAnswer": 1,
+      "explanation": "The chair came from a tree that WAS alive, but the chair itself does not grow, feed or breathe now. What matters is what the thing does today, not where it came from. Leather shoes and dried rice are the same — once part of something living, not living now.",
+      "difficulty": "challenge"
+    },
+    {
+      "id": "q4-pl-1",
+      "topicId": "g4-sci-plants",
+      "question": "Which part of a plant takes in water from the soil?",
+      "options": [
+        "The leaves",
+        "The flower",
+        "The roots",
+        "The stem"
+      ],
+      "correctAnswer": 2,
+      "explanation": "The roots are under the ground, where the water is. They also grip the soil so the plant does not fall over. The stem carries that water upward, but it does not collect it.",
+      "difficulty": "foundation"
+    },
+    {
+      "id": "q4-pl-2",
+      "topicId": "g4-sci-plants",
+      "question": "Where does a plant make its food?",
+      "options": [
+        "In the roots",
+        "In the leaves",
+        "In the soil",
+        "In the flower"
+      ],
+      "correctAnswer": 1,
+      "explanation": "The leaves make the food, using sunlight. Plants do not take food from the soil — they take WATER from the soil and make food themselves. Mixing up water and food is the most common mistake in this topic.",
+      "difficulty": "core"
+    },
+    {
+      "id": "q4-pl-3",
+      "topicId": "g4-sci-plants",
+      "question": "A plant is watered every day but kept in a dark room. Why does it still die?",
+      "options": [
+        "The roots stop working",
+        "The leaves cannot make food without sunlight",
+        "It gets too much water",
+        "The stem breaks"
+      ],
+      "correctAnswer": 1,
+      "explanation": "The roots and stem are working perfectly — water is coming in and going up. But leaves need sunlight to make food, and in the dark they cannot. The plant starves while standing in wet soil, because water and food are not the same thing.",
+      "difficulty": "challenge"
+    }
+  ],
+  "quizzes": [
+    {
+      "id": "quiz-g4-living",
+      "lessonId": "g4-sci-living-l1",
+      "topicId": "g4-sci-living",
+      "title": "Living Things Check",
+      "questionIds": [
+        "q4-liv-1",
+        "q4-liv-2",
+        "q4-liv-3"
+      ]
+    },
+    {
+      "id": "quiz-g4-plants",
+      "lessonId": "g4-sci-plants-l1",
+      "topicId": "g4-sci-plants",
+      "title": "Parts of a Plant Check",
+      "questionIds": [
+        "q4-pl-1",
+        "q4-pl-2",
+        "q4-pl-3"
+      ]
+    }
+  ]
+}

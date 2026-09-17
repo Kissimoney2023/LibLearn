@@ -1,16 +1,24 @@
-import type {Lesson, Topic} from '../../types/domain';
+import type {Lesson, Topic, Unit} from '../../types/domain';
+import {GRADE4_LESSONS, GRADE4_TOPICS, GRADE4_UNITS} from './grade4';
+import {GRADE5_LESSONS, GRADE5_TOPICS, GRADE5_UNITS} from './grade5';
+import {GRADE7_LESSONS, GRADE7_TOPICS, GRADE7_UNITS} from './grade7';
+import {GRADE9_LESSONS, GRADE9_TOPICS, GRADE9_UNITS} from './grade9';
+import {GRADE11_LESSONS, GRADE11_TOPICS, GRADE11_UNITS} from './grade11';
+import {GRADE12_LESSONS, GRADE12_TOPICS, GRADE12_UNITS} from './grade12';
 
 /**
- * DEMO CURRICULUM SEED.
+ * LIBLEARN CURRICULUM SEED.
  *
- * Every record below is provenance: 'demo'. This is sample teaching material
- * written to exercise the application. It is NOT the official Liberian
- * curriculum and must never be presented as such. Replacing it with verified
- * material is a data-layer change only - no component reads these objects by
- * literal id.
+ * Every record here is provenance: 'liblearn'. It is academically standard
+ * teaching material written for LibLearn. It is NOT the official Liberian
+ * curriculum and must never be presented as such - see src/data/sources.ts for
+ * why nothing may currently claim `official`.
+ *
+ * Replacing it with verified material is a data-layer change only: no component
+ * reads these objects by literal id.
  */
 
-export const TOPICS: Topic[] = [
+const BASE_TOPICS: Topic[] = [
   {
     id: 'g8-math-algebra',
     subjectId: 'mathematics',
@@ -61,7 +69,7 @@ export const TOPICS: Topic[] = [
   },
 ];
 
-export const LESSONS: Lesson[] = [
+const BASE_LESSONS: Lesson[] = [
   {
     id: 'g8-math-algebra-l1',
     topicId: 'g8-math-algebra',
@@ -70,7 +78,7 @@ export const LESSONS: Lesson[] = [
     title: 'Understanding Variables and Expressions',
     estimatedMinutes: 12,
     order: 1,
-    provenance: 'demo',
+    provenance: 'liblearn',
     objectives: [
       {id: 'o1', text: 'Explain what a variable stands for in an expression.'},
       {id: 'o2', text: 'Write a word problem as an algebraic expression.'},
@@ -101,7 +109,7 @@ export const LESSONS: Lesson[] = [
     title: 'Solving Linear Equations',
     estimatedMinutes: 15,
     order: 2,
-    provenance: 'demo',
+    provenance: 'liblearn',
     objectives: [
       {id: 'o1', text: 'Solve a one-step linear equation.'},
       {id: 'o2', text: 'Solve a two-step linear equation.'},
@@ -133,7 +141,7 @@ export const LESSONS: Lesson[] = [
     title: 'Equations with Brackets',
     estimatedMinutes: 14,
     order: 3,
-    provenance: 'demo',
+    provenance: 'liblearn',
     objectives: [
       {id: 'o1', text: 'Expand a bracket using the distributive law.'},
       {id: 'o2', text: 'Solve an equation that contains brackets.'},
@@ -159,7 +167,7 @@ export const LESSONS: Lesson[] = [
     title: 'Converting Fractions and Decimals',
     estimatedMinutes: 11,
     order: 1,
-    provenance: 'demo',
+    provenance: 'liblearn',
     objectives: [
       {id: 'o1', text: 'Convert a fraction to a decimal by division.'},
       {id: 'o2', text: 'Convert a terminating decimal to a fraction in lowest terms.'},
@@ -184,7 +192,7 @@ export const LESSONS: Lesson[] = [
     title: 'Naming and Comparing Fractions',
     estimatedMinutes: 10,
     order: 1,
-    provenance: 'demo',
+    provenance: 'liblearn',
     objectives: [
       {id: 'o1', text: 'Name the numerator and denominator of a fraction.'},
       {id: 'o2', text: 'Compare two fractions with the same denominator.'},
@@ -209,7 +217,7 @@ export const LESSONS: Lesson[] = [
     title: 'The Three States of Matter',
     estimatedMinutes: 12,
     order: 1,
-    provenance: 'demo',
+    provenance: 'liblearn',
     objectives: [
       {id: 'o1', text: 'Describe the arrangement of particles in solids, liquids and gases.'},
       {id: 'o2', text: 'Explain why a gas fills its container but a solid does not.'},
@@ -234,7 +242,7 @@ export const LESSONS: Lesson[] = [
     title: 'Nouns, Verbs and Adjectives',
     estimatedMinutes: 10,
     order: 1,
-    provenance: 'demo',
+    provenance: 'liblearn',
     objectives: [
       {id: 'o1', text: 'Identify nouns, verbs and adjectives in a sentence.'},
       {id: 'o2', text: 'Explain the job each does.'},
@@ -259,7 +267,7 @@ export const LESSONS: Lesson[] = [
     title: 'Cell Structure and Organelles',
     estimatedMinutes: 16,
     order: 1,
-    provenance: 'demo',
+    provenance: 'liblearn',
     objectives: [
       {id: 'o1', text: 'Name the main organelles of a plant and an animal cell.'},
       {id: 'o2', text: 'State the function of the nucleus, mitochondria and chloroplast.'},
@@ -281,6 +289,43 @@ export const LESSONS: Lesson[] = [
       },
     ],
   },
+];
+
+/**
+ * Grade 11 lives in its own module purely for file size; it is part of the same
+ * LibLearn Teaching Sequence v1 and carries the same provenance.
+ */
+/**
+ * Units exist only for Grade 11 so far. Grades 6, 8 and 10 have topics filed
+ * under no unit, which the UI handles explicitly (see `unfiledTopics`) rather
+ * than hiding them. Content mid-import must stay reachable.
+ */
+export const UNITS: Unit[] = [
+  ...GRADE4_UNITS,
+  ...GRADE5_UNITS,
+  ...GRADE7_UNITS,
+  ...GRADE9_UNITS,
+  ...GRADE11_UNITS,
+  ...GRADE12_UNITS,
+];
+
+export const TOPICS: Topic[] = [
+  ...BASE_TOPICS,
+  ...GRADE4_TOPICS,
+  ...GRADE5_TOPICS,
+  ...GRADE7_TOPICS,
+  ...GRADE9_TOPICS,
+  ...GRADE11_TOPICS,
+  ...GRADE12_TOPICS,
+];
+export const LESSONS: Lesson[] = [
+  ...BASE_LESSONS,
+  ...GRADE4_LESSONS,
+  ...GRADE5_LESSONS,
+  ...GRADE7_LESSONS,
+  ...GRADE9_LESSONS,
+  ...GRADE11_LESSONS,
+  ...GRADE12_LESSONS,
 ];
 
 export const topicsForSubjectGrade = (subjectId: string, grade: number): Topic[] =>

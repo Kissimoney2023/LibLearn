@@ -1,0 +1,149 @@
+{
+  "grade": 12,
+  "subjectId": "chemistry",
+  "curriculumVersionId": "liblearn-v1",
+  "provenance": "liblearn",
+  "sourceId": null,
+  "units": [
+    {
+      "id": "g12-chem-u-organic",
+      "name": "Organic Chemistry",
+      "summary": "Carbon compounds, and why carbon is special.",
+      "order": 1
+    }
+  ],
+  "topics": [
+    {
+      "id": "g12-chem-hydrocarbons",
+      "unitId": "g12-chem-u-organic",
+      "name": "Hydrocarbons",
+      "summary": "Alkanes and alkenes, and how to tell them apart.",
+      "order": 1
+    }
+  ],
+  "lessons": [
+    {
+      "id": "g12-chem-hydrocarbons-l1",
+      "topicId": "g12-chem-hydrocarbons",
+      "title": "Hydrocarbons: Alkanes and Alkenes",
+      "estimatedMinutes": 15,
+      "order": 1,
+      "objectives": [
+        {
+          "id": "o1",
+          "text": "Explain why carbon forms so many compounds."
+        },
+        {
+          "id": "o2",
+          "text": "Distinguish alkanes from alkenes by structure and formula."
+        },
+        {
+          "id": "o3",
+          "text": "Describe a test that tells them apart."
+        }
+      ],
+      "keyTerms": [
+        {
+          "term": "Hydrocarbon",
+          "definition": "A compound of hydrogen and carbon only."
+        },
+        {
+          "term": "Alkane",
+          "definition": "A hydrocarbon with only single C–C bonds. Saturated."
+        },
+        {
+          "term": "Alkene",
+          "definition": "A hydrocarbon with at least one C=C double bond. Unsaturated."
+        },
+        {
+          "term": "Saturated",
+          "definition": "Holding as many hydrogen atoms as possible."
+        }
+      ],
+      "sections": [
+        {
+          "heading": "What you will learn",
+          "body": "Organic chemistry is the chemistry of carbon compounds, and there are millions of them. This lesson explains why carbon is unusual, and covers the two simplest families."
+        },
+        {
+          "heading": "Why carbon",
+          "body": "A carbon atom forms FOUR bonds, and — unusually — it bonds strongly to other carbon atoms.\n\nThat means carbon can build chains, branches and rings of almost any length, with hydrogen filling the remaining bonds.\n\nNo other element does this to nearly the same extent, which is why there are millions of carbon compounds and comparatively few of most other elements."
+        },
+        {
+          "heading": "Alkanes",
+          "body": "ALKANES have only SINGLE bonds between carbons. Every carbon holds as many hydrogens as it can, so they are SATURATED.\n\nGeneral formula: **CₙH₂ₙ₊₂**\n\n    methane  CH₄     (n=1: 2×1+2 = 4) ✓\n    ethane   C₂H₆    (n=2: 2×2+2 = 6) ✓\n    propane  C₃H₈    (n=3: 2×3+2 = 8) ✓\n    butane   C₄H₁₀   (n=4: 2×4+2 = 10) ✓\n\nNames end in **-ane**. They are fairly unreactive, because a single C–C bond is strong and there is no room to add anything."
+        },
+        {
+          "heading": "Alkenes",
+          "body": "ALKENES have at least one DOUBLE bond between carbons (C=C). The double bond uses bonds that would otherwise hold hydrogen, so alkenes carry FEWER hydrogens — they are UNSATURATED.\n\nGeneral formula: **CₙH₂ₙ**\n\n    ethene   C₂H₄    (n=2: 2×2 = 4) ✓\n    propene  C₃H₆    (n=3: 2×3 = 6) ✓\n    butene   C₄H₈    (n=4: 2×4 = 8) ✓\n\nNames end in **-ene**. Compare directly:\n\n    ethane C₂H₆  vs  ethene C₂H₄\n\nSame two carbons, two fewer hydrogens, because one pair of bonds went into the C=C.\n\nAlkenes are MORE reactive than alkanes. The double bond can open up and let other atoms add across it — which is exactly what the test below detects.",
+          "example": "The bromine water test.\n\nBromine water is orange-brown. Shake a hydrocarbon with it:\n\n    ALKANE  → stays orange-brown. No reaction.\n    ALKENE  → turns COLOURLESS, quickly.\n\nWhy? The alkene's double bond opens and bromine adds across it, forming a colourless product. The alkane has no double bond to open, so nothing happens.\n\nThis is a genuinely useful test: a clear, immediate, visible difference from one property — unsaturation.\n\nExam wording matters here. \"Decolourised\" is the correct term, not \"turns white\" or \"goes clear\". The solution becomes colourless."
+        },
+        {
+          "heading": "Try it yourself",
+          "body": "1. Why can carbon form so many compounds?\n2. Give the molecular formula of the alkane with 5 carbons, using CₙH₂ₙ₊₂.\n3. C₃H₆ — alkane or alkene? How do you know from the formula alone?\n4. Describe what you would see when bromine water is shaken with ethene, and with ethane.\n5. Explain why an alkene is called unsaturated."
+        },
+        {
+          "heading": "Summary",
+          "body": "• Carbon forms four bonds and bonds to itself, so it builds chains and rings.\n• Alkanes: single bonds only, saturated, CₙH₂ₙ₊₂, names end -ane.\n• Alkenes: at least one C=C, unsaturated, CₙH₂ₙ, names end -ene.\n• Alkenes are more reactive; the double bond can open and add atoms.\n• Bromine water is decolourised by an alkene, unchanged by an alkane."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "id": "q12-hc-1",
+      "topicId": "g12-chem-hydrocarbons",
+      "question": "C₃H₆ — is this an alkane or an alkene?",
+      "options": [
+        "Alkane",
+        "Alkene",
+        "Neither",
+        "Both"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Alkenes follow CₙH₂ₙ. With n = 3, 2n = 6, so C₃H₆ fits — it is propene. An alkane with 3 carbons would be CₙH₂ₙ₊₂ = C₃H₈. Test the formula against both patterns rather than guessing from the name.",
+      "difficulty": "core"
+    },
+    {
+      "id": "q12-hc-2",
+      "topicId": "g12-chem-hydrocarbons",
+      "question": "What happens when bromine water is shaken with an alkene?",
+      "options": [
+        "It stays orange-brown",
+        "It is decolourised",
+        "It turns blue",
+        "It gives off a gas"
+      ],
+      "correctAnswer": 1,
+      "explanation": "The C=C double bond opens and bromine adds across it, forming a colourless product, so the orange-brown colour disappears. An alkane has no double bond to open and leaves the colour unchanged. Use \"decolourised\" — not \"turns white\" or \"goes clear\".",
+      "difficulty": "challenge"
+    },
+    {
+      "id": "q12-hc-3",
+      "topicId": "g12-chem-hydrocarbons",
+      "question": "Why does carbon form so many different compounds?",
+      "options": [
+        "It is the most common element",
+        "It forms four bonds and bonds strongly to other carbon atoms, building chains and rings",
+        "It is a metal",
+        "It reacts with everything"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Four bonds per atom plus strong carbon-to-carbon bonding lets carbon build chains, branches and rings of almost any size. Very few elements do this, which is why carbon compounds number in the millions while most elements form comparatively few.",
+      "difficulty": "core"
+    }
+  ],
+  "quizzes": [
+    {
+      "id": "quiz-g12-hydrocarbons",
+      "lessonId": "g12-chem-hydrocarbons-l1",
+      "topicId": "g12-chem-hydrocarbons",
+      "title": "Hydrocarbons Check",
+      "questionIds": [
+        "q12-hc-1",
+        "q12-hc-2",
+        "q12-hc-3"
+      ]
+    }
+  ]
+}

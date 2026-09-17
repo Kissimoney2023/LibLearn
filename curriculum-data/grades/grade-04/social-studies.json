@@ -1,0 +1,145 @@
+{
+  "grade": 4,
+  "subjectId": "social-studies",
+  "curriculumVersionId": "liblearn-v1",
+  "provenance": "liblearn",
+  "sourceId": null,
+  "units": [
+    {
+      "id": "g4-soc-u-community",
+      "name": "Maps and My Community",
+      "summary": "Reading maps, and how people in a community depend on each other.",
+      "order": 1
+    }
+  ],
+  "topics": [
+    {
+      "id": "g4-soc-maps",
+      "unitId": "g4-soc-u-community",
+      "name": "Reading a Map",
+      "summary": "Using a key, directions and symbols to find your way.",
+      "order": 1
+    }
+  ],
+  "lessons": [
+    {
+      "id": "g4-soc-maps-l1",
+      "topicId": "g4-soc-maps",
+      "title": "Reading a Map",
+      "estimatedMinutes": 12,
+      "order": 1,
+      "objectives": [
+        {
+          "id": "o1",
+          "text": "Use a map key to understand symbols."
+        },
+        {
+          "id": "o2",
+          "text": "Name the four main directions."
+        },
+        {
+          "id": "o3",
+          "text": "Describe where one place is compared to another."
+        }
+      ],
+      "keyTerms": [
+        {
+          "term": "Map",
+          "definition": "A drawing of a place as it would look from above."
+        },
+        {
+          "term": "Key",
+          "definition": "The list that explains what each symbol on a map means."
+        },
+        {
+          "term": "Compass directions",
+          "definition": "North, South, East and West."
+        }
+      ],
+      "sections": [
+        {
+          "heading": "What you will learn",
+          "body": "A map lets you understand a place you are standing in, or one you have never been to, by looking at it from above.\n\nThe map in this lesson shows an invented village, not a real one. It is for practising the skill — for real places, use a real map."
+        },
+        {
+          "heading": "A map is a view from above",
+          "body": "Imagine standing on the roof of a tall building and looking straight down. Roads become lines. Houses become squares. The river becomes a winding band.\n\nThat is a map: everything drawn small, seen from above, in the right positions relative to each other.\n\nThings on a map are much smaller than in real life, but they keep their correct positions. If the school is north of the market in real life, it is north of the market on the map."
+        },
+        {
+          "heading": "The key explains the symbols",
+          "body": "Maps use small pictures called symbols, because there is no room to write everything out. The KEY tells you what each one means:\n\n    ▲  = school\n    ●  = house\n    ═  = main road\n    ~  = river\n    +  = clinic\n\nAlways read the key FIRST. The same symbol can mean different things on different maps, so guessing is a mistake even when the guess seems obvious."
+        },
+        {
+          "heading": "The four directions",
+          "body": "Maps almost always have North at the top. Then:\n\n           North\n             ↑\n    West ←       → East\n             ↓\n           South\n\nA sentence that helps people remember the order going clockwise from the top: **N**ever **E**at **S**our **W**orms — North, East, South, West.\n\nIf you know which way is North, you know all four.",
+          "example": "Describing a position.\n\nOn a village map, the clinic is drawn ABOVE the market, and slightly to the RIGHT.\n\nAbove means North. Right means East.\n\nSo: \"The clinic is north-east of the market.\"\n\nAnd the other way round: if the clinic is north-east of the market, then the market is SOUTH-WEST of the clinic — the exact opposite direction.\n\nDirection always depends on which place you start from. That is why we say \"north of the market\" and not just \"north\"."
+        },
+        {
+          "heading": "Try it yourself",
+          "body": "Draw a simple map of your school or your home area, seen from above.\n\n1. Draw at least four things: buildings, a road, a tree, a path.\n2. Use a symbol for each, and make a key explaining them.\n3. Mark North at the top.\n4. Then write two sentences: \"The ___ is ___ of the ___.\"\n\nSwap with a friend. Can they read your map using only your key?"
+        },
+        {
+          "heading": "Summary",
+          "body": "• A map shows a place from above, smaller but in the right positions.\n• The key explains the symbols — read it first, never guess.\n• North is usually at the top: North, East, South, West going clockwise.\n• Directions are always relative: if A is north of B, then B is south of A."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "id": "q4-map-1",
+      "topicId": "g4-soc-maps",
+      "question": "What does the key on a map tell you?",
+      "options": [
+        "How far away places are",
+        "What each symbol on the map means",
+        "Who drew the map",
+        "The name of the country"
+      ],
+      "correctAnswer": 1,
+      "explanation": "The key explains the symbols, so you know a triangle means a school and a wavy line means a river. Read it first — the same symbol can mean different things on different maps, so guessing is unreliable even when it feels obvious.",
+      "difficulty": "foundation"
+    },
+    {
+      "id": "q4-map-2",
+      "topicId": "g4-soc-maps",
+      "question": "On most maps, which direction is at the top?",
+      "options": [
+        "South",
+        "East",
+        "North",
+        "West"
+      ],
+      "correctAnswer": 2,
+      "explanation": "North is at the top on almost every map. Once you know that, the rest follow going clockwise: North, East, South, West — \"Never Eat Sour Worms\".",
+      "difficulty": "core"
+    },
+    {
+      "id": "q4-map-3",
+      "topicId": "g4-soc-maps",
+      "question": "The clinic is north-east of the market. Where is the market compared to the clinic?",
+      "options": [
+        "Also north-east",
+        "South-west",
+        "North-west",
+        "You cannot tell"
+      ],
+      "correctAnswer": 1,
+      "explanation": "South-west — the exact opposite. Direction always depends on where you start from. If you walked north-east to get from the market to the clinic, you must walk south-west to come back. This is why we say \"north of the market\" rather than just \"north\".",
+      "difficulty": "challenge"
+    }
+  ],
+  "quizzes": [
+    {
+      "id": "quiz-g4-maps",
+      "lessonId": "g4-soc-maps-l1",
+      "topicId": "g4-soc-maps",
+      "title": "Reading a Map Check",
+      "questionIds": [
+        "q4-map-1",
+        "q4-map-2",
+        "q4-map-3"
+      ]
+    }
+  ]
+}

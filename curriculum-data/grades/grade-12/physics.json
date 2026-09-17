@@ -1,0 +1,153 @@
+{
+  "grade": 12,
+  "subjectId": "physics",
+  "curriculumVersionId": "liblearn-v1",
+  "provenance": "liblearn",
+  "sourceId": null,
+  "units": [
+    {
+      "id": "g12-phys-u-waves",
+      "name": "Waves",
+      "summary": "How energy travels without matter travelling with it.",
+      "order": 1
+    }
+  ],
+  "topics": [
+    {
+      "id": "g12-phys-waves",
+      "unitId": "g12-phys-u-waves",
+      "name": "Properties of Waves",
+      "summary": "Wavelength, frequency, amplitude, and the wave equation.",
+      "order": 1
+    }
+  ],
+  "lessons": [
+    {
+      "id": "g12-phys-waves-l1",
+      "topicId": "g12-phys-waves",
+      "title": "Properties of Waves",
+      "estimatedMinutes": 15,
+      "order": 1,
+      "objectives": [
+        {
+          "id": "o1",
+          "text": "Define wavelength, frequency, amplitude and period."
+        },
+        {
+          "id": "o2",
+          "text": "Use the wave equation v = fλ."
+        },
+        {
+          "id": "o3",
+          "text": "Distinguish transverse from longitudinal waves."
+        }
+      ],
+      "keyTerms": [
+        {
+          "term": "Wavelength (λ)",
+          "definition": "The distance between two matching points on consecutive waves, in metres."
+        },
+        {
+          "term": "Frequency (f)",
+          "definition": "How many complete waves pass a point per second, in hertz."
+        },
+        {
+          "term": "Amplitude",
+          "definition": "The maximum displacement from the rest position."
+        },
+        {
+          "term": "Period (T)",
+          "definition": "The time for one complete wave to pass. T = 1/f."
+        }
+      ],
+      "sections": [
+        {
+          "heading": "What you will learn",
+          "body": "A wave carries ENERGY from place to place without carrying matter with it. That distinction is the foundation of the whole topic."
+        },
+        {
+          "heading": "Energy moves; matter does not",
+          "body": "Drop a stone in water. Ripples spread outward. Put a leaf on the surface and watch it: the leaf bobs UP AND DOWN. It does not travel outward with the ripple.\n\nThe wave moved across the pond. The water did not. Each bit of water moved up and down and stayed roughly where it was, passing the energy to its neighbour.\n\nThis is what a wave is: **a travelling disturbance that carries energy while the medium stays put.**\n\nA crowd doing a \"wave\" in a stadium is the same idea — the wave travels round the stands while every person stays in their seat."
+        },
+        {
+          "heading": "Measuring a wave",
+          "body": "WAVELENGTH (λ) — distance from one crest to the next, in metres.\n\nFREQUENCY (f) — complete waves passing a point each second, in hertz (Hz). 50 Hz means 50 waves per second.\n\nAMPLITUDE — maximum displacement from the rest position. Bigger amplitude means more energy: a louder sound, a brighter light.\n\nPERIOD (T) — time for one wave to pass, in seconds.\n\nFrequency and period are inverses:\n\n    T = 1/f     and     f = 1/T\n\nIf 5 waves pass each second (f = 5 Hz), each takes 1/5 = 0.2 s."
+        },
+        {
+          "heading": "The wave equation",
+          "body": "    **v = f λ**\n\n    v = speed (m/s), f = frequency (Hz), λ = wavelength (m)\n\nIt makes sense from the units: if 5 waves pass per second and each is 2 m long, then 10 m of wave passes per second.\n\nRearranged:\n\n    f = v / λ        λ = v / f\n\nOne consequence worth holding onto: in a given medium, the SPEED is fixed. So frequency and wavelength are inversely related — a higher frequency must mean a shorter wavelength, and vice versa.",
+          "example": "A worked calculation.\n\nA sound wave has frequency 170 Hz and travels at 340 m/s. Find its wavelength.\n\n    v = f λ\n    340 = 170 × λ\n    λ = 340 ÷ 170\n    λ = 2 m\n\nNow a second question on the same sound: what is its period?\n\n    T = 1/f = 1/170 ≈ 0.0059 s\n\nAnd a check on understanding: if the frequency doubled to 340 Hz, what happens to the wavelength?\n\nSpeed is unchanged — it depends on the medium, not the source. So:\n\n    λ = 340 ÷ 340 = 1 m\n\nDouble the frequency, halve the wavelength. A higher-pitched sound has a shorter wavelength but travels at the same speed."
+        },
+        {
+          "heading": "Transverse and longitudinal",
+          "body": "TRANSVERSE — the medium moves at RIGHT ANGLES to the wave direction.\n\n    Water ripples, light, waves on a rope.\n    The leaf moves up and down; the wave goes sideways.\n\nLONGITUDINAL — the medium moves ALONG the same line as the wave.\n\n    Sound. Air is squeezed and stretched in the direction of travel,\n    making compressions and rarefactions.\n\nThis is why sound needs a medium and light does not. Sound is a squeezing of something; with no air there is nothing to squeeze, so sound cannot cross a vacuum. Light can."
+        },
+        {
+          "heading": "Try it yourself",
+          "body": "1. A wave has f = 25 Hz and λ = 4 m. Find its speed.\n2. Light travels at 3 × 10⁸ m/s. Find the frequency of light with λ = 6 × 10⁻⁷ m.\n3. A wave has a period of 0.02 s. What is its frequency?\n4. If wavelength doubles and speed is unchanged, what happens to frequency?\n5. Explain why sound cannot travel through a vacuum but light can."
+        },
+        {
+          "heading": "Summary",
+          "body": "• A wave carries energy; the medium oscillates but does not travel.\n• λ = wavelength (m), f = frequency (Hz), T = period (s), T = 1/f.\n• Amplitude relates to energy — louder, brighter.\n• v = f λ. At fixed speed, frequency and wavelength are inversely related.\n• Transverse: motion at right angles. Longitudinal: motion along the line.\n• Sound needs a medium; light does not."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "id": "q12-wav-1",
+      "topicId": "g12-phys-waves",
+      "question": "A wave has frequency 170 Hz and speed 340 m/s. What is its wavelength?",
+      "options": [
+        "0.5 m",
+        "2 m",
+        "510 m",
+        "57800 m"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Use v = fλ, so λ = v ÷ f = 340 ÷ 170 = 2 m. Choosing 57800 means you multiplied instead of dividing — check the units: metres per second divided by per-second leaves metres.",
+      "difficulty": "core"
+    },
+    {
+      "id": "q12-wav-2",
+      "topicId": "g12-phys-waves",
+      "question": "A sound’s frequency doubles while it travels through the same air. What happens to its wavelength?",
+      "options": [
+        "It doubles",
+        "It halves",
+        "It stays the same",
+        "It becomes four times larger"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Speed depends on the medium, not the source, so v is unchanged. In v = fλ, if f doubles then λ must halve for the product to stay constant. A higher-pitched sound has a shorter wavelength but travels at exactly the same speed.",
+      "difficulty": "challenge"
+    },
+    {
+      "id": "q12-wav-3",
+      "topicId": "g12-phys-waves",
+      "question": "Why can light travel through a vacuum but sound cannot?",
+      "options": [
+        "Light is faster",
+        "Sound is longitudinal and needs particles to compress; light does not need a medium",
+        "A vacuum absorbs sound",
+        "Sound is too weak"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Sound is a longitudinal wave — it travels by squeezing and stretching the particles of a medium. With no particles there is nothing to compress, so no sound. Light needs no medium at all. Speed is irrelevant to whether a wave can cross a vacuum.",
+      "difficulty": "challenge"
+    }
+  ],
+  "quizzes": [
+    {
+      "id": "quiz-g12-waves",
+      "lessonId": "g12-phys-waves-l1",
+      "topicId": "g12-phys-waves",
+      "title": "Properties of Waves Check",
+      "questionIds": [
+        "q12-wav-1",
+        "q12-wav-2",
+        "q12-wav-3"
+      ]
+    }
+  ]
+}

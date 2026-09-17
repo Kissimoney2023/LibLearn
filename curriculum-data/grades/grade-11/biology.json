@@ -1,0 +1,323 @@
+{
+  "grade": 11,
+  "subjectId": "biology",
+  "curriculumVersionId": "liblearn-v1",
+  "provenance": "liblearn",
+  "sourceId": null,
+  "units": [
+    {
+      "id": "g11-bio-u-plants",
+      "name": "Plant Biology",
+      "summary": "How plants obtain energy and sustain themselves.",
+      "order": 1
+    },
+    {
+      "id": "g11-bio-u-genetics",
+      "name": "Heredity",
+      "summary": "How characteristics pass from one generation to the next.",
+      "order": 2
+    }
+  ],
+  "topics": [
+    {
+      "id": "g11-bio-photosynthesis",
+      "unitId": "g11-bio-u-plants",
+      "name": "Photosynthesis",
+      "summary": "How green plants build their own food from light, water and carbon dioxide, and what limits the rate.",
+      "order": 1
+    },
+    {
+      "id": "g11-bio-genetics",
+      "unitId": "g11-bio-u-genetics",
+      "name": "Genetics and Inheritance",
+      "summary": "Why offspring resemble their parents: genes, alleles, and predicting the outcome of a cross.",
+      "order": 2
+    }
+  ],
+  "lessons": [
+    {
+      "id": "g11-bio-photosynthesis-l1",
+      "topicId": "g11-bio-photosynthesis",
+      "title": "How Photosynthesis Works",
+      "estimatedMinutes": 14,
+      "order": 1,
+      "objectives": [
+        {
+          "id": "o1",
+          "text": "State the word and balanced equations for photosynthesis."
+        },
+        {
+          "id": "o2",
+          "text": "Explain the role of chlorophyll, light, water and carbon dioxide."
+        },
+        {
+          "id": "o3",
+          "text": "Describe the limiting factors that control the rate."
+        }
+      ],
+      "keyTerms": [
+        {
+          "term": "Photosynthesis",
+          "definition": "The process by which green plants make glucose from carbon dioxide and water using light energy."
+        },
+        {
+          "term": "Chlorophyll",
+          "definition": "The green pigment in chloroplasts that absorbs light energy."
+        },
+        {
+          "term": "Chloroplast",
+          "definition": "The organelle in plant cells where photosynthesis takes place."
+        },
+        {
+          "term": "Stomata",
+          "definition": "Small pores, mostly on the underside of a leaf, that let gases in and out."
+        },
+        {
+          "term": "Limiting factor",
+          "definition": "The factor in shortest supply, which alone caps the rate of a process."
+        }
+      ],
+      "sections": [
+        {
+          "heading": "What you will learn",
+          "body": "Photosynthesis is how nearly all food on Earth begins. You will learn what goes in, what comes out, where in the leaf it happens, and what controls how fast it runs."
+        },
+        {
+          "heading": "Introduction",
+          "body": "Animals eat. Plants cannot — so they build their own food instead, out of air, water and sunlight.\n\nThis matters beyond botany. Every animal either eats plants or eats something that ate plants, and the oxygen you are breathing right now was released by photosynthesis. It is the entry point of energy into almost every food chain."
+        },
+        {
+          "heading": "The equation",
+          "body": "In words:\n\n    carbon dioxide + water → glucose + oxygen\n                (in the presence of light and chlorophyll)\n\nBalanced:\n\n    6CO₂ + 6H₂O → C₆H₁₂O₆ + 6O₂\n\nRead what this says. The plant takes two low-energy substances and builds one high-energy one. Light supplies the energy for that; chlorophyll captures the light. Neither is consumed as a raw material, which is why both are written above the arrow rather than in it.\n\nOxygen is a by-product. The plant does not make it deliberately — it is simply left over."
+        },
+        {
+          "heading": "Where it happens",
+          "body": "Photosynthesis occurs in CHLOROPLASTS, concentrated in the palisade layer near the upper surface of the leaf where light is strongest.\n\nA leaf is well built for the job:\n• Broad and flat — large surface area for catching light.\n• Thin — gases diffuse across a short distance.\n• Stomata on the underside — let CO₂ in and O₂ out.\n• Veins — deliver water from the roots, carry glucose away.\n\nEach feature is a solution to a supply problem: light, gas, water or transport."
+        },
+        {
+          "heading": "Limiting factors",
+          "body": "Three things control the rate, and at any moment ONE of them is holding the process back — whichever is in shortest supply. That one is the limiting factor.\n\n• LIGHT INTENSITY — more light, faster rate, until another factor takes over.\n• CARBON DIOXIDE CONCENTRATION — usually the limiting factor outdoors, since air is only about 0.04% CO₂.\n• TEMPERATURE — raises the rate up to an optimum, then the rate falls sharply as enzymes denature.\n\nThe temperature curve behaves differently from the other two, and examiners like this point. Light and CO₂ level off at a plateau. Temperature rises, peaks, then DROPS — because enzymes are proteins and heat destroys their shape permanently.",
+          "example": "Interpreting a rate-against-light-intensity graph:\n\nThe steep early section — light is limiting. Adding light adds rate.\n\nThe flat plateau — light is no longer limiting. Something else (CO₂ or temperature) has become the cap, so extra light changes nothing.\n\nExam technique: if a graph plateaus, do not answer \"the plant has enough light\". Say which factor has BECOME limiting instead."
+        },
+        {
+          "heading": "Try it yourself",
+          "body": "1. Write the balanced equation from memory, then check it.\n2. A farmer grows tomatoes in a greenhouse and adds CO₂ to the air. Why might this increase yield — and when would it make no difference at all?\n3. Explain why a plant kept in constant darkness dies even though it still has water and CO₂."
+        },
+        {
+          "heading": "Summary",
+          "body": "• 6CO₂ + 6H₂O → C₆H₁₂O₆ + 6O₂, requiring light and chlorophyll.\n• It happens in chloroplasts, mainly in the palisade layer.\n• Leaf structure solves the supply problems of light, gas and water.\n• Light, CO₂ and temperature can each limit the rate.\n• Only temperature causes the rate to FALL past the optimum, because enzymes denature."
+        }
+      ]
+    },
+    {
+      "id": "g11-bio-genetics-l1",
+      "topicId": "g11-bio-genetics",
+      "title": "Genes, Alleles and Monohybrid Crosses",
+      "estimatedMinutes": 16,
+      "order": 1,
+      "objectives": [
+        {
+          "id": "o1",
+          "text": "Distinguish gene, allele, genotype and phenotype."
+        },
+        {
+          "id": "o2",
+          "text": "Explain dominant and recessive inheritance."
+        },
+        {
+          "id": "o3",
+          "text": "Complete a Punnett square and state the expected ratio."
+        }
+      ],
+      "keyTerms": [
+        {
+          "term": "Gene",
+          "definition": "A length of DNA coding for one characteristic."
+        },
+        {
+          "term": "Allele",
+          "definition": "A version of a gene. You inherit one from each parent."
+        },
+        {
+          "term": "Genotype",
+          "definition": "The alleles an organism carries, e.g. Tt."
+        },
+        {
+          "term": "Phenotype",
+          "definition": "The characteristic actually shown, e.g. tall."
+        },
+        {
+          "term": "Homozygous",
+          "definition": "Two identical alleles (TT or tt)."
+        },
+        {
+          "term": "Heterozygous",
+          "definition": "Two different alleles (Tt)."
+        }
+      ],
+      "sections": [
+        {
+          "heading": "What you will learn",
+          "body": "Why children resemble their parents without being identical to them — and how to predict, with real numbers, what a cross will produce."
+        },
+        {
+          "heading": "The vocabulary matters",
+          "body": "Genetics questions are lost on vocabulary more than on reasoning, so be precise:\n\nA GENE is the instruction for a characteristic — say, height in a pea plant.\nAn ALLELE is a version of that instruction — tall, or short.\n\nYou carry two alleles for each gene: one from each parent. Together they are your GENOTYPE. What you actually look like is your PHENOTYPE.\n\nThe distinction is the whole subject in miniature: two organisms can look identical and carry different alleles. TT and Tt are both tall, but they do not breed the same way."
+        },
+        {
+          "heading": "Dominant and recessive",
+          "body": "A DOMINANT allele shows in the phenotype whenever it is present, even in a single copy. Capital letter: T.\n\nA RECESSIVE allele shows ONLY when no dominant allele is present — so both must be recessive. Lower case: t.\n\n    TT → tall\n    Tt → tall   (the T masks the t)\n    tt → short\n\nSo short plants have exactly one possible genotype, tt. A tall plant could be TT or Tt, and you cannot tell by looking. Use the SAME letter in both cases — T and t, never T and s."
+        },
+        {
+          "heading": "The Punnett square",
+          "body": "A Punnett square sets out every way the parents’ alleles can combine.\n\nCross two heterozygous tall plants (Tt × Tt). Each parent passes on either T or t:\n\n            T       t\n        ┌───────┬───────┐\n    T   │  TT   │  Tt   │\n        ├───────┼───────┤\n    t   │  Tt   │  tt   │\n        └───────┴───────┘\n\nFour equally likely outcomes: TT, Tt, Tt, tt.\n\nGenotype ratio  1 TT : 2 Tt : 1 tt\nPhenotype ratio 3 tall : 1 short\n\nThat 3:1 is the signature of a monohybrid cross between two heterozygotes. Recognising it in a question is often the fastest route to the answer.",
+          "example": "A different cross: Tt × tt.\n\n            t       t\n        ┌───────┬───────┐\n    T   │  Tt   │  Tt   │\n        ├───────┼───────┤\n    t   │  tt   │  tt   │\n        └───────┴───────┘\n\nGenotype ratio  2 Tt : 2 tt  →  1 : 1\nPhenotype ratio 1 tall : 1 short\n\nHalf the offspring are short here, where the Tt × Tt cross gave only a quarter. Same alleles, different ratio — which is why you must draw the square rather than recall \"3:1\" by reflex."
+        },
+        {
+          "heading": "Probability, not prophecy",
+          "body": "A 3:1 ratio does NOT promise that four offspring will be exactly three tall and one short. It is a probability: each offspring independently has a 3-in-4 chance of being tall.\n\nWith four seeds you might well get four tall ones. With four hundred, the proportion will sit close to 3:1. Large numbers are what make the ratio visible — a point worth stating explicitly when a question asks you to interpret unexpected results."
+        },
+        {
+          "heading": "Try it yourself",
+          "body": "1. In pea plants, purple flowers (P) are dominant to white (p). Cross Pp × Pp. Give both ratios.\n2. A white-flowered plant is crossed with a purple one and half the offspring are white. What was the purple parent’s genotype?\n3. Explain why two brown-eyed parents can have a blue-eyed child."
+        },
+        {
+          "heading": "Summary",
+          "body": "• Gene = instruction, allele = version, genotype = alleles carried, phenotype = appearance.\n• Dominant shows with one copy; recessive needs two.\n• Use one letter, capital for dominant and lower case for recessive.\n• Tt × Tt gives 3:1; Tt × tt gives 1:1. Draw the square rather than recalling a ratio.\n• Ratios are probabilities and show themselves reliably only in large numbers."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "id": "q11-photo-1",
+      "topicId": "g11-bio-photosynthesis",
+      "question": "Which are the raw materials for photosynthesis?",
+      "options": [
+        "Glucose and oxygen",
+        "Carbon dioxide and water",
+        "Oxygen and water",
+        "Glucose and carbon dioxide"
+      ],
+      "correctAnswer": 1,
+      "explanation": "The equation is 6CO₂ + 6H₂O → C₆H₁₂O₆ + 6O₂. Carbon dioxide and water go in; glucose and oxygen come out. Glucose and oxygen are the PRODUCTS — reversing them is the most common slip, and it describes respiration instead.",
+      "difficulty": "foundation",
+      "examGoal": "wassce"
+    },
+    {
+      "id": "q11-photo-2",
+      "topicId": "g11-bio-photosynthesis",
+      "question": "Why is chlorophyll written above the arrow in the equation rather than as a reactant?",
+      "options": [
+        "It is used up during the reaction",
+        "It absorbs light energy but is not consumed",
+        "It is a product of the reaction",
+        "It only acts at night"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Chlorophyll captures light energy so the reaction can proceed, but it is not used up and does not end up in the glucose. The same is true of light itself. Substances written above the arrow enable the reaction without being consumed by it.",
+      "difficulty": "core",
+      "examGoal": "wassce"
+    },
+    {
+      "id": "q11-photo-3",
+      "topicId": "g11-bio-photosynthesis",
+      "question": "A graph of photosynthesis rate against light intensity rises then levels off. What does the flat section show?",
+      "options": [
+        "The plant has stopped photosynthesising",
+        "Light is still the limiting factor",
+        "Another factor, such as CO₂ or temperature, has become limiting",
+        "The chlorophyll has been used up"
+      ],
+      "correctAnswer": 2,
+      "explanation": "While the line rises, light is limiting — more light gives more rate. Once it plateaus, adding light changes nothing, so something else is now the constraint, usually CO₂ concentration or temperature. The plant is still photosynthesising, just capped by a different factor. Answering \"it has enough light\" does not name the limiting factor and loses marks.",
+      "difficulty": "challenge",
+      "examGoal": "wassce"
+    },
+    {
+      "id": "q11-photo-4",
+      "topicId": "g11-bio-photosynthesis",
+      "question": "Unlike light intensity, raising temperature well past the optimum makes the rate FALL. Why?",
+      "options": [
+        "Carbon dioxide dissolves less readily",
+        "Enzymes denature and lose their shape",
+        "Chlorophyll changes colour",
+        "The stomata close permanently"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Photosynthesis is enzyme-controlled, and enzymes are proteins. Excess heat changes the shape of the active site permanently, so reactions slow sharply. This is why the temperature curve peaks and falls, while light and CO₂ curves simply level off — a distinction examiners test often.",
+      "difficulty": "challenge",
+      "examGoal": "wassce"
+    },
+    {
+      "id": "q11-gen-1",
+      "topicId": "g11-bio-genetics",
+      "question": "What is the difference between genotype and phenotype?",
+      "options": [
+        "Genotype is the alleles carried; phenotype is the characteristic shown",
+        "Genotype is what you see; phenotype is the DNA",
+        "They mean the same thing",
+        "Genotype applies to plants, phenotype to animals"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Genotype is the pair of alleles an organism carries, such as Tt. Phenotype is the characteristic that results, such as \"tall\". The distinction matters because TT and Tt give the same phenotype but behave differently when bred.",
+      "difficulty": "foundation",
+      "examGoal": "wassce"
+    },
+    {
+      "id": "q11-gen-2",
+      "topicId": "g11-bio-genetics",
+      "question": "Crossing two heterozygous plants (Tt × Tt) gives what phenotype ratio?",
+      "options": [
+        "1 tall : 1 short",
+        "3 tall : 1 short",
+        "All tall",
+        "1 tall : 3 short"
+      ],
+      "correctAnswer": 1,
+      "explanation": "The Punnett square gives TT, Tt, Tt and tt. The first three all contain at least one dominant T, so they are tall; only tt is short. That is 3 tall : 1 short. The genotype ratio is different — 1 TT : 2 Tt : 1 tt — so read carefully which ratio the question wants.",
+      "difficulty": "core",
+      "examGoal": "wassce"
+    },
+    {
+      "id": "q11-gen-3",
+      "topicId": "g11-bio-genetics",
+      "question": "A tall plant crossed with a short plant (tt) produces about half tall and half short offspring. What is the tall parent’s genotype?",
+      "options": [
+        "TT",
+        "Tt",
+        "tt",
+        "Impossible to tell"
+      ],
+      "correctAnswer": 1,
+      "explanation": "If the tall parent were TT, every offspring would inherit a T and all would be tall. Getting roughly half short means the tall parent must carry a recessive allele to pass on, so it is Tt. Tt × tt gives a 1:1 ratio, which is exactly what was observed.",
+      "difficulty": "challenge",
+      "examGoal": "wassce"
+    }
+  ],
+  "quizzes": [
+    {
+      "id": "quiz-g11-photosynthesis",
+      "lessonId": "g11-bio-photosynthesis-l1",
+      "topicId": "g11-bio-photosynthesis",
+      "title": "Photosynthesis Check",
+      "questionIds": [
+        "q11-photo-1",
+        "q11-photo-2",
+        "q11-photo-3",
+        "q11-photo-4"
+      ]
+    },
+    {
+      "id": "quiz-g11-genetics",
+      "lessonId": "g11-bio-genetics-l1",
+      "topicId": "g11-bio-genetics",
+      "title": "Genetics Check",
+      "questionIds": [
+        "q11-gen-1",
+        "q11-gen-2",
+        "q11-gen-3"
+      ]
+    }
+  ]
+}

@@ -1,20 +1,50 @@
 import {Link} from 'react-router-dom';
-import {BookOpen, GraduationCap, MessageCircleQuestion, Quote} from 'lucide-react';
+import {BookOpen, Bookmark, GraduationCap, MessageCircleQuestion, Quote} from 'lucide-react';
 import {useAuth} from '../context/AuthContext';
 import {useStudentData} from '../context/StudentDataContext';
 import {Button, ButtonLink, Card, EmptyState, ProgressBar, SectionHeading, Skeleton, SubjectChip} from '../components/ui';
 import {subjectById} from '../data/catalog';
 import {track} from '../lib/analytics';
+import {useCurriculum} from '../context/CurriculumContext';
+import {continueLearning} from '../lib/continueLearning';
 
 const QUICK = [
   {to: '/ai-tutor', label: 'Ask AI', icon: MessageCircleQuestion},
   {to: '/learn', label: 'Browse Lessons', icon: BookOpen},
   {to: '/exam-coach', label: 'Exam Coach', icon: GraduationCap},
+  {to: '/bookmarks', label: 'My Bookmarks', icon: Bookmark},
 ];
+
+const ACTIVITY_LABEL: Record<string, string> = {
+  lesson_opened: 'Opened a lesson',
+  lesson_completed: 'Completed a lesson',
+  quiz_started: 'Started a quiz',
+  quiz_completed: 'Completed a quiz',
+  bookmark_created: 'Bookmarked',
+  exam_started: 'Started an exam',
+  exam_completed: 'Completed an exam',
+  search_performed: 'Searched',
+};
+
+/** Coarse on purpose: a feed needs "2 hours ago", not a timestamp. */
+function relativeTime(iso: string): string {
+  const diff = Date.now() - new Date(iso).getTime();
+  const mins = Math.floor(diff / 60000);
+  if (mins < 1) return 'just now';
+  if (mins < 60) return `${mins}m ago`;
+  const hours = Math.floor(mins / 60);
+  if (hours < 24) return `${hours}h ago`;
+  const days = Math.floor(hours / 24);
+  if (days === 1) return 'yesterday';
+  if (days < 7) return `${days}d ago`;
+  return new Date(iso).toLocaleDateString();
+}
 
 export default function Dashboard() {
   const {profile} = useAuth();
-  const {loading, summary, recommendations, readiness, quizzes} = useStudentData();
+  const {loading, summary, recommendations, readiness, quizzes, lessons, activity} =
+    useStudentData();
+  const {curriculum} = useCurriculum();
 
   if (loading) {
     return (
@@ -26,6 +56,8 @@ export default function Dashboard() {
     );
   }
 
+  // Derived from progress, never stored - see src/lib/continueLearning.ts.
+  const resume = continueLearning(curriculum, lessons, curriculum.subjects);
   const first = recommendations[0];
   const overall =
     summary.lessonsTotal === 0
@@ -56,15 +88,32 @@ export default function Dashboard() {
         </p>
       </Card>
 
-      {first ? (
+      {resume ? (
         <Card rail="progress">
           <p className="mb-1 text-xs font-medium uppercase tracking-wide text-on-surface-variant">
             Continue learning
           </p>
+          <h2 className="mb-1 text-lg font-semibold">{resume.lessonTitle}</h2>
+          <p className="mb-3 text-sm text-on-surface-variant">
+            {resume.subjectName} · {resume.topicName}
+          </p>
+          <ProgressBar value={resume.percent} label={`${resume.topicName} progress`} />
+          <p className="mb-4 mt-2 text-xs text-on-surface-variant">
+            {resume.topicCompleted} of {resume.topicTotal} lessons in this topic
+          </p>
+          <Link className="inline-block" to={resume.href} onClick={() => track('continue_learning_clicked', {lessonId: resume.lessonId})}>
+            <Button>Continue</Button>
+          </Link>
+        </Card>
+      ) : first ? (
+        <Card rail="progress">
+          <p className="mb-1 text-xs font-medium uppercase tracking-wide text-on-surface-variant">
+            Suggested next
+          </p>
           <h2 className="mb-1.5 text-lg font-semibold">{first.title}</h2>
           <p className="mb-4 text-sm text-on-surface-variant">{first.reason}</p>
-          <Link to={first.href} onClick={() => track('recommendation_clicked', {kind: first.kind})}>
-            <Button>Continue</Button>
+          <Link className="inline-block" to={first.href} onClick={() => track('recommendation_clicked', {kind: first.kind})}>
+            <Button>Start</Button>
           </Link>
         </Card>
       ) : (
@@ -74,6 +123,29 @@ export default function Dashboard() {
           body="Start your first lesson and your progress will appear here."
           action={<ButtonLink to="/learn">Browse lessons</ButtonLink>}
         />
+      )}
+
+      {activity.length > 0 && (
+        <section>
+          <SectionHeading>Recent activity</SectionHeading>
+          <Card>
+            <ul className="flex flex-col divide-y divide-outline-variant">
+              {activity.slice(0, 6).map((e) => (
+                <li key={e.id} className="flex items-baseline justify-between gap-3 py-2.5 first:pt-0 last:pb-0">
+                  <span className="min-w-0 text-sm">
+                    <span className="font-medium">{ACTIVITY_LABEL[e.activityType]}</span>
+                    {e.metadata.title ? ` — ${e.metadata.title}` : ''}
+                  </span>
+                  <time
+                    dateTime={e.createdAt}
+                    className="shrink-0 text-xs text-on-surface-variant">
+                    {relativeTime(e.createdAt)}
+                  </time>
+                </li>
+              ))}
+            </ul>
+          </Card>
+        </section>
       )}
 
       <section>
