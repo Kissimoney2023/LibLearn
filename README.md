@@ -38,6 +38,19 @@ a data-layer change — see [Content architecture](#content-architecture).
 | Auth & data | Supabase — optional, with a local fallback |
 | AI | Gemini via a server-side Express route |
 
+## Documentation
+
+| Doc | What it covers |
+| --- | --- |
+| [docs/AUDIT.md](docs/AUDIT.md) | Repository audit, blockers, recommended order |
+| [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) | Layers, the curriculum seam, design decisions |
+| [docs/DATABASE.md](docs/DATABASE.md) | Schema, RLS, provenance enforcement, migration conventions |
+| [docs/CURRICULUM.md](docs/CURRICULUM.md) | Hierarchy, provenance tiers, coverage, sources |
+| [docs/CONTENT_PIPELINE.md](docs/CONTENT_PIPELINE.md) | Adding curriculum without code changes |
+| [docs/SUPABASE_SETUP.md](docs/SUPABASE_SETUP.md) | Migrations, auth, env vars, troubleshooting |
+| [docs/DEPLOYMENT.md](docs/DEPLOYMENT.md) | Netlify build, redirects, checklist |
+| [docs/TESTING.md](docs/TESTING.md) | What is verified, how, and what is not |
+
 ## Environment variables
 
 Copy `.env.example` to `.env` and fill in what you need. **No secret is ever
