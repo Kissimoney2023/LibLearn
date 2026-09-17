@@ -10,7 +10,7 @@ import type {QuizAnswer, QuizAttempt} from '../types/domain';
 export default function QuizRunner() {
   const {quizId} = useParams();
   const navigate = useNavigate();
-  const {recordQuiz} = useStudentData();
+  const {recordQuiz, logActivity} = useStudentData();
 
   const {curriculum} = useCurriculum();
   const quiz = quizId ? quizById(curriculum, quizId) : undefined;
@@ -51,6 +51,17 @@ export default function QuizRunner() {
       submittedAt: new Date().toISOString(),
     };
     await recordQuiz(attempt);
+    await logActivity({
+      activityType: 'quiz_completed',
+      contentType: 'quiz',
+      contentId: quiz!.id,
+      metadata: {
+        title: quiz!.title,
+        subjectId: quiz!.subjectId,
+        score,
+        total: questions.length,
+      },
+    });
     setSubmitted(true);
   }
 
@@ -106,7 +117,7 @@ export default function QuizRunner() {
   return (
     <div className="flex max-w-2xl flex-col gap-6">
       <header>
-        <Link to="/dashboard" className="text-sm text-secondary underline underline-offset-4">
+        <Link to="/dashboard" className="inline-flex min-h-12 items-center text-sm text-secondary underline underline-offset-4">
           ← Leave quiz
         </Link>
         <h1 className="mt-2 font-display text-2xl font-bold">{quiz.title}</h1>

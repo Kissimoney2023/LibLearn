@@ -84,7 +84,7 @@ export default function SubjectTopics() {
   return (
     <div className="flex flex-col gap-6">
       <header>
-        <Link to={`/learn/${g}`} className="text-sm text-secondary underline underline-offset-4">
+        <Link to={`/learn/${g}`} className="inline-flex min-h-12 items-center text-sm text-secondary underline underline-offset-4">
           ← Grade {g}
         </Link>
         <h1 className="mt-2 font-display text-2xl font-bold">{subjectMeta.name}</h1>

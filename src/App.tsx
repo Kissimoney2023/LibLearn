@@ -19,6 +19,7 @@ const Learn = lazy(() => import('./routes/Learn'));
 const GradeSubjects = lazy(() => import('./routes/GradeSubjects'));
 const GradeScope = lazy(() => import('./routes/GradeScope'));
 const StudentGradeScope = lazy(() => import('./routes/StudentGradeScope'));
+const Bookmarks = lazy(() => import('./routes/Bookmarks'));
 const SubjectTopics = lazy(() => import('./routes/SubjectTopics'));
 const TopicLessons = lazy(() => import('./routes/TopicLessons'));
 const QuizRunner = lazy(() => import('./routes/QuizRunner'));
@@ -88,7 +89,12 @@ export default function App() {
             <Route path="/onboarding" element={<Onboarding />} />
 
             <Route element={<Protected />}>
-              <Route path="/dashboard" element={<Dashboard />} />
+              {/* Dashboard needs curriculum to derive Continue Learning, and
+                  bookmarks link into it, so both sit in the student's grade scope. */}
+              <Route element={<StudentGradeScope />}>
+                <Route path="/dashboard" element={<Dashboard />} />
+                <Route path="/bookmarks" element={<Bookmarks />} />
+              </Route>
               <Route path="/learn" element={<Learn />} />
               {/* Every screen below shares one grade load, so navigating
                   subject -> unit -> topic -> lesson touches no network, and

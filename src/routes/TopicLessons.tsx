@@ -1,6 +1,6 @@
 import {useEffect, useState} from 'react';
 import {Link, useParams, useSearchParams} from 'react-router-dom';
-import {CheckCircle2} from 'lucide-react';
+import {Bookmark as BookmarkIcon, CheckCircle2} from 'lucide-react';
 import {Button, ButtonLink, Card, EmptyState, GradeBadge, ProvenanceBadge, SubjectChip} from '../components/ui';
 import {useCurriculum} from '../context/CurriculumContext';
 import {lessonsForTopic, quizForLesson, topicById, unitById} from '../lib/curriculum';
@@ -9,7 +9,8 @@ import {useStudentData} from '../context/StudentDataContext';
 export default function TopicLessons() {
   const {grade, subject, topic} = useParams();
   const [params, setParams] = useSearchParams();
-  const {startLesson, completeLesson, isLessonComplete} = useStudentData();
+  const {startLesson, completeLesson, isLessonComplete, toggleBookmark, isBookmarked} =
+    useStudentData();
 
   const {curriculum} = useCurriculum();
   const topicMeta = topic ? topicById(curriculum, topic) : undefined;
@@ -19,7 +20,7 @@ export default function TopicLessons() {
   const [saving, setSaving] = useState(false);
 
   useEffect(() => {
-    if (lesson) void startLesson(lesson.id);
+    if (lesson) void startLesson(lesson);
   }, [lesson, startLesson]);
 
   if (!topicMeta || !lesson) {
@@ -28,6 +29,7 @@ export default function TopicLessons() {
 
   const unit = topicMeta.unitId ? unitById(curriculum, topicMeta.unitId) : undefined;
   const done = isLessonComplete(lesson.id);
+  const bookmarked = isBookmarked('lesson', lesson.id);
   const index = lessons.findIndex((l) => l.id === lesson.id);
   const prev = lessons[index - 1];
   const next = lessons[index + 1];
@@ -36,7 +38,7 @@ export default function TopicLessons() {
   async function markComplete() {
     setSaving(true);
     try {
-      await completeLesson(lesson!.id);
+      await completeLesson(lesson!, lesson!.title);
     } finally {
       setSaving(false);
     }
@@ -47,7 +49,7 @@ export default function TopicLessons() {
       <header>
         <Link
           to={`/learn/${grade}/${subject}`}
-          className="text-sm text-secondary underline underline-offset-4">
+          className="inline-flex min-h-12 items-center text-sm text-secondary underline underline-offset-4">
           ← {curriculum.subjects.find((x) => x.id === subject)?.name ?? 'Back'}
         </Link>
         <div className="mt-3 flex flex-wrap items-center gap-2">
@@ -101,15 +103,37 @@ export default function TopicLessons() {
                 : 'Mark it complete to update your progress and recommendations.'}
             </p>
           </div>
-          {done ? (
-            <span className="flex items-center gap-2 font-medium text-on-primary-surface">
-              <CheckCircle2 size={20} aria-hidden="true" /> Done
-            </span>
-          ) : (
-            <Button onClick={markComplete} disabled={saving}>
-              {saving ? 'Saving…' : 'Mark complete'}
-            </Button>
-          )}
+          <div className="flex items-center gap-2">
+            <button
+              type="button"
+              onClick={() =>
+                void toggleBookmark({
+                  contentType: 'lesson',
+                  contentId: lesson.id,
+                  title: lesson.title,
+                  subjectId: lesson.subjectId,
+                  grade: lesson.grade,
+                })
+              }
+              aria-pressed={bookmarked}
+              aria-label={bookmarked ? 'Remove bookmark' : 'Bookmark this lesson'}
+              className="flex min-h-12 min-w-12 items-center justify-center rounded-lg border border-outline px-3 text-on-surface-variant">
+              <BookmarkIcon
+                size={20}
+                aria-hidden="true"
+                fill={bookmarked ? 'currentColor' : 'none'}
+              />
+            </button>
+            {done ? (
+              <span className="flex items-center gap-2 font-medium text-on-primary-surface">
+                <CheckCircle2 size={20} aria-hidden="true" /> Done
+              </span>
+            ) : (
+              <Button onClick={markComplete} disabled={saving}>
+                {saving ? 'Saving…' : 'Mark complete'}
+              </Button>
+            )}
+          </div>
         </div>
       </Card>
 

@@ -343,6 +343,62 @@ export interface ProgressSummary {
   strongTopics: string[];
 }
 
+/* ---------- Bookmarks & activity ---------- */
+
+export type BookmarkType = 'lesson' | 'topic' | 'question';
+
+export interface Bookmark {
+  id: string;
+  contentType: BookmarkType;
+  contentId: string;
+  /** Denormalised so My Bookmarks renders from one read, not N lookups. */
+  title: string;
+  subjectId?: string;
+  grade?: GradeLevel;
+  createdAt: string;
+}
+
+export type ActivityType =
+  | 'lesson_opened'
+  | 'lesson_completed'
+  | 'quiz_started'
+  | 'quiz_completed'
+  | 'bookmark_created'
+  | 'exam_started'
+  | 'exam_completed'
+  | 'search_performed';
+
+export interface ActivityEvent {
+  id: string;
+  activityType: ActivityType;
+  contentType?: 'lesson' | 'topic' | 'subject' | 'quiz' | 'question' | 'exam' | 'unit';
+  contentId?: string;
+  /** Small payload (title, subject, score) so the feed needs no extra reads. */
+  metadata: Record<string, string | number>;
+  createdAt: string;
+}
+
+/**
+ * The card that answers "where was I?".
+ *
+ * Derived from lesson progress rather than stored, so it can never disagree
+ * with the progress it is meant to summarise.
+ */
+export interface ContinueLearning {
+  lessonId: string;
+  lessonTitle: string;
+  topicId: string;
+  topicName: string;
+  subjectId: string;
+  subjectName: string;
+  grade: GradeLevel;
+  /** Lessons finished in this topic, over lessons in it. */
+  topicCompleted: number;
+  topicTotal: number;
+  percent: number;
+  href: string;
+}
+
 /* ---------- AI tutor ---------- */
 
 export type TeachingStyle = 'standard' | 'simple' | 'liberian';

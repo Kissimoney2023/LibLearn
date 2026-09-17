@@ -1,5 +1,5 @@
-import {LESSONS, TOPICS} from '../data/seed/curriculum';
-import {QUIZZES} from '../data/seed/questions';
+import {LESSONS, TOPICS, UNITS} from '../data/seed/curriculum';
+import {QUESTIONS, QUIZZES} from '../data/seed/questions';
 import {SUBJECTS} from '../data/catalog';
 import type {GradeLevel} from '../types/domain';
 
@@ -16,7 +16,7 @@ import type {GradeLevel} from '../types/domain';
  * the student's own grade.
  */
 
-export type ResultKind = 'lesson' | 'topic' | 'subject' | 'quiz';
+export type ResultKind = 'lesson' | 'topic' | 'subject' | 'quiz' | 'unit' | 'question';
 
 export interface SearchResult {
   id: string;
@@ -79,6 +79,30 @@ const INDEX: IndexEntry[] = [
       .toLowerCase(),
   })),
 
+  ...UNITS.map<IndexEntry>((u) => ({
+    id: u.id,
+    kind: 'unit',
+    title: u.name,
+    context: `Grade ${u.grade} · ${subjectName(u.subjectId)}`,
+    href: `/learn/${u.grade}/${u.subjectId}`,
+    grade: u.grade,
+    body: `${u.name} ${u.summary}`.toLowerCase(),
+  })),
+
+  // Questions are indexed on their text and explanation, but NOT on their
+  // options. Indexing the options would let a student search a question and see
+  // the correct answer highlighted in the result snippet, which turns search
+  // into an answer key.
+  ...QUESTIONS.map<IndexEntry>((q) => ({
+    id: q.id,
+    kind: 'question',
+    title: q.question,
+    context: `Grade ${q.grade} · ${subjectName(q.subjectId)} · Practice question`,
+    href: `/learn/${q.grade}/${q.subjectId}/${q.topicId}`,
+    grade: q.grade,
+    body: q.question.toLowerCase(),
+  })),
+
   ...QUIZZES.map<IndexEntry>((q) => ({
     id: q.id,
     kind: 'quiz',
@@ -92,6 +116,8 @@ const INDEX: IndexEntry[] = [
 
 const KIND_WEIGHT: Record<ResultKind, number> = {
   lesson: 3,
+  unit: 2,
+  question: 1,
   topic: 2,
   quiz: 2,
   subject: 1,
@@ -143,7 +169,9 @@ export function search(
 
 export const KIND_LABELS: Record<ResultKind, string> = {
   lesson: 'Lesson',
+  unit: 'Unit',
   topic: 'Topic',
   subject: 'Subject',
+  question: 'Question',
   quiz: 'Practice',
 };

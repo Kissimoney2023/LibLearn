@@ -30,7 +30,7 @@ export default function ExamPrep() {
   if (subjectIds.length === 0) {
     return (
       <div className="flex flex-col gap-4">
-        <Link to="/exam-coach" className="text-sm text-secondary underline underline-offset-4">
+        <Link to="/exam-coach" className="inline-flex min-h-12 items-center text-sm text-secondary underline underline-offset-4">
           ← Exam Coach
         </Link>
         <EmptyState
@@ -48,7 +48,7 @@ export default function ExamPrep() {
   return (
     <div className="flex max-w-2xl flex-col gap-6">
       <header>
-        <Link to="/exam-coach" className="text-sm text-secondary underline underline-offset-4">
+        <Link to="/exam-coach" className="inline-flex min-h-12 items-center text-sm text-secondary underline underline-offset-4">
           ← Exam Coach
         </Link>
         <h1 className="mt-2 font-display text-2xl font-bold">{examMeta.name} practice</h1>

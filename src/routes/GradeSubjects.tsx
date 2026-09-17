@@ -40,7 +40,7 @@ export default function GradeSubjects() {
   return (
     <div className="flex flex-col gap-6">
       <header>
-        <Link to="/learn" className="text-sm text-secondary underline underline-offset-4">
+        <Link to="/learn" className="inline-flex min-h-12 items-center text-sm text-secondary underline underline-offset-4">
           ← All grades
         </Link>
         <h1 className="mt-2 font-display text-2xl font-bold">Grade {g}</h1>
