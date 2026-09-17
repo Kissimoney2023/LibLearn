@@ -1,4 +1,5 @@
 import type {Question, Quiz} from '../../types/domain';
+import {GRADE4_QUESTIONS, GRADE4_QUIZZES} from './grade4Questions';
 import {GRADE11_QUESTIONS, GRADE11_QUIZZES} from './grade11Questions';
 
 /**
@@ -238,8 +239,8 @@ const BASE_QUIZZES: Quiz[] = [
   },
 ];
 
-export const QUESTIONS: Question[] = [...BASE_QUESTIONS, ...GRADE11_QUESTIONS];
-export const QUIZZES: Quiz[] = [...BASE_QUIZZES, ...GRADE11_QUIZZES];
+export const QUESTIONS: Question[] = [...BASE_QUESTIONS, ...GRADE4_QUESTIONS, ...GRADE11_QUESTIONS];
+export const QUIZZES: Quiz[] = [...BASE_QUIZZES, ...GRADE4_QUIZZES, ...GRADE11_QUIZZES];
 
 export const questionById = (id: string): Question | undefined =>
   QUESTIONS.find((q) => q.id === id);

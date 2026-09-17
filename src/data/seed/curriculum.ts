@@ -1,4 +1,5 @@
 import type {Lesson, Topic, Unit} from '../../types/domain';
+import {GRADE4_LESSONS, GRADE4_TOPICS, GRADE4_UNITS} from './grade4';
 import {GRADE11_LESSONS, GRADE11_TOPICS, GRADE11_UNITS} from './grade11';
 
 /**
@@ -295,10 +296,10 @@ const BASE_LESSONS: Lesson[] = [
  * under no unit, which the UI handles explicitly (see `unfiledTopics`) rather
  * than hiding them. Content mid-import must stay reachable.
  */
-export const UNITS: Unit[] = [...GRADE11_UNITS];
+export const UNITS: Unit[] = [...GRADE4_UNITS, ...GRADE11_UNITS];
 
-export const TOPICS: Topic[] = [...BASE_TOPICS, ...GRADE11_TOPICS];
-export const LESSONS: Lesson[] = [...BASE_LESSONS, ...GRADE11_LESSONS];
+export const TOPICS: Topic[] = [...BASE_TOPICS, ...GRADE4_TOPICS, ...GRADE11_TOPICS];
+export const LESSONS: Lesson[] = [...BASE_LESSONS, ...GRADE4_LESSONS, ...GRADE11_LESSONS];
 
 export const topicsForSubjectGrade = (subjectId: string, grade: number): Topic[] =>
   TOPICS.filter((t) => t.subjectId === subjectId && t.grade === grade).sort(

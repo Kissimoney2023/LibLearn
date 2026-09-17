@@ -1,0 +1,254 @@
+{
+  "grade": 4,
+  "subjectId": "english",
+  "curriculumVersionId": "liblearn-v1",
+  "provenance": "liblearn",
+  "sourceId": null,
+  "units": [
+    {
+      "id": "g4-eng-u-words",
+      "name": "Words and Their Jobs",
+      "summary": "The different jobs words do in a sentence.",
+      "order": 1
+    },
+    {
+      "id": "g4-eng-u-sentences",
+      "name": "Building Sentences",
+      "summary": "Putting words together so they make complete sense.",
+      "order": 2
+    }
+  ],
+  "topics": [
+    {
+      "id": "g4-eng-nouns-verbs",
+      "unitId": "g4-eng-u-words",
+      "name": "Nouns and Verbs",
+      "summary": "Naming words and doing words, and how to spot each one.",
+      "order": 1
+    },
+    {
+      "id": "g4-eng-sentences",
+      "unitId": "g4-eng-u-sentences",
+      "name": "Complete Sentences",
+      "summary": "What every sentence needs before it is finished.",
+      "order": 1
+    }
+  ],
+  "lessons": [
+    {
+      "id": "g4-eng-nouns-verbs-l1",
+      "topicId": "g4-eng-nouns-verbs",
+      "title": "Naming Words and Doing Words",
+      "estimatedMinutes": 11,
+      "order": 1,
+      "objectives": [
+        {
+          "id": "o1",
+          "text": "Find the nouns in a sentence."
+        },
+        {
+          "id": "o2",
+          "text": "Find the verb in a sentence."
+        },
+        {
+          "id": "o3",
+          "text": "Use a test to check whether a word is a noun or a verb."
+        }
+      ],
+      "keyTerms": [
+        {
+          "term": "Noun",
+          "definition": "A word that names a person, place, animal or thing."
+        },
+        {
+          "term": "Verb",
+          "definition": "A word that tells what someone or something does."
+        }
+      ],
+      "sections": [
+        {
+          "heading": "What you will learn",
+          "body": "Every word in a sentence has a job. Two of the most important jobs are naming and doing. Once you can spot those two, sentences make much more sense."
+        },
+        {
+          "heading": "Nouns name things",
+          "body": "A NOUN names something. It can be:\n\n    a person — teacher, mother, Musu\n    a place  — market, school, river\n    an animal — goat, fish, bird\n    a thing  — book, rice, chair\n\nA quick test: can you put \"a\", \"an\" or \"the\" in front of it and does it still sound right?\n\n    the book ✓ — so \"book\" is a noun\n    the jump ✗ — \"jump\" is not usually a noun"
+        },
+        {
+          "heading": "Verbs tell what happens",
+          "body": "A VERB tells what someone or something does.\n\n    run, eat, write, sleep, carry, laugh\n\nIn this sentence:\n\n    The boy carries water.\n\n    \"boy\"   — names a person → noun\n    \"water\" — names a thing  → noun\n    \"carries\" — tells what he does → verb\n\nA quick test: can you put \"I\" or \"she\" in front of it?\n\n    she carries ✓ — so \"carries\" is a verb\n    she book ✗   — so \"book\" is not a verb",
+          "example": "Finding both in one sentence.\n\n    The farmer plants cassava.\n\nAsk two questions, in order:\n\nWho or what is this about?\n    The farmer. That names a person → NOUN\n\nWhat does the farmer do?\n    Plants. That is the action → VERB\n\nIs anything else named?\n    Cassava. That names a thing → NOUN\n\nSo: farmer (noun), plants (verb), cassava (noun)."
+        },
+        {
+          "heading": "One word, two jobs",
+          "body": "Careful — some words can do either job. Look at what the word is DOING in that sentence, not just the word by itself.\n\n    I drink water.        Here \"drink\" is a verb. It tells the action.\n    Bring me a drink.     Here \"drink\" is a noun. It names a thing.\n\nSame word. Different job. This is why you test the word inside its sentence."
+        },
+        {
+          "heading": "Try it yourself",
+          "body": "Find the nouns and the verb in each sentence:\n\n1. The goat eats grass.\n2. My sister sweeps the yard.\n3. Children play football.\n\nThen: write your own sentence with two nouns and one verb."
+        },
+        {
+          "heading": "Summary",
+          "body": "• A noun names a person, place, animal or thing.\n• A verb tells what someone or something does.\n• Noun test: does \"the\" fit in front of it?\n• Verb test: does \"she\" fit in front of it?\n• Some words can be either — check the job it does in THAT sentence."
+        }
+      ]
+    },
+    {
+      "id": "g4-eng-sentences-l1",
+      "topicId": "g4-eng-sentences",
+      "title": "What Makes a Complete Sentence",
+      "estimatedMinutes": 11,
+      "order": 1,
+      "objectives": [
+        {
+          "id": "o1",
+          "text": "Say the two things every sentence must have."
+        },
+        {
+          "id": "o2",
+          "text": "Tell a complete sentence from an incomplete one."
+        },
+        {
+          "id": "o3",
+          "text": "Use a capital letter and a full stop correctly."
+        }
+      ],
+      "keyTerms": [
+        {
+          "term": "Sentence",
+          "definition": "A group of words that makes complete sense on its own."
+        },
+        {
+          "term": "Subject",
+          "definition": "Who or what the sentence is about."
+        },
+        {
+          "term": "Full stop",
+          "definition": "The dot (.) that shows a sentence has ended."
+        }
+      ],
+      "sections": [
+        {
+          "heading": "What you will learn",
+          "body": "Some groups of words are finished. Others leave you waiting for more. This lesson shows you how to tell the difference, and how to fix the unfinished ones."
+        },
+        {
+          "heading": "Two things every sentence needs",
+          "body": "A complete sentence needs:\n\n    1. A SUBJECT — who or what it is about\n    2. A VERB — what they do\n\nLook:\n\n    The dog barks.\n\n    Subject: the dog\n    Verb: barks\n\nIt is finished. You are not left waiting.\n\nNow look at this:\n\n    The dog in the yard.\n\nWho is it about? The dog. Good.\nWhat does the dog do? …nothing is said.\n\nYou are left waiting. It is not a sentence yet."
+        },
+        {
+          "heading": "The waiting test",
+          "body": "Read the words out loud. When you stop, do you feel finished, or do you feel like something is missing?\n\n    Running to the market.        → Who is running? MISSING\n    Musu is running to the market. → Finished ✓\n\n    Because it rained.            → Because it rained, what? MISSING\n    We stayed inside because it rained. → Finished ✓\n\nThat feeling of waiting is real information. Trust it.",
+          "example": "Fixing three incomplete groups.\n\n1. \"The tall boy.\"\n   Has a subject, no verb. Add one:\n   → The tall boy waved.\n\n2. \"Sings every morning.\"\n   Has a verb, no subject. Add one:\n   → My mother sings every morning.\n\n3. \"After we ate.\"\n   Leaves you waiting. Finish the thought:\n   → After we ate, we washed the plates.\n\nEach fix adds the missing part. Nothing else changed."
+        },
+        {
+          "heading": "Capital letter and full stop",
+          "body": "Every sentence starts with a CAPITAL letter and ends with a FULL STOP.\n\n    wrong:  the rain stopped\n    right:  The rain stopped.\n\nThink of them as a door. The capital opens the sentence, the full stop closes it. Without them the reader cannot tell where one idea ends and the next begins."
+        },
+        {
+          "heading": "Try it yourself",
+          "body": "Which of these are complete sentences? Fix the ones that are not:\n\n1. The market is busy.\n2. Walking down the road.\n3. My brother.\n4. We carried the water home.\n5. When the sun set."
+        },
+        {
+          "heading": "Summary",
+          "body": "• Every sentence needs a subject and a verb.\n• Read it aloud: if you feel like you are waiting, it is not finished.\n• Missing subject → add who or what.\n• Missing verb → add what they do.\n• Start with a capital letter, end with a full stop."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "id": "q4-nv-1",
+      "topicId": "g4-eng-nouns-verbs",
+      "question": "In the sentence \"The goat eats grass\", which word is the verb?",
+      "options": [
+        "goat",
+        "eats",
+        "grass",
+        "The"
+      ],
+      "correctAnswer": 1,
+      "explanation": "\"Eats\" tells you what the goat does, so it is the verb. \"Goat\" and \"grass\" are both nouns — they name an animal and a thing. Try the test: \"she eats\" sounds right, but \"she goat\" does not.",
+      "difficulty": "foundation"
+    },
+    {
+      "id": "q4-nv-2",
+      "topicId": "g4-eng-nouns-verbs",
+      "question": "How many nouns are in \"My sister sweeps the yard\"?",
+      "options": [
+        "One",
+        "Two",
+        "Three",
+        "None"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Two: \"sister\" names a person and \"yard\" names a place. \"Sweeps\" is the verb, and \"my\" and \"the\" are neither. Check each word with the test — \"the sister\" and \"the yard\" both sound right, but \"the sweeps\" does not.",
+      "difficulty": "core"
+    },
+    {
+      "id": "q4-nv-3",
+      "topicId": "g4-eng-nouns-verbs",
+      "question": "In \"Bring me a drink\", what job does the word \"drink\" do?",
+      "options": [
+        "It is a verb",
+        "It is a noun",
+        "It is both at once",
+        "It is neither"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Here \"drink\" names a thing you can bring, so it is a noun — notice \"a drink\" sounds right. In \"I drink water\" the same word is a verb, because there it tells the action. Always check the job the word does in that particular sentence.",
+      "difficulty": "challenge"
+    },
+    {
+      "id": "q4-sen-1",
+      "topicId": "g4-eng-sentences",
+      "question": "Which of these is a complete sentence?",
+      "options": [
+        "Walking down the road.",
+        "The market is busy.",
+        "My brother.",
+        "When the sun set."
+      ],
+      "correctAnswer": 1,
+      "explanation": "\"The market is busy\" has a subject (the market) and a verb (is), and nothing is left hanging. The others leave you waiting: walking — who? my brother — did what? when the sun set — then what happened?",
+      "difficulty": "foundation"
+    },
+    {
+      "id": "q4-sen-2",
+      "topicId": "g4-eng-sentences",
+      "question": "What is missing from \"Sings every morning\"?",
+      "options": [
+        "A verb",
+        "A subject",
+        "A full stop only",
+        "Nothing is missing"
+      ],
+      "correctAnswer": 1,
+      "explanation": "It has a verb — \"sings\" — but never says WHO sings, so the subject is missing. Add one and it is finished: \"My mother sings every morning.\" Ask \"who or what?\" and if there is no answer, the subject is what is missing.",
+      "difficulty": "core"
+    }
+  ],
+  "quizzes": [
+    {
+      "id": "quiz-g4-nouns-verbs",
+      "lessonId": "g4-eng-nouns-verbs-l1",
+      "topicId": "g4-eng-nouns-verbs",
+      "title": "Nouns and Verbs Check",
+      "questionIds": [
+        "q4-nv-1",
+        "q4-nv-2",
+        "q4-nv-3"
+      ]
+    },
+    {
+      "id": "quiz-g4-sentences",
+      "lessonId": "g4-eng-sentences-l1",
+      "topicId": "g4-eng-sentences",
+      "title": "Complete Sentences Check",
+      "questionIds": [
+        "q4-sen-1",
+        "q4-sen-2"
+      ]
+    }
+  ]
+}
