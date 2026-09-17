@@ -52,7 +52,7 @@ export default function TopicLessons() {
         <div className="mt-3 flex flex-wrap items-center gap-2">
           <GradeBadge>Grade {lesson.grade}</GradeBadge>
           <SubjectChip>{topicMeta.name}</SubjectChip>
-          {lesson.provenance === 'demo' && <DemoBadge />}
+          {lesson.provenance === 'liblearn' && <DemoBadge />}
         </div>
         <h1 className="mt-3 font-display text-2xl font-bold">{lesson.title}</h1>
         <p className="mt-1 text-sm text-on-surface-variant">

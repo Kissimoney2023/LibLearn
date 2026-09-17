@@ -37,11 +37,96 @@ export interface ExamDefinition {
 export type Difficulty = 'foundation' | 'core' | 'challenge';
 
 /**
- * Every content record declares where it came from. The UI must surface
- * `demo` content as sample material and must never present it as official
- * Liberian curriculum.
+ * Every content record declares where it came from, and the UI must label it.
+ *
+ *  official      Reproduced from a government / Ministry / WAEC document that
+ *                someone has actually read. Requires a `sourceId`.
+ *  verified      Supported by a credible published educational source that
+ *                someone has actually read. Requires a `sourceId`.
+ *  liblearn      Written for LibLearn. Academically standard material, NOT
+ *                claimed to match any national curriculum.
+ *  ai-generated  Produced by a model at runtime. Never persisted as curriculum
+ *                without passing through review (see ReviewStatus).
+ *
+ * The distinction that matters: `official` and `verified` are claims about
+ * Liberia. Nothing may carry them until the underlying document has been read
+ * by a person. Guessing here misinforms students about their own examinations.
  */
-export type ContentProvenance = 'demo' | 'verified' | 'ai-generated';
+export type ContentProvenance =
+  | 'official'
+  | 'verified'
+  | 'liblearn'
+  | 'ai-generated';
+
+/** Human-readable label per provenance tier, for UI badges. */
+export const PROVENANCE_LABEL: Record<ContentProvenance, string> = {
+  official: 'Official source',
+  verified: 'Verified source',
+  liblearn: 'LibLearn content',
+  'ai-generated': 'AI generated',
+};
+
+/** Where a source document came from. */
+export type SourceType =
+  | 'MOE'
+  | 'WAEC'
+  | 'MCSS'
+  | 'Government'
+  | 'UNESCO'
+  | 'WorldBank'
+  | 'Other';
+
+/**
+ * How far a source has actually been checked.
+ *
+ * `located` is deliberately distinct from `reviewed`: knowing a document
+ * exists at a URL is not the same as having read it, and only the latter can
+ * justify `official` provenance on content.
+ */
+export type VerificationStatus =
+  | 'located'
+  | 'reviewed'
+  | 'verified'
+  | 'superseded'
+  | 'verification-required';
+
+/** A document LibLearn can cite. Registry lives in src/data/sources.ts. */
+export interface ContentSource {
+  id: string;
+  title: string;
+  organization: string;
+  sourceType: SourceType;
+  url?: string;
+  documentDate?: string;
+  curriculumVersionId?: string;
+  description: string;
+  verificationStatus: VerificationStatus;
+  lastVerifiedAt: string | null;
+  /** Why this status - especially why something is not yet reviewed. */
+  notes?: string;
+}
+
+/** Status of a curriculum version. Only `official-current` may drive claims. */
+export type CurriculumStatus =
+  | 'official-current'
+  | 'official-historical'
+  | 'revised'
+  | 'draft'
+  | 'archived'
+  | 'reference';
+
+export interface CurriculumVersion {
+  id: string;
+  name: string;
+  description: string;
+  status: CurriculumStatus;
+  sourceId?: string;
+  effectiveDate?: string;
+  notes?: string;
+}
+
+/** Editorial pipeline for content, incl. anything a model drafts. */
+export type ReviewStatus = 'draft' | 'in-review' | 'verified' | 'published';
 
 export interface Subject {
   id: string;
@@ -58,6 +143,9 @@ export interface Topic {
   name: string;
   summary: string;
   order: number;
+  /** Which curriculum version places this topic at this grade. */
+  curriculumVersionId?: string;
+  provenance?: ContentProvenance;
 }
 
 export interface LearningObjective {
@@ -84,6 +172,12 @@ export interface Lesson {
   sections: LessonSection[];
   provenance: ContentProvenance;
   order: number;
+  /** Required when provenance is 'official' or 'verified'. */
+  sourceId?: string;
+  curriculumVersionId?: string;
+  reviewStatus?: ReviewStatus;
+  /** Terms a student can look up; feeds the glossary and search. */
+  keyTerms?: {term: string; definition: string}[];
 }
 
 export interface Question {
