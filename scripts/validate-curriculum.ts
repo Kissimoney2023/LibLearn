@@ -15,6 +15,8 @@
 import {LESSONS, TOPICS} from '../src/data/seed/curriculum';
 import {QUESTIONS, QUIZZES} from '../src/data/seed/questions';
 import {SUBJECTS} from '../src/data/catalog';
+import {QUESTION_ALIGNMENT} from '../src/data/seed/alignment';
+import {noteForLesson} from '../src/lib/curriculum/notes';
 import {CONTENT_SOURCES, CURRICULUM_VERSIONS} from '../src/data/sources';
 
 const errors: string[] = [];
@@ -169,6 +171,124 @@ const unreviewed = CONTENT_SOURCES.filter(
   (s) => s.verificationStatus === 'located' || s.verificationStatus === 'verification-required',
 );
 console.log(`Sources awaiting human review: ${unreviewed.length}/${CONTENT_SOURCES.length}`);
+
+
+/* ------------------------------------------- NOTE -> QUESTION ALIGNMENT --- */
+/*
+ * The rule: a question may only assess something its lesson's Note teaches.
+ *
+ * A question that cannot be traced to a section of a real Note is not assessed
+ * learning - it is a guess dressed as assessment - so it is reported as
+ * NEEDS_VERIFICATION rather than quietly passing.
+ */
+const NOTES = new Map(LESSONS.map((l) => [l.id, noteForLesson(l)]));
+const needsVerification: string[] = [];
+const objectiveGaps: string[] = [];
+
+for (const q of QUESTIONS) {
+  const a = QUESTION_ALIGNMENT[q.id];
+
+  if (!a) {
+    needsVerification.push(`${q.id}: no alignment entry — not traceable to any Note`);
+    continue;
+  }
+
+  const lesson = LESSONS.find((l) => l.id === a.lessonId);
+  if (!lesson) {
+    errors.push(`question ${q.id}: aligned to lesson ${a.lessonId}, which does not exist`);
+    continue;
+  }
+  if (lesson.grade !== q.grade) {
+    errors.push(`question ${q.id}: grade ${q.grade} but its lesson ${lesson.id} is grade ${lesson.grade}`);
+  }
+  if (lesson.subjectId !== q.subjectId) {
+    errors.push(`question ${q.id}: subject ${q.subjectId} but its lesson ${lesson.id} is ${lesson.subjectId}`);
+  }
+
+  const note = NOTES.get(a.lessonId)!;
+
+  if (a.noteSection === null) {
+    if (!a.gap) errors.push(`question ${q.id}: unaligned but gives no reason (gap is required)`);
+    needsVerification.push(`${q.id}: ${a.gap ?? 'no reason given'}`);
+  } else if (!note.sections.some((sec) => sec.key === a.noteSection)) {
+    // The citation points at a section that is not in the Note. Either the
+    // heading was renamed or the citation was wrong; both need a human.
+    errors.push(
+      `question ${q.id}: cites note section "${a.noteSection}" which ${note.lessonId} does not have ` +
+        `(has: ${note.sections.map((x) => x.key).join(', ')})`,
+    );
+  }
+
+  if (a.objectiveId === null) {
+    if (!a.gap) errors.push(`question ${q.id}: no objective and no reason given`);
+    objectiveGaps.push(`${q.id}: ${a.gap ?? ''}`);
+  } else if (!lesson.objectives.some((o) => o.id === a.objectiveId)) {
+    errors.push(`question ${q.id}: cites objective ${a.objectiveId}, absent from ${lesson.id}`);
+  }
+}
+
+/* A quiz may only contain questions aligned to ITS OWN lesson. This is the
+ * check that caught the Grade 8 algebra quiz testing two other lessons. */
+for (const qz of QUIZZES) {
+  if (!qz.lessonId) {
+    errors.push(`quiz ${qz.id}: has no lessonId, so it has no Note to be built from`);
+    continue;
+  }
+  const note = NOTES.get(qz.lessonId);
+  if (!note) {
+    errors.push(`quiz ${qz.id}: lesson ${qz.lessonId} does not exist`);
+    continue;
+  }
+  if (note.status !== 'published') {
+    errors.push(`quiz ${qz.id}: built on a Note that is ${note.status}, not published`);
+  }
+  for (const qid of qz.questionIds) {
+    const a = QUESTION_ALIGNMENT[qid];
+    if (!a) {
+      errors.push(`quiz ${qz.id}: question ${qid} has no Note alignment`);
+    } else if (a.lessonId !== qz.lessonId) {
+      errors.push(
+        `quiz ${qz.id} (lesson ${qz.lessonId}): question ${qid} is taught by ${a.lessonId}. ` +
+          `A quiz must not assess a lesson the student did not open.`,
+      );
+    } else if (a.noteSection === null) {
+      errors.push(`quiz ${qz.id}: question ${qid} is NEEDS_VERIFICATION and must not be in a quiz`);
+    }
+  }
+}
+
+/* Every published lesson must have a Note with objectives, and every objective
+ * should be assessed by something. */
+for (const l of LESSONS) {
+  const note = NOTES.get(l.id)!;
+  if (note.sections.length === 0) errors.push(`lesson ${l.id}: Note has no sections`);
+  if (note.objectives.length === 0) errors.push(`lesson ${l.id}: Note has no learning objectives`);
+
+  const assessed = new Set(
+    QUESTIONS.filter((q) => QUESTION_ALIGNMENT[q.id]?.lessonId === l.id)
+      .map((q) => QUESTION_ALIGNMENT[q.id]?.objectiveId)
+      .filter(Boolean),
+  );
+  for (const o of note.objectives) {
+    if (!assessed.has(o.id)) {
+      warnings.push(`lesson ${l.id}: objective ${o.id} is taught but never assessed`);
+    }
+  }
+}
+
+console.log('\nNote alignment');
+console.log(`  Notes built:            ${NOTES.size}`);
+console.log(`  Questions traced:       ${QUESTIONS.length - needsVerification.length}/${QUESTIONS.length}`);
+console.log(`  NEEDS_VERIFICATION:     ${needsVerification.length}`);
+console.log(`  Taught but no objective: ${objectiveGaps.length}`);
+if (needsVerification.length) {
+  console.log('\n  NEEDS_VERIFICATION (kept out of quizzes, never guessed):');
+  for (const n of needsVerification) console.log(`    ? ${n}`);
+}
+if (objectiveGaps.length) {
+  console.log('\n  Taught, but no learning objective covers it:');
+  for (const n of objectiveGaps) console.log(`    ? ${n}`);
+}
 
 /* ----------------------------------------------------------- result --- */
 if (warnings.length) {

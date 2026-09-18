@@ -1,4 +1,5 @@
 import type {
+  LessonNote,
   GradeLevel,
   Lesson,
   Question,
@@ -11,6 +12,7 @@ import {isSupabaseConfigured} from '../supabase';
 import {bundledQuizGrade, bundledRepository} from './bundled';
 import {supabaseRepository} from './supabaseRepo';
 import {resolveAvailableGrades} from './availability';
+import {noteForLesson as noteFor} from './notes';
 import {createBreaker, DATABASE_COOLDOWN_MS} from './breaker';
 import {emptyCurriculum, type GradeCurriculum} from './types';
 
@@ -304,3 +306,13 @@ export const emptyFor = emptyCurriculum;
 /* Re-exported so routes take the bundled answer from the seam rather than
  * importing a data module directly. */
 export {bundledQuizGrade} from './bundled';
+
+/* The Note engine. The Note is the source of truth for what a lesson teaches;
+ * every question cites a section of it. */
+export {noteForLesson, noteSectionOf, sectionKey, noteId} from './notes';
+
+/** The Note for a lesson in a loaded curriculum. */
+export const noteForLessonId = (c: GradeCurriculum, lessonId: string): LessonNote | undefined => {
+  const lesson = c.lessons.find((l) => l.id === lessonId);
+  return lesson ? noteFor(lesson) : undefined;
+};

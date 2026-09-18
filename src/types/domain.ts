@@ -206,6 +206,71 @@ export interface Lesson {
   keyTerms?: {term: string; definition: string}[];
 }
 
+/* ---------- The Note: the source of truth for what a lesson teaches ---------- */
+
+export type NoteSourceType =
+  | 'MINISTRY_OF_EDUCATION'
+  | 'WAEC'
+  | 'OFFICIAL_GOVERNMENT'
+  | 'MCSS'
+  | 'TEXTBOOK'
+  | 'TEACHER_GUIDE'
+  | 'OTHER_AUTHORITY'
+  | 'LIBLEARN'
+  | 'AI_GENERATED';
+
+/** Human label shown to students. Never implies Ministry endorsement. */
+export const NOTE_SOURCE_LABEL: Record<NoteSourceType, string> = {
+  MINISTRY_OF_EDUCATION: 'Official Curriculum — Liberia Ministry of Education',
+  WAEC: 'West African Examinations Council',
+  OFFICIAL_GOVERNMENT: 'Official Government Source',
+  MCSS: 'Monrovia Consolidated School System',
+  TEXTBOOK: 'Textbook',
+  TEACHER_GUIDE: 'Teacher Guide',
+  OTHER_AUTHORITY: 'Other Authority',
+  LIBLEARN: 'LibLearn Learning Material',
+  AI_GENERATED: 'AI-generated explanation',
+};
+
+export type NoteStatus =
+  | 'draft'
+  | 'review'
+  | 'verified'
+  | 'published'
+  | 'archived'
+  | 'needs_verification';
+
+/**
+ * One addressable part of a Note.
+ *
+ * `key` is what a question cites. It is derived from the heading, so editing a
+ * section's prose keeps every citation intact while RENAMING it breaks them
+ * loudly - which is correct, because a renamed section needs re-checking.
+ */
+export interface NoteSection {
+  key: string;
+  heading: string;
+  body: string;
+  example?: string;
+}
+
+export interface LessonNote {
+  id: string;
+  lessonId: string;
+  title: string;
+  introduction: string;
+  objectives: LearningObjective[];
+  sections: NoteSection[];
+  keyTerms: {term: string; definition: string}[];
+  summary: string;
+  sourceType: NoteSourceType;
+  sourceId?: string;
+  curriculumVersionId?: string;
+  /** Monotonic per lesson. Old versions are kept, never rewritten. */
+  version: number;
+  status: NoteStatus;
+}
+
 export interface Question {
   id: string;
   question: string;
@@ -220,6 +285,15 @@ export interface Question {
   /** Set when the question is written for a specific examination. */
   examGoal?: ExamGoal;
   provenance: ContentProvenance;
+
+  /* ---- Traceability. A question may only assess what its Note teaches. ---- */
+
+  /** The lesson whose Note supports the answer. */
+  lessonId?: string;
+  /** Section key within that Note. Absent = NEEDS_VERIFICATION. */
+  noteSection?: string;
+  /** Objective assessed. Absent = taught, but no objective covers it. */
+  objectiveId?: string;
 }
 
 export interface Quiz {

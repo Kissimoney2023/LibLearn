@@ -14,6 +14,7 @@
 import {writeFileSync, mkdirSync} from 'node:fs';
 import {LESSONS, TOPICS, UNITS} from '../src/data/seed/curriculum';
 import {QUESTIONS, QUIZZES} from '../src/data/seed/questions';
+import {noteForLesson, noteId} from '../src/lib/curriculum/notes';
 
 /** Postgres string literal: double every quote. Nothing else needs escaping. */
 const q = (v: string | null | undefined): string =>
@@ -65,19 +66,34 @@ on conflict (id) do update set title = excluded.title, objectives = excluded.obj
 }
 w();
 
+w('-- --------------------------------------------------------- lesson notes');
+w('-- The Note is the source of truth for what a lesson teaches. Every question');
+w('-- below cites one of these sections in questions.note_section.');
+for (const l of LESSONS) {
+  const n = noteForLesson(l);
+  w(`insert into public.lesson_notes (id, lesson_id, title, introduction, main_content, key_terms, summary, source_type, curriculum_version_id, version, status) values
+  (${q(n.id)}, ${q(n.lessonId)}, ${q(n.title)}, ${q(n.introduction)}, ${j(n.sections)}, ${j(n.keyTerms)}, ${q(n.summary)}, ${q(n.sourceType)}, ${q(n.curriculumVersionId ?? 'liblearn-v1')}, ${n.version}, ${q(n.status)})
+on conflict (id) do update set title = excluded.title, introduction = excluded.introduction, main_content = excluded.main_content, key_terms = excluded.key_terms, summary = excluded.summary, status = excluded.status;`);
+}
+w();
+
 w('-- ------------------------------------------------------------ questions');
 for (const qq of QUESTIONS) {
-  w(`insert into public.questions (id, topic_id, subject_id, curriculum_version_id, grade, question_type, question_text, options, correct_answer, explanation, difficulty, exam_goal, provenance, review_status) values
-  (${q(qq.id)}, ${q(qq.topicId)}, ${q(qq.subjectId)}, 'liblearn-v1', ${qq.grade}, 'multiple_choice', ${q(qq.question)}, ${j(qq.options)}, ${qq.correctAnswer}, ${q(qq.explanation)}, ${q(qq.difficulty)}, ${q(qq.examGoal ?? null)}, 'liblearn', 'published')
-on conflict (id) do update set question_text = excluded.question_text, options = excluded.options, correct_answer = excluded.correct_answer, explanation = excluded.explanation;`);
+  // note_section is NULL when nobody has established which part of the Note
+  // supports the answer. That is NEEDS_VERIFICATION, and the audit view reports
+  // it rather than the seed inventing a citation.
+  const nid = qq.lessonId ? noteId(qq.lessonId) : null;
+  w(`insert into public.questions (id, topic_id, subject_id, lesson_id, note_id, note_section, objective_id, curriculum_version_id, grade, question_type, question_text, options, correct_answer, explanation, difficulty, exam_goal, provenance, review_status) values
+  (${q(qq.id)}, ${q(qq.topicId)}, ${q(qq.subjectId)}, ${q(qq.lessonId ?? null)}, ${q(nid)}, ${q(qq.noteSection ?? null)}, ${q(qq.objectiveId ?? null)}, 'liblearn-v1', ${qq.grade}, 'multiple_choice', ${q(qq.question)}, ${j(qq.options)}, ${qq.correctAnswer}, ${q(qq.explanation)}, ${q(qq.difficulty)}, ${q(qq.examGoal ?? null)}, 'liblearn', 'published')
+on conflict (id) do update set question_text = excluded.question_text, options = excluded.options, correct_answer = excluded.correct_answer, explanation = excluded.explanation, lesson_id = excluded.lesson_id, note_id = excluded.note_id, note_section = excluded.note_section, objective_id = excluded.objective_id;`);
 }
 w();
 
 w('-- -------------------------------------------------------------- quizzes');
 for (const z of QUIZZES) {
-  w(`insert into public.quizzes (id, lesson_id, topic_id, subject_id, grade, title) values
-  (${q(z.id)}, ${q(z.lessonId ?? null)}, ${q(z.topicId)}, ${q(z.subjectId)}, ${z.grade}, ${q(z.title)})
-on conflict (id) do update set title = excluded.title, lesson_id = excluded.lesson_id;`);
+  w(`insert into public.quizzes (id, lesson_id, note_id, topic_id, subject_id, grade, title) values
+  (${q(z.id)}, ${q(z.lessonId ?? null)}, ${q(z.lessonId ? noteId(z.lessonId) : null)}, ${q(z.topicId)}, ${q(z.subjectId)}, ${z.grade}, ${q(z.title)})
+on conflict (id) do update set title = excluded.title, lesson_id = excluded.lesson_id, note_id = excluded.note_id;`);
 }
 w();
 

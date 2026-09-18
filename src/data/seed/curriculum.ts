@@ -82,6 +82,8 @@ const BASE_LESSONS: Lesson[] = [
     estimatedMinutes: 12,
     order: 1,
     provenance: 'liblearn',
+    reviewStatus: 'published',
+    curriculumVersionId: 'liblearn-v1',
     objectives: [
       {id: 'o1', text: 'Explain what a variable stands for in an expression.'},
       {id: 'o2', text: 'Write a word problem as an algebraic expression.'},
@@ -113,6 +115,8 @@ const BASE_LESSONS: Lesson[] = [
     estimatedMinutes: 15,
     order: 2,
     provenance: 'liblearn',
+    reviewStatus: 'published',
+    curriculumVersionId: 'liblearn-v1',
     objectives: [
       {id: 'o1', text: 'Solve a one-step linear equation.'},
       {id: 'o2', text: 'Solve a two-step linear equation.'},
@@ -145,6 +149,8 @@ const BASE_LESSONS: Lesson[] = [
     estimatedMinutes: 14,
     order: 3,
     provenance: 'liblearn',
+    reviewStatus: 'published',
+    curriculumVersionId: 'liblearn-v1',
     objectives: [
       {id: 'o1', text: 'Expand a bracket using the distributive law.'},
       {id: 'o2', text: 'Solve an equation that contains brackets.'},
@@ -171,6 +177,8 @@ const BASE_LESSONS: Lesson[] = [
     estimatedMinutes: 11,
     order: 1,
     provenance: 'liblearn',
+    reviewStatus: 'published',
+    curriculumVersionId: 'liblearn-v1',
     objectives: [
       {id: 'o1', text: 'Convert a fraction to a decimal by division.'},
       {id: 'o2', text: 'Convert a terminating decimal to a fraction in lowest terms.'},
@@ -196,6 +204,8 @@ const BASE_LESSONS: Lesson[] = [
     estimatedMinutes: 10,
     order: 1,
     provenance: 'liblearn',
+    reviewStatus: 'published',
+    curriculumVersionId: 'liblearn-v1',
     objectives: [
       {id: 'o1', text: 'Name the numerator and denominator of a fraction.'},
       {id: 'o2', text: 'Compare two fractions with the same denominator.'},
@@ -221,6 +231,8 @@ const BASE_LESSONS: Lesson[] = [
     estimatedMinutes: 12,
     order: 1,
     provenance: 'liblearn',
+    reviewStatus: 'published',
+    curriculumVersionId: 'liblearn-v1',
     objectives: [
       {id: 'o1', text: 'Describe the arrangement of particles in solids, liquids and gases.'},
       {id: 'o2', text: 'Explain why a gas fills its container but a solid does not.'},
@@ -246,6 +258,8 @@ const BASE_LESSONS: Lesson[] = [
     estimatedMinutes: 10,
     order: 1,
     provenance: 'liblearn',
+    reviewStatus: 'published',
+    curriculumVersionId: 'liblearn-v1',
     objectives: [
       {id: 'o1', text: 'Identify nouns, verbs and adjectives in a sentence.'},
       {id: 'o2', text: 'Explain the job each does.'},
@@ -271,6 +285,8 @@ const BASE_LESSONS: Lesson[] = [
     estimatedMinutes: 16,
     order: 1,
     provenance: 'liblearn',
+    reviewStatus: 'published',
+    curriculumVersionId: 'liblearn-v1',
     objectives: [
       {id: 'o1', text: 'Name the main organelles of a plant and an animal cell.'},
       {id: 'o2', text: 'State the function of the nucleus, mitochondria and chloroplast.'},

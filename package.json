@@ -10,7 +10,9 @@
     "clean": "rm -rf dist server.js",
     "lint": "tsc --noEmit",
     "typecheck": "tsc --noEmit",
-    "dev:api": "tsx server.ts"
+    "dev:api": "tsx server.ts",
+    "validate:curriculum": "tsx scripts/validate-curriculum.ts",
+    "test:units": "tsx src/lib/curriculum/breaker.test.ts && tsx src/lib/curriculum/availability.test.ts && tsx src/lib/recommend.test.ts"
   },
   "dependencies": {
     "@google/genai": "^2.4.0",
