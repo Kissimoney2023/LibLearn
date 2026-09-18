@@ -40,6 +40,20 @@ w('-- Safe to run more than once: every row upserts on its primary key.');
 w();
 w('begin;');
 w();
+// Fail at line 1 with an instruction, not 500 lines in with a bare
+// "relation does not exist". Someone pasting this into the SQL editor needs to
+// know WHICH file to run first, not merely that something is absent.
+w(`do $$
+begin
+  if to_regclass('public.lessons') is null then
+    raise exception 'LibLearn setup: the curriculum tables do not exist yet. Run the migrations in supabase/migrations/ in order (0001 to 0006) before this seed, or paste supabase/liblearn-complete-setup.sql instead, which contains everything in the right order.';
+  end if;
+  if to_regclass('public.lesson_notes') is null then
+    raise exception 'LibLearn setup: public.lesson_notes is missing. Run supabase/migrations/0006_lesson_notes.sql before this seed, or paste supabase/liblearn-complete-setup.sql instead, which contains everything in the right order.';
+  end if;
+end $$;`);
+w();
+w();
 
 w('-- ---------------------------------------------------------------- units');
 for (const u of UNITS) {
