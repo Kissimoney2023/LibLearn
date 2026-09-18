@@ -182,6 +182,25 @@ const toSubject = (r: SubjectRow, grades: GradeLevel[]): Subject => ({
 export const supabaseRepository: CurriculumRepository = {
   name: 'supabase',
 
+  async gradeForQuiz(quizId: string): Promise<GradeLevel | null> {
+    if (!supabase) throw new Error('Supabase is not configured.');
+
+    // One row, one column. maybeSingle rather than single: a quiz id that does
+    // not exist is a normal outcome here (a stale link), not an error.
+    const res = await supabase
+      .from('quizzes')
+      .select('grade')
+      .eq('id', quizId)
+      .maybeSingle();
+
+    if (res.error) throw toError(res.error);
+
+    const grade = (res.data as {grade: number} | null)?.grade;
+    return grade !== undefined && GRADE_LEVELS.includes(grade as GradeLevel)
+      ? (grade as GradeLevel)
+      : null;
+  },
+
   async availableGrades(): Promise<GradeLevel[]> {
     if (!supabase) throw new Error('Supabase is not configured.');
 

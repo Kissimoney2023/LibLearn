@@ -8,7 +8,7 @@ import type {
   Unit,
 } from '../../types/domain';
 import {isSupabaseConfigured} from '../supabase';
-import {bundledRepository} from './bundled';
+import {bundledQuizGrade, bundledRepository} from './bundled';
 import {supabaseRepository} from './supabaseRepo';
 import {resolveAvailableGrades} from './availability';
 import {createBreaker, DATABASE_COOLDOWN_MS} from './breaker';
@@ -207,6 +207,31 @@ export async function loadAvailableGrades(
 }
 
 
+/**
+ * Which grade a quiz belongs to, so the quiz screen can load that grade.
+ *
+ * The bundle answers first and the database only has to be asked for quizzes
+ * the bundle does not know - which is exactly the content loaded into Postgres
+ * after the app was built. Never throws: a quiz screen that fails closed tells
+ * a student their quiz does not exist because of a dropped connection.
+ */
+export async function loadQuizGrade(quizId: string): Promise<GradeLevel | null> {
+  const local = bundledQuizGrade(quizId);
+  if (local !== null) return local;
+
+  if (!isSupabaseConfigured || databaseBreaker.isOpen()) return null;
+
+  try {
+    const grade = await supabaseRepository.gradeForQuiz(quizId);
+    databaseBreaker.reset();
+    return grade;
+  } catch (err) {
+    databaseBreaker.trip();
+    console.warn('[curriculum] could not resolve the grade for quiz', quizId, err);
+    return null;
+  }
+}
+
 /** Drop cached curriculum, e.g. after content is edited. */
 export function invalidate(grade?: GradeLevel): void {
   if (grade === undefined) cache.clear();
@@ -275,3 +300,7 @@ export const topicCounts = (c: GradeCurriculum): Map<string, number> => {
 };
 
 export const emptyFor = emptyCurriculum;
+
+/* Re-exported so routes take the bundled answer from the seam rather than
+ * importing a data module directly. */
+export {bundledQuizGrade} from './bundled';
