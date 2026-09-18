@@ -1,4 +1,5 @@
 import type {Question, Quiz} from '../../types/domain';
+import {QUESTION_ALIGNMENT} from './alignment';
 import {GRADE4_QUESTIONS, GRADE4_QUIZZES} from './grade4Questions';
 import {LOWER_PRIMARY_QUESTIONS, LOWER_PRIMARY_QUIZZES} from './lowerPrimaryQuestions';
 import {GRADE11_QUESTIONS, GRADE11_QUIZZES} from './grade11Questions';
@@ -210,9 +211,22 @@ const BASE_QUESTIONS: Question[] = [
 
 const BASE_QUIZZES: Quiz[] = [
   {
+    // One quiz per lesson. This used to be a single "Algebra Check" on lesson 2
+    // that also asked about coefficients (lesson 1) and expanding brackets
+    // (lesson 3), assessing students on two things that lesson had not taught.
+    id: 'quiz-g8-algebra-l1', topicId: 'g8-math-algebra', subjectId: 'mathematics', grade: 8,
+    title: 'Variables and Expressions Check', lessonId: 'g8-math-algebra-l1',
+    questionIds: ['q-alg-1', 'q-alg-6'],
+  },
+  {
     id: 'quiz-g8-algebra', topicId: 'g8-math-algebra', subjectId: 'mathematics', grade: 8,
-    title: 'Algebra Check', lessonId: 'g8-math-algebra-l2',
-    questionIds: ['q-alg-1', 'q-alg-2', 'q-alg-3', 'q-alg-4', 'q-alg-5'],
+    title: 'Solving Equations Check', lessonId: 'g8-math-algebra-l2',
+    questionIds: ['q-alg-2', 'q-alg-3'],
+  },
+  {
+    id: 'quiz-g8-algebra-l3', topicId: 'g8-math-algebra', subjectId: 'mathematics', grade: 8,
+    title: 'Equations with Brackets Check', lessonId: 'g8-math-algebra-l3',
+    questionIds: ['q-alg-4', 'q-alg-5'],
   },
   {
     id: 'quiz-g8-fractions', topicId: 'g8-math-fractions', subjectId: 'mathematics', grade: 8,
@@ -241,13 +255,32 @@ const BASE_QUIZZES: Quiz[] = [
   },
 ];
 
-export const QUESTIONS: Question[] = [
+const ALL_QUESTIONS: Question[] = [
   ...BASE_QUESTIONS,
   ...LOWER_PRIMARY_QUESTIONS,
   ...GRADE4_QUESTIONS,
   ...OTHER_GRADE_QUESTIONS,
   ...GRADE11_QUESTIONS,
 ];
+
+/**
+ * Questions carry their trace back to the Note that supports them.
+ *
+ * Applied here rather than written into each question file so that the trace is
+ * maintained in ONE place and a new question cannot quietly ship without one:
+ * anything missing from QUESTION_ALIGNMENT arrives with no lessonId and is
+ * reported by the validator as NEEDS_VERIFICATION.
+ */
+export const QUESTIONS: Question[] = ALL_QUESTIONS.map((q) => {
+  const a = QUESTION_ALIGNMENT[q.id];
+  if (!a) return q;
+  return {
+    ...q,
+    lessonId: a.lessonId,
+    noteSection: a.noteSection ?? undefined,
+    objectiveId: a.objectiveId ?? undefined,
+  };
+});
 export const QUIZZES: Quiz[] = [
   ...BASE_QUIZZES,
   ...LOWER_PRIMARY_QUIZZES,

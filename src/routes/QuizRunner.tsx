@@ -2,9 +2,10 @@ import {useEffect, useMemo, useRef, useState} from 'react';
 import {Link, useNavigate, useParams} from 'react-router-dom';
 import {Button, ButtonLink, Card, EmptyState, ProgressBar} from '../components/ui';
 import {useCurriculum} from '../context/CurriculumContext';
-import {questionById, quizById, topicById} from '../lib/curriculum';
+import {noteForLessonId, noteSectionOf, questionById, quizById, topicById} from '../lib/curriculum';
 import {useStudentData} from '../context/StudentDataContext';
 import {track} from '../lib/analytics';
+import {recommendAfterQuiz} from '../lib/recommend';
 import type {QuizAnswer, QuizAttempt} from '../types/domain';
 
 export default function QuizRunner() {
@@ -99,6 +100,23 @@ export default function QuizRunner() {
         {questions.map((q) => {
           const chosen = picked[q.id];
           const right = chosen === q.correctAnswer;
+
+          // Every question cites the section of the Note that supports its
+          // answer. A wrong answer is only useful if the student can get
+          // straight back to the thing that teaches it, so the link goes to
+          // that section rather than to the top of the lesson.
+          const note = q.lessonId ? noteForLessonId(curriculum, q.lessonId) : undefined;
+          const section = note ? noteSectionOf(note, q.noteSection) : undefined;
+          const lesson = q.lessonId
+            ? curriculum.lessons.find((l) => l.id === q.lessonId)
+            : undefined;
+          const lessonTopic = lesson ? topicById(curriculum, lesson.topicId) : undefined;
+          const reviewHref =
+            lesson && lessonTopic && section
+              ? `/learn/${lesson.grade}/${lesson.subjectId}/${lessonTopic.id}` +
+                `?lesson=${lesson.id}&section=${section.key}`
+              : undefined;
+
           return (
             <Card key={q.id} rail={right ? 'complete' : undefined}>
               <p className="mb-3 font-medium">{q.question}</p>
@@ -110,19 +128,44 @@ export default function QuizRunner() {
                     : `You chose ${q.options[chosen]}. The answer is ${q.options[q.correctAnswer]}.`}
               </p>
               <p className="text-sm text-on-surface-variant">{q.explanation}</p>
+
+              {section && (
+                <p className="mt-3 text-sm text-on-surface-variant">
+                  Taught in{' '}
+                  <span className="font-medium text-on-surface">“{section.heading}”</span>
+                  {reviewHref && !right && (
+                    <>
+                      {' · '}
+                      <Link
+                        to={reviewHref}
+                        className="inline-flex min-h-12 items-center text-secondary underline underline-offset-4">
+                        Review this section
+                      </Link>
+                    </>
+                  )}
+                </p>
+              )}
             </Card>
           );
         })}
 
-        {pct < 60 && (
-          <Card rail="progress">
-            <p className="font-semibold">Recommended next</p>
-            <p className="mt-1 text-sm text-on-surface-variant">
-              Review {topicById(curriculum, quiz.topicId)?.name ?? 'this topic'} before moving on — your
-              score here was below 60%.
-            </p>
-          </Card>
-        )}
+        {/* Deterministic, not AI: the same score always gives the same advice,
+            and the reason is stated so the student can check it. */}
+        {(() => {
+          const rec = recommendAfterQuiz(
+            pct,
+            topicById(curriculum, quiz.topicId)?.name ?? 'this topic',
+          );
+          return (
+            <Card rail={rec.action === 'advance' ? 'complete' : 'progress'}>
+              <p className="text-xs font-semibold uppercase tracking-wide text-on-surface-variant">
+                Recommended next
+              </p>
+              <p className="mt-1 font-semibold">{rec.headline}</p>
+              <p className="mt-1 text-sm text-on-surface-variant">{rec.detail}</p>
+            </Card>
+          );
+        })()}
 
         <div className="flex flex-wrap gap-3">
           <ButtonLink to="/dashboard">Back to dashboard</ButtonLink>

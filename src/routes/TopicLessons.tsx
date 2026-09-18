@@ -3,8 +3,9 @@ import {Link, useParams, useSearchParams} from 'react-router-dom';
 import {Bookmark as BookmarkIcon, CheckCircle2} from 'lucide-react';
 import {Button, ButtonLink, Card, EmptyState, GradeBadge, ProvenanceBadge, SubjectChip} from '../components/ui';
 import {useCurriculum} from '../context/CurriculumContext';
-import {lessonsForTopic, quizForLesson, topicById, unitById} from '../lib/curriculum';
+import {lessonsForTopic, noteForLesson, quizForLesson, topicById, unitById} from '../lib/curriculum';
 import {useStudentData} from '../context/StudentDataContext';
+import {NOTE_SOURCE_LABEL} from '../types/domain';
 
 export default function TopicLessons() {
   const {grade, subject, topic} = useParams();
@@ -17,17 +18,28 @@ export default function TopicLessons() {
   const lessons = topic ? lessonsForTopic(curriculum, topic) : [];
   const selectedId = params.get('lesson') ?? lessons[0]?.id;
   const lesson = lessons.find((l) => l.id === selectedId);
+  const highlighted = params.get('section');
   const [saving, setSaving] = useState(false);
 
   useEffect(() => {
     if (lesson) void startLesson(lesson);
   }, [lesson, startLesson]);
 
+  useEffect(() => {
+    if (!highlighted) return;
+    // The section renders in the same commit, so wait a frame before scrolling.
+    const id = requestAnimationFrame(() => {
+      document.getElementById(`note-${highlighted}`)?.scrollIntoView({block: 'start'});
+    });
+    return () => cancelAnimationFrame(id);
+  }, [highlighted, selectedId]);
+
   if (!topicMeta || !lesson) {
     return <EmptyState title="Lesson not found" body="This topic has no lessons yet." />;
   }
 
   const unit = topicMeta.unitId ? unitById(curriculum, topicMeta.unitId) : undefined;
+  const note = noteForLesson(lesson);
   const done = isLessonComplete(lesson.id);
   const bookmarked = isBookmarked('lesson', lesson.id);
   const index = lessons.findIndex((l) => l.id === lesson.id);
@@ -78,9 +90,24 @@ export default function TopicLessons() {
         </ul>
       </Card>
 
-      {lesson.sections.map((s) => (
-        <section key={s.heading}>
+      {note.sections.map((s) => (
+        <section
+          key={s.key}
+          id={`note-${s.key}`}
+          // A student arriving from a wrong answer lands on the exact section
+          // that teaches it. Highlighting it is the difference between "here is
+          // the lesson" and "here is the part you missed".
+          className={
+            s.key === highlighted
+              ? 'scroll-mt-24 rounded-lg border-l-4 border-primary bg-primary-surface p-4'
+              : 'scroll-mt-24'
+          }>
           <h2 className="mb-2 text-lg font-semibold">{s.heading}</h2>
+          {s.key === highlighted && (
+            <p className="mb-2 text-xs font-semibold uppercase tracking-wide text-on-primary-surface">
+              The section your quiz question came from
+            </p>
+          )}
           <p className="text-base leading-7 text-on-surface">{s.body}</p>
           {s.example && (
             <div className="mt-3 rounded-lg border-l-4 border-tertiary-container bg-tertiary-surface p-4">
@@ -92,6 +119,34 @@ export default function TopicLessons() {
           )}
         </section>
       ))}
+
+      {/* Source footer. A LibLearn Note must never be mistaken for a Ministry
+          document, so what this content IS gets stated plainly under it. */}
+      <Card>
+        <p className="text-xs font-semibold uppercase tracking-wide text-on-surface-variant">
+          Curriculum source
+        </p>
+        <dl className="mt-2 grid gap-1 text-sm">
+          <div className="flex flex-wrap gap-2">
+            <dt className="text-on-surface-variant">Content:</dt>
+            <dd className="font-medium">{NOTE_SOURCE_LABEL[note.sourceType]}</dd>
+          </div>
+          <div className="flex flex-wrap gap-2">
+            <dt className="text-on-surface-variant">Curriculum version:</dt>
+            <dd className="font-medium">{note.curriculumVersionId ?? 'Not assigned'}</dd>
+          </div>
+          <div className="flex flex-wrap gap-2">
+            <dt className="text-on-surface-variant">Note version:</dt>
+            <dd className="font-medium">v{note.version}</dd>
+          </div>
+        </dl>
+        {note.sourceType === 'LIBLEARN' && (
+          <p className="mt-3 text-sm text-on-surface-variant">
+            This lesson was written by LibLearn. It is not a Ministry of Education document and
+            does not carry Ministry endorsement.
+          </p>
+        )}
+      </Card>
 
       <Card rail={done ? 'complete' : 'progress'}>
         <div className="flex flex-wrap items-center justify-between gap-3">
