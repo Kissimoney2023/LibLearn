@@ -15,8 +15,22 @@ import type {CurriculumRepository, GradeCurriculum} from './types';
  * changing content means rebuilding and redeploying the app. That is fine for
  * a starter corpus and wrong as a way to run a national curriculum.
  */
+/**
+ * The bundled answer to "which grade is this quiz in", synchronously.
+ *
+ * Exported separately so the quiz screen can render the right grade on its
+ * FIRST paint instead of flashing an error while a lookup is in flight. Every
+ * quiz the app ships with is answered here without touching the network.
+ */
+export const bundledQuizGrade = (quizId: string): GradeLevel | null =>
+  QUIZZES.find((q) => q.id === quizId)?.grade ?? null;
+
 export const bundledRepository: CurriculumRepository = {
   name: 'bundled',
+
+  async gradeForQuiz(quizId: string): Promise<GradeLevel | null> {
+    return bundledQuizGrade(quizId);
+  },
 
   async availableGrades(): Promise<GradeLevel[]> {
     // A grade with topics but no lessons is still a dead end, so lessons are

@@ -58,6 +58,18 @@ export interface CurriculumRepository {
    * cheaply instead.
    */
   availableGrades(): Promise<GradeLevel[]>;
+
+  /**
+   * Which grade a quiz belongs to.
+   *
+   * A quiz is opened at /quiz/:quizId with no grade in the URL. Scoping that
+   * to the signed-in student's grade looks right and is wrong: Learn lets a
+   * student browse ANY grade, so a Grade 12 student opening a Grade 4 quiz
+   * would load the Grade 12 curriculum and be told the quiz does not exist.
+   * Resolving the quiz's own grade costs one small query and makes every quiz
+   * in the corpus openable from wherever it was linked.
+   */
+  gradeForQuiz(quizId: string): Promise<GradeLevel | null>;
 }
 
 /** Empty curriculum for a grade, so callers never handle undefined. */

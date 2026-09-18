@@ -19,6 +19,7 @@ const Learn = lazy(() => import('./routes/Learn'));
 const GradeSubjects = lazy(() => import('./routes/GradeSubjects'));
 const GradeScope = lazy(() => import('./routes/GradeScope'));
 const StudentGradeScope = lazy(() => import('./routes/StudentGradeScope'));
+const QuizScope = lazy(() => import('./routes/QuizScope'));
 const Bookmarks = lazy(() => import('./routes/Bookmarks'));
 const Help = lazy(() => import('./routes/Help'));
 const About = lazy(() => import('./routes/About'));
@@ -117,8 +118,10 @@ export default function App() {
                 <Route path=":subject/:topic" element={<TopicLessons />} />
               </Route>
               {/* Quizzes carry no grade in the URL, so they scope to the
-                  student's own grade. */}
-              <Route element={<StudentGradeScope />}>
+                  QUIZ's grade - not the student's. Learn lets a student browse
+                  any grade, and scoping to their own grade broke every quiz
+                  outside it with "Quiz not found". */}
+              <Route element={<QuizScope />}>
                 <Route path="/quiz/:quizId" element={<QuizRunner />} />
               </Route>
               <Route path="/ai-tutor" element={<AiTutor />} />

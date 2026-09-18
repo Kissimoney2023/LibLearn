@@ -84,7 +84,7 @@ console.log('grade availability');
 // The bundled backend must agree with the corpus that ships in the app.
 {
   const grades = await bundledRepository.availableGrades();
-  eq('the bundle offers all nine grades', grades, [4, 5, 6, 7, 8, 9, 10, 11, 12]);
+  eq('the bundle offers all twelve grades', grades, [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]);
 }
 
 console.log(failures === 0 ? '\nAll availability checks passed.' : `\n${failures} check(s) failed.`);
