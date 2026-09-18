@@ -18,7 +18,7 @@
       "id": "g8-science-matter-l1",
       "topicId": "g8-science-matter",
       "title": "The Three States of Matter",
-      "estimatedMinutes": 12,
+      "estimatedMinutes": 14,
       "order": 1,
       "objectives": [
         {
@@ -30,16 +30,53 @@
           "text": "Explain why a gas fills its container but a solid does not."
         }
       ],
-      "keyTerms": [],
+      "keyTerms": [
+        {
+          "term": "Particle",
+          "definition": "The tiny unit all matter is made of, far too small to see."
+        },
+        {
+          "term": "State of matter",
+          "definition": "Solid, liquid or gas — determined by how the particles are arranged and how they move."
+        },
+        {
+          "term": "Volume",
+          "definition": "The amount of space something takes up."
+        },
+        {
+          "term": "Compress",
+          "definition": "To squeeze into a smaller volume. Possible for gases, barely possible for solids and liquids."
+        }
+      ],
       "sections": [
         {
+          "heading": "What you will learn",
+          "body": "Ice, water and steam are the same substance. What makes them behave so differently is not what they are made of, but how their particles are arranged.\n\nBy the end you will be able to:\n\n• describe how particles sit and move in a solid, a liquid and a gas\n• explain why each state keeps or loses its shape and volume\n• use the particle model to predict how a substance will behave"
+        },
+        {
           "heading": "Particles and arrangement",
-          "body": "All matter is made of tiny particles. What makes a solid different from a liquid or a gas is not the particles themselves but how they are arranged and how freely they move. In a solid they are packed closely in a fixed pattern and can only vibrate. In a liquid they are still close together but can slide past one another. In a gas they are far apart and move quickly in all directions."
+          "body": "All matter is made of tiny particles. What makes a solid different from a liquid or a gas is not the particles themselves but how they are arranged and how freely they move. In a solid they are packed closely in a fixed pattern and can only vibrate. In a liquid they are still close together but can slide past one another. In a gas they are far apart and move quickly in all directions.\n\nThis is the key idea of the whole topic: the particles in ice, water and steam are identical. Heating does not change the particles. It gives them more energy, so they move more and hold their arrangement less.\n\n    SOLID   ●●●●   fixed pattern, vibrating on the spot\n    LIQUID  ●● ●●  close but sliding past each other\n    GAS     ●   ●  far apart, moving fast in all directions"
         },
         {
           "heading": "Shape and volume",
-          "body": "Because solid particles hold their positions, a solid keeps its own shape and volume. A liquid keeps its volume but takes the shape of its container, since its particles can flow. A gas keeps neither - its particles spread out until they fill whatever space they are given.",
-          "example": "Water shows all three. Ice holds its shape. Liquid water takes the shape of the cup. Steam spreads through the whole kitchen."
+          "body": "Because solid particles hold their positions, a solid keeps its own shape and volume. A liquid keeps its volume but takes the shape of its container, since its particles can flow. A gas keeps neither — its particles spread out until they fill whatever space they are given.\n\nThat last point is what makes a gas fill its container. There is nothing holding the particles together, so they simply keep moving until the walls stop them.\n\nIt also explains compression. A gas has large gaps between particles, so it can be squeezed into a smaller volume. A solid or liquid has almost no gaps, which is why you cannot squash a bottle of water.",
+          "example": "Water shows all three. Ice holds its shape. Liquid water takes the shape of the cup. Steam spreads through the whole kitchen.\n\n                shape?      volume?\n    solid       keeps       keeps\n    liquid      takes       keeps\n    gas         takes       takes"
+        },
+        {
+          "heading": "Worked example",
+          "body": "A sealed syringe contains air. You push the plunger in. Then you fill the same syringe with water and try again.\n\n(a) What happens with the air?\n\n    The plunger moves in a long way. Gas particles are far apart, so there is\n    space for them to be pushed closer together.\n\n(b) What happens with the water?\n\n    The plunger barely moves. Liquid particles are already touching, so there\n    is almost no space to remove.\n\n(c) What does this tell you?\n\n    The difference is not the particles but the GAPS between them. Gases\n    compress because they are mostly empty space; liquids do not because they\n    are not.\n\n(d) Predict: would a block of wood compress?\n\n    No. Its particles are packed in a fixed pattern with no gaps to close —\n    even less free space than a liquid."
+        },
+        {
+          "heading": "Common mistakes",
+          "body": "**Thinking the particles themselves change.** The particles in ice and steam are exactly the same. Only their arrangement and energy differ.\n\n**Saying a gas has no volume.** A gas takes the volume of its container. It does not lack volume; it lacks a fixed one.\n\n**Confusing \"takes the shape\" with \"keeps the volume\".** A liquid does both at once: it takes the container's shape while keeping its own volume.\n\n**Thinking particles in a solid are still.** They vibrate. They simply cannot leave their positions."
+        },
+        {
+          "heading": "Try it yourself",
+          "body": "1. In which state are particles packed in a fixed pattern?\n\n2. Why does a gas fill its whole container?\n\n3. Which state keeps its volume but takes the shape of its container?\n\n4. Explain why air can be compressed in a syringe but water cannot.\n\n5. A substance keeps its volume but flows into the shape of its jar. Which state is it?\n\n6. Ice, water and steam are the same substance. What is different about them?"
+        },
+        {
+          "heading": "Summary",
+          "body": "• All matter is made of particles; the state depends on their arrangement and movement.\n• Solid: fixed pattern, vibrating. Keeps shape and volume.\n• Liquid: close but sliding. Takes shape, keeps volume.\n• Gas: far apart, fast. Takes both shape and volume.\n• Gases compress because of the gaps between particles; solids and liquids have almost none."
         }
       ]
     }

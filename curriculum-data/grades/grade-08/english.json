@@ -18,7 +18,7 @@
       "id": "g8-english-speech-l1",
       "topicId": "g8-english-speech",
       "title": "Nouns, Verbs and Adjectives",
-      "estimatedMinutes": 10,
+      "estimatedMinutes": 12,
       "order": 1,
       "objectives": [
         {
@@ -30,16 +30,54 @@
           "text": "Explain the job each does."
         }
       ],
-      "keyTerms": [],
+      "keyTerms": [
+        {
+          "term": "Noun",
+          "definition": "A naming word: a person, place, thing or idea."
+        },
+        {
+          "term": "Verb",
+          "definition": "A doing or being word: what is happening."
+        },
+        {
+          "term": "Adjective",
+          "definition": "A describing word that tells you more about a noun."
+        },
+        {
+          "term": "Adverb",
+          "definition": "A word describing a verb — often how, when or where something was done."
+        }
+      ],
       "sections": [
         {
+          "heading": "What you will learn",
+          "body": "Words are sorted by the JOB they do in a sentence, not by what they look like. The same word can do different jobs on different days.\n\nBy the end you will be able to:\n\n• identify the nouns, verbs and adjectives in a sentence\n• say what job each one is doing\n• use a reliable test rather than guessing"
+        },
+        {
           "heading": "The three workhorses",
-          "body": "A noun names something - a person, place, thing or idea. A verb tells you what is happening or what something is. An adjective describes a noun, adding detail about which one, what kind or how many.",
-          "example": "In \"The clever student answered quickly\", student is the noun, answered is the verb, and clever is the adjective describing the student."
+          "body": "A noun names something — a person, place, thing or idea. A verb tells you what is happening or what something is. An adjective describes a noun, adding detail about which one, what kind or how many.\n\nThese three carry most of the meaning in any sentence. Strip a sentence down to its noun and verb and you still have an idea; remove them and you have nothing.\n\nIdeas count as nouns too, even though you cannot touch them: freedom, hunger, courage. If you can put \"the\" in front of it, it is very likely a noun.",
+          "example": "In \"The clever student answered quickly\", student is the noun, answered is the verb, and clever is the adjective describing the student.\n\nNote that \"quickly\" is none of the three — it describes HOW the student answered, which makes it an adverb."
         },
         {
           "heading": "Finding them reliably",
-          "body": "To find the verb, ask what is being done. To find the noun, ask who or what is doing it. To find adjectives, look at the words sitting just before a noun and ask whether they describe it."
+          "body": "To find the verb, ask what is being done. To find the noun, ask who or what is doing it. To find adjectives, look at the words sitting just before a noun and ask whether they describe it.\n\nWork in that order — verb first, then noun, then adjective. The verb is usually the easiest to spot, and once you have it, asking \"who or what did this?\" hands you the noun immediately.\n\nBe careful: the same word can change job. In \"I drink water\", drink is a verb. In \"Bring me a drink\", drink is a noun. The word did not change; the job did. Always test the word in the sentence in front of you.",
+          "example": "Take \"The tired farmer harvested the rice.\"\n\n    What is being done?        harvested → VERB\n    Who or what did it?        farmer    → NOUN\n    What else is named?        rice      → NOUN\n    What describes the farmer? tired     → ADJECTIVE"
+        },
+        {
+          "heading": "Worked example",
+          "body": "Label every noun, verb and adjective in this sentence:\n\n    \"The young teacher wrote three difficult questions on the old board.\"\n\nStep 1 — find the verb. What is being done? Someone wrote.\n    wrote → VERB\n\nStep 2 — find who or what did it.\n    teacher → NOUN\n\nStep 3 — find the other naming words. Use the \"the\" test.\n    questions → NOUN (the questions ✓)\n    board     → NOUN (the board ✓)\n\nStep 4 — find the describing words. Look just before each noun.\n    young     describes teacher   → ADJECTIVE\n    three     describes questions → ADJECTIVE (how many)\n    difficult describes questions → ADJECTIVE (what kind)\n    old       describes board     → ADJECTIVE\n\nFinal answer:\n    Nouns: teacher, questions, board\n    Verb: wrote\n    Adjectives: young, three, difficult, old\n\nNumber words like \"three\" are adjectives when they tell you how many of a noun there are."
+        },
+        {
+          "heading": "Common mistakes",
+          "body": "**Calling an adverb an adjective.** \"Quickly\" describes the verb, not a noun, so it is an adverb. Adjectives describe nouns only.\n\n**Deciding a word's job without reading the sentence.** \"Drink\" is a verb in one sentence and a noun in another. The sentence decides.\n\n**Missing nouns that are ideas.** Freedom, hunger and courage are nouns even though you cannot hold them.\n\n**Forgetting number words.** In \"three difficult questions\", both \"three\" and \"difficult\" are adjectives."
+        },
+        {
+          "heading": "Try it yourself",
+          "body": "For each sentence, list the nouns, the verb and the adjectives.\n\n1. The old man carried a heavy bucket.\n\n2. My younger sister sells fresh bread.\n\n3. The clever student answered quickly. (Careful — one word is none of the three.)\n\n4. In \"Bring me a cold drink\", what job does \"drink\" do?\n\n5. Write your own sentence with two nouns, one verb and two adjectives, then label them."
+        },
+        {
+          "heading": "Summary",
+          "body": "• A noun names a person, place, thing or idea.\n• A verb says what is happening.\n• An adjective describes a noun.\n• Find the verb first, then the noun, then the adjectives.\n• The same word can do different jobs — the sentence decides, not the word."
         }
       ]
     }

@@ -109,8 +109,16 @@ not *"here is the lesson"*.
 
 ## Current state
 
-- **163 of 164** questions traced to a Note section.
-- **1** `NEEDS_VERIFICATION`, excluded from all quizzes, reason recorded.
-- **2** questions test content no learning objective covers, both recorded.
-- **30** objectives are taught but never assessed — reported as warnings. These
-  are gaps in the quiz blueprint, not defects in existing questions.
+- **164 of 164** questions traced to a Note section.
+- **0** `NEEDS_VERIFICATION`.
+- **1** question tests content no learning objective covers, recorded with a
+  reason (`q3-mul-3`, commutativity).
+- **40 of 176** objectives are taught but never assessed — reported as
+  warnings. These are gaps in the quiz blueprint, not defects in existing
+  questions, and closing them is the next content task.
+
+The last `NEEDS_VERIFICATION` closed when the Grade 8 algebra lessons were
+rewritten: `q-alg-7` asks about solving with the variable on both sides, which
+no lesson taught. Lesson 2 now teaches it in its own section under a new
+objective, so the question became assessed learning instead of being deleted or
+quietly waved through.

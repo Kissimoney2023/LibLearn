@@ -221,7 +221,7 @@ const BASE_QUIZZES: Quiz[] = [
   {
     id: 'quiz-g8-algebra', topicId: 'g8-math-algebra', subjectId: 'mathematics', grade: 8,
     title: 'Solving Equations Check', lessonId: 'g8-math-algebra-l2',
-    questionIds: ['q-alg-2', 'q-alg-3'],
+    questionIds: ['q-alg-2', 'q-alg-3', 'q-alg-7'],
   },
   {
     id: 'quiz-g8-algebra-l3', topicId: 'g8-math-algebra', subjectId: 'mathematics', grade: 8,

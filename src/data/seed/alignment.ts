@@ -149,11 +149,10 @@ export const QUESTION_ALIGNMENT: Record<string, QuestionAlignment> = {
   'q-alg-5': {lessonId: 'g8-math-algebra-l3', noteSection: 'solving-with-brackets', objectiveId: 'o2'},
   // Re-homed: writing a word problem as an expression is lesson 1.
   'q-alg-6': {lessonId: 'g8-math-algebra-l1', noteSection: 'turning-words-into-algebra', objectiveId: 'o2'},
-  // Variables on BOTH sides. None of the three algebra lessons teaches this, so
-  // it is not assessed learning and is kept out of every quiz until a Note
-  // covers it.
-  'q-alg-7': {lessonId: 'g8-math-algebra-l2', noteSection: null, objectiveId: null,
-    gap: 'Solving with the variable on both sides is not taught by any Grade 8 algebra lesson.'},
+  // Was NEEDS_VERIFICATION: no lesson taught variables on both sides. Lesson 2
+  // now teaches it in its own section, with objective o4, so the question is
+  // assessed learning and joins the lesson 2 quiz.
+  'q-alg-7': {lessonId: 'g8-math-algebra-l2', noteSection: 'variables-on-both-sides', objectiveId: 'o4'},
   'q-fr8-1': {lessonId: 'g8-math-fractions-l1', noteSection: 'fraction-to-decimal', objectiveId: 'o1'},
   'q-fr8-2': {lessonId: 'g8-math-fractions-l1', noteSection: 'decimal-to-fraction', objectiveId: 'o2'},
   'q-fr8-3': {lessonId: 'g8-math-fractions-l1', noteSection: 'fraction-to-decimal', objectiveId: 'o1'},
