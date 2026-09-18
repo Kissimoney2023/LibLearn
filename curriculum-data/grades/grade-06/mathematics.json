@@ -18,7 +18,7 @@
       "id": "g6-math-fractions-l1",
       "topicId": "g6-math-fractions",
       "title": "Naming and Comparing Fractions",
-      "estimatedMinutes": 10,
+      "estimatedMinutes": 13,
       "order": 1,
       "objectives": [
         {
@@ -30,16 +30,54 @@
           "text": "Compare two fractions with the same denominator."
         }
       ],
-      "keyTerms": [],
+      "keyTerms": [
+        {
+          "term": "Fraction",
+          "definition": "A number describing part of a whole that has been cut into equal parts."
+        },
+        {
+          "term": "Numerator",
+          "definition": "The top number: how many parts you have."
+        },
+        {
+          "term": "Denominator",
+          "definition": "The bottom number: how many equal parts the whole was cut into."
+        },
+        {
+          "term": "Equal parts",
+          "definition": "Pieces of exactly the same size. Without this, a fraction has no meaning."
+        }
+      ],
       "sections": [
         {
+          "heading": "What you will learn",
+          "body": "A fraction is not one number — it is two numbers doing two different jobs.\n\nBy the end of this lesson you will be able to:\n\n• name the numerator and the denominator, and say what each one tells you\n• work out what fraction of a whole is left over\n• compare two fractions that have the same denominator, and explain why"
+        },
+        {
           "heading": "The two numbers",
-          "body": "A fraction has a top number and a bottom number. The bottom number - the denominator - tells you how many equal parts the whole has been cut into. The top number - the numerator - tells you how many of those parts you have.",
-          "example": "If a loaf is cut into 8 equal slices and you take 3, you have 3/8 of the loaf. The 8 is the denominator, the 3 is the numerator."
+          "body": "A fraction has a top number and a bottom number. The bottom number — the denominator — tells you how many equal parts the whole has been cut into. The top number — the numerator — tells you how many of those parts you have.\n\nThe word EQUAL is doing a lot of work here. If a loaf is cut into 8 pieces of different sizes, taking 3 of them is not 3/8 of the loaf. A fraction only means something when the parts are the same size.\n\nOne way to hold the two words apart: the Denominator is Down, and it tells you how many pieces the whole was Divided into.",
+          "example": "If a loaf is cut into 8 equal slices and you take 3, you have 3/8 of the loaf. The 8 is the denominator, the 3 is the numerator.\n\nThe rest of the loaf is the other 5 slices, which is 5/8. Notice that 3/8 and 5/8 together make 8/8 — one whole loaf."
         },
         {
           "heading": "Comparing fractions",
-          "body": "When two fractions have the same denominator, the pieces are the same size, so the one with the bigger numerator is bigger. 5/8 is greater than 3/8 because five equal pieces beat three of the same size."
+          "body": "When two fractions have the same denominator, the pieces are the same size, so the one with the bigger numerator is bigger. 5/8 is greater than 3/8 because five equal pieces beat three of the same size.\n\nThis only works when the denominators match. Comparing 3/8 with 1/2 by looking at the top numbers would tell you 3/8 is bigger, and that is wrong: 1/2 is 4/8.\n\nSo before you compare, check the bottoms. Same denominator — compare the tops. Different denominators — you cannot compare them directly yet.",
+          "example": "Which is bigger, 7/10 or 4/10?\n\nBoth wholes were cut into 10 equal parts, so every piece is the same size. Seven pieces is more than four.\n\n    7/10 > 4/10"
+        },
+        {
+          "heading": "Worked example",
+          "body": "A cassava is cut into 12 equal pieces. Musu takes 5 pieces and Sia takes 4.\n\n(a) What fraction does each girl have?\n\n    The whole was cut into 12 equal parts, so 12 is the denominator for both.\n    Musu: 5 pieces → 5/12\n    Sia:  4 pieces → 4/12\n\n(b) Who has more?\n\n    The denominators are the same, so the pieces are the same size.\n    Compare the numerators: 5 > 4.\n    Musu has more.\n\n(c) What fraction is left?\n\n    Taken altogether: 5 + 4 = 9 pieces.\n    Left: 12 − 9 = 3 pieces → 3/12\n\n(d) Check.\n\n    5/12 + 4/12 + 3/12 = 12/12, which is the whole cassava. ✓"
+        },
+        {
+          "heading": "Common mistakes",
+          "body": "**Reading the fraction upside down.** In 3/8 you have 3 pieces out of 8, not 8 pieces out of 3. Denominator is Down.\n\n**Forgetting that the parts must be equal.** Three of eight uneven pieces is not 3/8.\n\n**Comparing tops when the bottoms differ.** 3/8 looks bigger than 1/2 if you only read the numerators, but 1/2 is the same as 4/8, so 1/2 wins.\n\n**Thinking a bigger denominator means a bigger fraction.** More pieces means SMALLER pieces. 1/12 is less than 1/4."
+        },
+        {
+          "heading": "Try it yourself",
+          "body": "1. In the fraction 5/9, name the numerator and the denominator.\n\n2. A pizza is cut into 6 equal slices and you eat 2. What fraction did you eat? What fraction is left?\n\n3. Which is bigger, 4/7 or 6/7? Say why.\n\n4. Can you tell straight away which is bigger, 2/3 or 2/5? What is different about this question?\n\n5. A rope is cut into 10 equal pieces. Three are used. Write the fraction used and the fraction left, and check they add to 10/10."
+        },
+        {
+          "heading": "Summary",
+          "body": "• The denominator (bottom) says how many equal parts the whole was cut into.\n• The numerator (top) says how many of those parts you have.\n• The parts must be EQUAL or the fraction means nothing.\n• With the same denominator, the bigger numerator is the bigger fraction.\n• With different denominators, you cannot compare the tops directly."
         }
       ]
     }

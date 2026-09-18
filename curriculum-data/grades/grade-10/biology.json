@@ -18,7 +18,7 @@
       "id": "g10-bio-cells-l1",
       "topicId": "g10-bio-cells",
       "title": "Cell Structure and Organelles",
-      "estimatedMinutes": 16,
+      "estimatedMinutes": 18,
       "order": 1,
       "objectives": [
         {
@@ -34,20 +34,62 @@
           "text": "Describe two differences between plant and animal cells."
         }
       ],
-      "keyTerms": [],
+      "keyTerms": [
+        {
+          "term": "Cell",
+          "definition": "The smallest unit of a living thing that can carry out the processes of life."
+        },
+        {
+          "term": "Organelle",
+          "definition": "A structure inside a cell with a particular job."
+        },
+        {
+          "term": "Nucleus",
+          "definition": "The organelle holding genetic information and controlling the cell."
+        },
+        {
+          "term": "Mitochondrion",
+          "definition": "The organelle that releases energy from food by respiration. Plural: mitochondria."
+        },
+        {
+          "term": "Chloroplast",
+          "definition": "The organelle in plant cells that captures light for photosynthesis."
+        }
+      ],
       "sections": [
         {
+          "heading": "What you will learn",
+          "body": "A cell is not a bag of jelly. It is an organised structure in which each part has a job, and the arrangement explains what the cell can do.\n\nBy the end you will be able to:\n\n• name the main organelles in plant and animal cells\n• state what the nucleus, mitochondria and chloroplast each do\n• explain a cell’s structure from the job it has to perform"
+        },
+        {
           "heading": "The cell as a working unit",
-          "body": "Every living thing is built from cells, and each cell is a small working unit with parts called organelles. Each organelle has a job, and the cell stays alive because they work together."
+          "body": "Every living thing is built from cells, and each cell is a small working unit with parts called organelles. Each organelle has a job, and the cell stays alive because they work together.\n\nThe useful habit in this topic is to read structure as evidence of function. A cell that needs a great deal of energy will have many mitochondria. A cell that must capture light will be packed with chloroplasts and sit near the surface of a leaf.\n\nSo when an exam question describes an unfamiliar cell, look at what it contains and ask what job would require that."
         },
         {
           "heading": "The main organelles",
-          "body": "The nucleus holds the cell’s genetic information and controls its activities. The mitochondria release energy from food through respiration. The cell membrane controls what enters and leaves. The cytoplasm is the jelly where most reactions happen.",
+          "body": "The nucleus holds the cell’s genetic information and controls its activities. The mitochondria release energy from food through respiration. The cell membrane controls what enters and leaves. The cytoplasm is the jelly where most reactions happen.\n\nThese four are in BOTH plant and animal cells. Learning them as the shared set makes the plant-only extras easy to remember afterwards.\n\n    nucleus        → control centre, holds DNA\n    mitochondria   → release energy by respiration\n    cell membrane  → controls what goes in and out\n    cytoplasm      → where most reactions happen",
           "example": "Muscle cells contain very many mitochondria, because contracting a muscle demands a great deal of energy."
         },
         {
           "heading": "Plant cells are different",
-          "body": "Plant cells have three parts animal cells do not: a rigid cell wall made of cellulose that gives the cell its shape, chloroplasts containing chlorophyll where photosynthesis takes place, and a large permanent vacuole filled with cell sap that helps keep the cell firm."
+          "body": "A plant cell has everything an animal cell has, plus three structures an animal cell never has: a cell wall, chloroplasts and a large permanent vacuole.\n\nThe cell wall is made of cellulose and gives the cell a rigid shape and support — which is why a plant can stand up without a skeleton. Chloroplasts contain chlorophyll and carry out photosynthesis. The large vacuole is filled with cell sap and helps keep the cell firm.\n\nBe precise about the membrane. A plant cell has a cell wall AND a cell membrane; the wall does not replace the membrane. The wall gives shape; the membrane controls what passes through.",
+          "example": "The three plant-only structures:\n\n    cell wall      → rigid support, made of cellulose\n    chloroplasts   → photosynthesis\n    large vacuole  → cell sap, keeps the cell firm\n\nRoot cells are an exception worth knowing: they have a cell wall and vacuole but few or no chloroplasts, because underground there is no light to capture."
+        },
+        {
+          "heading": "Worked example",
+          "body": "A student examines an unknown cell under a microscope and records: a nucleus, a cell membrane, cytoplasm, a rigid outer wall, a large central vacuole, and no chloroplasts.\n\n(a) Is it a plant or an animal cell?\n\n    A rigid wall and a large permanent vacuole are plant features. An animal\n    cell has neither. So: a plant cell.\n\n(b) Why might it have no chloroplasts?\n\n    Chloroplasts capture light. A plant cell with none is probably not exposed\n    to light — a root cell, for example.\n\n(c) The cell also has unusually many mitochondria. What does that suggest?\n\n    Mitochondria release energy. Many of them means the cell needs a lot of\n    energy — consistent with a root hair cell actively taking up minerals.\n\n(d) What does this show about reading cells?\n\n    Structure is evidence of function. You did not need to be told what the\n    cell was; what it contains told you what it does."
+        },
+        {
+          "heading": "Common mistakes",
+          "body": "**Saying plant cells have a wall instead of a membrane.** They have both. The wall supports; the membrane controls what enters and leaves.\n\n**Assuming every plant cell has chloroplasts.** Root cells generally do not — there is no light underground.\n\n**Confusing the vacuole.** Animal cells may have small temporary vacuoles; the LARGE PERMANENT vacuole is the plant feature.\n\n**Saying mitochondria \"make\" energy.** Energy is not created. Mitochondria RELEASE it from food during respiration."
+        },
+        {
+          "heading": "Try it yourself",
+          "body": "1. Which organelle controls the activities of the cell?\n\n2. Name the three structures found in plant cells but not animal cells.\n\n3. What is the function of mitochondria?\n\n4. A cell has a nucleus, membrane and cytoplasm but no wall and no chloroplasts. Plant or animal?\n\n5. Why do muscle cells contain so many mitochondria?\n\n6. Explain why a root cell has a cell wall but few chloroplasts."
+        },
+        {
+          "heading": "Summary",
+          "body": "• All cells share a nucleus, cell membrane, cytoplasm and mitochondria.\n• Plant cells add a cell wall, chloroplasts and a large permanent vacuole.\n• The nucleus controls; mitochondria release energy; chloroplasts photosynthesise.\n• A plant cell has a wall AND a membrane — the wall does not replace it.\n• Read structure as evidence of function: what a cell contains tells you what it does."
         }
       ]
     }

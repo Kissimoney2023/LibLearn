@@ -7,6 +7,29 @@ import {lessonsForTopic, noteForLesson, quizForLesson, topicById, unitById} from
 import {useStudentData} from '../context/StudentDataContext';
 import {NOTE_SOURCE_LABEL} from '../types/domain';
 
+/**
+ * Renders **bold** runs and nothing else.
+ *
+ * Lesson bodies are plain text, but several use **...** to mark the name of a
+ * mistake or a rule so it can be found while skimming. Rendered raw they showed
+ * as literal asterisks.
+ *
+ * This splits on the marker and alternates, building React nodes rather than
+ * injecting HTML, so lesson text can never become markup. An unmatched marker
+ * degrades to plain text instead of swallowing the rest of the paragraph.
+ */
+function emphasise(text: string) {
+  return text.split('**').map((part, i) =>
+    i % 2 === 1 ? (
+      <strong key={i} className="font-semibold">
+        {part}
+      </strong>
+    ) : (
+      part
+    ),
+  );
+}
+
 export default function TopicLessons() {
   const {grade, subject, topic} = useParams();
   const [params, setParams] = useSearchParams();
@@ -108,13 +131,13 @@ export default function TopicLessons() {
               The section your quiz question came from
             </p>
           )}
-          <p className="text-base leading-7 text-on-surface">{s.body}</p>
+          <p className="whitespace-pre-wrap text-base leading-7 text-on-surface">{emphasise(s.body)}</p>
           {s.example && (
             <div className="mt-3 rounded-lg border-l-4 border-tertiary-container bg-tertiary-surface p-4">
               <p className="mb-1 text-xs font-semibold uppercase tracking-wide text-on-tertiary-surface">
                 Example
               </p>
-              <p className="text-sm text-on-surface">{s.example}</p>
+              <p className="whitespace-pre-wrap text-sm text-on-surface">{emphasise(s.example)}</p>
             </div>
           )}
         </section>
