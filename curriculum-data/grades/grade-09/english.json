@@ -1,0 +1,130 @@
+{
+  "grade": 9,
+  "subjectId": "english",
+  "curriculumVersionId": "liblearn-v1",
+  "provenance": "liblearn",
+  "sourceId": null,
+  "units": [
+    {
+      "id": "g9-eng-u-formal",
+      "name": "Formal Writing",
+      "summary": "Writing to people you do not know, for a purpose.",
+      "order": 1
+    }
+  ],
+  "topics": [
+    {
+      "id": "g9-eng-letters",
+      "unitId": "g9-eng-u-formal",
+      "name": "Formal Letters",
+      "summary": "Structure, tone and the difference from writing to a friend.",
+      "order": 1
+    }
+  ],
+  "lessons": [
+    {
+      "id": "g9-eng-letters-l1",
+      "topicId": "g9-eng-letters",
+      "title": "Writing a Formal Letter",
+      "estimatedMinutes": 14,
+      "order": 1,
+      "objectives": [
+        {
+          "id": "o1",
+          "text": "Lay out a formal letter correctly."
+        },
+        {
+          "id": "o2",
+          "text": "Use formal tone instead of conversational language."
+        },
+        {
+          "id": "o3",
+          "text": "State a purpose clearly in the opening."
+        }
+      ],
+      "keyTerms": [
+        {
+          "term": "Formal",
+          "definition": "Serious and respectful in tone, used with people you do not know personally."
+        },
+        {
+          "term": "Salutation",
+          "definition": "The greeting: Dear Sir, Dear Madam, Dear Mr Kollie."
+        },
+        {
+          "term": "Subscription",
+          "definition": "The closing: Yours faithfully, Yours sincerely."
+        }
+      ],
+      "sections": [
+        {
+          "heading": "What you will learn",
+          "body": "A formal letter is written to someone in their official role — a principal, an employer, an office — rather than as a friend. Its layout and tone are fixed, and getting them right is part of being taken seriously."
+        },
+        {
+          "heading": "The layout",
+          "body": "In order, down the page:\n\n    1. YOUR ADDRESS — top right\n    2. THE DATE — under your address\n    3. RECIPIENT’S ADDRESS — left, below the date\n    4. SALUTATION — Dear Sir / Dear Madam / Dear Mr Kollie\n    5. SUBJECT LINE — a short heading saying what it is about\n    6. BODY — usually three paragraphs\n    7. SUBSCRIPTION — Yours faithfully or Yours sincerely\n    8. YOUR SIGNATURE, then your name printed below\n\nThe rule for the ending catches people out:\n\n    Dear Sir / Dear Madam  → Yours faithfully   (you do not know their name)\n    Dear Mr Kollie         → Yours sincerely    (you do know their name)"
+        },
+        {
+          "heading": "The three paragraphs",
+          "body": "PARAGRAPH 1 — why you are writing. One or two sentences. Do not warm up.\n\n    \"I am writing to apply for the post of library assistant,\n     advertised in the school notice of 3 May.\"\n\nPARAGRAPH 2 — the detail. Your reasons, evidence, or the facts of the matter.\n\nPARAGRAPH 3 — what you want to happen, and a courteous close.\n\n    \"I should be grateful if you would consider my application.\n     I am available for interview at any time.\"\n\nThe reader may have many letters to get through. If your first sentence does not say what this is, you have already made their job harder.",
+          "example": "Conversational rewritten as formal.\n\nToo conversational:\n\n    \"Hi, I really want that library job, it sounds great and I\n     think I'd be perfect for it! Let me know.\"\n\nFormal:\n\n    \"I am writing to apply for the post of library assistant,\n     advertised on the school notice board on 3 May.\n\n     I have helped to organise the class reading corner for two\n     years, and I am familiar with sorting and recording books.\n\n     I should be grateful if you would consider my application.\"\n\nWhat changed: no contractions (I'd → I would), no exclamation marks, no vague praise, and a specific reference to when and where the post was advertised. The formal version is not colder — it is more useful, because it gives the reader facts they can act on."
+        },
+        {
+          "heading": "Tone",
+          "body": "In formal writing:\n\n    avoid contractions — write \"I would\", not \"I'd\"\n    avoid slang and casual phrases\n    avoid exclamation marks\n    be specific — dates, names, places\n    be brief; a formal letter is rarely more than one page\n\nBeing formal does not mean using long words to sound impressive. Clear and plain is formal. Complicated and vague is not."
+        },
+        {
+          "heading": "Try it yourself",
+          "body": "Write a formal letter to your principal requesting permission for your class to visit a local workplace.\n\nInclude all eight layout parts. Check:\n1. Does paragraph 1 say why you are writing, in one sentence?\n2. Did you use \"Yours faithfully\" or \"Yours sincerely\" — and does it match your salutation?\n3. Are there any contractions left?"
+        },
+        {
+          "heading": "Summary",
+          "body": "• Eight parts, in a fixed order.\n• Dear Sir/Madam → Yours faithfully. Dear + name → Yours sincerely.\n• Paragraph 1 states the purpose immediately.\n• No contractions, no slang, no exclamation marks.\n• Clear and plain IS formal; complicated is not."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "id": "q9-let-1",
+      "topicId": "g9-eng-letters",
+      "question": "You begin a formal letter \"Dear Sir\". How should you end it?",
+      "options": [
+        "Yours sincerely",
+        "Yours faithfully",
+        "Best wishes",
+        "Regards"
+      ],
+      "correctAnswer": 1,
+      "explanation": "\"Dear Sir\" or \"Dear Madam\" means you do not know the person’s name, so you close \"Yours faithfully\". Use \"Yours sincerely\" only when you addressed them by name, as in \"Dear Mr Kollie\". \"Best wishes\" is informal.",
+      "difficulty": "core"
+    },
+    {
+      "id": "q9-let-2",
+      "topicId": "g9-eng-letters",
+      "question": "What should the FIRST paragraph of a formal letter do?",
+      "options": [
+        "Describe your background in detail",
+        "State clearly why you are writing",
+        "Thank the reader at length",
+        "Explain how you found their address"
+      ],
+      "correctAnswer": 1,
+      "explanation": "State the purpose immediately, in a sentence or two. The reader may have many letters to get through, and if your opening does not say what this one is, you have made their job harder. Detail belongs in paragraph two.",
+      "difficulty": "core"
+    }
+  ],
+  "quizzes": [
+    {
+      "id": "quiz-g9-letters",
+      "lessonId": "g9-eng-letters-l1",
+      "topicId": "g9-eng-letters",
+      "title": "Formal Letters Check",
+      "questionIds": [
+        "q9-let-1",
+        "q9-let-2"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,130 @@
+{
+  "grade": 5,
+  "subjectId": "social-studies",
+  "curriculumVersionId": "liblearn-v1",
+  "provenance": "liblearn",
+  "sourceId": null,
+  "units": [
+    {
+      "id": "g5-soc-u-resources",
+      "name": "Resources and Work",
+      "summary": "What a country has, and how people use it to live.",
+      "order": 1
+    }
+  ],
+  "topics": [
+    {
+      "id": "g5-soc-resources",
+      "unitId": "g5-soc-u-resources",
+      "name": "Natural Resources",
+      "summary": "What natural resources are, and why some can run out.",
+      "order": 1
+    }
+  ],
+  "lessons": [
+    {
+      "id": "g5-soc-resources-l1",
+      "topicId": "g5-soc-resources",
+      "title": "Natural Resources and How We Use Them",
+      "estimatedMinutes": 12,
+      "order": 1,
+      "objectives": [
+        {
+          "id": "o1",
+          "text": "Say what a natural resource is."
+        },
+        {
+          "id": "o2",
+          "text": "Tell renewable from non-renewable resources."
+        },
+        {
+          "id": "o3",
+          "text": "Explain why resources need to be looked after."
+        }
+      ],
+      "keyTerms": [
+        {
+          "term": "Natural resource",
+          "definition": "Something useful that comes from nature, not made by people."
+        },
+        {
+          "term": "Renewable",
+          "definition": "A resource that can be replaced within a person’s lifetime."
+        },
+        {
+          "term": "Non-renewable",
+          "definition": "A resource that takes so long to form that once used it is gone."
+        }
+      ],
+      "sections": [
+        {
+          "heading": "What you will learn",
+          "body": "Everything people use starts as something from nature. This lesson is about what those things are, and why some can run out while others do not."
+        },
+        {
+          "heading": "What counts as a natural resource",
+          "body": "A NATURAL RESOURCE is something useful that comes from nature. People did not make it — they found it and used it.\n\n    water — for drinking, washing, farming\n    soil — for growing food\n    trees — for timber, firewood, shade, fruit\n    fish — for food\n    minerals from the ground — for building and tools\n\nA wooden chair is NOT a natural resource. The tree was. The chair is what people made from it. Resources are the raw materials."
+        },
+        {
+          "heading": "Renewable and non-renewable",
+          "body": "RENEWABLE resources can be replaced within a person's lifetime.\n\n    Trees — cut one, plant one, it grows back.\n    Fish — they breed and the population recovers.\n    Water — the water cycle keeps returning it.\n\nNON-RENEWABLE resources take so long to form that, once used, they are gone for practical purposes.\n\n    Minerals and metals in the ground took millions of years to form.\n\nHere is the part worth understanding properly: renewable does NOT mean unlimited.\n\nA forest recovers only if trees are replanted and given time. Catch fish faster than they breed and the fish disappear, even though fish are renewable. Renewable means \"can recover\", not \"cannot run out\".",
+          "example": "Two villages, one river.\n\nVillage A catches fish, and each year leaves the young fish to grow and breed. The river still has fish twenty years later.\n\nVillage B catches every fish it can find, including the young ones. The catch is huge for two years. In the third year there is almost nothing, because no fish were left to breed.\n\nSame resource. Same river. The difference is the rate of use.\n\nThis is why people talk about using resources SUSTAINABLY — at a speed that lets them recover."
+        },
+        {
+          "heading": "Why it matters",
+          "body": "Resources are where jobs, food and building materials come from. When a resource is used up, the people who depended on it lose their living, not only the resource.\n\nLooking after resources is not only about nature. It is about whether the next group of people has anything left to use."
+        },
+        {
+          "heading": "Try it yourself",
+          "body": "1. Give three natural resources used where you live.\n2. Is soil renewable? Think carefully — it recovers, but very slowly if it washes away.\n3. Explain why a renewable resource can still run out.\n4. Suggest one thing a community could do to protect its trees."
+        },
+        {
+          "heading": "Summary",
+          "body": "• Natural resources come from nature, not from people.\n• Renewable resources can recover within a lifetime; non-renewable ones cannot.\n• Renewable does not mean unlimited — the rate of use decides.\n• Using a resource sustainably means at a speed that lets it recover."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "id": "q5-res-1",
+      "topicId": "g5-soc-resources",
+      "question": "Which of these is a natural resource?",
+      "options": [
+        "A wooden chair",
+        "A forest",
+        "A shirt",
+        "A bicycle"
+      ],
+      "correctAnswer": 1,
+      "explanation": "A forest comes from nature and people did not make it. A chair and a shirt are things people MADE from resources — the tree and the cotton were the resources. Natural resources are the raw materials.",
+      "difficulty": "foundation"
+    },
+    {
+      "id": "q5-res-2",
+      "topicId": "g5-soc-resources",
+      "question": "Fish are a renewable resource. Why can a river still run out of fish?",
+      "options": [
+        "Renewable resources never run out",
+        "If fish are caught faster than they can breed, the population collapses",
+        "Fish are actually non-renewable",
+        "Only minerals can run out"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Renewable means a resource CAN recover, not that it cannot run out. Fish recover only if enough are left to breed. Catch them faster than they reproduce and they disappear — which is why the rate of use matters as much as the type of resource.",
+      "difficulty": "challenge"
+    }
+  ],
+  "quizzes": [
+    {
+      "id": "quiz-g5-resources",
+      "lessonId": "g5-soc-resources-l1",
+      "topicId": "g5-soc-resources",
+      "title": "Natural Resources Check",
+      "questionIds": [
+        "q5-res-1",
+        "q5-res-2"
+      ]
+    }
+  ]
+}

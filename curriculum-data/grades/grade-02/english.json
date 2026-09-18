@@ -1,0 +1,141 @@
+{
+  "grade": 2,
+  "subjectId": "english",
+  "curriculumVersionId": "liblearn-v1",
+  "provenance": "liblearn",
+  "sourceId": null,
+  "units": [
+    {
+      "id": "g2-eng-u-sentences",
+      "name": "Making Sentences",
+      "summary": "What makes a sentence complete, and how to start and end it.",
+      "order": 1
+    }
+  ],
+  "topics": [
+    {
+      "id": "g2-eng-sentences",
+      "unitId": "g2-eng-u-sentences",
+      "name": "Complete Sentences",
+      "summary": "Every sentence needs a who and a what-they-did.",
+      "order": 1
+    }
+  ],
+  "lessons": [
+    {
+      "id": "g2-eng-sentences-l1",
+      "topicId": "g2-eng-sentences",
+      "title": "Complete Sentences",
+      "estimatedMinutes": 10,
+      "order": 1,
+      "objectives": [
+        {
+          "id": "o1",
+          "text": "Tell a complete sentence from an incomplete one."
+        },
+        {
+          "id": "o2",
+          "text": "Start a sentence with a capital letter."
+        },
+        {
+          "id": "o3",
+          "text": "End a sentence with a full stop or a question mark."
+        }
+      ],
+      "keyTerms": [
+        {
+          "term": "Sentence",
+          "definition": "A group of words that tells a whole idea."
+        },
+        {
+          "term": "Capital letter",
+          "definition": "A big letter, like A or B, used to start a sentence."
+        },
+        {
+          "term": "Full stop",
+          "definition": "The dot at the end of a sentence. It tells the reader to stop."
+        }
+      ],
+      "sections": [
+        {
+          "heading": "What you will learn",
+          "body": "A sentence must tell a whole idea.\n\nYou will learn what a sentence needs.\n\nYou will learn how to start it and how to end it."
+        },
+        {
+          "heading": "A sentence needs two things",
+          "body": "Every sentence needs a WHO and a WHAT THEY DID.\n\nLook at this:\n\n    The dog\n\nThat is not a sentence. You know who. But what did the dog do? You are still waiting.\n\nNow look at this:\n\n    The dog barked.\n\nNow it is a sentence. There is a who — the dog. There is what it did — barked.\n\nThe idea is whole. You are not left waiting.",
+          "example": "Finding what is missing.\n\n    ran to the river\n\nWhat did? A boy? A goat? You do not know. The WHO is missing.\n\nAdd it:\n\n    The boy ran to the river.\n\nNow it is a sentence.\n\nAnother one:\n\n    My little sister\n\nYou know who. But she did what? The WHAT is missing.\n\nAdd it:\n\n    My little sister sang a song.\n\nNow it is a sentence."
+        },
+        {
+          "heading": "Start big, end with a dot",
+          "body": "Every sentence starts with a capital letter.\n\n    the rain fell        ← wrong. Small t.\n    The rain fell.       ← right. Big T.\n\nEvery sentence ends with a mark.\n\nIf you are telling something, use a full stop:\n\n    The rain fell.\n\nIf you are asking something, use a question mark:\n\n    Did the rain fall?\n\nThe capital letter tells the reader \"a sentence starts here\". The mark at the end tells them \"it stops here\"."
+        },
+        {
+          "heading": "Try it yourself",
+          "body": "Say whether each one is a complete sentence. If it is not, say what is missing.\n\n1. The baby cried.\n\n2. under the big tree\n\n3. My mother cooks rice.\n\n4. The three goats\n\n5. Now write this properly, with a capital letter and a full stop:  the sun is hot"
+        },
+        {
+          "heading": "Summary",
+          "body": "• A sentence tells a whole idea.\n• It needs a who and a what-they-did.\n• Start it with a capital letter.\n• End it with a full stop, or a question mark if you are asking."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "id": "q2-sen-1",
+      "topicId": "g2-eng-sentences",
+      "question": "Which one is a complete sentence?",
+      "options": [
+        "under the big tree",
+        "The baby cried.",
+        "My three goats",
+        "running very fast"
+      ],
+      "correctAnswer": 1,
+      "explanation": "A sentence needs a WHO and a WHAT THEY DID. \"The baby cried.\" has both — the baby, and what the baby did. The others leave you waiting: \"My three goats\" tells you who but never says what they did.",
+      "difficulty": "foundation"
+    },
+    {
+      "id": "q2-sen-2",
+      "topicId": "g2-eng-sentences",
+      "question": "What is missing from this: \"ran to the river\"?",
+      "options": [
+        "The doing word",
+        "The who",
+        "Nothing is missing",
+        "The capital letter only"
+      ],
+      "correctAnswer": 1,
+      "explanation": "You know what happened — running. But WHO ran? A boy? A goat? The who is missing. Add it and you have a sentence: \"The boy ran to the river.\"",
+      "difficulty": "foundation"
+    },
+    {
+      "id": "q2-sen-3",
+      "topicId": "g2-eng-sentences",
+      "question": "How should you write this properly:  the sun is hot",
+      "options": [
+        "the sun is hot",
+        "The sun is hot",
+        "The sun is hot.",
+        "the Sun is hot."
+      ],
+      "correctAnswer": 2,
+      "explanation": "A sentence needs BOTH things: a capital letter at the start and a full stop at the end. \"The sun is hot\" has the capital but no full stop, so it is not finished.",
+      "difficulty": "foundation"
+    }
+  ],
+  "quizzes": [
+    {
+      "id": "quiz-g2-sentences",
+      "lessonId": "g2-eng-sentences-l1",
+      "topicId": "g2-eng-sentences",
+      "title": "Sentences Check",
+      "questionIds": [
+        "q2-sen-1",
+        "q2-sen-2",
+        "q2-sen-3"
+      ]
+    }
+  ]
+}

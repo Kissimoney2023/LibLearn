@@ -1,0 +1,130 @@
+{
+  "grade": 12,
+  "subjectId": "civics",
+  "curriculumVersionId": "liblearn-v1",
+  "provenance": "liblearn",
+  "sourceId": null,
+  "units": [
+    {
+      "id": "g12-civ-u-participation",
+      "name": "Elections and Participation",
+      "summary": "How citizens take part beyond voting day.",
+      "order": 1
+    }
+  ],
+  "topics": [
+    {
+      "id": "g12-civ-participation",
+      "unitId": "g12-civ-u-participation",
+      "name": "Citizen Participation",
+      "summary": "Why democracy needs more from citizens than a vote every few years.",
+      "order": 1
+    }
+  ],
+  "lessons": [
+    {
+      "id": "g12-civ-participation-l1",
+      "topicId": "g12-civ-participation",
+      "title": "Citizen Participation Beyond Voting",
+      "estimatedMinutes": 13,
+      "order": 1,
+      "objectives": [
+        {
+          "id": "o1",
+          "text": "Describe ways citizens participate besides voting."
+        },
+        {
+          "id": "o2",
+          "text": "Explain why participation between elections matters."
+        },
+        {
+          "id": "o3",
+          "text": "Explain how informed participation differs from mere opinion."
+        }
+      ],
+      "keyTerms": [
+        {
+          "term": "Participation",
+          "definition": "Taking an active part in public life."
+        },
+        {
+          "term": "Civil society",
+          "definition": "Groups outside government through which citizens organise."
+        },
+        {
+          "term": "Scrutiny",
+          "definition": "Examining what those in power are doing."
+        }
+      ],
+      "sections": [
+        {
+          "heading": "What you will learn",
+          "body": "Most students meet citizenship as \"vote when you are old enough\". Voting is the minimum, not the whole of it. This lesson is about the rest.\n\nScope note: general principles of participation, shared across democracies — not a description of Liberian institutions or electoral procedures. For those, use the Constitution or your teacher’s materials."
+        },
+        {
+          "heading": "Why voting is a small part",
+          "body": "Elections happen every few years. Government happens every day.\n\nBetween elections, decisions are taken continuously — budgets set, contracts awarded, services run well or badly. If citizens only engage on polling day, all of that goes unexamined for years at a time.\n\nA vote is a judgement on the past and a choice about the future. It is not a mechanism for influencing what happens in between."
+        },
+        {
+          "heading": "Ways to participate",
+          "body": "ATTENDING PUBLIC MEETINGS — where local decisions are explained and can be questioned.\n\nJOINING ASSOCIATIONS — community groups, cooperatives, unions, school committees. Organised voices are heard where individual ones are not.\n\nCONTACTING REPRESENTATIVES — writing to the person elected for your area about a specific problem.\n\nSCRUTINY — following what public bodies do and asking about it. Journalists do this professionally; citizens can too.\n\nVOLUNTEERING — tutoring, clean-ups, helping run local services.\n\nPEACEFUL ASSEMBLY — gathering lawfully to express a shared view.\n\nSERVING — standing for a school, community or local body."
+        },
+        {
+          "heading": "Informed participation",
+          "body": "Participation is only useful if it rests on accurate information. A strongly held view built on a rumour does not improve a decision — it degrades it, and it spreads.\n\nBefore acting on a claim about public affairs, it is worth asking:\n\n    Where did this come from?\n    Is there a primary source — a document, a record, an official statement?\n    Who benefits if I believe it?\n    Have I checked, or does it simply match what I already thought?\n\nThat last question is the hard one. Claims that flatter what we already believe get far less scrutiny than claims that challenge it, and that asymmetry is exactly what misinformation exploits.",
+          "example": "Two responses to the same problem.\n\nA community's water pump has been broken for months.\n\nRESPONSE A: Individuals complain to each other. Everyone agrees it is bad. A rumour spreads about who is to blame. Nothing reaches anyone who could act, and the rumour outlives the repair.\n\nRESPONSE B: Residents find out which body is responsible. They check what was budgeted and what was spent. They write jointly, with dates and facts, and request a response. They attend the next public meeting and ask directly. If nothing happens, they keep a record and raise it publicly.\n\nBoth groups are equally angry. Only one is participating.\n\nThe difference is not effort or sincerity — it is whether the energy is directed at someone who can act, and backed by something checkable."
+        },
+        {
+          "heading": "Try it yourself",
+          "body": "1. Name four ways to participate other than voting.\n2. Why is participation between elections important?\n3. A message circulates claiming an official stole funds. Before sharing it, what would you check?\n4. Choose a real problem in your community. Write three steps a group could take, naming who they would approach."
+        },
+        {
+          "heading": "Summary",
+          "body": "• Voting is the minimum of citizenship, not the whole.\n• Government acts daily; elections are years apart.\n• Participation includes meetings, associations, contacting representatives, scrutiny, volunteering, assembly and serving.\n• Informed participation needs checked facts, not just strong feeling.\n• Claims that match what you already believe deserve MORE scrutiny, not less."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "id": "q12-par-1",
+      "topicId": "g12-civ-participation",
+      "question": "Why does participation between elections matter?",
+      "options": [
+        "It does not — voting is enough",
+        "Government acts every day, while elections happen only every few years",
+        "Because voting is optional",
+        "To make elections unnecessary"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Budgets are set, contracts awarded and services run continuously. If citizens engage only on polling day, all of that goes unexamined for years. A vote judges the past and chooses the future; it does not influence the years in between.",
+      "difficulty": "core"
+    },
+    {
+      "id": "q12-par-2",
+      "topicId": "g12-civ-participation",
+      "question": "A message circulates claiming an official stole funds. What is the best first step before sharing it?",
+      "options": [
+        "Share it quickly so people are warned",
+        "Check whether there is a primary source, and ask who benefits if it is believed",
+        "Ignore it entirely",
+        "Share it only with friends"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Participation helps only when it rests on accurate information; spreading an unchecked claim degrades the decision and outlives the correction. Ask where it came from, whether a document or record supports it, and who gains if you believe it — especially when it matches what you already think.",
+      "difficulty": "challenge"
+    }
+  ],
+  "quizzes": [
+    {
+      "id": "quiz-g12-participation",
+      "lessonId": "g12-civ-participation-l1",
+      "topicId": "g12-civ-participation",
+      "title": "Citizen Participation Check",
+      "questionIds": [
+        "q12-par-1",
+        "q12-par-2"
+      ]
+    }
+  ]
+}

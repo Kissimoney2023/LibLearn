@@ -1,0 +1,145 @@
+{
+  "grade": 1,
+  "subjectId": "english",
+  "curriculumVersionId": "liblearn-v1",
+  "provenance": "liblearn",
+  "sourceId": null,
+  "units": [
+    {
+      "id": "g1-eng-u-sounds",
+      "name": "Letters and Sounds",
+      "summary": "The sounds letters make, and how they join to build words.",
+      "order": 1
+    }
+  ],
+  "topics": [
+    {
+      "id": "g1-eng-letter-sounds",
+      "unitId": "g1-eng-u-sounds",
+      "name": "Letter Sounds",
+      "summary": "Hearing the first sound in a word, and finding its letter.",
+      "order": 1
+    }
+  ],
+  "lessons": [
+    {
+      "id": "g1-eng-letter-sounds-l1",
+      "topicId": "g1-eng-letter-sounds",
+      "title": "Letter Sounds",
+      "estimatedMinutes": 10,
+      "order": 1,
+      "objectives": [
+        {
+          "id": "o1",
+          "text": "Hear the first sound in a spoken word."
+        },
+        {
+          "id": "o2",
+          "text": "Name the letter that makes that sound."
+        },
+        {
+          "id": "o3",
+          "text": "Say the sounds in a short word and join them together."
+        }
+      ],
+      "keyTerms": [
+        {
+          "term": "Letter",
+          "definition": "A mark we write, like a, b or c."
+        },
+        {
+          "term": "Sound",
+          "definition": "What you hear when you say a letter out loud."
+        },
+        {
+          "term": "Word",
+          "definition": "Sounds joined together that mean something, like cat."
+        }
+      ],
+      "sections": [
+        {
+          "heading": "What you will learn",
+          "body": "Letters have sounds.\n\nYou will learn to hear the first sound in a word.\n\nYou will learn to join sounds to make a word."
+        },
+        {
+          "heading": "A letter has a name and a sound",
+          "body": "The letter m has a name. We call it \"em\".\n\nBut it makes a different noise: mmmmm.\n\nThat noise is its SOUND.\n\nWhen you read, you use the sound, not the name.\n\nTry these. Say the sound out loud:\n\n    m  says  mmmm\n    s  says  sssss\n    t  says  t\n    a  says  a  (like in cat)"
+        },
+        {
+          "heading": "The first sound",
+          "body": "Say this word slowly: mmmmat.\n\nWhat did you hear first?\n\nYou heard mmmm.\n\nThat is the letter m.\n\nSo mat begins with m.\n\nTry it with your own name. Say it slowly. What sound comes first?",
+          "example": "Finding the first sound in sun.\n\nSay it slowly. Stretch the beginning:\n\n    sssssun\n\nThe first sound is sss.\n\nWhich letter says sss?\n\nThe letter s.\n\nSo sun begins with s.\n\nNow try pot. Say it slowly: p-ot. The first sound is p. So pot begins with p."
+        },
+        {
+          "heading": "Joining sounds to read a word",
+          "body": "A short word is just a few sounds stuck together.\n\nTake the word cat. It has three sounds:\n\n    c ... a ... t\n\nSay them one at a time. Slowly.\n\nNow say them faster. And faster.\n\n    c-a-t ... cat\n\nYou read the word.\n\nThat is all reading is. Sounds, joined up."
+        },
+        {
+          "heading": "Try it yourself",
+          "body": "Say every word out loud. Slowly first.\n\n1. What is the first sound in map?\n\n2. What is the first sound in ten?\n\n3. Join these sounds and say the word: s ... i ... t\n\n4. Join these sounds and say the word: p ... e ... n\n\n5. Say your own name slowly. What is the first sound?"
+        },
+        {
+          "heading": "Summary",
+          "body": "• A letter has a name and a sound.\n• When you read, you use the sound.\n• Say a word slowly to hear its first sound.\n• Join the sounds together and you have read the word."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "id": "q1-snd-1",
+      "topicId": "g1-eng-letter-sounds",
+      "question": "Say the word \"map\" slowly. What sound do you hear FIRST?",
+      "options": [
+        "p",
+        "a",
+        "m",
+        "t"
+      ],
+      "correctAnswer": 2,
+      "explanation": "Stretch the beginning: mmmmap. The first sound is mmm, which is the letter m. If you chose p, that is the sound at the END of the word, not the beginning.",
+      "difficulty": "foundation"
+    },
+    {
+      "id": "q1-snd-2",
+      "topicId": "g1-eng-letter-sounds",
+      "question": "Join these sounds together: s ... i ... t. What is the word?",
+      "options": [
+        "sat",
+        "sit",
+        "its",
+        "sip"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Say them faster and faster: s-i-t, sit. Keep the sounds in the order they are given. \"its\" has the same letters but in a different order, so it is a different word.",
+      "difficulty": "foundation"
+    },
+    {
+      "id": "q1-snd-3",
+      "topicId": "g1-eng-letter-sounds",
+      "question": "Which word begins with the same sound as \"sun\"?",
+      "options": [
+        "ten",
+        "sit",
+        "cup",
+        "man"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Sun begins with sss. Say each choice slowly. Sit also begins with sss. Ten begins with t, cup with c, man with m. Only sit matches.",
+      "difficulty": "foundation"
+    }
+  ],
+  "quizzes": [
+    {
+      "id": "quiz-g1-sounds",
+      "lessonId": "g1-eng-letter-sounds-l1",
+      "topicId": "g1-eng-letter-sounds",
+      "title": "Letter Sounds Check",
+      "questionIds": [
+        "q1-snd-1",
+        "q1-snd-2",
+        "q1-snd-3"
+      ]
+    }
+  ]
+}

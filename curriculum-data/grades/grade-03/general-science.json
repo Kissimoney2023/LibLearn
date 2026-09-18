@@ -1,0 +1,145 @@
+{
+  "grade": 3,
+  "subjectId": "general-science",
+  "curriculumVersionId": "liblearn-v1",
+  "provenance": "liblearn",
+  "sourceId": null,
+  "units": [
+    {
+      "id": "g3-sci-u-water",
+      "name": "Water and Weather",
+      "summary": "Where rain comes from, and where puddles go.",
+      "order": 1
+    }
+  ],
+  "topics": [
+    {
+      "id": "g3-sci-water-cycle",
+      "unitId": "g3-sci-u-water",
+      "name": "Where Rain Comes From",
+      "summary": "Water going up, water coming down, over and over.",
+      "order": 1
+    }
+  ],
+  "lessons": [
+    {
+      "id": "g3-sci-water-cycle-l1",
+      "topicId": "g3-sci-water-cycle",
+      "title": "Where Rain Comes From",
+      "estimatedMinutes": 12,
+      "order": 1,
+      "objectives": [
+        {
+          "id": "o1",
+          "text": "Explain where a puddle goes when it dries up."
+        },
+        {
+          "id": "o2",
+          "text": "Describe how clouds form."
+        },
+        {
+          "id": "o3",
+          "text": "Explain why water is never used up."
+        }
+      ],
+      "keyTerms": [
+        {
+          "term": "Evaporate",
+          "definition": "When water gets warm and rises into the air as tiny pieces you cannot see."
+        },
+        {
+          "term": "Cloud",
+          "definition": "Many tiny drops of water floating high in the sky."
+        },
+        {
+          "term": "Cycle",
+          "definition": "Something that goes round and round, and starts again."
+        }
+      ],
+      "sections": [
+        {
+          "heading": "What you will learn",
+          "body": "Rain does not come from nowhere.\n\nYou will learn where it comes from.\n\nYou will learn where puddles go when they dry.\n\nThey are the same story."
+        },
+        {
+          "heading": "Where does the puddle go?",
+          "body": "After rain, there are puddles on the ground.\n\nThe sun comes out. Hours later, the puddles are gone.\n\nWhere did the water go?\n\nIt did not sink into the ground — a puddle on a hard road dries up too.\n\nIt went UP.\n\nThe sun warmed the water. Warm water rises into the air in tiny pieces, far too small to see. This is called EVAPORATING.\n\nThe puddle did not disappear. It went into the air."
+        },
+        {
+          "heading": "Up, then down again",
+          "body": "Here is the whole journey.\n\n    1. The sun warms water in rivers, lakes and the sea.\n\n    2. The water evaporates. It rises as invisible tiny pieces.\n\n    3. High up, the air is cold. The cold turns those pieces back into tiny drops.\n\n    4. Millions of tiny drops together make a CLOUD.\n\n    5. The drops bump into each other and join up. They get bigger and heavier.\n\n    6. When they are too heavy to float, they fall. That is RAIN.\n\n    7. The rain lands in rivers, lakes and the sea.\n\nAnd then the sun warms it again, and it all starts over.\n\nRound and round. That is why it is called a cycle.",
+          "example": "You can see step 3 at home.\n\nHold a cold spoon over a pot of boiling water. Keep your hand well back from the steam.\n\nSteam rises from the pot. That is water going up.\n\nWhen the steam touches the cold spoon, it turns back into water. Drops form on the spoon and run down.\n\nThat is exactly what happens in the sky. Warm water goes up, meets cold air high above, and turns back into drops.\n\nThe spoon is the cold sky. The drops on it are a small cloud."
+        },
+        {
+          "heading": "Water is never used up",
+          "body": "Here is something worth knowing.\n\nThe water is not made new each time it rains. It is the SAME water, going round again.\n\nIt was in a river. It went up. It became a cloud. It fell as rain. It ran back to the river.\n\nThe world does not get more water or less water. It moves the same water around, over and over.\n\nThat is also why it matters if water is dirtied. It does not go away and get replaced. It comes back round."
+        },
+        {
+          "heading": "Try it yourself",
+          "body": "1. A puddle on a hard road dries up in the sun. Where did the water go?\n\n2. What is a cloud made of?\n\n3. Why do drops in a cloud eventually fall as rain?\n\n4. Why does the water on a cold spoon appear, when the spoon was dry before?\n\n5. Is the rain that falls today new water? Explain."
+        },
+        {
+          "heading": "Summary",
+          "body": "• The sun warms water and it evaporates into the air.\n• High up, cold air turns it back into tiny drops.\n• Many tiny drops together make a cloud.\n• When the drops get heavy enough, they fall as rain.\n• The same water goes round and round. It is never used up."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "id": "q3-wat-1",
+      "topicId": "g3-sci-water-cycle",
+      "question": "A puddle on a hard road dries up in the sun. Where did the water go?",
+      "options": [
+        "It sank into the road",
+        "It rose into the air as tiny pieces you cannot see",
+        "It disappeared completely",
+        "It turned into dust"
+      ],
+      "correctAnswer": 1,
+      "explanation": "It went UP, not down — that is why a puddle on hard ground dries too. The sun warmed it and it evaporated into the air in pieces far too small to see. Nothing disappears; it just moves somewhere you cannot see it.",
+      "difficulty": "foundation"
+    },
+    {
+      "id": "q3-wat-2",
+      "topicId": "g3-sci-water-cycle",
+      "question": "What is a cloud made of?",
+      "options": [
+        "Smoke",
+        "Cotton",
+        "Millions of tiny water drops",
+        "Dust from the ground"
+      ],
+      "correctAnswer": 2,
+      "explanation": "A cloud is millions of tiny drops of water floating high up. They formed when water that had risen met the cold air above and turned back into drops.",
+      "difficulty": "foundation"
+    },
+    {
+      "id": "q3-wat-3",
+      "topicId": "g3-sci-water-cycle",
+      "question": "Why do the drops in a cloud eventually fall as rain?",
+      "options": [
+        "The sun pushes them down",
+        "They join together, get heavier, and become too heavy to float",
+        "The wind makes new water",
+        "Clouds run out of air"
+      ],
+      "correctAnswer": 1,
+      "explanation": "The tiny drops bump into each other and join up. As they join they get bigger and heavier. When a drop is too heavy to float any longer, it falls — and that is rain.",
+      "difficulty": "core"
+    }
+  ],
+  "quizzes": [
+    {
+      "id": "quiz-g3-water",
+      "lessonId": "g3-sci-water-cycle-l1",
+      "topicId": "g3-sci-water-cycle",
+      "title": "Where Rain Comes From Check",
+      "questionIds": [
+        "q3-wat-1",
+        "q3-wat-2",
+        "q3-wat-3"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,145 @@
+{
+  "grade": 1,
+  "subjectId": "mathematics",
+  "curriculumVersionId": "liblearn-v1",
+  "provenance": "liblearn",
+  "sourceId": null,
+  "units": [
+    {
+      "id": "g1-math-u-counting",
+      "name": "Counting and Numbers to 20",
+      "summary": "Counting things, and writing the number that says how many.",
+      "order": 1
+    }
+  ],
+  "topics": [
+    {
+      "id": "g1-math-counting",
+      "unitId": "g1-math-u-counting",
+      "name": "Counting to 20",
+      "summary": "Counting one by one, and knowing which number is more.",
+      "order": 1
+    }
+  ],
+  "lessons": [
+    {
+      "id": "g1-math-counting-l1",
+      "topicId": "g1-math-counting",
+      "title": "Counting to 20",
+      "estimatedMinutes": 10,
+      "order": 1,
+      "objectives": [
+        {
+          "id": "o1",
+          "text": "Count up to 20 things, one at a time."
+        },
+        {
+          "id": "o2",
+          "text": "Write the number that says how many."
+        },
+        {
+          "id": "o3",
+          "text": "Say which of two groups has more."
+        }
+      ],
+      "keyTerms": [
+        {
+          "term": "Count",
+          "definition": "To say the numbers in order while you point at things, one by one."
+        },
+        {
+          "term": "How many",
+          "definition": "The number you say last when you finish counting."
+        },
+        {
+          "term": "More",
+          "definition": "A bigger amount. The group you would rather have if you like mangoes."
+        }
+      ],
+      "sections": [
+        {
+          "heading": "What you will learn",
+          "body": "You will learn to count things up to 20.\n\nYou will learn to write the number.\n\nYou will learn to say which group has more."
+        },
+        {
+          "heading": "Counting means pointing",
+          "body": "Counting is not just saying numbers fast.\n\nTouch one thing. Say one number.\n\nLike this, with five stones:\n\n    stone   stone   stone   stone   stone\n      1       2       3       4       5\n\nOne stone, one number. Never two numbers for one stone. Never two stones for one number.\n\nThe last number you say is how many. Here it is 5. There are 5 stones."
+        },
+        {
+          "heading": "The numbers to 20",
+          "body": "Say them out loud:\n\n    1  2  3  4  5\n    6  7  8  9  10\n\n    11  12  13  14  15\n    16  17  18  19  20\n\nSay them again. Point at each one as you say it.\n\nThe hard ones are 11, 12, 13. They do not sound like the others. You just have to learn them.",
+          "example": "Counting mangoes in a basket.\n\nA basket has some mangoes. You want to know how many.\n\nTake them out one at a time. Say a number each time you take one out:\n\n    1 ... 2 ... 3 ... 4 ... 5 ... 6 ... 7\n\nYou stop. There are no more mangoes.\n\nThe last number you said was 7.\n\nSo there are 7 mangoes."
+        },
+        {
+          "heading": "Which group has more?",
+          "body": "You have 4 stones. Your friend has 7 stones.\n\nWho has more?\n\nCount up. 4 comes first. Then 5, 6, 7.\n\n7 comes later than 4.\n\nThe number that comes later is more.\n\nSo your friend has more."
+        },
+        {
+          "heading": "Try it yourself",
+          "body": "Use real things. Stones, seeds, bottle tops — anything you can hold.\n\n1. Put out 6 stones. Count them by pointing. What number do you say last?\n\n2. Put out 9 stones. Now put out 3 more. Count them all. How many now?\n\n3. One hand has 5 fingers. Two hands have how many?\n\n4. You have 8 seeds. Your friend has 5 seeds. Who has more?"
+        },
+        {
+          "heading": "Summary",
+          "body": "• Touch one thing, say one number.\n• The last number you say is how many.\n• Count in order: 1 to 20.\n• The number that comes later is more."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "id": "q1-cnt-1",
+      "topicId": "g1-math-counting",
+      "question": "You count some stones: 1, 2, 3, 4, 5, 6. How many stones are there?",
+      "options": [
+        "1",
+        "5",
+        "6",
+        "7"
+      ],
+      "correctAnswer": 2,
+      "explanation": "The last number you say is how many there are. You stopped at 6, so there are 6 stones. If you chose 1, that was the first number, not the last one.",
+      "difficulty": "foundation"
+    },
+    {
+      "id": "q1-cnt-2",
+      "topicId": "g1-math-counting",
+      "question": "Which number is more, 8 or 5?",
+      "options": [
+        "5",
+        "8",
+        "They are the same",
+        "You cannot tell"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Count up: 5, 6, 7, 8. You say 8 after 5, so 8 comes later. The number that comes later when you count is the bigger one. So 8 is more.",
+      "difficulty": "foundation"
+    },
+    {
+      "id": "q1-cnt-3",
+      "topicId": "g1-math-counting",
+      "question": "How many fingers are on two hands?",
+      "options": [
+        "5",
+        "9",
+        "10",
+        "20"
+      ],
+      "correctAnswer": 2,
+      "explanation": "One hand has 5 fingers. Two hands is 5 and 5 more. Count on from 5: 6, 7, 8, 9, 10. So there are 10. If you chose 5, that was only one hand.",
+      "difficulty": "foundation"
+    }
+  ],
+  "quizzes": [
+    {
+      "id": "quiz-g1-counting",
+      "lessonId": "g1-math-counting-l1",
+      "topicId": "g1-math-counting",
+      "title": "Counting Check",
+      "questionIds": [
+        "q1-cnt-1",
+        "q1-cnt-2",
+        "q1-cnt-3"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,145 @@
+{
+  "grade": 3,
+  "subjectId": "social-studies",
+  "curriculumVersionId": "liblearn-v1",
+  "provenance": "liblearn",
+  "sourceId": null,
+  "units": [
+    {
+      "id": "g3-soc-u-maps",
+      "name": "Directions and Maps",
+      "summary": "North, south, east and west, and reading a simple map.",
+      "order": 1
+    }
+  ],
+  "topics": [
+    {
+      "id": "g3-soc-directions",
+      "unitId": "g3-soc-u-maps",
+      "name": "Directions and Simple Maps",
+      "summary": "Using north, south, east and west to describe where things are.",
+      "order": 1
+    }
+  ],
+  "lessons": [
+    {
+      "id": "g3-soc-directions-l1",
+      "topicId": "g3-soc-directions",
+      "title": "Directions and Simple Maps",
+      "estimatedMinutes": 12,
+      "order": 1,
+      "objectives": [
+        {
+          "id": "o1",
+          "text": "Name the four main directions."
+        },
+        {
+          "id": "o2",
+          "text": "Use the sun to work out which way is east and west."
+        },
+        {
+          "id": "o3",
+          "text": "Describe where something is on a simple map."
+        }
+      ],
+      "keyTerms": [
+        {
+          "term": "Direction",
+          "definition": "The way you face or travel: north, south, east or west."
+        },
+        {
+          "term": "Map",
+          "definition": "A drawing of a place, seen from above."
+        },
+        {
+          "term": "Key",
+          "definition": "The part of a map that explains what each symbol means."
+        }
+      ],
+      "sections": [
+        {
+          "heading": "What you will learn",
+          "body": "There are four main directions.\n\nYou will learn their names and their order.\n\nYou will learn to find them using the sun.\n\nYou will learn to read a simple map."
+        },
+        {
+          "heading": "The four directions",
+          "body": "The four main directions are:\n\n    NORTH, EAST, SOUTH, WEST\n\nOn a map they are drawn like this:\n\n              N\n              |\n        W  ---+---  E\n              |\n              S\n\nNorth is at the top. South at the bottom. East on the right. West on the left.\n\nGoing round clockwise from the top, the order is North, East, South, West.\n\nMany people remember it with a sentence: Never Eat Slimy Worms. N, E, S, W."
+        },
+        {
+          "heading": "Using the sun",
+          "body": "You do not need anything to find the directions. You only need the sun.\n\nThe sun rises in the EAST every morning.\n\nThe sun sets in the WEST every evening.\n\nSo in the morning, stand and face the rising sun. You are now facing east.\n\nWhen you face east:\n\n    north is on your LEFT\n    south is on your RIGHT\n    west is BEHIND you\n\nTry it tomorrow morning. Then you will never be lost about which way is which.",
+          "example": "A map of a village.\n\nThis village is not a real place. It is drawn to practise on.\n\n                    N\n                    |\n         [school]   |\n                    |\n     W ------- [market] ------- E\n                    |\n                    |\n         [river]    |\n                    S\n\nNow read it.\n\nThe school is NORTH of the market. It is above it on the map.\n\nThe river is SOUTH of the market. It is below it.\n\nIf you stand at the market and walk north, you reach the school.\n\nIf you stand at the school and want to reach the river, you walk south — straight past the market and on.\n\nNotice that direction works both ways. The school is north of the market, so the market is south of the school."
+        },
+        {
+          "heading": "What a map is",
+          "body": "A map is a picture of a place seen from ABOVE, as a bird would see it.\n\nThat is why a house on a map looks like a small square, not like a house from the front.\n\nMaps use symbols — small pictures that stand for real things. A blue line might mean a river. A small square might mean a building.\n\nThe KEY tells you what each symbol means. Always read the key first, or you will guess wrong."
+        },
+        {
+          "heading": "Try it yourself",
+          "body": "Use the village map above.\n\n1. Name the four main directions in order, starting from north.\n\n2. In which direction does the sun rise?\n\n3. Is the school north or south of the market?\n\n4. You are at the river. In which direction do you walk to reach the market?\n\n5. Face the rising sun. Which direction is behind you?"
+        },
+        {
+          "heading": "Summary",
+          "body": "• The four main directions are north, east, south and west.\n• On a map, north is at the top.\n• The sun rises in the east and sets in the west.\n• Face east and north is on your left.\n• A map shows a place from above, and the key explains its symbols."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "id": "q3-dir-1",
+      "topicId": "g3-soc-directions",
+      "question": "In which direction does the sun rise?",
+      "options": [
+        "North",
+        "South",
+        "East",
+        "West"
+      ],
+      "correctAnswer": 2,
+      "explanation": "The sun rises in the east every morning and sets in the west every evening. This is why you can find your directions with nothing but the sun: face the rising sun and you are facing east.",
+      "difficulty": "foundation"
+    },
+    {
+      "id": "q3-dir-2",
+      "topicId": "g3-soc-directions",
+      "question": "On a map, which direction is at the top?",
+      "options": [
+        "North",
+        "South",
+        "East",
+        "West"
+      ],
+      "correctAnswer": 0,
+      "explanation": "North is drawn at the top of a map, south at the bottom, east on the right and west on the left. Knowing this lets you read any map the same way.",
+      "difficulty": "foundation"
+    },
+    {
+      "id": "q3-dir-3",
+      "topicId": "g3-soc-directions",
+      "question": "You face the rising sun. Which direction is on your LEFT?",
+      "options": [
+        "South",
+        "North",
+        "East",
+        "West"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Facing the rising sun means facing east. When you face east, north is on your left, south is on your right and west is behind you. Try it outside one morning and you will remember it for good.",
+      "difficulty": "core"
+    }
+  ],
+  "quizzes": [
+    {
+      "id": "quiz-g3-directions",
+      "lessonId": "g3-soc-directions-l1",
+      "topicId": "g3-soc-directions",
+      "title": "Directions Check",
+      "questionIds": [
+        "q3-dir-1",
+        "q3-dir-2",
+        "q3-dir-3"
+      ]
+    }
+  ]
+}

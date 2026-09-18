@@ -1,0 +1,126 @@
+{
+  "grade": 7,
+  "subjectId": "english",
+  "curriculumVersionId": "liblearn-v1",
+  "provenance": "liblearn",
+  "sourceId": null,
+  "units": [
+    {
+      "id": "g7-eng-u-grammar",
+      "name": "Verbs and Tense",
+      "summary": "Showing when something happened.",
+      "order": 1
+    }
+  ],
+  "topics": [
+    {
+      "id": "g7-eng-tenses",
+      "unitId": "g7-eng-u-grammar",
+      "name": "Verb Tenses",
+      "summary": "Past, present and future, and keeping them consistent.",
+      "order": 1
+    }
+  ],
+  "lessons": [
+    {
+      "id": "g7-eng-tenses-l1",
+      "topicId": "g7-eng-tenses",
+      "title": "Past, Present and Future Tense",
+      "estimatedMinutes": 12,
+      "order": 1,
+      "objectives": [
+        {
+          "id": "o1",
+          "text": "Identify the tense of a verb."
+        },
+        {
+          "id": "o2",
+          "text": "Change a sentence from one tense to another."
+        },
+        {
+          "id": "o3",
+          "text": "Keep tense consistent within a piece of writing."
+        }
+      ],
+      "keyTerms": [
+        {
+          "term": "Tense",
+          "definition": "The form of a verb that shows when something happens."
+        },
+        {
+          "term": "Irregular verb",
+          "definition": "A verb whose past form does not simply add -ed, such as go → went."
+        }
+      ],
+      "sections": [
+        {
+          "heading": "What you will learn",
+          "body": "The same action can happen yesterday, now, or tomorrow, and the verb changes to show which. This lesson is about making that choice deliberately instead of by accident."
+        },
+        {
+          "heading": "The three tenses",
+          "body": "PRESENT — happening now, or happening regularly.\n    I walk to school.\n    She walks to school.\n\nPAST — already happened.\n    I walked to school.\n\nFUTURE — has not happened yet.\n    I will walk to school.\n\nMost verbs form the past by adding -ed, and the future by putting \"will\" in front. Only the verb changes — the rest of the sentence can stay the same."
+        },
+        {
+          "heading": "Irregular verbs",
+          "body": "Some common verbs do not follow the -ed rule, and these are the ones people get wrong:\n\n    go   → went    (not \"goed\")\n    eat  → ate     (not \"eated\")\n    see  → saw\n    take → took\n    come → came\n    write → wrote\n\nThere is no rule to work these out — they have to be learned. They are also the most common verbs in the language, which is why they are worth learning properly."
+        },
+        {
+          "heading": "Keep the tense consistent",
+          "body": "This is the mistake that costs marks most often. Once you choose a tense, stay in it unless the time genuinely changes.\n\n    Wrong: Yesterday I went to the market and buy rice.\n           \"went\" is past, \"buy\" is present. They disagree.\n\n    Right:  Yesterday I went to the market and bought rice.\n\nWhen you finish a piece of writing, read it once looking ONLY at the verbs. Ignore everything else. Tense mistakes hide easily inside a sentence that otherwise sounds fine.",
+          "example": "Changing one sentence through all three tenses.\n\n    Present: The farmer plants cassava.\n    Past:    The farmer planted cassava.\n    Future:  The farmer will plant cassava.\n\nNow one with an irregular verb:\n\n    Present: She writes a letter.\n    Past:    She wrote a letter.      (not \"writed\")\n    Future:  She will write a letter.\n\nNotice that after \"will\", the verb goes back to its plain form — \"will write\", never \"will wrote\"."
+        },
+        {
+          "heading": "Try it yourself",
+          "body": "Change each into the past tense:\n1. We eat rice every evening.\n2. He goes to the farm.\n3. They see the river.\n\nThen fix this: \"Last week my sister travel to town and buys new shoes.\""
+        },
+        {
+          "heading": "Summary",
+          "body": "• Present = now, past = already happened, future = not yet.\n• Most verbs add -ed for past and \"will\" for future.\n• Irregular verbs (go/went, eat/ate) must be learned.\n• After \"will\", use the plain verb form.\n• Stay in one tense; check by reading only the verbs."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "id": "q7-ten-1",
+      "topicId": "g7-eng-tenses",
+      "question": "What is the past tense of \"go\"?",
+      "options": [
+        "goed",
+        "gone",
+        "went",
+        "going"
+      ],
+      "correctAnswer": 2,
+      "explanation": "\"Went\" — \"go\" is an irregular verb, so it does not add -ed. \"Gone\" is used with a helper verb (\"has gone\"), not on its own for simple past. Irregular verbs have to be learned; there is no rule to work them out.",
+      "difficulty": "foundation"
+    },
+    {
+      "id": "q7-ten-2",
+      "topicId": "g7-eng-tenses",
+      "question": "What is wrong with: \"Yesterday I went to the market and buy rice\"?",
+      "options": [
+        "Nothing is wrong",
+        "\"Went\" should be \"go\"",
+        "The tenses do not match — \"buy\" should be \"bought\"",
+        "\"Yesterday\" is in the wrong place"
+      ],
+      "correctAnswer": 2,
+      "explanation": "\"Went\" is past but \"buy\" is present, so the tenses disagree. It should be \"went... and bought\". Read a finished piece looking ONLY at the verbs — tense mistakes hide easily inside sentences that otherwise sound fine.",
+      "difficulty": "core"
+    }
+  ],
+  "quizzes": [
+    {
+      "id": "quiz-g7-tenses",
+      "lessonId": "g7-eng-tenses-l1",
+      "topicId": "g7-eng-tenses",
+      "title": "Verb Tenses Check",
+      "questionIds": [
+        "q7-ten-1",
+        "q7-ten-2"
+      ]
+    }
+  ]
+}

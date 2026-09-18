@@ -1,0 +1,126 @@
+{
+  "grade": 7,
+  "subjectId": "social-studies",
+  "curriculumVersionId": "liblearn-v1",
+  "provenance": "liblearn",
+  "sourceId": null,
+  "units": [
+    {
+      "id": "g7-soc-u-geography",
+      "name": "Weather and Climate",
+      "summary": "The difference between today’s weather and a place’s climate.",
+      "order": 1
+    }
+  ],
+  "topics": [
+    {
+      "id": "g7-soc-climate",
+      "unitId": "g7-soc-u-geography",
+      "name": "Weather and Climate",
+      "summary": "Why one rainy day tells you nothing about a climate.",
+      "order": 1
+    }
+  ],
+  "lessons": [
+    {
+      "id": "g7-soc-climate-l1",
+      "topicId": "g7-soc-climate",
+      "title": "Weather and Climate Are Not the Same",
+      "estimatedMinutes": 12,
+      "order": 1,
+      "objectives": [
+        {
+          "id": "o1",
+          "text": "Define weather and climate."
+        },
+        {
+          "id": "o2",
+          "text": "Explain the difference using time."
+        },
+        {
+          "id": "o3",
+          "text": "Say why one unusual day proves nothing about climate."
+        }
+      ],
+      "keyTerms": [
+        {
+          "term": "Weather",
+          "definition": "What the air is doing at one place at one time."
+        },
+        {
+          "term": "Climate",
+          "definition": "The usual pattern of weather in a place over many years."
+        }
+      ],
+      "sections": [
+        {
+          "heading": "What you will learn",
+          "body": "These two words are often used as if they mean the same thing. They do not, and the difference is entirely about time."
+        },
+        {
+          "heading": "Weather is now",
+          "body": "WEATHER is what the air is doing at one place, right now or over a few days.\n\n    \"It is raining.\"\n    \"It was hot yesterday.\"\n    \"There is wind this morning.\"\n\nWeather changes quickly. It can be sunny in the morning and raining by afternoon."
+        },
+        {
+          "heading": "Climate is the pattern",
+          "body": "CLIMATE is what the weather is USUALLY like in a place, measured over many years — normally thirty or more.\n\n    \"This region has a rainy season and a dry season.\"\n\nClimate changes slowly, over decades.\n\nA useful way to hold the difference:\n\n    **Weather tells you what to wear today.\n    Climate tells you what clothes to own.**\n\nOne day of weather is one measurement. Climate is thousands of measurements averaged together.",
+          "example": "Why one cold day proves nothing.\n\nSomeone says: \"It was unusually cold last week, so the climate must be getting colder.\"\n\nThat does not follow. One week is weather — a single measurement.\n\nThink of a student's marks. They score 40 on one test. Is that student weak? You cannot say from one test. They might average 80 and have had a bad day.\n\nTo judge the student you need many tests. To judge climate you need many years.\n\nThe reverse is also a mistake: one very hot week does not by itself prove the climate is warming either. Single measurements never settle questions about averages."
+        },
+        {
+          "heading": "Why the difference matters",
+          "body": "Farmers plan around CLIMATE — which months are usually wet decides when to plant.\n\nThey react to WEATHER — today's rain decides whether to work in the field this afternoon.\n\nConfusing the two leads to bad decisions in both directions: planting by a single warm week, or abandoning a plan because of one unusual day."
+        },
+        {
+          "heading": "Try it yourself",
+          "body": "Weather or climate?\n1. \"It will rain this afternoon.\"\n2. \"This area is usually dry between November and March.\"\n3. \"Yesterday was the hottest day this year.\"\n4. \"This region has had heavy rains most years for the last fifty.\"\n\nThen: explain in your own words why one dry month does not mean a place has a dry climate."
+        },
+        {
+          "heading": "Summary",
+          "body": "• Weather is now or a few days; climate is the pattern over many years.\n• Weather changes fast; climate changes slowly.\n• Weather = what to wear today. Climate = what clothes to own.\n• A single unusual day or week proves nothing about climate."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "id": "q7-cli-1",
+      "topicId": "g7-soc-climate",
+      "question": "Which statement describes CLIMATE rather than weather?",
+      "options": [
+        "It is raining heavily this afternoon",
+        "This region is usually dry from November to March",
+        "Yesterday was very hot",
+        "There is a strong wind right now"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Climate is the usual pattern over many years, so \"usually dry from November to March\" is climate. The other three describe one day or one moment, which is weather. Weather tells you what to wear today; climate tells you what clothes to own.",
+      "difficulty": "foundation"
+    },
+    {
+      "id": "q7-cli-2",
+      "topicId": "g7-soc-climate",
+      "question": "Why does one unusually cold week NOT show that a place’s climate is getting colder?",
+      "options": [
+        "Because cold weeks do not count",
+        "Because climate is an average over many years, and one week is a single measurement",
+        "Because thermometers are unreliable",
+        "Because climate never changes"
+      ],
+      "correctAnswer": 1,
+      "explanation": "One week is weather — a single measurement. Judging a climate from it is like judging a student from one test they did badly on. You need many years of data. Note this cuts both ways: one hot week does not prove warming either.",
+      "difficulty": "challenge"
+    }
+  ],
+  "quizzes": [
+    {
+      "id": "quiz-g7-climate",
+      "lessonId": "g7-soc-climate-l1",
+      "topicId": "g7-soc-climate",
+      "title": "Weather and Climate Check",
+      "questionIds": [
+        "q7-cli-1",
+        "q7-cli-2"
+      ]
+    }
+  ]
+}

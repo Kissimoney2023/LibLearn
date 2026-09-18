@@ -13,9 +13,9 @@ export type UserRole =
   | 'school_admin'
   | 'super_admin';
 
-/** Grades 4-12 are the full MVP range. */
-export type GradeLevel = 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12;
-export const GRADE_LEVELS: GradeLevel[] = [4, 5, 6, 7, 8, 9, 10, 11, 12];
+/** Grades 1-12: the whole of Liberian primary and secondary schooling. */
+export type GradeLevel = 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12;
+export const GRADE_LEVELS: GradeLevel[] = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
 
 /**
  * Examination targets. These identifiers name real Liberian/West African

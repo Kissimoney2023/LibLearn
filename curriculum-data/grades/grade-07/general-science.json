@@ -1,0 +1,130 @@
+{
+  "grade": 7,
+  "subjectId": "general-science",
+  "curriculumVersionId": "liblearn-v1",
+  "provenance": "liblearn",
+  "sourceId": null,
+  "units": [
+    {
+      "id": "g7-sci-u-energy",
+      "name": "Energy",
+      "summary": "The forms energy takes and how it moves between them.",
+      "order": 1
+    }
+  ],
+  "topics": [
+    {
+      "id": "g7-sci-energy",
+      "unitId": "g7-sci-u-energy",
+      "name": "Forms of Energy",
+      "summary": "Energy is never used up — it changes form.",
+      "order": 1
+    }
+  ],
+  "lessons": [
+    {
+      "id": "g7-sci-energy-l1",
+      "topicId": "g7-sci-energy",
+      "title": "Forms of Energy and How It Changes",
+      "estimatedMinutes": 13,
+      "order": 1,
+      "objectives": [
+        {
+          "id": "o1",
+          "text": "Name the main forms of energy."
+        },
+        {
+          "id": "o2",
+          "text": "Describe an energy change in a everyday device."
+        },
+        {
+          "id": "o3",
+          "text": "Explain what \"energy is conserved\" means."
+        }
+      ],
+      "keyTerms": [
+        {
+          "term": "Energy",
+          "definition": "What is needed to make something happen — to move, heat or light."
+        },
+        {
+          "term": "Energy transfer",
+          "definition": "Energy changing from one form to another."
+        },
+        {
+          "term": "Conservation of energy",
+          "definition": "Energy is never created or destroyed, only changed in form."
+        }
+      ],
+      "sections": [
+        {
+          "heading": "What you will learn",
+          "body": "People say energy is \"used up\". It never is. This lesson is about what actually happens to it."
+        },
+        {
+          "heading": "Forms of energy",
+          "body": "Energy comes in several forms:\n\n    LIGHT — from the sun, a lamp, a fire\n    HEAT (thermal) — from a stove, the sun, your body\n    SOUND — from a drum, a voice, an engine\n    MOVEMENT (kinetic) — anything that is moving\n    ELECTRICAL — flowing through wires\n    CHEMICAL — stored in food, fuel, a battery\n\nStored energy is still energy. A battery sitting in a drawer doing nothing holds chemical energy the whole time."
+        },
+        {
+          "heading": "Energy changes form",
+          "body": "Devices do not make energy. They CHANGE it from one form to another.\n\n    Torch:     chemical (battery) → electrical → light\n    Radio:     chemical → electrical → sound\n    Cooking fire: chemical (wood) → heat and light\n    Your body: chemical (food) → movement and heat\n\nFollow the arrows in the torch. The battery does not create light. It holds chemical energy, which becomes electrical energy in the wire, which becomes light in the bulb. Same energy, three forms."
+        },
+        {
+          "heading": "Nothing is used up",
+          "body": "When a battery \"goes flat\", the energy did not vanish. It left as light, a little sound, and heat — and heat spreads into the air where it is too thinly spread to be useful.\n\nThat is what \"used up\" really means: not destroyed, but changed into a form too spread out to use again.\n\nThis is the CONSERVATION OF ENERGY: energy is never created or destroyed, only changed in form. Add up all the energy before and after, and the totals match.",
+          "example": "Where the energy goes in a torch.\n\nStart: 100 units of chemical energy in the battery.\n\nAfter running:\n    about 10 units left as light\n    about 90 units left as heat\n\nTotal out: 100 units. Nothing missing.\n\nMost of it became heat, which is why a torch that has been on feels warm. The heat was not wasted in the sense of vanishing — it was wasted in the sense of not being the form you wanted.\n\nA good device is one where most of the energy becomes the form you actually want."
+        },
+        {
+          "heading": "Try it yourself",
+          "body": "1. Name the energy changes when a phone is charged, then used to play music.\n2. A child slides down a slide. What energy change happens, and where did the energy come from before they slid?\n3. Explain why \"the battery used up its energy\" is not strictly correct.\n4. Why does a lamp that has been on for an hour feel warm?"
+        },
+        {
+          "heading": "Summary",
+          "body": "• Forms include light, heat, sound, movement, electrical and chemical.\n• Devices change energy from one form to another; they do not create it.\n• Energy is never created or destroyed — conservation of energy.\n• \"Used up\" means changed into heat spread too thin to use."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "id": "q7-en-1",
+      "topicId": "g7-sci-energy",
+      "question": "What energy change happens in a torch?",
+      "options": [
+        "Light → electrical → chemical",
+        "Chemical → electrical → light",
+        "Heat → light → chemical",
+        "Electrical → chemical → sound"
+      ],
+      "correctAnswer": 1,
+      "explanation": "The battery holds chemical energy, which becomes electrical energy in the wires, which becomes light at the bulb. The torch does not create light — it changes energy that was already stored from one form into another.",
+      "difficulty": "core"
+    },
+    {
+      "id": "q7-en-2",
+      "topicId": "g7-sci-energy",
+      "question": "A battery \"goes flat\". What has actually happened to its energy?",
+      "options": [
+        "It was destroyed",
+        "It changed into light, sound and heat that spread into the surroundings",
+        "It leaked out as liquid",
+        "It turned into new matter"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Energy is never destroyed — this is conservation of energy. It became light, a little sound, and heat, and the heat spread into the air where it is too thinly spread to be useful. \"Used up\" means changed into a form you cannot use again, not gone.",
+      "difficulty": "challenge"
+    }
+  ],
+  "quizzes": [
+    {
+      "id": "quiz-g7-energy",
+      "lessonId": "g7-sci-energy-l1",
+      "topicId": "g7-sci-energy",
+      "title": "Energy Check",
+      "questionIds": [
+        "q7-en-1",
+        "q7-en-2"
+      ]
+    }
+  ]
+}

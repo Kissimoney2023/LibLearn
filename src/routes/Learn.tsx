@@ -1,8 +1,10 @@
+import {useEffect, useState} from 'react';
 import {Link} from 'react-router-dom';
 import {useAuth} from '../context/AuthContext';
 import {Card, SectionHeading} from '../components/ui';
-import {GRADE_LEVELS} from '../types/domain';
-import {TOPICS} from '../data/seed/curriculum';
+import {GRADE_LEVELS, type GradeLevel} from '../types/domain';
+import {loadAvailableGrades} from '../lib/curriculum';
+import {LESSONS, TOPICS} from '../data/seed/curriculum';
 
 /**
  * Grade picker.
@@ -16,16 +18,38 @@ import {TOPICS} from '../data/seed/curriculum';
  * visible, because a Grade 5 student should see their grade exists and is
  * planned, but not offered as something to open.
  *
- * The counts come from the BUNDLED corpus rather than the database. That is a
- * deliberate trade: this screen sits above the per-grade loader, and fetching
- * all twelve grades just to decide which cards to grey out would cost twelve
- * requests to render one list. The bundled figures are a floor, since the
- * database seed is generated from the same corpus.
+ * Which grades are ready comes from `loadAvailableGrades`, which asks the
+ * database and unions the answer with the bundle. This screen used to answer
+ * from the bundle alone, on the assumption that the database seed is generated
+ * from the same corpus - true when they are deployed together, and wrong the
+ * moment curriculum is loaded into Supabase ahead of a rebuild. It made
+ * "add curriculum without deploying" quietly false: the grade stayed greyed out
+ * as "Coming soon" no matter what the database held.
+ *
+ * The bundled set is the first paint, so the cards never flash empty and the
+ * screen still works with no network. The database answer refines it.
  */
 export default function Learn() {
   const {profile} = useAuth();
 
-  const gradesWithContent = new Set(TOPICS.map((t) => t.grade));
+  // Bundled grades are known synchronously, so the list is correct-ish on the
+  // first frame and only ever grows when the database answers.
+  const [available, setAvailable] = useState<GradeLevel[]>(() => {
+    const withLessons = new Set(LESSONS.map((l) => l.topicId));
+    return [...new Set(TOPICS.filter((t) => withLessons.has(t.id)).map((t) => t.grade))];
+  });
+
+  useEffect(() => {
+    let live = true;
+    void loadAvailableGrades().then((g) => {
+      if (live) setAvailable(g);
+    });
+    return () => {
+      live = false;
+    };
+  }, []);
+
+  const gradesWithContent = new Set(available);
   const ready = GRADE_LEVELS.filter((g) => gradesWithContent.has(g));
 
   return (

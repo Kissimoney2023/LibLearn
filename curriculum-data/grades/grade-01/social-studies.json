@@ -1,0 +1,130 @@
+{
+  "grade": 1,
+  "subjectId": "social-studies",
+  "curriculumVersionId": "liblearn-v1",
+  "provenance": "liblearn",
+  "sourceId": null,
+  "units": [
+    {
+      "id": "g1-soc-u-family",
+      "name": "My Family and My Home",
+      "summary": "Who lives in a home, and how people in a family help each other.",
+      "order": 1
+    }
+  ],
+  "topics": [
+    {
+      "id": "g1-soc-family",
+      "unitId": "g1-soc-u-family",
+      "name": "My Family",
+      "summary": "The people in a family, and the jobs they share at home.",
+      "order": 1
+    }
+  ],
+  "lessons": [
+    {
+      "id": "g1-soc-family-l1",
+      "topicId": "g1-soc-family",
+      "title": "My Family",
+      "estimatedMinutes": 10,
+      "order": 1,
+      "objectives": [
+        {
+          "id": "o1",
+          "text": "Name the people who live in a home."
+        },
+        {
+          "id": "o2",
+          "text": "Say one job that people share at home."
+        },
+        {
+          "id": "o3",
+          "text": "Say why families help each other."
+        }
+      ],
+      "keyTerms": [
+        {
+          "term": "Family",
+          "definition": "The people who care for you and who you belong to."
+        },
+        {
+          "term": "Home",
+          "definition": "The place where you live and sleep."
+        },
+        {
+          "term": "Share",
+          "definition": "To do something together, or give some to someone else."
+        }
+      ],
+      "sections": [
+        {
+          "heading": "What you will learn",
+          "body": "You will learn who is in a family.\n\nYou will learn about jobs at home.\n\nYou will learn why families help each other."
+        },
+        {
+          "heading": "Families are not all the same",
+          "body": "Some children live with a mother and a father.\n\nSome live with one parent.\n\nSome live with a grandmother, or an aunt, or an older sister.\n\nSome homes have many children. Some have one.\n\nAll of these are families.\n\nA family is not one shape. A family is the people who care for you."
+        },
+        {
+          "heading": "Jobs at home",
+          "body": "A home has work to do every day.\n\nSomeone fetches water.\n\nSomeone cooks the food.\n\nSomeone washes the clothes.\n\nSomeone sweeps the floor.\n\nSomeone looks after the small children.\n\nIf one person did all of it, that person would be very tired. So the work is shared.\n\nEven a small child can help. Carrying a cup. Holding a baby's hand.",
+          "example": "One evening in a home.\n\nThe sun is going down. There is a lot to do before dark.\n\nThe older brother fetches the water.\n\nThe mother starts the fire and cooks.\n\nThe small sister sweeps the step. It takes her a long time, but she does it.\n\nThe grandmother holds the baby so the mother can cook.\n\nFour people. Four jobs. Everyone eats.\n\nIf nobody had fetched water, nobody would have eaten. Every job mattered."
+        },
+        {
+          "heading": "Why families help each other",
+          "body": "Nobody can do everything alone.\n\nA baby cannot cook.\n\nA small child cannot carry a heavy bucket.\n\nSomeone who is sick cannot sweep.\n\nSo people do what they can, and others do the rest.\n\nThat is what helping means. You do your part. Someone else does theirs."
+        },
+        {
+          "heading": "Try it yourself",
+          "body": "Think about your own home. Answer out loud.\n\n1. Who lives in your home?\n\n2. Name one job that gets done at your home every day.\n\n3. Who does that job?\n\n4. What is one job you could help with?\n\n5. Why is it better when the work is shared?"
+        },
+        {
+          "heading": "Summary",
+          "body": "• A family is the people who care for you.\n• Families come in many shapes.\n• A home has work to do every day.\n• The work is shared, so nobody is too tired.\n• Everyone can help with something."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "id": "q1-fam-1",
+      "topicId": "g1-soc-family",
+      "question": "Which of these is a family?",
+      "options": [
+        "Only a mother, a father and their children",
+        "Any people who care for each other and live together",
+        "Only people who have the same job",
+        "Only families with many children"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Families come in many shapes. Some children live with one parent, some with a grandmother, some with an aunt. All of these are families. A family is the people who care for you.",
+      "difficulty": "foundation"
+    },
+    {
+      "id": "q1-fam-2",
+      "topicId": "g1-soc-family",
+      "question": "Why do people in a home share the work?",
+      "options": [
+        "So one person does not have to do everything",
+        "Because work is not important",
+        "So the children never help",
+        "Because everyone likes sweeping"
+      ],
+      "correctAnswer": 0,
+      "explanation": "There is a lot to do every day — water, cooking, washing, sweeping. If one person did all of it they would be very tired, and some jobs would not get done. Sharing means everyone does a part.",
+      "difficulty": "foundation"
+    }
+  ],
+  "quizzes": [
+    {
+      "id": "quiz-g1-family",
+      "lessonId": "g1-soc-family-l1",
+      "topicId": "g1-soc-family",
+      "title": "My Family Check",
+      "questionIds": [
+        "q1-fam-1",
+        "q1-fam-2"
+      ]
+    }
+  ]
+}

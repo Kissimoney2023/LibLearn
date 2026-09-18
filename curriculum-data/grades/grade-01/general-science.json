@@ -1,0 +1,141 @@
+{
+  "grade": 1,
+  "subjectId": "general-science",
+  "curriculumVersionId": "liblearn-v1",
+  "provenance": "liblearn",
+  "sourceId": null,
+  "units": [
+    {
+      "id": "g1-sci-u-mybody",
+      "name": "My Body and My Senses",
+      "summary": "The five senses, and the body part that does each one.",
+      "order": 1
+    }
+  ],
+  "topics": [
+    {
+      "id": "g1-sci-senses",
+      "unitId": "g1-sci-u-mybody",
+      "name": "The Five Senses",
+      "summary": "See, hear, smell, taste, touch — and the body part for each.",
+      "order": 1
+    }
+  ],
+  "lessons": [
+    {
+      "id": "g1-sci-senses-l1",
+      "topicId": "g1-sci-senses",
+      "title": "The Five Senses",
+      "estimatedMinutes": 10,
+      "order": 1,
+      "objectives": [
+        {
+          "id": "o1",
+          "text": "Name the five senses."
+        },
+        {
+          "id": "o2",
+          "text": "Say which body part does each sense."
+        },
+        {
+          "id": "o3",
+          "text": "Say which sense you would use to find something out."
+        }
+      ],
+      "keyTerms": [
+        {
+          "term": "Sense",
+          "definition": "A way your body finds out about the world around you."
+        },
+        {
+          "term": "Sight",
+          "definition": "Seeing. You do it with your eyes."
+        },
+        {
+          "term": "Hearing",
+          "definition": "Hearing sounds. You do it with your ears."
+        }
+      ],
+      "sections": [
+        {
+          "heading": "What you will learn",
+          "body": "Your body has five senses.\n\nEach one uses a different body part.\n\nYou will learn all five."
+        },
+        {
+          "heading": "The five senses",
+          "body": "Here they are:\n\n    I see    with my  EYES\n    I hear   with my  EARS\n    I smell  with my  NOSE\n    I taste  with my  TONGUE\n    I touch  with my  SKIN\n\nFive senses. Five body parts.\n\nTouch each part as you say it. Eyes. Ears. Nose. Tongue. Skin."
+        },
+        {
+          "heading": "Senses work together",
+          "body": "Think about a mango.\n\nYou SEE that it is yellow. That is your eyes.\n\nYou SMELL that it is sweet. That is your nose.\n\nYou TOUCH it and feel that it is soft. That is your skin.\n\nYou TASTE it. That is your tongue.\n\nFour senses, one mango.\n\nYour senses work together to tell you about one thing.",
+          "example": "Which sense tells you the rain has started?\n\nYou are inside the house. You cannot see outside.\n\nYou HEAR it. Drops hitting the roof.\n\nThat is your ears. Hearing.\n\nNow you go outside. You FEEL the drops on your arm.\n\nThat is your skin. Touch.\n\nTwo different senses told you about the same rain."
+        },
+        {
+          "heading": "Try it yourself",
+          "body": "Answer out loud.\n\n1. Which body part do you use to hear a bird?\n\n2. Close your eyes. Which sense can you not use now?\n\n3. Which sense tells you that food is salty?\n\n4. Someone is cooking rice in the next room. Which sense tells you?\n\n5. Name all five senses without looking."
+        },
+        {
+          "heading": "Summary",
+          "body": "• You have five senses.\n• Eyes see. Ears hear. Nose smells. Tongue tastes. Skin touches.\n• Your senses tell you about the world.\n• More than one sense can tell you about the same thing."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "id": "q1-sen-1",
+      "topicId": "g1-sci-senses",
+      "question": "Which body part do you use to hear?",
+      "options": [
+        "Eyes",
+        "Nose",
+        "Ears",
+        "Tongue"
+      ],
+      "correctAnswer": 2,
+      "explanation": "You hear with your ears. Eyes are for seeing, the nose is for smelling and the tongue is for tasting. Touch your ears and say \"I hear with my ears\".",
+      "difficulty": "foundation"
+    },
+    {
+      "id": "q1-sen-2",
+      "topicId": "g1-sci-senses",
+      "question": "Someone is cooking rice in the next room. Which sense tells you?",
+      "options": [
+        "Sight",
+        "Smell",
+        "Taste",
+        "Hearing"
+      ],
+      "correctAnswer": 1,
+      "explanation": "You cannot see it, because it is in another room. You have not eaten it, so it is not taste. You SMELL it with your nose. Smell can reach you from far away.",
+      "difficulty": "foundation"
+    },
+    {
+      "id": "q1-sen-3",
+      "topicId": "g1-sci-senses",
+      "question": "How many senses do you have?",
+      "options": [
+        "Two",
+        "Three",
+        "Five",
+        "Ten"
+      ],
+      "correctAnswer": 2,
+      "explanation": "There are five: seeing, hearing, smelling, tasting and touching. Count them on your fingers — eyes, ears, nose, tongue, skin. Five parts, five senses.",
+      "difficulty": "foundation"
+    }
+  ],
+  "quizzes": [
+    {
+      "id": "quiz-g1-senses",
+      "lessonId": "g1-sci-senses-l1",
+      "topicId": "g1-sci-senses",
+      "title": "Five Senses Check",
+      "questionIds": [
+        "q1-sen-1",
+        "q1-sen-2",
+        "q1-sen-3"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,126 @@
+{
+  "grade": 5,
+  "subjectId": "english",
+  "curriculumVersionId": "liblearn-v1",
+  "provenance": "liblearn",
+  "sourceId": null,
+  "units": [
+    {
+      "id": "g5-eng-u-writing",
+      "name": "Writing Clearly",
+      "summary": "Organising your ideas so a reader can follow them.",
+      "order": 1
+    }
+  ],
+  "topics": [
+    {
+      "id": "g5-eng-paragraph",
+      "unitId": "g5-eng-u-writing",
+      "name": "Paragraphs",
+      "summary": "Grouping sentences so each paragraph makes one point.",
+      "order": 1
+    }
+  ],
+  "lessons": [
+    {
+      "id": "g5-eng-paragraph-l1",
+      "topicId": "g5-eng-paragraph",
+      "title": "Writing a Clear Paragraph",
+      "estimatedMinutes": 12,
+      "order": 1,
+      "objectives": [
+        {
+          "id": "o1",
+          "text": "Say what a paragraph is and what it is for."
+        },
+        {
+          "id": "o2",
+          "text": "Write a topic sentence that tells the reader the main idea."
+        },
+        {
+          "id": "o3",
+          "text": "Keep one paragraph to one idea."
+        }
+      ],
+      "keyTerms": [
+        {
+          "term": "Paragraph",
+          "definition": "A group of sentences about one main idea."
+        },
+        {
+          "term": "Topic sentence",
+          "definition": "The sentence that tells the reader what the paragraph is about."
+        }
+      ],
+      "sections": [
+        {
+          "heading": "What you will learn",
+          "body": "Writing is easier to read when ideas are grouped. This lesson shows you how to build one clear paragraph, which is the building block of every longer piece of writing."
+        },
+        {
+          "heading": "One paragraph, one idea",
+          "body": "A paragraph is a group of sentences that all belong together because they are about the SAME idea.\n\nWhen you change to a new idea, you start a new paragraph.\n\nThink of it like packing. You do not put rice, soap and schoolbooks in one bag and hope the person sorts it out. You group things that belong together. A paragraph is that bag."
+        },
+        {
+          "heading": "The topic sentence comes first",
+          "body": "The first sentence of a paragraph usually tells the reader what it is about. That is the TOPIC SENTENCE.\n\n    \"Cassava is an important crop in many homes.\"\n\nNow the reader knows: this paragraph is about cassava being important. Every sentence after it should support that.\n\n    Cassava is an important crop in many homes. It grows well even\n    when there is little rain. The roots can be pounded into fufu,\n    and the leaves are cooked as a vegetable. Because of this, one\n    plant can feed a family in more than one way.\n\nEvery sentence is about cassava being important. Nothing wanders off.",
+          "example": "Spotting a sentence that does not belong.\n\n    Cassava is an important crop in many homes. It grows well even\n    when there is little rain. My uncle has a motorbike. The roots\n    can be pounded into fufu.\n\nWhich sentence does not belong?\n\n\"My uncle has a motorbike.\" It may be true, but it is not about cassava. It breaks the reader's concentration and belongs in a different paragraph — or nowhere.\n\nTest every sentence: does this support the topic sentence? If not, take it out."
+        },
+        {
+          "heading": "How long should a paragraph be?",
+          "body": "There is no fixed number of sentences. A paragraph is finished when the idea is finished.\n\nBut if a paragraph fills a whole page, you are probably covering more than one idea — look for the place where the subject changes and split it there.\n\nAnd if a paragraph is one short sentence, ask whether you have explained enough."
+        },
+        {
+          "heading": "Try it yourself",
+          "body": "Write one paragraph about your school.\n\n1. Start with a topic sentence saying one thing about it.\n2. Add three sentences that support it.\n3. Read it back. Does every sentence belong? Cross out any that wander."
+        },
+        {
+          "heading": "Summary",
+          "body": "• A paragraph holds sentences about ONE idea.\n• The topic sentence tells the reader what that idea is.\n• Every other sentence should support it.\n• Start a new paragraph when the idea changes.\n• Test each sentence: does it belong in this bag?"
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "id": "q5-par-1",
+      "topicId": "g5-eng-paragraph",
+      "question": "What does a topic sentence do?",
+      "options": [
+        "It ends the paragraph",
+        "It tells the reader the main idea of the paragraph",
+        "It gives an example",
+        "It makes the paragraph longer"
+      ],
+      "correctAnswer": 1,
+      "explanation": "The topic sentence, usually first, tells the reader what the paragraph is about. Every sentence after it should support that idea. Examples come after it — they are support, not the point itself.",
+      "difficulty": "foundation"
+    },
+    {
+      "id": "q5-par-2",
+      "topicId": "g5-eng-paragraph",
+      "question": "A paragraph about cassava being useful contains: \"My uncle has a motorbike.\" What should you do?",
+      "options": [
+        "Keep it — it adds interest",
+        "Remove it — it is not about the topic",
+        "Move it to the start",
+        "Add more about the motorbike"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Remove it. A paragraph holds sentences about ONE idea, and the motorbike is not about cassava. It may be true and even interesting, but it breaks the reader’s concentration. Test each sentence: does it support the topic sentence?",
+      "difficulty": "core"
+    }
+  ],
+  "quizzes": [
+    {
+      "id": "quiz-g5-paragraph",
+      "lessonId": "g5-eng-paragraph-l1",
+      "topicId": "g5-eng-paragraph",
+      "title": "Paragraphs Check",
+      "questionIds": [
+        "q5-par-1",
+        "q5-par-2"
+      ]
+    }
+  ]
+}

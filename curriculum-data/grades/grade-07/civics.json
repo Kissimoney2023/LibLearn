@@ -1,0 +1,130 @@
+{
+  "grade": 7,
+  "subjectId": "civics",
+  "curriculumVersionId": "liblearn-v1",
+  "provenance": "liblearn",
+  "sourceId": null,
+  "units": [
+    {
+      "id": "g7-civ-u-citizenship",
+      "name": "Citizenship",
+      "summary": "What citizens are entitled to, and what they owe in return.",
+      "order": 1
+    }
+  ],
+  "topics": [
+    {
+      "id": "g7-civ-rights",
+      "unitId": "g7-civ-u-citizenship",
+      "name": "Rights and Responsibilities",
+      "summary": "Why every right carries a duty on somebody.",
+      "order": 1
+    }
+  ],
+  "lessons": [
+    {
+      "id": "g7-civ-rights-l1",
+      "topicId": "g7-civ-rights",
+      "title": "Rights and Responsibilities",
+      "estimatedMinutes": 12,
+      "order": 1,
+      "objectives": [
+        {
+          "id": "o1",
+          "text": "Explain what a right is."
+        },
+        {
+          "id": "o2",
+          "text": "Explain why every right places a duty on someone."
+        },
+        {
+          "id": "o3",
+          "text": "Give examples of responsibilities citizens hold."
+        }
+      ],
+      "keyTerms": [
+        {
+          "term": "Right",
+          "definition": "Something a person is entitled to, which others must not take away."
+        },
+        {
+          "term": "Responsibility",
+          "definition": "Something a person is expected to do."
+        },
+        {
+          "term": "Citizen",
+          "definition": "A recognised member of a country, with rights and responsibilities in it."
+        }
+      ],
+      "sections": [
+        {
+          "heading": "What you will learn",
+          "body": "Rights and responsibilities are usually taught as two lists to memorise. They are better understood as two sides of one thing — which this lesson shows.\n\nA note on scope: this lesson teaches the general idea of rights and duties. It does not set out the specific rights guaranteed by Liberian law. For those, use the Constitution itself or your teacher’s materials — LibLearn will not state them from memory."
+        },
+        {
+          "heading": "What a right is",
+          "body": "A RIGHT is something a person is entitled to simply because they are a person or a citizen — not a favour someone grants them, and not something that can be withdrawn because it is inconvenient.\n\nCommonly recognised rights include being treated equally before the law, being able to say what you think, and being able to learn."
+        },
+        {
+          "heading": "Every right places a duty on someone",
+          "body": "This is the idea worth taking from the lesson.\n\nA right is not just a possession. It is a claim on other people's behaviour.\n\n    If you have a right to be safe, then others have a duty not to harm you.\n    If you have a right to learn, then others have a duty not to prevent you.\n    If you have a right to speak, then others have a duty not to silence you.\n\nA right nobody has any duty to respect is not really a right. It is only a wish.\n\nAnd it runs both ways. The same duties others owe you, you owe them. Your right to speak means you must let others speak, including when you disagree — which is exactly when it is hard.",
+          "example": "Two students, one classroom.\n\nStudent A says: \"I have the right to speak, so I will talk whenever I want during the lesson.\"\n\nBut Student B also has the right to learn. If A talks constantly, B cannot hear the teacher — so A exercising a right destroys B's.\n\nThis is what people mean when they say rights have limits. The limit is not arbitrary: your right runs up to the point where it would cancel someone else's.\n\nA is free to speak. A is not free to prevent B from learning."
+        },
+        {
+          "heading": "Responsibilities",
+          "body": "Responsibilities are what citizens are expected to do so that everyone's rights hold:\n\n    obeying the law\n    respecting other people and their property\n    taking part — voting when old enough, serving the community\n    caring for shared things: schools, roads, water sources\n\nThese are not a price charged for rights. They are how rights are kept working for everybody, including you."
+        },
+        {
+          "heading": "Try it yourself",
+          "body": "1. For \"the right to be safe at school\", say what duty it places on other students.\n2. Someone says \"I have my rights, so nobody can tell me anything.\" What have they misunderstood?\n3. Name two responsibilities of a student, and say whose rights each one protects.\n4. Using your Constitution or class materials, find how rights are set out in Liberian law — and note anything that differs from the general picture here."
+        },
+        {
+          "heading": "Summary",
+          "body": "• A right is an entitlement, not a favour.\n• Every right places a duty on other people.\n• A right nobody must respect is only a wish.\n• Your right ends where it would cancel someone else’s.\n• Responsibilities are how rights are kept working for everyone.\n• Country-specific rights must come from the law itself, not memory."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "id": "q7-civ-1",
+      "topicId": "g7-civ-rights",
+      "question": "If a person has a right to learn, what follows for other people?",
+      "options": [
+        "Nothing — rights concern only the person who has them",
+        "Others have a duty not to prevent them from learning",
+        "Others must pay for their education",
+        "Others lose their own right to learn"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Every right places a duty on other people — that is what makes it a right rather than a wish. A right to learn means others must not prevent it. It also runs both ways: the duty you are owed, you owe to everyone else.",
+      "difficulty": "core"
+    },
+    {
+      "id": "q7-civ-2",
+      "topicId": "g7-civ-rights",
+      "question": "A student says: \"I have the right to speak, so I can talk whenever I like during lessons.\" What has he misunderstood?",
+      "options": [
+        "He is correct",
+        "His right to speak ends where it cancels other students’ right to learn",
+        "Students have no right to speak",
+        "Rights only apply outside school"
+      ],
+      "correctAnswer": 1,
+      "explanation": "He does have a right to speak, but constant talking stops others hearing the teacher — so exercising his right destroys theirs. That is where the limit comes from: your right runs up to the point where it would cancel someone else’s.",
+      "difficulty": "challenge"
+    }
+  ],
+  "quizzes": [
+    {
+      "id": "quiz-g7-rights",
+      "lessonId": "g7-civ-rights-l1",
+      "topicId": "g7-civ-rights",
+      "title": "Rights and Responsibilities Check",
+      "questionIds": [
+        "q7-civ-1",
+        "q7-civ-2"
+      ]
+    }
+  ]
+}
